@@ -1,0 +1,42 @@
+raw_root: "C:/Users/Saurabh Sharma/Downloads/J&K"
+project_root: "D:/Projects/GeoSlide_JK"
+
+boundaries:
+  district_search:
+    - "Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9/**/*.shp"
+    - "Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9/**/*.geojson"
+  tehsil_search:
+    - "Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8/**/*.shp"
+    - "Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8/**/*.geojson"
+
+dem:
+  copernicus_glo30_search: "copernicus_glo30/**/*.tif"
+
+landcover:
+  worldcover_search: "esa_worldcover_2021/**/*.tif"
+
+geology:
+  lithology_geojson: "geology_50klithology_jammu_kashmir_geoJSON file/**/*.geojson"
+  lithology_shapefile: "geology_50klithology_jammu_kashmir_shape file/**/*.shp"
+
+tectonics:
+  fault_search: "FAULT and THRUST Tectonic J&K/**/*.shp"
+  active_fault_search: "Active Fault, Earthquake J&K/**/*.shp"
+  lineament_search: "LINEAMENT and FOLD Tectonic J&K/**/*.shp"
+  geomorphology_lineament_search: "Geomorphology Lineatment J&K/**/*.shp"
+
+landslides:
+  ngdr_geojson_search: "NGDR GeoJSON File/**/*.geojson"
+  ngdr_shapefile_search: "NGDR Shape File J&K/**/*.shp"
+  nlsm_reference_tif: "JammuandKashmir_Susceptibility.tif_NLSM_20260725210220.036_11842.tif"
+
+population:
+  ghs_pop_search: "GHS_POP_E2025_GLOBE_R2023A_54009_100_V1_0_R6_C26/**/*.tif"
+
+rainfall:
+  imd_search: "IMD Yearly Gridded Rainfall Data/**/*.nc"
+  imerg_search: "IMERG_Download_Helper_Windows/**/*.nc4"
+  wris_search: "WRIS Rainfall Data/**/*.xlsx"
+
+reference_metadata:
+  data_source_reference: "GeoSlide_JK_Data_Source_Reference.xlsx"

@@ -1,0 +1,23 @@
+rainfall:
+  windows:
+    - 30min
+    - 1h
+    - 3h
+    - 6h
+    - 12h
+    - 24h
+    - 48h
+    - 72h
+    - 7d
+
+  percentiles:
+    normal: 75.0
+    elevated: 90.0
+    high: 95.0
+    extreme: 99.0
+
+  trigger_classes:
+    - Normal
+    - Elevated
+    - High
+    - Extreme

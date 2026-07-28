@@ -1,0 +1,11 @@
+grid:
+  primary_resolution_m: 100
+  fallback_resolution_m: 250
+  crs: "EPSG:32643"
+  bounds_utm:
+    min_x: 400000.0
+    min_y: 3550000.0
+    max_x: 750000.0
+    max_y: 4150000.0
+  nodata_value: -9999.0
+  dtype: "float32"

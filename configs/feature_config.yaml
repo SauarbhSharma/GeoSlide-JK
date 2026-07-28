@@ -1,0 +1,36 @@
+features:
+  morphometric:
+    - elevation
+    - slope_deg
+    - aspect_rad
+    - northness
+    - eastness
+    - profile_curvature
+    - plan_curvature
+    - tri
+    - tpi
+    - local_relief
+    - twi
+    - dist_drainage_m
+  geological:
+    - lithology_class
+    - dist_fault_m
+    - dist_thrust_m
+    - dist_active_fault_m
+    - dist_lineament_m
+    - lineament_density
+  landcover:
+    - lulc_class
+    - tree_cover_fraction
+    - builtup_fraction
+    - bare_fraction
+  infrastructure:
+    - dist_road_m
+    - road_density
+    - dist_nh44_m
+    - dist_settlement_m
+
+preprocessing:
+  scaling: "standard"
+  categorical_encoding: "one-hot"
+  imputation: "median"

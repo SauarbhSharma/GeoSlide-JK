@@ -1,0 +1,38 @@
+matrix:
+  susceptibility_levels: ["Very Low", "Low", "Moderate", "High", "Very High"]
+  rainfall_triggers: ["Normal", "Elevated", "High", "Extreme"]
+
+  hazard_rules:
+    "Very Low":
+      "Normal": "Low"
+      "Elevated": "Low"
+      "High": "Moderate"
+      "Extreme": "High"
+    "Low":
+      "Normal": "Low"
+      "Elevated": "Moderate"
+      "High": "High"
+      "Extreme": "High"
+    "Moderate":
+      "Normal": "Moderate"
+      "Elevated": "Moderate"
+      "High": "High"
+      "Extreme": "Very High"
+    "High":
+      "Normal": "Moderate"
+      "Elevated": "High"
+      "High": "Very High"
+      "Extreme": "Critical"
+    "Very High":
+      "Normal": "High"
+      "Elevated": "Very High"
+      "High": "Critical"
+      "Extreme": "Critical"
+
+risk_classes:
+  - Low
+  - Moderate
+  - High
+  - Very High
+  - Critical
+  - Insufficient Data

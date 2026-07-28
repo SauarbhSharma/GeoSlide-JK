@@ -1,0 +1,23 @@
+theme:
+  mode: "dark"
+  palette:
+    navy: "#0f172a"
+    charcoal: "#1e293b"
+    accent_blue: "#2563eb"
+  risk_colors:
+    "Low": "#22c55e"
+    "Moderate": "#eab308"
+    "High": "#f97316"
+    "Very High": "#ef4444"
+    "Critical": "#881337"
+    "Insufficient Data": "#64748b"
+
+map:
+  default_center: [75.5, 33.7]
+  default_zoom: 7.5
+  focus_corridor: "NH-44"
+
+branding:
+  title: "GeoSlide J&K"
+  tagline: "Terrain Intelligence and Rainfall-Triggered Landslide Risk"
+  disclaimer: "An explainable landslide susceptibility and rainfall-triggered risk-nowcasting research prototype for Jammu and Kashmir."

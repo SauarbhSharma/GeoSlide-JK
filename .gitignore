@@ -1,0 +1,83 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter / IPython
+.ipynb_checkpoints
+
+# Environment variables
+.env
+!.env.example
+
+# Read-only Raw Data Folder Path & Data Directories
+/data/raw/*
+!/data/raw/.gitkeep
+/data/interim/*
+!/data/interim/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+!/data/processed/boundaries/*.geojson
+/data/tiles/*
+!/data/tiles/.gitkeep
+
+# Large Generated Rasters & Heavy Outputs
+*.tif
+*.nc
+*.nc4
+*.geoparquet
+/outputs/maps/*
+!/outputs/maps/.gitkeep
+/outputs/reports/*
+!/outputs/reports/.gitkeep
+/outputs/figures/*
+!/outputs/figures/.gitkeep
+!/outputs/figures/page_screenshots/
+/outputs/logs/*
+!/outputs/logs/.gitkeep
+/models/registered/*
+!/models/registered/.gitkeep
+
+# Temporary GIS files
+*.lock
+*.tmp
+*.gpkg-journal
+*.gpkg-shm
+*.gpkg-wal
+
+# Node / Next.js
+node_modules/
+/apps/web/node_modules/
+/apps/web/.next/
+/apps/web/out/
+/apps/web/build/
+.next
+
+# IDEs & System files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

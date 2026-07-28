@@ -1,0 +1,19 @@
+project:
+  name: "GeoSlide-JK"
+  title: "Landslide Risk Prediction & Decision Support System (J&K)"
+  version: "0.1.0"
+  description: "Explainable landslide susceptibility and rainfall-triggered risk decision-support platform for Jammu and Kashmir"
+  target_region: "Jammu and Kashmir"
+  district_count: 20
+  excluded_districts:
+    - "Leh"
+    - "Kargil"
+
+crs:
+  processing: "EPSG:32643"  # WGS 84 / UTM zone 43N
+  web: "EPSG:4326"          # WGS 84 geographic
+
+defaults:
+  grid_resolution_m: 100
+  grid_fallback_m: 250
+  data_confidence_threshold: 0.8
