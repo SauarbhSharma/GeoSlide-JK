@@ -87,6 +87,17 @@ export default function SystemStatus() {
           </div>
         </div>
 
+        {/* Phase 3 Status Update Section */}
+        <div className="bg-navy-900 border border-sky-500/40 p-4 rounded-xl space-y-2 text-xs">
+          <div className="flex items-center space-x-2 border-b border-navy-800 pb-2 text-sky-400 font-bold text-sm">
+            <CheckCircle className="w-4 h-4" />
+            <span>Phase 3 Terrain Feature Engineering</span>
+          </div>
+          <p className="text-slate-200 font-mono text-xs">
+            Phase 3 Terrain Feature Engineering: 16 terrain and hydrological features prepared and aligned to the 100m master analysis grid. Model training has not started.
+          </p>
+        </div>
+
         {/* Truthful Category Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
           {/* Core datasets ready */}

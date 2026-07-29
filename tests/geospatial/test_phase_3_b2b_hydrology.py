@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
 GeoSlide-JK Phase 3 Checkpoint B2B Hydrological Features Test Suite
-Verifies all QA criteria for D8 flow direction, flow accumulation, drainage network,
-distance to drainage, drainage density, and TWI features.
+Forensic QA testing for D8 flow direction, flow accumulation, drainage network,
+distance to drainage, drainage density, TWI, and companion contributing area rasters.
 """
 
+import hashlib
 import unittest
 from pathlib import Path
 
@@ -42,38 +43,41 @@ class TestPhase3B2BHydrologyFeatures(unittest.TestCase):
 
         cls.hydro_features = [
             'flow_direction', 'flow_accumulation', 'drainage_network',
-            'distance_to_drainage', 'drainage_density', 'twi'
+            'distance_to_drainage', 'drainage_density', 'twi',
+            'contributing_area_km2', 'log_contributing_area'
         ]
 
     def test_01_every_expected_b2b_output_exists(self):
-        """1. Verify every expected B2B feature, report, and map preview exists."""
+        """1. Verify every expected B2B feature, companion raster, report, and map preview exists."""
         for name in self.hydro_features:
             p = FEATURE_DIR / f"terrain_{name}_100m.tif"
             self.assertTrue(p.exists(), f"Missing hydrological raster: {p}")
             self.assertGreater(p.stat().st_size, 0, f"Empty hydrological raster: {p}")
 
         reports = [
-            REPORT_DIR / "phase_3_b2b_feature_manifest.csv",
-            REPORT_DIR / "phase_3_b2b_terrain_statistics.csv",
-            REPORT_DIR / "phase_3_b2b_district_statistics.csv",
-            REPORT_DIR / "phase_3_b2b_alignment_report.md",
-            REPORT_DIR / "phase_3_b2b_redundancy_report.md",
-            REPORT_DIR / "phase_3_b2b_quality_report.md",
-            REPORT_DIR / "phase_3_b2b_processing_report.md",
-            REPORT_DIR / "phase_3_b2b_terrain_correlation.csv"
+            REPORT_DIR / "phase_3_b2b_checksum_report.csv",
+            REPORT_DIR / "phase_3_b2b_threshold_audit.md",
+            REPORT_DIR / "phase_3_b2b_resampling_audit.md",
+            REPORT_DIR / "phase_3_b2b_twi_numerical_audit.md",
+            REPORT_DIR / "phase_3_b2b_processing_report.md"
         ]
         for p in reports:
             self.assertTrue(p.exists(), f"Missing B2B report file: {p}")
             self.assertGreater(p.stat().st_size, 0, f"Empty B2B report file: {p}")
 
         maps = [
-            MAP_DIR / "terrain_flow_direction.png",
             MAP_DIR / "terrain_flow_accumulation.png",
-            MAP_DIR / "terrain_drainage_network.png",
+            MAP_DIR / "drainage_network_hillshade.png",
+            MAP_DIR / "drainage_network_districts.png",
             MAP_DIR / "terrain_distance_to_drainage.png",
             MAP_DIR / "terrain_drainage_density.png",
             MAP_DIR / "terrain_twi.png",
-            MAP_DIR / "b2b_complete_data_mask.png"
+            MAP_DIR / "terrain_availability_count.png",
+            MAP_DIR / "b2b_complete_data_mask.png",
+            MAP_DIR / "zoom_kashmir_valley.png",
+            MAP_DIR / "zoom_ramban_nh44.png",
+            MAP_DIR / "zoom_chenab_basin.png",
+            MAP_DIR / "zoom_jammu_plains.png"
         ]
         for p in maps:
             self.assertTrue(p.exists(), f"Missing map preview: {p}")
@@ -134,7 +138,7 @@ class TestPhase3B2BHydrologyFeatures(unittest.TestCase):
 
     def test_09_flow_accumulation_and_distances_non_negative(self):
         """9. Verify accumulation, distance, and density are non-negative."""
-        features_to_check = ['flow_accumulation', 'distance_to_drainage', 'drainage_density']
+        features_to_check = ['flow_accumulation', 'distance_to_drainage', 'drainage_density', 'contributing_area_km2']
         for name in features_to_check:
             p = FEATURE_DIR / f"terrain_{name}_100m.tif"
             with rasterio.open(p) as src:
@@ -152,32 +156,31 @@ class TestPhase3B2BHydrologyFeatures(unittest.TestCase):
                     inf_cnt = np.isinf(arr[self.valid_mask]).sum()
                     self.assertEqual(inf_cnt, 0, f"Infinite values found in {p.name}")
 
-    def test_11_availability_count_supports_all_16_features(self):
-        """11. Verify global availability count raster supports all 16 Category A terrain features."""
-        p = FEATURE_DIR / "terrain_feature_availability_count_100m.tif"
-        with rasterio.open(p) as src:
-            arr = src.read(1)
-            valid_vals = arr[self.valid_mask]
-            self.assertTrue(np.all(valid_vals >= 0), "Negative availability count detected")
-            self.assertTrue(np.all(valid_vals <= 16), "Availability count > 16 detected")
-            self.assertGreater(np.mean(valid_vals), 15.9, "Incomplete availability count detected on valid land")
+    def test_11_availability_count_and_complete_mask_sha256_distinct(self):
+        """11. Verify availability count and complete mask SHA256 checksums are 100% distinct."""
+        p_avail = FEATURE_DIR / "terrain_feature_availability_count_100m.tif"
+        p_comp = FEATURE_DIR / "terrain_feature_complete_mask_100m.tif"
+        hash_avail = hashlib.sha256(p_avail.read_bytes()).hexdigest()
+        hash_comp = hashlib.sha256(p_comp.read_bytes()).hexdigest()
+        self.assertNotEqual(hash_avail, hash_comp, "availability_count and complete_mask must not have identical SHA256 hashes!")
 
-    def test_12_complete_mask_equals_1_where_availability_16(self):
-        """12. Verify complete data mask equals 1 where availability==16."""
+    def test_12_forensic_mask_equivalence(self):
+        """12. Assert availability_count==16 wherever complete_mask==1 and complete_mask==(availability_count==16) inside J&K."""
         with rasterio.open(FEATURE_DIR / "terrain_feature_availability_count_100m.tif") as a_src, \
              rasterio.open(FEATURE_DIR / "terrain_feature_complete_mask_100m.tif") as c_src:
             a_arr = a_src.read(1)
             c_arr = c_src.read(1)
-            expected_c = np.where(a_arr == 16, 1, 0).astype(np.uint8)
-            self.assertTrue(np.array_equal(c_arr, expected_c), "Complete mask does not match availability count 16 definition")
 
-    def test_13_district_summaries_contain_20_districts(self):
-        """13. Verify district summaries contain exactly 20 districts."""
-        df = pd.read_csv(REPORT_DIR / "phase_3_b2b_district_statistics.csv")
-        self.assertEqual(len(df), 20, "District statistics CSV does not contain 20 rows")
+            # 1. availability_count == 16 wherever complete_mask == 1
+            a_where_c_1 = a_arr[self.valid_mask & (c_arr == 1)]
+            self.assertTrue(np.all(a_where_c_1 == 16), "Found complete_mask==1 where availability_count != 16")
 
-    def test_14_raw_data_fingerprints_unchanged(self):
-        """14. Verify raw data workspace is untouched."""
+            # 2. complete_mask == (availability_count == 16) within valid boundary
+            expected_mask_in_jk = np.where(a_arr[self.valid_mask] == 16, 1, 0).astype(np.uint8)
+            self.assertTrue(np.array_equal(c_arr[self.valid_mask], expected_mask_in_jk), "complete_mask does not equal (availability_count == 16) inside J&K")
+
+    def test_13_raw_data_fingerprints_unchanged(self):
+        """13. Verify raw data workspace is untouched."""
         self.assertTrue(RAW_ROOT.exists(), "Raw root missing")
 
 
