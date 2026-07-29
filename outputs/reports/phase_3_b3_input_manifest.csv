@@ -1,0 +1,13 @@
+layer_name,layer_type,format,path,crs,dimensions,file_size,b2_verified,b3_ready
+worldcover_n30e072,raster,GeoTIFF,C:/Users/Saurabh Sharma/Downloads/J&K/esa_worldcover_2021/ESA_WorldCover_10m_2021_v200_N30E072_Map (1).tif,EPSG:4326,36000x36000,117.1 MB,Yes,Yes
+worldcover_n30e075,raster,GeoTIFF,C:/Users/Saurabh Sharma/Downloads/J&K/esa_worldcover_2021/ESA_WorldCover_10m_2021_v200_N30E075_Map.tif,EPSG:4326,36000x36000,97.8 MB,Yes,Yes
+worldcover_n33e072,raster,GeoTIFF,C:/Users/Saurabh Sharma/Downloads/J&K/esa_worldcover_2021/ESA_WorldCover_10m_2021_v200_N33E072_Map.tif,EPSG:4326,36000x36000,146.1 MB,Yes,Yes
+worldcover_n33e075,raster,GeoTIFF,C:/Users/Saurabh Sharma/Downloads/J&K/esa_worldcover_2021/ESA_WorldCover_10m_2021_v200_N33E075_Map.tif,EPSG:4326,36000x36000,93.0 MB,Yes,Yes
+lithology,vector,GeoParquet,data/processed/vectors/jk_lithology.parquet,EPSG:4326,4076 polygons,9.1 MB,Yes,Yes
+faults,vector,GeoParquet,data/processed/vectors/jk_faults.parquet,EPSG:4326,5 lines,30 KB,Yes,Yes
+thrusts,vector,GeoParquet,data/processed/vectors/jk_thrusts.parquet,EPSG:4326,14 lines,25 KB,Yes,Yes
+lineaments,vector,GeoParquet,data/processed/vectors/jk_lineaments.parquet,EPSG:4326,774 lines,287 KB,Yes,Yes
+major_roads,vector,GeoParquet,data/processed/vectors/jk_major_roads.parquet,EPSG:4326,4762 lines,3.5 MB,Yes,Yes
+nh44,vector,GeoParquet,data/processed/vectors/jk_nh44.parquet,EPSG:4326,82 features,47 KB,Yes,Yes
+settlements,vector,GeoParquet,data/processed/vectors/jk_settlements.parquet,EPSG:4326,5060 features,344 KB,Yes,Yes
+health_facilities,vector,GeoParquet,data/processed/vectors/jk_health_facilities.parquet,EPSG:4326,877 features,103 KB,Yes,Yes

@@ -91,10 +91,10 @@ export default function SystemStatus() {
         <div className="bg-navy-900 border border-sky-500/40 p-4 rounded-xl space-y-2 text-xs">
           <div className="flex items-center space-x-2 border-b border-navy-800 pb-2 text-sky-400 font-bold text-sm">
             <CheckCircle className="w-4 h-4" />
-            <span>Phase 3 Terrain Feature Engineering</span>
+            <span>Phase 3 Land-Cover and Proximity Feature Engineering</span>
           </div>
           <p className="text-slate-200 font-mono text-xs">
-            Phase 3 Terrain Feature Engineering: 16 terrain and hydrological features prepared and aligned to the 100m master analysis grid. Model training has not started.
+            Phase 3 Land-Cover and Proximity Feature Engineering: ESA WorldCover land-cover fractions and structural/infrastructure proximity features have been prepared on the 100m master grid. Model training has not started.
           </p>
         </div>
 
