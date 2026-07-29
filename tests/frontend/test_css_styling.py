@@ -6,8 +6,10 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-SCREENSHOT_DIR = PROJECT_ROOT / "docs" / "progress" / "phase_2_screenshots"
+SCREENSHOT_DIR = PROJECT_ROOT / "docs" / "progress" / "phase_3_b3_frontend_runtime_repair"
 SCREENSHOT_DIR.mkdir(parents=True, exist_ok=True)
+PHASE_2_SCREENSHOT_DIR = PROJECT_ROOT / "docs" / "progress" / "phase_2_screenshots"
+PHASE_2_SCREENSHOT_DIR.mkdir(parents=True, exist_ok=True)
 
 class TestCSSStylingAndComputedProperties(unittest.TestCase):
 
@@ -88,6 +90,7 @@ class TestCSSStylingAndComputedProperties(unittest.TestCase):
                 self.assertGreater(nav_count, 0, f"Route {path} missing header navigation")
 
                 page.screenshot(path=str(SCREENSHOT_DIR / filename))
+                page.screenshot(path=str(PHASE_2_SCREENSHOT_DIR / filename))
 
             browser.close()
 

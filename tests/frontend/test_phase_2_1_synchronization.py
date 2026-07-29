@@ -65,10 +65,10 @@ class TestPhase21Synchronization(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page(viewport={"width": 1280, "height": 900})
-            page.goto("http://localhost:3000", wait_until="domcontentloaded")
-            time.sleep(3)
+            page.goto("http://localhost:3000", wait_until="load")
+            time.sleep(5)
 
-            map_el = page.locator("div.relative.w-full.h-full.min-h-\\[620px\\]").first
+            map_el = page.locator("canvas.maplibregl-canvas").first
             map_el.scroll_into_view_if_needed()
             box = map_el.bounding_box()
 
@@ -76,7 +76,7 @@ class TestPhase21Synchronization(unittest.TestCase):
             cx = box["x"] + box["width"] * 0.35
             cy = box["y"] + box["height"] * 0.50
             page.mouse.click(cx, cy)
-            time.sleep(2)
+            time.sleep(3)
 
             popup_html = page.evaluate("() => document.querySelector('.custom-popup')?.outerHTML || ''")
             self.assertTrue(len(popup_html) > 0, "Popup HTML not found after map click")
