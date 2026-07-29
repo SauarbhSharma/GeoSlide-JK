@@ -1,0 +1,53 @@
+feature_id,feature_name,category,source_layer,units,raster_dtype,generation_method,neighbourhood_window,nodata_value,expected_landslide_relationship,leakage_risk,inclusion_recommendation
+1,elevation,A_terrain,elevation COG,m,float32,Resample 30m COG to 100m grid (bilinear),,-9999,Higher elevation increases exposure but complex relationship,,Include
+2,slope,A_terrain,slope COG,degrees,float32,Resample 30m COG to 100m grid (bilinear),,-9999,Strong positive: steeper slopes = higher susceptibility,,Include
+3,aspect,A_terrain,aspect COG,degrees,float32,Resample 30m (bilinear),,-9999,"Indirect: south-facing slopes drier, north-facing wetter",,Include (transform to northness/eastness)
+4,northness,A_terrain,Derived from aspect,unitless [-1 1],float32,cos(aspect_rad),,-9999,"North-facing slopes retain moisture, potentially more unstable",,Include
+5,eastness,A_terrain,Derived from aspect,unitless [-1 1],float32,sin(aspect_rad),,-9999,"East-facing slopes receive morning sun, asymmetric weathering",,Include
+6,profile_curvature,A_terrain,Derived from DEM,1/m,float32,Second derivative along max slope direction (3x3),3x3,-9999,"Convex profile = accelerated flow, higher instability",,Include
+7,plan_curvature,A_terrain,Derived from DEM,1/m,float32,Second derivative across max slope direction (3x3),3x3,-9999,"Convergent contour = concentrated flow, higher susceptibility",,Include
+8,tri,A_terrain,Derived from DEM,m,float32,Mean absolute elevation difference in 3x3 window (Riley 1999),3x3,-9999,Higher terrain ruggedness = more instability,,Include
+9,tpi,A_terrain,Derived from DEM,m,float32,Cell minus mean of annular neighbourhood,11x11 (default),-9999,Negative TPI (valleys/concavities) = more water accumulation,,Include
+10,local_relief,A_terrain,Derived from DEM,m,float32,Max minus min elevation in circular window,r=500m (5 cells at 100m),-9999,Greater local relief = higher erosion potential,,Include
+11,flow_direction,A_terrain,Derived from filled DEM,D8 code,uint8,D8 single-flow direction after pit filling,,255,Routing input; not directly a predictor but used for accumulation,Low,Include (intermediate)
+12,flow_accumulation,A_terrain,Derived from flow_direction,cell count,float32,Cumulative upslope contributing area count,,-9999,Higher accumulation = more runoff concentration risk,Low,Include
+13,drainage_network,A_terrain,Derived from flow_accumulation,binary,uint8,Threshold flow_accumulation > threshold,,255,Stream proximity affects toe-erosion,Low,Include (intermediate)
+14,distance_to_drainage,A_terrain,Derived from drainage_network,m,float32,Euclidean distance to nearest stream cell,,-9999,"Closer to drainage = more toe-erosion, bank undercutting",,Include
+15,drainage_density,A_terrain,Derived from drainage_network,km/km2,float32,Length of drainage per unit area in moving window,r=500m,-9999,"Higher density = higher runoff, more dissection",,Include
+16,twi,A_terrain,Derived from slope + flow_accumulation,unitless,float32,ln(specific_catchment_area / tan(slope_rad)),,-9999,Higher TWI = more wetness = higher pore pressure = instability,,Include
+17,lithology_class,B_geology,jk_lithology.parquet,categorical code,uint8,Rasterize polygon to grid using normalized coding table,,255,Strong: soft rocks/unconsolidated sediments = higher susceptibility,,Include
+18,engineering_geology_group,B_geology,Derived from lithology_class,categorical code,uint8,Map lithology codes to broad engineering groups,,255,Consolidated grouping for ML generalization,,Include
+19,distance_to_fault,B_geology,jk_faults.parquet,m,float32,Euclidean distance to nearest fault line (all types),,-9999,"Closer to faults = more fractured, weaker rock mass",,Include
+20,distance_to_active_fault,B_geology,jk_faults.parquet (fault_type='active'),m,float32,Euclidean distance to nearest active fault,,-9999,Active faults = seismic shaking trigger proximity,,Include
+21,distance_to_thrust,B_geology,jk_thrusts.parquet,m,float32,Euclidean distance to nearest thrust,,-9999,Thrusts create crushed/sheared zones,,Include
+22,distance_to_lineament,B_geology,jk_lineaments.parquet,m,float32,Euclidean distance to nearest lineament,,-9999,Lineaments indicate fracture zones,,Include
+23,fault_density,B_geology,jk_faults.parquet,km/km2,float32,Total fault length per unit area in moving window,r=2500m,-9999,Higher fault density = more structurally weakened terrain,,Include
+24,active_fault_density,B_geology,jk_faults.parquet (fault_type='active'),km/km2,float32,Active fault length per unit area,r=2500m,-9999,Spatially correlates with seismic hazard zones,Low (sparse),Conditional: include if spatial variability is sufficient
+25,thrust_density,B_geology,jk_thrusts.parquet,km/km2,float32,Thrust length per unit area,r=2500m,-9999,Higher thrust density = more crushed rock,,Include
+26,lineament_density,B_geology,jk_lineaments.parquet,km/km2,float32,Lineament length per unit area,r=2500m,-9999,Higher lineament density = more fractured rock,,Include
+27,dominant_worldcover_class,C_landcover,WorldCover mosaic,categorical code,uint8,Majority resampling from 10m to 100m grid (nearest-neighbour),10x10 pixel majority,255,Strong: bare land and cropland = higher; forest = lower susceptibility,,Include
+28,tree_cover_proportion,C_landcover,WorldCover mosaic (class 10),fraction [0-1],float32,Proportion of 10m pixels in 100m cell classified as trees,10x10,-9999,Higher tree cover = more root cohesion = lower susceptibility,,Include
+29,shrubland_proportion,C_landcover,WorldCover mosaic (class 20),fraction [0-1],float32,Proportion classified as shrubland,10x10,-9999,Moderate protective effect,,Include
+30,grassland_proportion,C_landcover,WorldCover mosaic (class 30),fraction [0-1],float32,Proportion classified as grassland,10x10,-9999,Less protection than forest,,Include
+31,cropland_proportion,C_landcover,WorldCover mosaic (class 40),fraction [0-1],float32,Proportion classified as cropland,10x10,-9999,Cultivated slopes often destabilized,,Include
+32,builtup_proportion,C_landcover,WorldCover mosaic (class 50),fraction [0-1],float32,Proportion classified as built-up,10x10,-9999,"Modified terrain, altered drainage, increased load",,Include
+33,bare_sparse_proportion,C_landcover,WorldCover mosaic (class 60),fraction [0-1],float32,Proportion classified as bare/sparse vegetation,10x10,-9999,"No vegetation protection, high erosion potential",,Include
+34,snow_ice_proportion,C_landcover,WorldCover mosaic (class 70),fraction [0-1],float32,Proportion classified as snow/ice,10x10,-9999,"Periglacial processes, freeze-thaw, glacial debuttressing",,Include
+35,water_proportion,C_landcover,WorldCover mosaic (class 80),fraction [0-1],float32,Proportion classified as permanent water,10x10,-9999,Mask: water cells are non-landslide terrain,,Include
+36,wetland_proportion,C_landcover,WorldCover mosaic (class 90),fraction [0-1],float32,Proportion classified as herbaceous wetland,10x10,-9999,"High water table, saturated materials",,Include
+37,distance_to_road,D_human,jk_major_roads.parquet,m,float32,Euclidean distance to nearest road segment,,-9999,"Road cuts destabilize slopes, increase susceptibility near roads",,Include
+38,distance_to_major_road,D_human,jk_major_roads.parquet (filtered),m,float32,Euclidean distance to nearest major road (national/state highway),,-9999,Major roads have larger cut-slopes,,Include
+39,distance_to_nh44,D_human,jk_nh44.parquet,m,float32,Euclidean distance to NH-44 Jammu-Srinagar corridor,,-9999,NH-44 corridor is a known landslide hotspot,,Include
+40,road_density,D_human,jk_major_roads.parquet,km/km2,float32,Total road length per unit area in moving window,r=500m,-9999,Higher road density = more terrain modification,,Include
+41,distance_to_settlement,D_human,jk_settlements.parquet,m,float32,Euclidean distance to nearest settlement,,-9999,Settlements indicate human terrain modification,,Include
+42,settlement_density,D_human,jk_settlements.parquet,count/km2,float32,Settlement points per unit area in moving window,r=1000m,-9999,Higher settlement density = more anthropogenic pressure,,Include
+44,dem_availability,E_quality,elevation COG,binary (0/1),uint8,1 where elevation is not NoData,,255,Quality mask,,Include
+45,terrain_availability,E_quality,slope+aspect COGs,binary (0/1),uint8,1 where slope AND aspect are not NoData,,255,Quality mask,,Include
+46,lithology_availability,E_quality,lithology rasterized,binary (0/1),uint8,1 where lithology class is not NoData,,255,Quality mask,,Include
+47,tectonic_availability,E_quality,faults+thrusts distance,binary (0/1),uint8,1 where distance to fault is not NoData,,255,Quality mask,,Include
+48,worldcover_availability,E_quality,WorldCover mosaic,binary (0/1),uint8,1 where WorldCover class is not NoData,,255,Quality mask,,Include
+49,road_availability,E_quality,road distance,binary (0/1),uint8,1 where distance to road is not NoData,,255,Quality mask,,Include
+50,settlement_availability,E_quality,settlement distance,binary (0/1),uint8,1 where distance to settlement is not NoData,,255,Quality mask,,Include
+51,provisional_inventory_support_mask,E_quality,landslide polygons spatial extent,binary (0/1),uint8,1 where landslide inventory mapping exists,,255,Critical for defining valid sampling domain,,Include
+52,missing_feature_count,E_quality,All features,count (0-N),uint8,Count of features with NoData at each cell,,255,Summary quality metric,,Include
+53,data_confidence_class,E_quality,missing_feature_count,categorical (1-4),uint8,"Classify: 0 missing=High, 1-2=Moderate, 3-5=Low, 6+=Insufficient",,255,Overall data quality classification,,Include

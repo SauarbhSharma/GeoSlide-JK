@@ -1,0 +1,396 @@
+# GeoSlide-JK Phase 3 Feature Configuration (Gate A Final Draft)
+# Status: PROPOSAL — awaiting Gate A approval before execution
+# Total unambiguous unique features: 52 (42 predictor features + 10 quality/availability features)
+
+output_dir: "data/processed/features"
+feature_table_path: "data/processed/features/jk_feature_table.parquet"
+
+# ============================================================
+# A. TERRAIN FEATURES (16)
+# ============================================================
+terrain:
+  source_dem: "data/processed/terrain/jk_elevation_glo30_cog.tif"
+  source_slope: "data/processed/terrain/jk_slope_degrees_cog.tif"
+  source_aspect: "data/processed/terrain/jk_aspect_degrees_cog.tif"
+  resample_method: "bilinear"  # 30m → 100m
+
+  features:
+    - name: elevation
+      units: m
+      dtype: float32
+      method: "Resample 30m elevation COG to 100m grid"
+      nodata: -9999.0
+
+    - name: slope
+      units: degrees
+      dtype: float32
+      method: "Resample 30m slope COG to 100m grid"
+      nodata: -9999.0
+
+    - name: aspect
+      units: degrees
+      dtype: float32
+      method: "Resample 30m aspect COG to 100m grid"
+      nodata: -9999.0
+
+    - name: northness
+      units: "unitless [-1,1]"
+      dtype: float32
+      method: "cos(aspect_rad)"
+      nodata: -9999.0
+
+    - name: eastness
+      units: "unitless [-1,1]"
+      dtype: float32
+      method: "sin(aspect_rad)"
+      nodata: -9999.0
+
+    - name: profile_curvature
+      units: "1/m"
+      dtype: float32
+      method: "Second derivative along max slope direction"
+      window: "3x3"
+      nodata: -9999.0
+
+    - name: plan_curvature
+      units: "1/m"
+      dtype: float32
+      method: "Second derivative across max slope direction"
+      window: "3x3"
+      nodata: -9999.0
+
+    - name: tri
+      units: m
+      dtype: float32
+      method: "Mean absolute elevation difference (Riley 1999)"
+      window: "3x3"
+      nodata: -9999.0
+
+    - name: tpi
+      units: m
+      dtype: float32
+      method: "Cell minus mean of annular neighbourhood"
+      window: "11x11"
+      nodata: -9999.0
+
+    - name: local_relief
+      units: m
+      dtype: float32
+      method: "Max minus min elevation in circular window"
+      radius_m: 500
+      nodata: -9999.0
+
+    - name: flow_direction
+      units: "D8 code"
+      dtype: uint8
+      method: "D8 single-flow direction after pit filling via WhiteboxTools"
+      nodata: 255
+      note: "Intermediate product; used for flow accumulation and TWI"
+
+    - name: flow_accumulation
+      units: "cell count"
+      dtype: float32
+      method: "Cumulative upslope contributing area via WhiteboxTools"
+      nodata: -9999.0
+
+    - name: drainage_network
+      units: binary
+      dtype: uint8
+      method: "Threshold flow_accumulation > 1000 cells"
+      nodata: 255
+      note: "Intermediate product; used for distance to drainage"
+
+    - name: distance_to_drainage
+      units: m
+      dtype: float32
+      method: "Euclidean distance to nearest stream cell"
+      nodata: -9999.0
+
+    - name: drainage_density
+      units: "km/km²"
+      dtype: float32
+      method: "Stream length per unit area in moving window"
+      radius_m: 500
+      nodata: -9999.0
+
+    - name: twi
+      units: unitless
+      dtype: float32
+      method: "ln(specific_catchment_area / tan(slope_rad))"
+      nodata: -9999.0
+
+# ============================================================
+# B. GEOLOGY AND STRUCTURE FEATURES (10)
+# ============================================================
+geology:
+  sources:
+    lithology: "data/processed/vectors/jk_lithology.parquet"
+    faults: "data/processed/vectors/jk_faults.parquet"
+    thrusts: "data/processed/vectors/jk_thrusts.parquet"
+    lineaments: "data/processed/vectors/jk_lineaments.parquet"
+
+  features:
+    - name: lithology_class
+      units: categorical
+      dtype: uint8
+      method: "Rasterize polygon to grid using normalized coding table"
+      nodata: 255
+      coding_table: "outputs/reports/phase_3_lithology_lookup_table.csv"
+
+    - name: engineering_geology_group
+      units: categorical
+      dtype: uint8
+      method: "Map lithology codes to broad engineering groups"
+      nodata: 255
+
+    - name: distance_to_fault
+      units: m
+      dtype: float32
+      method: "Euclidean distance to nearest fault line (all types)"
+      source_filter: null
+      nodata: -9999.0
+
+    - name: distance_to_active_fault
+      units: m
+      dtype: float32
+      method: "Euclidean distance to nearest active fault"
+      source_filter: "fault_type == 'active'"
+      nodata: -9999.0
+
+    - name: distance_to_thrust
+      units: m
+      dtype: float32
+      method: "Euclidean distance to nearest thrust"
+      nodata: -9999.0
+
+    - name: distance_to_lineament
+      units: m
+      dtype: float32
+      method: "Euclidean distance to nearest lineament"
+      nodata: -9999.0
+
+    - name: fault_density
+      units: "km/km²"
+      dtype: float32
+      method: "Total fault length per unit area in moving window"
+      radius_m: 2500
+      nodata: -9999.0
+
+    - name: active_fault_density
+      units: "km/km²"
+      dtype: float32
+      method: "Active fault length per unit area"
+      radius_m: 2500
+      source_filter: "fault_type == 'active'"
+      nodata: -9999.0
+      note: "Conditional inclusion — evaluate spatial variance during B7 QA"
+
+    - name: thrust_density
+      units: "km/km²"
+      dtype: float32
+      method: "Thrust length per unit area"
+      radius_m: 2500
+      nodata: -9999.0
+
+    - name: lineament_density
+      units: "km/km²"
+      dtype: float32
+      method: "Lineament length per unit area"
+      radius_m: 2500
+      nodata: -9999.0
+
+# ============================================================
+# C. LAND COVER FEATURES (10)
+# ============================================================
+landcover:
+  source_tiles:
+    - "C:/Users/Saurabh Sharma/Downloads/J&K/esa_worldcover_2021/ESA_WorldCover_10m_2021_v200_N30E072_Map (1).tif"
+    - "C:/Users/Saurabh Sharma/Downloads/J&K/esa_worldcover_2021/ESA_WorldCover_10m_2021_v200_N30E075_Map.tif"
+    - "C:/Users/Saurabh Sharma/Downloads/J&K/esa_worldcover_2021/ESA_WorldCover_10m_2021_v200_N33E072_Map.tif"
+    - "C:/Users/Saurabh Sharma/Downloads/J&K/esa_worldcover_2021/ESA_WorldCover_10m_2021_v200_N33E075_Map.tif"
+
+  resample_method: "nearest"  # CRITICAL: No bilinear for categorical data
+  proportion_method: "count_fraction"
+
+  features:
+    - name: dominant_worldcover_class
+      units: categorical
+      dtype: uint8
+      method: "Majority class in 10x10 (10m→100m) pixel block"
+      nodata: 255
+
+    - name: tree_cover_proportion
+      units: "fraction [0-1]"
+      dtype: float32
+      method: "Proportion of 10m pixels classified as class 10"
+      nodata: -9999.0
+
+    - name: shrubland_proportion
+      units: "fraction [0-1]"
+      dtype: float32
+      method: "Proportion classified as class 20"
+      nodata: -9999.0
+
+    - name: grassland_proportion
+      units: "fraction [0-1]"
+      dtype: float32
+      method: "Proportion classified as class 30"
+      nodata: -9999.0
+
+    - name: cropland_proportion
+      units: "fraction [0-1]"
+      dtype: float32
+      method: "Proportion classified as class 40"
+      nodata: -9999.0
+
+    - name: builtup_proportion
+      units: "fraction [0-1]"
+      dtype: float32
+      method: "Proportion classified as class 50"
+      nodata: -9999.0
+
+    - name: bare_sparse_proportion
+      units: "fraction [0-1]"
+      dtype: float32
+      method: "Proportion classified as class 60"
+      nodata: -9999.0
+
+    - name: snow_ice_proportion
+      units: "fraction [0-1]"
+      dtype: float32
+      method: "Proportion classified as class 70"
+      nodata: -9999.0
+
+    - name: water_proportion
+      units: "fraction [0-1]"
+      dtype: float32
+      method: "Proportion classified as class 80"
+      nodata: -9999.0
+
+    - name: wetland_proportion
+      units: "fraction [0-1]"
+      dtype: float32
+      method: "Proportion classified as class 90"
+      nodata: -9999.0
+
+# ============================================================
+# D. HUMAN INTERVENTION FEATURES (6 - unique, zero duplicate)
+# ============================================================
+human:
+  sources:
+    major_roads: "data/processed/vectors/jk_major_roads.parquet"
+    nh44: "data/processed/vectors/jk_nh44.parquet"
+    settlements: "data/processed/vectors/jk_settlements.parquet"
+
+  features:
+    - name: distance_to_road
+      units: m
+      dtype: float32
+      method: "Euclidean distance to nearest road segment"
+      nodata: -9999.0
+
+    - name: distance_to_nh44
+      units: m
+      dtype: float32
+      method: "Euclidean distance to NH-44 corridor"
+      nodata: -9999.0
+
+    - name: road_density
+      units: "km/km²"
+      dtype: float32
+      method: "Total road length per unit area in moving window"
+      radius_m: 500
+      nodata: -9999.0
+
+    - name: distance_to_settlement
+      units: m
+      dtype: float32
+      method: "Euclidean distance to nearest settlement"
+      nodata: -9999.0
+
+    - name: settlement_density
+      units: "count/km²"
+      dtype: float32
+      method: "Settlement points per unit area in moving window"
+      radius_m: 1000
+      nodata: -9999.0
+
+    - name: distance_to_major_road
+      units: m
+      dtype: float32
+      method: "Euclidean distance to nearest national/state highway"
+      nodata: -9999.0
+
+# ============================================================
+# E. DATA QUALITY FEATURES (10)
+# ============================================================
+quality:
+  features:
+    - name: dem_availability
+      dtype: uint8
+      method: "1 where elevation is not NoData"
+      nodata: 255
+
+    - name: terrain_availability
+      dtype: uint8
+      method: "1 where slope AND aspect are not NoData"
+      nodata: 255
+
+    - name: lithology_availability
+      dtype: uint8
+      method: "1 where lithology class is not NoData"
+      nodata: 255
+
+    - name: tectonic_availability
+      dtype: uint8
+      method: "1 where distance to fault is not NoData"
+      nodata: 255
+
+    - name: worldcover_availability
+      dtype: uint8
+      method: "1 where WorldCover class is not NoData"
+      nodata: 255
+
+    - name: road_availability
+      dtype: uint8
+      method: "1 where distance to road is not NoData"
+      nodata: 255
+
+    - name: settlement_availability
+      dtype: uint8
+      method: "1 where distance to settlement is not NoData"
+      nodata: 255
+
+    - name: provisional_inventory_support_mask
+      dtype: uint8
+      method: "1 where landslide inventory spatial support exists (polygon hull + 5km buffer)"
+      nodata: 255
+
+    - name: missing_feature_count
+      dtype: uint8
+      method: "Count of predictor features with NoData at each cell"
+      nodata: 255
+
+    - name: data_confidence_class
+      dtype: uint8
+      method: "0 missing=1(High), 1-2=2(Moderate), 3-5=3(Low), 6+=4(Insufficient)"
+      nodata: 255
+
+# ============================================================
+# LEAKAGE PREVENTION RULES
+# ============================================================
+leakage_prevention:
+  excluded_predictors:
+    - "latitude"
+    - "longitude"
+    - "NLSM susceptibility raster"
+    - "shape_area (landslide polygons)"
+    - "shape_leng (landslide polygons)"
+    - "persons_de (landslide points)"
+    - "people_aff (landslide points)"
+    - "infrastruc (landslide points)"
+    - "alert (landslide points)"
+    - "triggering (landslide points)"
+
+  nlsm_raster_path: "C:/Users/Saurabh Sharma/Downloads/J&K/JammuandKashmir_Susceptibility.tif_NLSM_20260725210220.036_11842.tif"
+  nlsm_usage: "validation_benchmark_only"

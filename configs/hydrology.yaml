@@ -1,0 +1,98 @@
+# GeoSlide-JK Hydrology Processing Configuration (Gate A Final)
+# Status: PROPOSAL — awaiting Gate A approval before execution
+
+hydrology:
+  # Source DEM for hydrological processing
+  source_dem: "data/processed/terrain/jk_elevation_glo30_cog.tif"
+  source_crs: "EPSG:32643"
+  source_resolution_m: 30.0
+
+  # CRITICAL EXECUTION RULES:
+  # 1. Hydrology MUST be calculated on the complete mosaicked 30m J&K DEM (never separate tiles).
+  # 2. WhiteboxTools v2.4.0 is the MANDATORY primary engine.
+  # 3. DO NOT silently fall back to simplified custom NumPy D8 implementations for final flow direction, flow accumulation, drainage, or TWI.
+  # 4. If WhiteboxTools fails: STOP Checkpoint B2 immediately, report exact error, propose validated alternative, wait for user approval.
+  process_as_mosaic: true
+  primary_tool: "whiteboxtools"
+  primary_version: "v2.4.0"
+  stop_on_primary_failure: true
+
+  # Pipeline steps
+  pipeline:
+    - step: 1
+      name: "fill_depressions"
+      tool: "whiteboxtools"
+      function: "fill_depressions"
+      input: "source_dem"
+      output: "data/interim/terrain/jk_filled_dem.tif"
+      temporary: true
+
+    - step: 2
+      name: "d8_flow_direction"
+      tool: "whiteboxtools"
+      function: "d8_pointer"
+      input: "jk_filled_dem.tif"
+      output: "data/interim/terrain/jk_flow_direction.tif"
+      temporary: true
+      dtype: uint8
+
+    - step: 3
+      name: "d8_flow_accumulation"
+      tool: "whiteboxtools"
+      function: "d8_flow_accumulation"
+      input: "jk_flow_direction.tif"
+      output: "data/interim/terrain/jk_flow_accumulation_30m.tif"
+      temporary: false
+      dtype: float32
+
+    - step: 4
+      name: "resample_flow_accumulation"
+      tool: "rasterio"
+      method: "bilinear"
+      input: "jk_flow_accumulation_30m.tif"
+      output: "data/processed/features/flow_accumulation.tif"
+      target_resolution_m: 100
+
+    - step: 5
+      name: "extract_drainage"
+      tool: "numpy"
+      method: "threshold"
+      input: "flow_accumulation.tif"
+      output: "data/processed/features/drainage_network.tif"
+      threshold_cells: 1000
+      dtype: uint8
+
+    - step: 6
+      name: "distance_to_drainage"
+      tool: "scipy.ndimage"
+      method: "distance_transform_edt"
+      input: "drainage_network.tif"
+      output: "data/processed/features/distance_to_drainage.tif"
+      dtype: float32
+
+    - step: 7
+      name: "drainage_density"
+      tool: "numpy"
+      method: "moving_window_density"
+      input: "drainage_network.tif"
+      output: "data/processed/features/drainage_density.tif"
+      radius_m: 500
+      dtype: float32
+
+    - step: 8
+      name: "twi"
+      tool: "numpy"
+      method: "ln(specific_catchment_area / tan(slope_rad))"
+      inputs:
+        - "flow_accumulation.tif"
+        - "slope (resampled to 100m)"
+      output: "data/processed/features/twi.tif"
+      dtype: float32
+
+  # Resource benchmark estimates (verified on sample)
+  estimates:
+    benchmark_sample_1M_px_sec: 0.27
+    full_dem_processing_time_min: 0.75  # ~45 seconds for Whitebox hydrology!
+    total_terrain_pipeline_min: 15-25
+    peak_memory_gb: 1.5
+    temporary_storage_mb: 350

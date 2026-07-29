@@ -57,6 +57,7 @@ scratch/
 !/outputs/reports/phase_2_feature_count_reconciliation.*
 !/outputs/reports/phase_2_approved_dem_sources.csv
 !/outputs/reports/phase_2_quality_report.md
+!/outputs/reports/phase_3_*
 /outputs/figures/*
 !/outputs/figures/.gitkeep
 !/outputs/figures/page_screenshots/

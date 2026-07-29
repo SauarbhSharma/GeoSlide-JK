@@ -1,11 +1,63 @@
+# GeoSlide-JK Master Analysis Grid Configuration (Phase 3 Gate A Draft)
+# Status: PROPOSAL — awaiting Gate A approval before execution
+
 grid:
+  # Recommended resolution
   primary_resolution_m: 100
   fallback_resolution_m: 250
-  crs: "EPSG:32643"
-  bounds_utm:
-    min_x: 400000.0
-    min_y: 3550000.0
-    max_x: 750000.0
-    max_y: 4150000.0
-  nodata_value: -9999.0
-  dtype: "float32"
+  selected_resolution_m: 100  # Gate A recommendation
+
+  # Processing CRS
+  crs: "EPSG:32643"  # UTM Zone 43N
+
+  # Grid bounds (snapped to 100m alignment below J&K UT minimum bounds)
+  # J&K UT bounds: minx=360863.46, miny=3571150.97, maxx=665788.17, maxy=3864775.11
+  bounds:
+    min_x: 360800.0
+    min_y: 3571100.0
+    max_x: 665800.0
+    max_y: 3864800.0
+
+  # Grid dimensions at 100m
+  width: 3050    # columns
+  height: 2937   # rows
+  total_cells: 8957850
+  valid_jk_cells_est: 4619191
+  valid_fraction: 0.516
+
+  # Fixed origin for pixel alignment
+  origin_x: 360800.0
+  origin_y: 3864800.0  # top-left Y (north-up raster)
+
+  # Affine transform (rasterio convention)
+  # Affine(pixel_width, 0, origin_x, 0, -pixel_height, origin_y)
+  transform:
+    a: 100.0
+    b: 0.0
+    c: 360800.0
+    d: 0.0
+    e: -100.0
+    f: 3864800.0
+
+  # NoData conventions
+  nodata:
+    float32: -9999.0
+    uint8: 255
+    int16: -9999
+
+  # Required mask layers
+  masks:
+    jk_boundary_mask: "data/processed/features/jk_boundary_mask.tif"       # UInt8: 1=inside, 0=outside
+    district_id_raster: "data/processed/features/jk_district_id.tif"       # UInt8: 1-20 district IDs
+    feature_coverage_mask: "data/processed/features/feature_coverage.tif"  # UInt8: 1=all features present
+
+  # Study area boundary source
+  boundary_source: "data/processed/boundaries/jk_ut_boundary.geojson"
+  district_source: "data/processed/boundaries/jk_districts.geojson"
+
+  # DEM reference for alignment verification
+  dem_reference:
+    path: "data/processed/terrain/jk_elevation_glo30_cog.tif"
+    bounds: [360846.92, 3571144.27, 665796.92, 3864784.27]
+    resolution: 30.0
+    shape: [10165, 9788]  # width x height

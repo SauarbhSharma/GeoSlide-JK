@@ -1,0 +1,21 @@
+layer_name,layer_type,source_format,processed_path,source_path,crs,feature_count,geometry_type,file_size_bytes,md5_8k_hash,phase_2_verified,phase_3_ready
+elevation,raster,COG GeoTIFF,D:\Projects\GeoSlide_JK\data\processed\terrain\jk_elevation_glo30_cog.tif,Copernicus GLO-30 (4 tiles mosaicked),EPSG:32643,10165x9788 (30m),Float32,varies,e202bfc61e12,Yes,Yes
+slope,raster,COG GeoTIFF,D:\Projects\GeoSlide_JK\data\processed\terrain\jk_slope_degrees_cog.tif,Derived from elevation,EPSG:32643,10165x9788 (30m),Float32,varies,16ab9f233728,Yes,Yes
+aspect,raster,COG GeoTIFF,D:\Projects\GeoSlide_JK\data\processed\terrain\jk_aspect_degrees_cog.tif,Derived from elevation,EPSG:32643,10165x9788 (30m),Float32,varies,d116756a5e06,Yes,Yes
+hillshade,raster,COG GeoTIFF,D:\Projects\GeoSlide_JK\data\processed\terrain\jk_hillshade_cog.tif,Derived from elevation,EPSG:32643,10165x9788 (30m),UInt8,varies,5e05e932f443,Yes,Yes
+ut_boundary,vector,GeoJSON,D:\Projects\GeoSlide_JK\data\processed\boundaries\jk_ut_boundary.geojson,Admin Boundary Database,EPSG:4326,1,Polygon,varies,ccd334ae5b87,Yes,Yes
+districts,vector,GeoJSON,D:\Projects\GeoSlide_JK\data\processed\boundaries\jk_districts.geojson,Admin Boundary Database,EPSG:4326,20,Polygon,varies,b80cf905256e,Yes,Yes
+landslide_points,vector,GeoParquet,D:\Projects\GeoSlide_JK\data\processed\vectors\jk_landslides_points.parquet,NGDR Inventory,EPSG:4326,2370,Point,252673,ae6da231982d,Yes,Yes
+landslide_polygons,vector,GeoParquet,D:\Projects\GeoSlide_JK\data\processed\vectors\jk_landslides_polygons.parquet,NGDR Inventory,EPSG:4326,7436,Polygon/MultiPolygon,7679617,7668c39ac73c,Yes,Yes
+lithology,vector,GeoParquet,D:\Projects\GeoSlide_JK\data\processed\vectors\jk_lithology.parquet,GSI 50K Lithology,EPSG:4326,4076,Polygon/MultiPolygon,9059074,d48104e2f617,Yes,Yes
+faults,vector,GeoParquet,D:\Projects\GeoSlide_JK\data\processed\vectors\jk_faults.parquet,GSI Tectonics + Active Faults (merged),EPSG:4326,5 (3 fault + 2 active),LineString/MultiLineString,30422,d0808a5f20fd,Yes,Yes
+thrusts,vector,GeoParquet,D:\Projects\GeoSlide_JK\data\processed\vectors\jk_thrusts.parquet,GSI Tectonics,EPSG:4326,14,LineString/MultiLineString,24964,c832f0ba4a30,Yes,Yes
+lineaments,vector,GeoParquet,D:\Projects\GeoSlide_JK\data\processed\vectors\jk_lineaments.parquet,GSI Geomorphology,EPSG:4326,774,LineString/MultiLineString,287113,0b5b0ea789d6,Yes,Yes
+major_roads,vector,GeoParquet,D:\Projects\GeoSlide_JK\data\processed\vectors\jk_major_roads.parquet,Exposure GPKG,EPSG:4326,4762,Mixed,3491343,c2f8c4c1cd1a,Yes,Yes
+nh44,vector,GeoParquet,D:\Projects\GeoSlide_JK\data\processed\vectors\jk_nh44.parquet,Exposure GPKG filtered,EPSG:4326,82,LineString/Point,47215,29d0d4550b34,Yes,Yes
+settlements,vector,GeoParquet,D:\Projects\GeoSlide_JK\data\processed\vectors\jk_settlements.parquet,Exposure GPKG,EPSG:4326,5060,Mixed,344153,02510764b5c0,Yes,Yes
+health_facilities,vector,GeoParquet,D:\Projects\GeoSlide_JK\data\processed\vectors\jk_health_facilities.parquet,Exposure GPKG,EPSG:4326,877,Mixed,102839,97733d0f19a3,Yes,Yes
+worldcover_sw,raster,GeoTIFF,C:\Users\Saurabh Sharma\Downloads\J&K\esa_worldcover_2021\ESA_WorldCover_10m_2021_v200_N30E072_Map (1).tif,ESA WorldCover 2021 v200,EPSG:4326,36000x36000 (10m),UInt8,122839390,54c7fcb36c47,Yes (raw),Needs mosaic+clip
+worldcover_se,raster,GeoTIFF,C:\Users\Saurabh Sharma\Downloads\J&K\esa_worldcover_2021\ESA_WorldCover_10m_2021_v200_N30E075_Map.tif,ESA WorldCover 2021 v200,EPSG:4326,36000x36000 (10m),UInt8,102543746,a001d3a1e3ef,Yes (raw),Needs mosaic+clip
+worldcover_nw,raster,GeoTIFF,C:\Users\Saurabh Sharma\Downloads\J&K\esa_worldcover_2021\ESA_WorldCover_10m_2021_v200_N33E072_Map.tif,ESA WorldCover 2021 v200,EPSG:4326,36000x36000 (10m),UInt8,153200236,86b1d0251d60,Yes (raw),Needs mosaic+clip
+worldcover_ne,raster,GeoTIFF,C:\Users\Saurabh Sharma\Downloads\J&K\esa_worldcover_2021\ESA_WorldCover_10m_2021_v200_N33E075_Map.tif,ESA WorldCover 2021 v200,EPSG:4326,36000x36000 (10m),UInt8,97538409,1cb5803cbedb,Yes (raw),Needs mosaic+clip

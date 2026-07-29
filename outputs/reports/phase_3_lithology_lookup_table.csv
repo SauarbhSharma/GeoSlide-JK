@@ -1,0 +1,131 @@
+lithology_id,source_lithology_text,normalized_class_name,normalized_class_code,engineering_geology_group,confidence,review_status,notes
+1,"ALLUVIUM, MORAINES, HILLWASH & SCREE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+2,AMPHIBOLITE,VOLCANIC_INTRUSIVE,5,Volcanic / Basic Intrusive Rock,High,Draft / Pending Expert Review,Variable weathering resistance
+3,ANDESITIC AND BASALTIC LAVA FLOWS,VOLCANIC_INTRUSIVE,5,Volcanic / Basic Intrusive Rock,High,Draft / Pending Expert Review,Variable weathering resistance
+4,"ARENACEOUS SLATE, PHYLLITE, CARBONACEOUS PHYLLITE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+5,ARENITE AND GREYWACKE,UNDIFFERENTIATED_GEOLOGY,2,Medium-Strength Sedimentary Rock,Medium,Draft / Pending Expert Review,Broad lithologic classification based on regional context
+6,"ARENITE, SHALE WITH PLANT FOSSILS",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+7,"ARENITE, SLATE, PHYLLITE WITH GRANITE & GRANITOIDS",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+8,ARENITE/GREYWACKE WITH SILTSTONE AND SHALE,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+9,AUGEN GNEISS WITH GARNET AND BIOTITE SCHIST,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+10,AUGEN GNEISS WIYH ALTERNATE BANDS OF QUARTZITE,HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+11,"BASAL GRAVEL, CALCAREOUS LOAMY CLAY AND SILT",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+12,BASIC VOLCANICS,VOLCANIC_INTRUSIVE,5,Volcanic / Basic Intrusive Rock,High,Draft / Pending Expert Review,Variable weathering resistance
+13,"BASIC/INTERMEDIATE VOLCANICS, AGGLOMERATE AND TUFF",VOLCANIC_INTRUSIVE,5,Volcanic / Basic Intrusive Rock,High,Draft / Pending Expert Review,Variable weathering resistance
+14,BIOTITE GNEISS & QUARTZ/GARNETIFEROUS MICA SCHIST,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+15,BIOTITE GRANITE,HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+16,BLUISH LIMESTONE,MEDIUM_SEDIMENTARY,2,Medium-Strength Sedimentary Rock,High,Draft / Pending Expert Review,Moderate strength rock mass
+17,BOULDER CONGLOMERATE AND SANDSTONE,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+18,"CALCAREOUS ARENITE, SHALE AND LIMESTONE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+19,"CALCAREOUS SANDSTONE, SHALE AND LIMESTONE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+20,CALCAREOUS SHALE AND CRYSTALLINE LIMESTONE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+21,"CARBONACEOUS & CALCAREOUS SHALE, SLATE & LIMESTONE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+22,CARBONACEOUS PHYLLITE SCHIST WITH GRAPHITE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+23,CARBONACEOUS PHYLLITE WITH MARBLE AND QUARTZITE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+24,"CARBONACEOUS PHYLLITE, SCHIST WITH GRAPHITE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+25,"CARBONACEOUS PHYLLITE, SCHIST, LST AND DOLOMITE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+26,CARBONACEOUS SHALE WITH NUMMULITIC LIMESTONE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+27,"CARBONACEOUS SHALE, SLATE, QUARTZITE & LIMESTONE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+28,"CARBONACEOUS SLATE, PHYLLITE, QUARTZITE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+29,"CHERT, QUARTZ BRECCIA, SANDSTONE, SHALE, BAUXITE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+30,"CLAY, SANDY CLAY, CONGLOMERATE WITH LIGNITE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+31,"COARSE SANDSTONE, BOULDER CONGLOMERATE,CLAY & GRIT",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+32,CONGLOMERATE,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+33,CONGLOMERATE WITH FRIABLE SANDSTONE AND CLAY,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+34,"CONGLOMERATE, ARENITE, QUARTZWACKE AND LITHIC TUFF",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+35,"CONGLOMERATE, IMPERSISTENT SANDSTONE AND CLAY",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+36,"DIAMICTITE, ARENITE WITH PHYLLITE AND ASH BEDS",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+37,"DIAMICTITE, SHALE, SLATE, SANDSTONE, LIMESTONE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+38,DOLERITE / META-DOLERITE,UNDIFFERENTIATED_GEOLOGY,2,Medium-Strength Sedimentary Rock,Medium,Draft / Pending Expert Review,Broad lithologic classification based on regional context
+39,DOLERITE AND GABBRO DYKES,VOLCANIC_INTRUSIVE,5,Volcanic / Basic Intrusive Rock,High,Draft / Pending Expert Review,Variable weathering resistance
+40,"DOLOMITE, SLATE, QUARTZITE WITH LIMESTONE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+41,FERRUGINOUS MICA SCHIST,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+42,FOSSILIFEROUS LIMESTONE WITH SHALE PARTINGS,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+43,GOLDEN BROWN SILT,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+44,GRANITE AND GRANITOIDS,HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+45,GRANITE GNEISS,HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+46,GRANITE GNEISS AND HORNBLENDE GRANITE,HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+47,"GRANITE GNEISS, QUARTZITE AND MICA SCHIST",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+48,"GRANITE, HORNBLENDE GRANITE WITH PEGMATITE",HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+49,"GRAVEL, PEBBLE, SAND, SILT AND CLAY",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+50,"GREY ARGILLITE, QUARTZITE, LIMESTONE & DOLOMITE",MEDIUM_SEDIMENTARY,2,Medium-Strength Sedimentary Rock,High,Draft / Pending Expert Review,Moderate strength rock mass
+51,"GREY MICACEOUS SAND, SILT AND CLAY",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+52,"GREY MICACEOUS SANDSTONE, GRAVEL BEDS, SHALE, CLAY",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+53,"GREY SAND, SILT AND CLAY",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+54,"GREY SILT, CLAY AND SAND",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+55,INTERBEDDED SLATE/PHYLLITE AND QUARTZITE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+56,"KYANITE/ANDALUSITE SCHIST, GNEISS AND AMHIBOLITE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+57,LEUCO TO MESOCRATIC BIOTITE GRANITE,HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+58,LEUCOCRATIC GRANITE WITH FELSPAR PORPHYRIES,HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+59,LEUCOCRATIC TO MESOCRATIC BIOTITE GRANITE,HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+60,LIMESTONE,MEDIUM_SEDIMENTARY,2,Medium-Strength Sedimentary Rock,High,Draft / Pending Expert Review,Moderate strength rock mass
+61,LIMESTONE AND DOLOMITE,MEDIUM_SEDIMENTARY,2,Medium-Strength Sedimentary Rock,High,Draft / Pending Expert Review,Moderate strength rock mass
+62,"LIMESTONE, ARENITE WITH SHALE LAYERS",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+63,"LIMESTONE, SANDSTONE AND SHALE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+64,"LIMESTONE, SANDSTONE, SHALE & CALCAREOUS BANDS",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+65,"LIMESTONE, SHALE AND PHYLLITE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+66,"LIMESTONE, SHALE, QUARTZITE, SPORADIC CONGLOMERATE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+67,MARBLE BAND,MEDIUM_SEDIMENTARY,2,Medium-Strength Sedimentary Rock,High,Draft / Pending Expert Review,Moderate strength rock mass
+68,META-BASALT AND BASALT,VOLCANIC_INTRUSIVE,5,Volcanic / Basic Intrusive Rock,High,Draft / Pending Expert Review,Variable weathering resistance
+69,METABASIC (AMPHIBOLITE),VOLCANIC_INTRUSIVE,5,Volcanic / Basic Intrusive Rock,High,Draft / Pending Expert Review,Variable weathering resistance
+70,METABASITES / METABASICS,VOLCANIC_INTRUSIVE,5,Volcanic / Basic Intrusive Rock,High,Draft / Pending Expert Review,Variable weathering resistance
+71,"MICACEOUS SANDSTONE, PURPLE CLAY, MUDSTONE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+72,MICACEOUS SILTSTONE AND ARENITE WITH LIMESTONE,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+73,NUMMULITIC LIMESTONE,MEDIUM_SEDIMENTARY,2,Medium-Strength Sedimentary Rock,High,Draft / Pending Expert Review,Moderate strength rock mass
+74,OLIVE GREEN SHALE WITH LIMESTONE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+75,ORTHOQUARTZITE WITH SHALE BANDS,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+76,OXIDISED SILT-CLAY WITH KANKAR AND MICACEOUS SAND,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+77,"PEBBLY SLATE, CONGLOMERATE WITH TUFF AND ASH BEDS",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+78,PEGMATITE,UNDIFFERENTIATED_GEOLOGY,2,Medium-Strength Sedimentary Rock,Medium,Draft / Pending Expert Review,Broad lithologic classification based on regional context
+79,"PHYLLITE, QUARTZITE, DIAMICTITE AND LAVA FLOWS",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+80,"PHYLLITE, QUARTZITE, LIMESTONE AND LAVA FLOWS",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+81,"PHYLLITE, SLATE, CARBONACEOUS SHALE AND LIMESTONE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+82,"PHYLLITE, SLATE, CARBONACEOUS SHALE, LIMESTONE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+83,PORPHYRITIC GRANITE WIYH QUARTZ-CHLORITE SCHIST,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+84,QUARTZ VEIN/REEF,UNDIFFERENTIATED_GEOLOGY,2,Medium-Strength Sedimentary Rock,Medium,Draft / Pending Expert Review,Broad lithologic classification based on regional context
+85,"QUARTZ-ARENITE, LIMESTONE AND SHALE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+86,QUARTZITE,HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+87,QUARTZITE AND SCHIST,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+88,QUARTZITE WITH THIN BANDS OF PHYLLITE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+89,"QUARTZITE, SANDY SHALE AND BIOMICRITIC LIMESTONE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+90,QUARTZOSE STREAKY GNEISS,HARD_CRYSTALLINE,1,Hard Crystalline Metamorphic / Igneous,High,Draft / Pending Expert Review,High strength rock mass
+91,"SAND, SILT, CLAY AND CONGLOMERATE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+92,SANDSTONE AND CLAY,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+93,SANDSTONE AND CLAY WITH MINOR CONGLOMERATE BED,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+94,SANDSTONE CLAY AND PEBBLY BEDS,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+95,SANDSTONE WITH THIN PARTINGS OF CLAY,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+96,"SANDSTONE, CLAY AND PEBBLE BED",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+97,"SANDSTONE, PHYLLITE, SCHIST",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+98,"SANDSTONE, PHYLLITE, SCHIST, QUARTZITE, AND GRIT",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+99,"SANDSTONE, SHALE, SILTSTONE WITH LIMESTONE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+100,"SANDSTONE, SILTSTONE, CLAYSTONE WITH CONGLOMERATE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+101,"SANDY SHALE, SILTSTONE AND QUARTZ-ARENITE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+102,"SCHIST, GNEISS, MIGMATITE, QRTZITE, MARBLE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+103,"SCHISTOSE QUARTZITE, SLATE AND GRITTY QUARTZITE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+104,SHALE AND LIMESTONE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+105,SHALE AND LIMESTONE WITH CALCAREOUS BANDS,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+106,"SHALE, LIMESTONE AND SANDSTONE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+107,"SHALE, QUARTZITE, SANDSTONE AND LIMESTONE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+108,"SHALE, SANDSTONE AND SILTSTONE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+109,"SHALE, SLATE, ARENITE AND LIMESTONE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+110,"SHALE, SLATE, LIMESTONE & QUARTZ-ARENITE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+111,SHELLY LIMESTONE WITH SHALE & SILTSTONE,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+112,"SILLIMANITE - KYANIE BEARING SCHIST, QUARTZITE",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+113,SILLIMANITE/GARNETIFEROUS AUGEN GNEISS AND SCHIST,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+114,SILTSTONE AND SHALE,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+115,"SILTSTONE, ARENITE WITH SHALE AND LIMESTONE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+116,"SILTSTONE, ARENITE WITH SHALE AND LIMESTONE BANDS",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+117,SLATE AND CARBONACEOUS PHYLLITE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+118,SLATE WITH THIN BANDS OF SILTSTONE AND LIMESTONE,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+119,"SLATE, ALGAL LIMESTONE & SANDSTONE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+120,"SLATE, PHYLLITE, QUARTZITE, LIMESTONE & SCHIST",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+121,"SLATE, PHYLLITE, SCHIST, QUARTZITE, CONGLOMERATE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+122,"SLATE,PHYLLITE,QUARTZARENITE, LIMESTONE,METABASICS",WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+123,SPLINTERY SHALE WITH NODULAR LIMESTONE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+124,SPLINTERY SHALE WITH NUMMULITIC LIMESTONE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+125,"UNASSORTED BOULDERS, GRAVELS, SAND, SILT & CLAY",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+126,UNMAPPED,UNMAPPED_UNKNOWN,255,NoData / Unmapped,High,Draft / Pending Expert Review,Explicit NoData category; assigned code 255
+127,VARIEGATED CLAYSTONE WITH SANDSTONE AND SILTSTONE,UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+128,"VARIEGATED SHALE, QUARTZ-ARENITE AND CONGLOMERATE",UNCONSOLIDATED_QUATERNARY,4,Unconsolidated Sediments / Regolith,High,Draft / Pending Expert Review,Soft/unconsolidated surface deposits
+129,VARIGATED SHALE,WEAK_SEDIMENTARY_METAMORPHIC,3,Soft / Fractured Incompetent Rock,High,Draft / Pending Expert Review,High susceptibility to slope failure
+130,"VESCICULAR BASALT, ANDESITE, AGGLOMERATE & CHERT",VOLCANIC_INTRUSIVE,5,Volcanic / Basic Intrusive Rock,High,Draft / Pending Expert Review,Variable weathering resistance
