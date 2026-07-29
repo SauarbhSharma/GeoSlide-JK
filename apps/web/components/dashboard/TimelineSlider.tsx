@@ -15,10 +15,10 @@ export function TimelineSlider() {
       <div className="flex items-center space-x-2">
         <button
           onClick={() => setIsPlaying(!isPlaying)}
-          className="p-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-md flex items-center space-x-1 font-medium transition-colors"
+          className="p-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-md flex items-center space-x-1 font-semibold transition-colors"
         >
           {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-          <span>{isPlaying ? 'Pause' : 'Play Demo'}</span>
+          <span>{isPlaying ? 'Pause Demo' : 'Play Timeline Demo'}</span>
         </button>
         <button
           onClick={() => setActiveWindow('24h')}
@@ -31,9 +31,9 @@ export function TimelineSlider() {
 
       {/* Accumulation Windows */}
       <div className="flex items-center space-x-1 bg-navy-800 p-1 rounded-lg border border-navy-700">
-        <div className="flex items-center space-x-1 text-slate-400 px-2 font-mono">
+        <div className="flex items-center space-x-1 text-slate-300 px-2 font-mono text-[11px]">
           <Clock className="w-3.5 h-3.5 text-blue-400" />
-          <span>IMERG Window:</span>
+          <span>IMERG Window (Demo):</span>
         </div>
         {windows.map((w) => (
           <button
@@ -50,10 +50,10 @@ export function TimelineSlider() {
         ))}
       </div>
 
-      {/* Demo Playback Indicator */}
-      <div className="flex items-center space-x-2 bg-blue-950/60 border border-blue-600/40 px-3 py-1 rounded-md text-blue-300">
-        <CloudRain className="w-3.5 h-3.5" />
-        <span className="font-semibold">Demo Playback (July 2026 Sample)</span>
+      {/* Risk & Rainfall Modules: Demo Badge */}
+      <div className="flex items-center space-x-2 bg-blue-950/60 border border-blue-600/40 px-3 py-1 rounded-md text-blue-300 font-medium">
+        <CloudRain className="w-3.5 h-3.5 text-blue-400" />
+        <span>Risk & Rainfall Modules: Demo</span>
       </div>
     </div>
   );

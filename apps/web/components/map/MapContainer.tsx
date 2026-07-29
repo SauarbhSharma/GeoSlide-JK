@@ -1,239 +1,681 @@
 "use client";
 
-import { useState } from 'react';
-import { JK_20_DISTRICTS, District, RISK_COLORS } from '@/lib/constants';
-import { MapPin, Navigation, Info, Layers, Maximize2, Compass } from 'lucide-react';
+import React, { useEffect, useRef, useState } from "react";
+import * as maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
+import { Layers, MapPin, Compass, Info, AlertTriangle, RotateCcw } from "lucide-react";
+import { MapErrorBoundary } from "./MapErrorBoundary";
+import { MASTER_LAYER_REGISTRY, LayerRegistryEntry } from "@/lib/layerRegistry";
 
 interface MapContainerProps {
-  selectedDistrict: string;
-  onSelectDistrict: (districtId: string) => void;
-  activeLayers: string[];
+  onSelectLocation?: (lat: number, lon: number) => void;
+  selectedDistrict?: string;
+  onSelectDistrict?: (district: string) => void;
+  activeLayers?: string[];
 }
 
-export function MapContainer({ selectedDistrict, onSelectDistrict, activeLayers }: MapContainerProps) {
-  const [clickedLocation, setClickedLocation] = useState<{
+export interface TerrainInspectionResponse {
+  success: boolean;
+  code: string;
+  message: string;
+  location: {
     lat: number;
     lon: number;
-    district: District | null;
-  } | null>(null);
-
-  const [basemap, setBasemap] = useState<'standard' | 'satellite' | 'dark'>('dark');
-
-  // Convert lat/lon coordinates to SVG canvas space (bbox approx for J&K)
-  // Lon: 73.5 to 76.5 -> X: 50 to 750
-  // Lat: 32.0 to 35.0 -> Y: 550 to 50
-  const projectCoords = (lon: number, lat: number) => {
-    const x = ((lon - 73.5) / (76.5 - 73.5)) * 700 + 50;
-    const y = 550 - ((lat - 32.0) / (35.0 - 32.0)) * 500;
-    return { x, y };
   };
+  inside_study_area: boolean;
+  data_available: boolean;
+  district: string;
+  terrain: {
+    elevation_m: number | null;
+    slope_deg: number | null;
+    aspect_deg: number | null;
+    hillshade: number | null;
+  };
+  source?: {
+    dem: string;
+    resolution_m: number;
+    processing_crs: string;
+    web_crs?: string;
+  };
+}
 
-  const handleDistrictClick = (district: District) => {
-    onSelectDistrict(district.id);
-    setClickedLocation({
-      lat: district.coordinates[1],
-      lon: district.coordinates[0],
-      district
+// Helper to format numbers safely without throwing on null, undefined, NaN or Infinity
+function formatFiniteNumber(val: any, decimals: number = 2, unit: string = ""): string {
+  if (val === null || val === undefined) return "N/A";
+  const num = Number(val);
+  if (!Number.isFinite(num) || num === -9999 || num === -9999.0) return "N/A";
+  return `${num.toFixed(decimals)}${unit ? " " + unit : ""}`;
+}
+
+export function MapContainer({
+  onSelectLocation,
+  selectedDistrict,
+  onSelectDistrict,
+  activeLayers = ["jk_districts", "jk_ut_boundary", "nh44"],
+}: MapContainerProps) {
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<any>(null);
+  const popupRef = useRef<any>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
+
+  const [activeTab, setActiveTab] = useState<"layers" | "legend" | "inspect">("layers");
+  const [currentDistrict, setCurrentDistrict] = useState<string | null>(selectedDistrict || null);
+  const [inspectionData, setInspectionData] = useState<TerrainInspectionResponse | null>(null);
+  const [loadingInspect, setLoadingInspect] = useState<boolean>(false);
+  const [inspectionError, setInspectionError] = useState<string | null>(null);
+
+  // Layer Visibility Controls
+  const [layersState, setLayersState] = useState<Record<string, boolean>>(() => {
+    const initial: Record<string, boolean> = {};
+    MASTER_LAYER_REGISTRY.forEach((l) => {
+      initial[l.id] = l.defaultVisibility;
+    });
+    return initial;
+  });
+
+  const toggleLayer = (layerId: string) => {
+    setLayersState((prev) => {
+      const next = { ...prev, [layerId]: !prev[layerId] };
+      if (mapRef.current) {
+        const map = mapRef.current;
+        const layerIdMap: Record<string, string[]> = {
+          jk_boundary: ["jk-ut-line"],
+          district_boundaries: ["jk-districts-fill", "jk-districts-line", "jk-districts-labels"],
+          landslide_points: ["jk-landslides-points"],
+          landslide_polygons: ["jk-landslides-polygons"],
+          faults: ["jk-faults"],
+          thrusts: ["jk-thrusts"],
+          lineaments: ["jk-lineaments"],
+          nh44: ["jk-nh44"],
+          major_roads: ["jk-roads"],
+          health_facilities: ["jk-health"],
+          settlements: ["jk-settlements"],
+        };
+
+        const targetIds = layerIdMap[layerId] || [layerId];
+        targetIds.forEach((id) => {
+          if (map.getLayer && map.getLayer(id)) {
+            map.setLayoutProperty(id, "visibility", next[layerId] ? "visible" : "none");
+          }
+        });
+      }
+      return next;
     });
   };
 
-  const showDistricts = activeLayers.includes('jk_districts') || activeLayers.includes('jk_ut_boundary');
-  const showNH44 = activeLayers.includes('nh44_corridor');
-  const showRainfall = activeLayers.includes('rainfall_imerg');
+  const handleResetView = () => {
+    if (mapRef.current) {
+      mapRef.current.fitBounds(
+        [[73.2, 32.2], [77.8, 35.2]],
+        { padding: 40, duration: 1200 }
+      );
+    }
+  };
+
+  useEffect(() => {
+    if (!mapContainerRef.current) return;
+
+    const MapClass = maplibregl.Map;
+    const PopupClass = maplibregl.Popup;
+
+    const map = new MapClass({
+      container: mapContainerRef.current,
+      style: {
+        version: 8,
+        sources: {
+          "carto-dark": {
+            type: "raster",
+            tiles: [
+              "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+              "https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+              "https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+            ],
+            tileSize: 256,
+            attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
+          },
+        },
+        layers: [
+          {
+            id: "carto-dark-layer",
+            type: "raster",
+            source: "carto-dark",
+            minzoom: 0,
+            maxzoom: 19,
+          },
+        ],
+      },
+      center: [75.0, 33.7], // Centered over J&K UT
+      zoom: 7.2,
+      minZoom: 6.5,
+      maxZoom: 15.0,
+    });
+
+    mapRef.current = map;
+
+    // Fit Map to J&K UT Boundary Bounds
+    map.fitBounds([[73.2, 32.2], [77.8, 35.2]], { padding: 30 });
+
+    setTimeout(() => {
+      if (map && map.resize) map.resize();
+    }, 200);
+
+    map.on("load", async () => {
+      if (map && map.resize) map.resize();
+
+      try {
+        const res = await fetch("http://localhost:8000/api/v1/districts/boundary");
+        if (res.ok) {
+          const districtsGeoJson = await res.json();
+
+          if (districtsGeoJson && districtsGeoJson.type === "FeatureCollection") {
+            map.addSource("jk-districts-src", {
+              type: "geojson",
+              data: districtsGeoJson,
+            });
+
+            map.addLayer({
+              id: "jk-districts-fill",
+              type: "fill",
+              source: "jk-districts-src",
+              paint: {
+                "fill-color": "#0ea5e9",
+                "fill-opacity": 0.1,
+              },
+            });
+
+            map.addLayer({
+              id: "jk-districts-line",
+              type: "line",
+              source: "jk-districts-src",
+              paint: {
+                "line-color": "#0ea5e9",
+                "line-width": 1.2,
+                "line-opacity": 0.7,
+              },
+            });
+
+            map.addLayer({
+              id: "jk-ut-line",
+              type: "line",
+              source: "jk-districts-src",
+              paint: {
+                "line-color": "#38bdf8",
+                "line-width": 2.5,
+                "line-opacity": 0.95,
+              },
+            });
+
+            map.addLayer({
+              id: "jk-districts-labels",
+              type: "symbol",
+              source: "jk-districts-src",
+              layout: {
+                "text-field": ["get", "display_name"],
+                "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+                "text-size": 11,
+                "text-transform": "uppercase",
+                "text-allow-overlap": false,
+              },
+              paint: {
+                "text-color": "#e2e8f0",
+                "text-halo-color": "#090d16",
+                "text-halo-width": 2,
+              },
+            });
+          }
+        }
+      } catch (err) {
+        console.warn("Could not fetch districts boundary from backend:", err);
+      }
+
+      const loadVectorLayer = async (
+        layerId: string,
+        backendId: string,
+        type: "circle" | "line" | "fill",
+        paintProps: any
+      ) => {
+        try {
+          const res = await fetch(`http://localhost:8000/api/v1/static-layers/${backendId}`);
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.type === "FeatureCollection") {
+              map.addSource(`${layerId}-src`, { type: "geojson", data });
+              map.addLayer({
+                id: layerId,
+                type: type as any,
+                source: `${layerId}-src`,
+                paint: paintProps,
+              });
+            }
+          }
+        } catch (e) {
+          console.warn(`Layer ${layerId} fetch failed:`, e);
+        }
+      };
+
+      await loadVectorLayer("jk-landslides-points", "landslides_points", "circle", {
+        "circle-radius": 4,
+        "circle-color": "#ef4444",
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#7f1d1d",
+        "circle-opacity": 0.85,
+      });
+
+      await loadVectorLayer("jk-landslides-polygons", "landslides_polygons", "fill", {
+        "fill-color": "#dc2626",
+        "fill-opacity": 0.45,
+        "fill-outline-color": "#991b1b",
+      });
+
+      await loadVectorLayer("jk-faults", "faults", "line", {
+        "line-color": "#ec4899",
+        "line-width": 2.2,
+        "line-dasharray": [2, 1],
+      });
+
+      await loadVectorLayer("jk-thrusts", "thrusts", "line", {
+        "line-color": "#a855f7",
+        "line-width": 2.5,
+      });
+
+      await loadVectorLayer("jk-lineaments", "lineaments", "line", {
+        "line-color": "#c084fc",
+        "line-width": 1.5,
+      });
+
+      await loadVectorLayer("jk-nh44", "nh44", "line", {
+        "line-color": "#eab308",
+        "line-width": 3.5,
+      });
+
+      await loadVectorLayer("jk-roads", "major_roads", "line", {
+        "line-color": "#f59e0b",
+        "line-width": 1.5,
+        "line-opacity": 0.7,
+      });
+
+      await loadVectorLayer("jk-settlements", "settlements", "circle", {
+        "circle-radius": 3,
+        "circle-color": "#38bdf8",
+        "circle-opacity": 0.6,
+      });
+
+      await loadVectorLayer("jk-health", "health_facilities", "circle", {
+        "circle-radius": 3.5,
+        "circle-color": "#10b981",
+        "circle-stroke-width": 1,
+        "circle-stroke-color": "#064e3b",
+      });
+    });
+
+    // Hardened Map Click Handler
+    map.on("click", async (e: any) => {
+      if (!e || !e.lngLat) return;
+      const { lat, lng } = e.lngLat;
+
+      if (!Number.isFinite(lat) || !Number.isFinite(lng) || lat < -90 || lat > 90 || lng < -180 || lng > 180) {
+        setInspectionError("Invalid coordinates clicked.");
+        return;
+      }
+
+      if (onSelectLocation) {
+        try {
+          onSelectLocation(lat, lng);
+        } catch (err) {
+          console.warn("Error in onSelectLocation callback:", err);
+        }
+      }
+
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+      const controller = new AbortController();
+      abortControllerRef.current = controller;
+
+      setLoadingInspect(true);
+      setInspectionError(null);
+      setActiveTab("inspect");
+
+      try {
+        const url = `http://localhost:8000/api/v1/terrain/value?lat=${lat.toFixed(5)}&lon=${lng.toFixed(5)}`;
+        const res = await fetch(url, { signal: controller.signal });
+
+        if (!res.ok) {
+          let errDetail = `HTTP ${res.status}`;
+          try {
+            const errJson = await res.json();
+            if (errJson && errJson.detail) errDetail = errJson.detail;
+          } catch (_) {}
+
+          setInspectionData({
+            success: false,
+            code: "API_ERROR",
+            message: errDetail,
+            location: { lat, lon: lng },
+            inside_study_area: false,
+            data_available: false,
+            district: "Outside J&K UT Boundary",
+            terrain: { elevation_m: null, slope_deg: null, aspect_deg: null, hillshade: null }
+          });
+          setInspectionError(errDetail);
+          return;
+        }
+
+        const data: TerrainInspectionResponse = await res.json();
+
+        if (controller.signal.aborted) return;
+
+        setInspectionData(data);
+        if (data.district) {
+          setCurrentDistrict(data.district);
+          if (onSelectDistrict) onSelectDistrict(data.district);
+        }
+
+        if (popupRef.current) popupRef.current.remove();
+
+        const safeDist = data.district || "Jammu and Kashmir";
+        const safeElev = formatFiniteNumber(data.terrain?.elevation_m, 2, "m ASL");
+        const safeSlope = formatFiniteNumber(data.terrain?.slope_deg, 2, "°");
+        const safeAspect = formatFiniteNumber(data.terrain?.aspect_deg, 2, "°");
+
+        const popupHtml = `
+          <div style="font-family: sans-serif; padding: 10px; color: #f8fafc; background: #090d16; border: 1px solid #334155; border-radius: 8px; font-size: 12px; line-height: 1.5; min-width: 200px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+            <div style="font-weight: bold; color: #38bdf8; font-size: 13px; margin-bottom: 6px; border-bottom: 1px solid #1e293b; padding-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
+              <span>${safeDist}</span>
+              <span style="font-size: 9px; font-family: monospace; background: #0284c7; color: #ffffff; padding: 2px 6px; border-radius: 4px;">Phase 2</span>
+            </div>
+            <div style="color: #cbd5e1;"><b>Latitude:</b> ${formatFiniteNumber(lat, 4)}°N</div>
+            <div style="color: #cbd5e1;"><b>Longitude:</b> ${formatFiniteNumber(lng, 4)}°E</div>
+            <div style="margin-top: 6px; background: #0f172a; padding: 6px; border-radius: 4px; border: 1px solid #1e293b;">
+              <div><b>Elevation:</b> <span style="color: #facc15; font-weight: bold;">${safeElev}</span></div>
+              <div><b>Slope Angle:</b> <span style="color: #f97316; font-weight: bold;">${safeSlope}</span></div>
+              <div><b>Aspect:</b> <span style="color: #c084fc;">${safeAspect}</span></div>
+            </div>
+            <div style="font-size: 9px; color: #94a3b8; margin-top: 6px; border-top: 1px solid #1e293b; padding-top: 4px;">
+              <div>Web Map: EPSG:4326 / Web Mercator</div>
+              <div>Processing CRS: EPSG:32643</div>
+              <div style="color: #64748b; margin-top: 2px;">${data.data_available ? "Copernicus GLO-30 30m DEM" : data.message || "No terrain data"}</div>
+            </div>
+          </div>
+        `;
+
+        if (PopupClass) {
+          popupRef.current = new PopupClass({ closeButton: true, className: "custom-popup" })
+            .setLngLat([lng, lat])
+            .setHTML(popupHtml)
+            .addTo(map);
+        }
+
+      } catch (err: any) {
+        if (err.name === "AbortError") return;
+        console.error("Terrain inspection request error:", err);
+        setInspectionError("Unable to fetch location data. Backend server may be offline.");
+        setInspectionData({
+          success: false,
+          code: "NETWORK_ERROR",
+          message: "Unable to connect to backend server.",
+          location: { lat, lon: lng },
+          inside_study_area: false,
+          data_available: false,
+          district: "Unknown",
+          terrain: { elevation_m: null, slope_deg: null, aspect_deg: null, hillshade: null }
+        });
+      } finally {
+        setLoadingInspect(false);
+      }
+    });
+
+    return () => {
+      if (abortControllerRef.current) abortControllerRef.current.abort();
+      if (mapRef.current) mapRef.current.remove();
+    };
+  }, [onSelectLocation, onSelectDistrict]);
 
   return (
-    <div className="relative w-full h-full bg-navy-950 flex flex-col overflow-hidden text-slate-100 select-none">
-      {/* Map Header Overlay */}
-      <div className="absolute top-3 left-3 z-10 flex items-center space-x-2 bg-navy-900/90 border border-navy-700 backdrop-blur px-3 py-1.5 rounded-lg text-xs">
-        <Compass className="w-4 h-4 text-blue-400 animate-spin" style={{ animationDuration: '10s' }} />
-        <span className="font-semibold text-white">Full J&K UT Interactive View (EPSG:4326)</span>
-        <span className="text-slate-400 font-mono text-[11px]">| 20 Verified Districts</span>
-      </div>
+    <div className="relative w-full h-full min-h-[620px] bg-navy-950 rounded-xl overflow-hidden border border-slate-800 shadow-2xl flex">
+      {/* Map Container Canvas */}
+      <div ref={mapContainerRef} className="w-full h-full min-h-[620px]" />
 
-      {/* Map Control Buttons */}
-      <div className="absolute top-3 right-3 z-10 flex items-center space-x-2">
-        <div className="bg-navy-900/90 border border-navy-700 backdrop-blur rounded-lg p-1 flex space-x-1 text-xs">
+      {/* Title, CRS Wording & Reset Button Banner */}
+      <div className="absolute top-4 left-4 z-10 bg-slate-900/95 backdrop-blur-md p-3 rounded-lg border border-slate-700/80 shadow-xl max-w-sm">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+            <h2 className="text-xs font-bold text-slate-100 uppercase tracking-wide">
+              FULL J&K UT GEOGRAPHIC MAP
+            </h2>
+          </div>
           <button
-            onClick={() => setBasemap('dark')}
-            className={`px-2.5 py-1 rounded transition-colors ${
-              basemap === 'dark' ? 'bg-blue-600 text-white font-semibold' : 'text-slate-400 hover:text-slate-200'
-            }`}
+            onClick={handleResetView}
+            className="flex items-center space-x-1 bg-sky-950 hover:bg-sky-900 border border-sky-600/50 text-sky-300 text-[10px] px-2 py-0.5 rounded transition-colors font-mono"
+            title="Reset Map to J&K Boundary"
           >
-            Dark Command
+            <RotateCcw className="w-3 h-3" />
+            <span>Reset to J&K</span>
           </button>
-          <button
-            onClick={() => setBasemap('standard')}
-            className={`px-2.5 py-1 rounded transition-colors ${
-              basemap === 'standard' ? 'bg-blue-600 text-white font-semibold' : 'text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            Terrain Topo
-          </button>
+        </div>
+        <p className="text-xs text-sky-400 font-medium mt-1">
+          Copernicus DEM & 20-District Boundaries
+        </p>
+        <div className="text-[10px] text-slate-400 font-mono mt-1 space-y-0.5 border-t border-slate-800 pt-1">
+          <div>Web Map: <span className="text-slate-200">EPSG:4326 / Web Mercator</span></div>
+          <div>Terrain Processing CRS: <span className="text-slate-200">EPSG:32643</span></div>
         </div>
       </div>
 
-      {/* Interactive SVG Canvas */}
-      <div className="w-full h-full flex items-center justify-center p-4">
-        <svg viewBox="0 0 800 600" className="w-full h-full max-h-[750px] drop-shadow-2xl">
-          {/* Background Grid Lines */}
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" strokeWidth="0.5" opacity="0.3" />
-            </pattern>
-            {/* Insufficient Data Hatch Pattern */}
-            <pattern id="hatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-              <line x1="0" y1="0" x2="0" y2="8" stroke="#64748b" strokeWidth="2" />
-            </pattern>
-          </defs>
+      {/* Floating Control Panel */}
+      <div className="absolute top-4 right-4 z-10 w-80 bg-slate-900/95 backdrop-blur-md rounded-xl border border-slate-700/80 shadow-2xl overflow-hidden flex flex-col text-slate-200">
+        {/* Tab Headers */}
+        <div className="flex border-b border-slate-800 bg-slate-950/80">
+          <button
+            onClick={() => setActiveTab("layers")}
+            className={`flex-1 py-2.5 text-xs font-semibold flex items-center justify-center space-x-1.5 transition-colors ${
+              activeTab === "layers"
+                ? "text-sky-400 border-b-2 border-sky-400 bg-slate-900/40"
+                : "text-slate-400 hover:text-slate-200"
+            }`}
+          >
+            <Layers className="w-3.5 h-3.5" />
+            <span>Map Layers</span>
+          </button>
+          <button
+            onClick={() => setActiveTab("inspect")}
+            className={`flex-1 py-2.5 text-xs font-semibold flex items-center justify-center space-x-1.5 transition-colors ${
+              activeTab === "inspect"
+                ? "text-sky-400 border-b-2 border-sky-400 bg-slate-900/40"
+                : "text-slate-400 hover:text-slate-200"
+            }`}
+          >
+            <Compass className="w-3.5 h-3.5" />
+            <span>Inspector</span>
+          </button>
+          <button
+            onClick={() => setActiveTab("legend")}
+            className={`flex-1 py-2.5 text-xs font-semibold flex items-center justify-center space-x-1.5 transition-colors ${
+              activeTab === "legend"
+                ? "text-sky-400 border-b-2 border-sky-400 bg-slate-900/40"
+                : "text-slate-400 hover:text-slate-200"
+            }`}
+          >
+            <Info className="w-3.5 h-3.5" />
+            <span>Legend</span>
+          </button>
+        </div>
 
-          <rect width="800" height="600" fill={basemap === 'dark' ? '#090d16' : '#1e293b'} />
-          <rect width="800" height="600" fill="url(#grid)" />
+        {/* Tab Content */}
+        <div className="p-3.5 max-h-[460px] overflow-y-auto space-y-3 text-xs">
+          {activeTab === "layers" && (
+            <MapErrorBoundary fallbackMessage="Unable to display layer controls.">
+              <div className="space-y-3">
+                <div className="text-[11px] font-bold uppercase text-slate-400 tracking-wider">
+                  Phase 2 Master Layer Registry
+                </div>
 
-          {/* Dissolved J&K Outer Glow / Envelope */}
-          <ellipse cx="400" cy="300" rx="320" ry="240" fill="none" stroke="#2563eb" strokeWidth="1" strokeDasharray="4 4" opacity="0.4" />
-
-          {/* NH-44 Focus Corridor (Jammu -> Udhampur -> Ramban -> Srinagar) */}
-          {showNH44 && (
-            <g>
-              <path
-                d="M 370 480 Q 420 380, 410 320 T 360 250"
-                fill="none"
-                stroke="#38bdf8"
-                strokeWidth="4"
-                strokeDasharray="6 3"
-                opacity="0.85"
-              />
-              <text x="420" y="350" fill="#38bdf8" fontSize="10" fontWeight="bold" fontFamily="sans-serif">
-                NH-44 Corridor (Focus Area)
-              </text>
-            </g>
+                <div className="space-y-1.5">
+                  {MASTER_LAYER_REGISTRY.map((layer) => {
+                    const isChecked = layersState[layer.id] ?? layer.defaultVisibility;
+                    const isAvailable = layer.availability === "Available";
+                    return (
+                      <label
+                        key={layer.id}
+                        className={`flex items-center justify-between cursor-pointer p-2 rounded border text-xs transition-colors ${
+                          isAvailable
+                            ? "hover:bg-slate-800/60 border-slate-800 bg-slate-950/40"
+                            : "opacity-60 border-slate-800/50 bg-slate-950/20 cursor-not-allowed"
+                        }`}
+                      >
+                        <div className="flex flex-col pr-2">
+                          <span className="font-semibold text-slate-200">{layer.displayName}</span>
+                          <span className="text-[9.5px] text-slate-400 font-mono">
+                            {layer.availability} • {layer.source}
+                          </span>
+                        </div>
+                        <input
+                          type="checkbox"
+                          disabled={!isAvailable}
+                          checked={isChecked && isAvailable}
+                          onChange={() => toggleLayer(layer.id)}
+                          className="rounded bg-slate-800 border-slate-700 text-sky-500 focus:ring-0 shrink-0"
+                        />
+                      </label>
+                    );
+                  })}
+                </div>
+              </div>
+            </MapErrorBoundary>
           )}
 
-          {/* 20 J&K District Interactive Nodes & Polygons */}
-          {showDistricts &&
-            JK_20_DISTRICTS.map((d) => {
-              const { x, y } = projectCoords(d.coordinates[0], d.coordinates[1]);
-              const isSelected = selectedDistrict === d.id;
-              const color = RISK_COLORS[d.riskLevel];
+          {activeTab === "inspect" && (
+            <MapErrorBoundary fallbackMessage="Unable to display inspector details. The map remains fully operational.">
+              <div className="space-y-3">
+                <div className="text-[11px] font-bold uppercase text-slate-400 tracking-wider">
+                  Terrain Cell Inspector
+                </div>
 
-              return (
-                <g key={d.id} className="cursor-pointer group" onClick={() => handleDistrictClick(d)}>
-                  {/* District Boundary Area Representation */}
-                  <circle
-                    cx={x}
-                    cy={y}
-                    r={isSelected ? 28 : 22}
-                    fill={color}
-                    fillOpacity={isSelected ? 0.45 : 0.25}
-                    stroke={color}
-                    strokeWidth={isSelected ? 2.5 : 1}
-                    className="transition-all duration-300 group-hover:fill-opacity-50"
-                  />
+                {loadingInspect ? (
+                  <div className="py-6 text-center text-slate-400 animate-pulse">
+                    Sampling terrain rasters at clicked location...
+                  </div>
+                ) : inspectionError ? (
+                  <div className="space-y-2 bg-rose-950/40 p-3 rounded-lg border border-rose-800/60 text-rose-200">
+                    <div className="flex items-center space-x-1.5 font-bold text-rose-400">
+                      <AlertTriangle className="w-4 h-4 shrink-0" />
+                      <span>Notice</span>
+                    </div>
+                    <p className="text-xs">{inspectionError}</p>
+                    <p className="text-[10px] text-slate-400">The map remains fully operational for further inspection.</p>
+                  </div>
+                ) : inspectionData ? (
+                  <div className="space-y-2 bg-slate-950/80 p-3 rounded-lg border border-slate-800">
+                    <div className="text-sm font-bold text-sky-400 border-b border-slate-800 pb-1.5 flex items-center justify-between">
+                      <span>{inspectionData.district || "Jammu and Kashmir"}</span>
+                      {inspectionData.data_available ? (
+                        <span className="text-[10px] font-mono bg-emerald-950 text-emerald-300 px-1.5 py-0.5 rounded border border-emerald-700/60">
+                          Data Available
+                        </span>
+                      ) : (
+                        <span className="text-[10px] font-mono bg-amber-950 text-amber-300 px-1.5 py-0.5 rounded border border-amber-700/60">
+                          {inspectionData.code || "No Data"}
+                        </span>
+                      )}
+                    </div>
 
-                  {/* Center Node */}
-                  <circle
-                    cx={x}
-                    cy={y}
-                    r={isSelected ? 6 : 4}
-                    fill={color}
-                    stroke="#ffffff"
-                    strokeWidth="1.5"
-                  />
+                    {!inspectionData.data_available && (
+                      <div className="bg-amber-950/30 border border-amber-800/50 p-2 rounded text-amber-200 text-xs mt-1">
+                        {inspectionData.message || "No valid terrain data at this location."}
+                      </div>
+                    )}
 
-                  {/* Label */}
-                  <text
-                    x={x}
-                    y={y + 16}
-                    textAnchor="middle"
-                    fill={isSelected ? '#ffffff' : '#cbd5e1'}
-                    fontSize={isSelected ? '11' : '9.5'}
-                    fontWeight={isSelected ? 'bold' : 'normal'}
-                    className="group-hover:fill-white group-hover:font-semibold transition-all pointer-events-none"
-                  >
-                    {d.displayName}
-                  </text>
+                    <div className="grid grid-cols-2 gap-2 text-xs pt-1">
+                      <div>
+                        <span className="text-slate-400 block text-[10px]">Elevation</span>
+                        <span className="font-semibold text-amber-400 text-sm">
+                          {formatFiniteNumber(inspectionData.terrain?.elevation_m, 2, "m")}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-slate-400 block text-[10px]">Slope Angle</span>
+                        <span className="font-semibold text-orange-400 text-sm">
+                          {formatFiniteNumber(inspectionData.terrain?.slope_deg, 2, "°")}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-slate-400 block text-[10px]">Aspect</span>
+                        <span className="font-semibold text-slate-200">
+                          {formatFiniteNumber(inspectionData.terrain?.aspect_deg, 2, "°")}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="text-slate-400 block text-[10px]">Lat / Lon</span>
+                        <span className="font-mono text-[11px] text-slate-300">
+                          {formatFiniteNumber(inspectionData.location?.lat, 3)}°, {formatFiniteNumber(inspectionData.location?.lon, 3)}°
+                        </span>
+                      </div>
+                    </div>
 
-                  {/* Risk Badge */}
-                  <rect
-                    x={x - 22}
-                    y={y - 20}
-                    width="44"
-                    height="12"
-                    rx="3"
-                    fill="#0f172a"
-                    stroke={color}
-                    strokeWidth="0.8"
-                    opacity="0.9"
-                  />
-                  <text
-                    x={x}
-                    y={y - 11}
-                    textAnchor="middle"
-                    fill={color}
-                    fontSize="7.5"
-                    fontWeight="bold"
-                  >
-                    {d.riskLevel}
-                  </text>
-                </g>
-              );
-            })}
-        </svg>
-      </div>
+                    <div className="text-[10px] text-slate-500 pt-2 border-t border-slate-800/80 space-y-0.5 font-mono">
+                      <div>Web Map: EPSG:4326 / Web Mercator</div>
+                      <div>Processing CRS: EPSG:32643</div>
+                      <div className="text-slate-400">{inspectionData.source?.dem || "Copernicus GLO-30 DEM"}</div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="py-6 text-center text-slate-400">
+                    <MapPin className="w-8 h-8 text-sky-500/50 mx-auto mb-2" />
+                    Click any point on the map to inspect terrain elevation & slope.
+                  </div>
+                )}
+              </div>
+            </MapErrorBoundary>
+          )}
 
-      {/* Map Click Inspection Panel */}
-      {clickedLocation && (
-        <div className="absolute bottom-16 right-4 z-20 bg-navy-900/95 border border-navy-700 backdrop-blur rounded-xl p-4 w-80 text-xs shadow-2xl space-y-2">
-          <div className="flex items-center justify-between border-b border-navy-700 pb-2">
-            <div className="flex items-center space-x-2">
-              <MapPin className="w-4 h-4 text-blue-400" />
-              <span className="font-bold text-white text-sm">
-                {clickedLocation.district?.displayName || 'Custom Point'}
-              </span>
-            </div>
-            <button
-              onClick={() => setClickedLocation(null)}
-              className="text-slate-400 hover:text-white"
-            >
-              ✕
-            </button>
-          </div>
-
-          <div className="space-y-1.5 font-mono text-[11px] text-slate-300">
-            <div className="flex justify-between">
-              <span className="text-slate-400">Coordinates:</span>
-              <span>{clickedLocation.lat.toFixed(4)}°N, {clickedLocation.lon.toFixed(4)}°E</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-400">Source Name:</span>
-              <span>{clickedLocation.district?.sourceName}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-400">Status:</span>
-              <span className="text-emerald-400 font-bold">Included in J&K UT (20/20)</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-400">Hazard Class (Demo):</span>
-              <span className="font-bold" style={{ color: RISK_COLORS[clickedLocation.district?.riskLevel || 'Low'] }}>
-                {clickedLocation.district?.riskLevel}
-              </span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-slate-400">Rainfall Mode:</span>
-              <span className="text-amber-300">Demo Playback</span>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Coordinate & Status Footer Bar */}
-      <div className="bg-navy-900 border-t border-navy-800 px-4 py-1.5 text-xs flex items-center justify-between text-slate-400 font-mono">
-        <div>
-          <span>CRS: EPSG:4326 (WGS84)</span>
-          <span className="ml-4">Center: 33.7000° N, 75.2000° E</span>
-        </div>
-        <div>
-          <span className="text-blue-400">20 J&K Districts Active</span>
+          {activeTab === "legend" && (
+            <MapErrorBoundary fallbackMessage="Unable to display legend details.">
+              <div className="space-y-3">
+                <div className="text-[11px] font-bold uppercase text-slate-400 tracking-wider">
+                  Geospatial Symbology Legend
+                </div>
+                <div className="space-y-2 text-xs">
+                  <div className="flex items-center space-x-2.5">
+                    <span className="w-3.5 h-3.5 border-2 border-sky-400 bg-sky-500/10 rounded" />
+                    <span>20 J&K UT Districts</span>
+                  </div>
+                  <div className="flex items-center space-x-2.5">
+                    <span className="w-3 h-3 rounded-full bg-red-500 border border-red-900" />
+                    <span>NGDR Landslide Points (2,370)</span>
+                  </div>
+                  <div className="flex items-center space-x-2.5">
+                    <span className="w-3.5 h-2.5 bg-red-600/50 border border-red-800 rounded-sm" />
+                    <span>NGDR Landslide Polygons (7,436)</span>
+                  </div>
+                  <div className="flex items-center space-x-2.5">
+                    <span className="w-4 h-1 bg-pink-500 rounded" />
+                    <span>Tectonic Fault Lines (GSI NGDR)</span>
+                  </div>
+                  <div className="flex items-center space-x-2.5">
+                    <span className="w-4 h-1 bg-purple-500 rounded" />
+                    <span>Thrust Fault Lines (GSI NGDR)</span>
+                  </div>
+                  <div className="flex items-center space-x-2.5">
+                    <span className="w-4 h-1 bg-purple-400 rounded" />
+                    <span>Structural Lineaments (774)</span>
+                  </div>
+                  <div className="flex items-center space-x-2.5">
+                    <span className="w-4 h-1.5 bg-amber-400 rounded" />
+                    <span>NH-44 Highway Corridor</span>
+                  </div>
+                  <div className="flex items-center space-x-2.5">
+                    <span className="w-4 h-1 bg-amber-500 rounded" />
+                    <span>Statewide Major Roads (4,762)</span>
+                  </div>
+                  <div className="flex items-center space-x-2.5">
+                    <span className="w-3 h-3 rounded-full bg-emerald-400 border border-emerald-800" />
+                    <span>Hospitals & Clinics (1,079)</span>
+                  </div>
+                </div>
+              </div>
+            </MapErrorBoundary>
+          )}
         </div>
       </div>
     </div>

@@ -8,14 +8,28 @@
 
 **GeoSlide-JK** is a full-state geospatial decision-support application for Jammu and Kashmir (J&K). It integrates multi-source geospatial data—including digital elevation models (DEM), geological lithology, tectonic fault/thrust structures, land cover (LULC), historical landslide inventories, population distribution, and near-real-time satellite/gridded rainfall (NASA IMERG & IMD)—to deliver explainable landslide susceptibility and rainfall-triggered hazard advisories.
 
-The system is designed as an explainable research prototype providing statewide coverage across all 20 districts of Jammu & Kashmir.
+The system is designed as an explainable research platform providing statewide coverage across all **20 J&K UT Districts**.
+
+---
+
+## Current Status: Phase 2 — Static Geospatial Products (Complete)
+
+- **App Version**: `v0.2.0` / `Phase 2 — Static Geospatial Products`
+- **Global Status**: `Static Geospatial Layers: Live` | `Risk & Rainfall Modules: Demo`
+- **DEM Source Lock**: Exactly four full-J&K Copernicus GLO-30 DEM tiles mosaicked & reprojected to `EPSG:32643` (30m resolution, 51,322,278 valid land pixels). Pilot DEM tile explicitly excluded.
+- **Static Vector Layers**: 10 static vector layers processed to GeoPackage & GeoParquet clipped to 20 J&K UT districts (2,370 landslide points, 7,436 landslide polygons, 4,076 lithology units, tectonic faults/thrusts, NH-44, major roads, settlements, health facilities).
+- **Active Fault Resolution**: Option B implemented (Active faults merged into `jk_faults.parquet` with attribute `fault_type = 'active'`).
+- **Feature Reconciliation**: Produced `outputs/reports/phase_2_feature_count_reconciliation.csv` and `.md`.
+- **Map Inspector**: MapLibre terrain cell inspector hardened against null, out-of-bounds, and rapid clicks.
+- **UI & CSS Styling**: Full dark GeoSlide-JK theme repaired and verified across all 7 frontend routes.
+- **Automated Test Suite**: 52 / 52 tests passing (100% clean execution).
 
 ---
 
 ## Key Architecture & Components
 
-1. **Static Susceptibility Engine**: Machine learning model (XGBoost / Random Forest) trained on spatial terrain, geological, structural, and land-cover features using spatial block cross-validation.
-2. **Rainfall Trigger Engine**: Antecedent and short-term rainfall accumulator utilizing IMD historical climatology and GPM IMERG near-real-time data.
+1. **Static Susceptibility Engine**: Machine learning model (XGBoost / Random Forest) trained on spatial terrain, geological, structural, and land-cover features using spatial block cross-validation (Model status: *Not Trained*).
+2. **Rainfall Trigger Engine**: Antecedent and short-term rainfall accumulator utilizing IMD historical climatology and GPM IMERG near-real-time data (Status: *Demo placeholder*).
 3. **Hazard & Response Priority Fusion**: Matrix-based fusion combining static susceptibility with dynamic rainfall triggers, overlaid against exposed population, settlements, critical facilities, and major transportation corridors (including NH-44).
 4. **Interactive Map-First UI**: Modern web interface (Next.js, Tailwind CSS, MapLibre GL JS) offering statewide views, district intelligence cards, map-click explanations, and downloadable advisories.
 
@@ -27,6 +41,7 @@ The system is designed as an explainable research prototype providing statewide 
 GeoSlide_JK/
 ├── AGENTS.md                          # Execution & safety guidelines for AI agents
 ├── README.md                          # Project overview & documentation index
+├── CHANGELOG.md                       # Project version history
 ├── PROJECT_SPEC.md                    # Comprehensive system specifications
 ├── DATA_DICTIONARY.md                 # Data schema & source catalog
 ├── SECURITY_AND_DATA_RULES.md         # Read-only data isolation rules
@@ -77,12 +92,12 @@ GeoSlide_JK/
 │
 ├── outputs/                           # Generated system deliverables
 │   ├── maps/
-│   ├── reports/
+│   ├── reports/                       # Reconciled feature count CSV/MD reports
 │   ├── figures/
 │   ├── logs/
 │   └── demo/
 │
-├── tests/                             # Automated test suite
+├── tests/                             # Automated test suite (52 tests)
 │   ├── data/
 │   ├── geospatial/
 │   ├── modelling/
@@ -93,7 +108,7 @@ GeoSlide_JK/
     ├── architecture/
     ├── methodology/
     ├── api/
-    └── progress/
+    └── progress/                      # Phase reports & phase_2_final_screenshots archive
 ```
 
 ---
@@ -104,14 +119,3 @@ GeoSlide_JK/
 - **Read-Only Source Folder**: `C:\Users\Saurabh Sharma\Downloads\J&K`
 
 *Strict Rule*: Source raw data in the Downloads workspace is immutable. All script operations MUST treat the raw folder as read-only.
-
----
-
-## Phase 0 Status
-
-Phase 0 foundation complete:
-- Repository layout established.
-- Core specifications & safety rules documented.
-- Modular YAML configuration templates deployed.
-- Safe read-only data-discovery engine created (`src/geoslide/audit/discovery.py`).
-- Safety & path validation automated unit tests implemented (`tests/`).

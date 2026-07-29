@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Shield, Activity, Database, Info, Map, AlertTriangle, CloudRain, CheckCircle } from 'lucide-react';
+import { Shield, Layers, CloudRain, CheckCircle } from 'lucide-react';
 
 export function Header() {
   const pathname = usePathname();
@@ -29,32 +29,32 @@ export function Header() {
             <div className="flex items-center space-x-2">
               <span className="font-bold text-lg tracking-wide text-white">GeoSlide J&K</span>
               <span className="bg-blue-900/60 border border-blue-500/30 text-blue-300 text-xs px-2 py-0.5 rounded font-mono">
-                v0.1.0 Prototype
+                Phase 2 — Static Geospatial Products
               </span>
             </div>
-            <p className="text-xs text-slate-400">Terrain Intelligence & Rainfall-Triggered Landslide Risk</p>
+            <p className="text-xs text-slate-300">Terrain Intelligence & Rainfall-Triggered Landslide Risk</p>
           </div>
         </div>
 
         {/* System Badges */}
-        <div className="hidden lg:flex items-center space-x-3">
-          <div className="flex items-center space-x-1.5 bg-amber-950/40 border border-amber-600/40 text-amber-300 text-xs px-2.5 py-1 rounded-md">
-            <AlertTriangle className="w-3.5 h-3.5" />
-            <span>Research Prototype</span>
+        <div className="hidden lg:flex items-center space-x-2.5">
+          <div className="flex items-center space-x-1.5 bg-emerald-950/70 border border-emerald-600/70 text-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium shadow-sm">
+            <Layers className="w-3.5 h-3.5 text-emerald-400" />
+            <span>Static Geospatial Layers: Live</span>
           </div>
-          <div className="flex items-center space-x-1.5 bg-blue-950/40 border border-blue-600/40 text-blue-300 text-xs px-2.5 py-1 rounded-md">
-            <CloudRain className="w-3.5 h-3.5" />
-            <span>Demo Playback (July 2026 Sample)</span>
+          <div className="flex items-center space-x-1.5 bg-amber-950/70 border border-amber-600/70 text-amber-200 text-xs px-2.5 py-1 rounded-md font-medium shadow-sm">
+            <CloudRain className="w-3.5 h-3.5 text-amber-400" />
+            <span>Risk & Rainfall Modules: Demo</span>
           </div>
-          <div className="flex items-center space-x-1.5 bg-emerald-950/40 border border-emerald-600/40 text-emerald-300 text-xs px-2.5 py-1 rounded-md">
-            <CheckCircle className="w-3.5 h-3.5" />
-            <span>20 Districts Verified</span>
+          <div className="flex items-center space-x-1.5 bg-sky-950/70 border border-sky-600/70 text-sky-200 text-xs px-2.5 py-1 rounded-md font-medium shadow-sm">
+            <CheckCircle className="w-3.5 h-3.5 text-sky-400" />
+            <span>20 J&K UT Districts</span>
           </div>
         </div>
       </div>
 
       {/* Navigation Bar */}
-      <nav className="flex items-center space-x-1 px-4 overflow-x-auto border-t border-navy-800 text-xs font-medium">
+      <nav className="flex items-center space-x-1 px-4 overflow-x-auto border-t border-navy-800 text-xs font-semibold">
         {navItems.map((item) => {
           const isActive = pathname === item.path;
           return (
@@ -63,8 +63,8 @@ export function Header() {
               href={item.path}
               className={`px-3 py-2 border-b-2 whitespace-nowrap transition-colors ${
                 isActive
-                  ? 'border-blue-500 text-white bg-navy-800/80 font-semibold'
-                  : 'border-transparent text-slate-400 hover:text-slate-200 hover:bg-navy-800/40'
+                  ? 'border-blue-500 text-white bg-navy-800/90 font-bold'
+                  : 'border-transparent text-slate-300 hover:text-white hover:bg-navy-800/40'
               }`}
             >
               {item.label}

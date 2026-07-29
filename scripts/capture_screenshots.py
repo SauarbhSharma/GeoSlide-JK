@@ -1,52 +1,42 @@
-#!/usr/bin/env python3
-"""
-GeoSlide-JK Page Screenshot Capture Tool
-Automates headless browser navigation across all 7 UI pages and saves full-page PNG screenshots to outputs/figures/page_screenshots/
-"""
-
-import sys
+import asyncio
 import os
-import time
-from pathlib import Path
-from playwright.sync_api import sync_playwright
-
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-OUTPUT_DIR = PROJECT_ROOT / "outputs" / "figures" / "page_screenshots"
+from playwright.async_api import async_playwright
 
 PAGES = [
-    {"name": "01_statewide_command_centre", "url": "http://localhost:3000/"},
-    {"name": "02_interactive_risk_explorer", "url": "http://localhost:3000/explorer"},
-    {"name": "03_district_intelligence", "url": "http://localhost:3000/districts"},
-    {"name": "04_rainfall_monitor", "url": "http://localhost:3000/rainfall"},
-    {"name": "05_location_risk_check", "url": "http://localhost:3000/location-check"},
-    {"name": "06_model_transparency", "url": "http://localhost:3000/transparency"},
-    {"name": "07_data_system_status", "url": "http://localhost:3000/status"},
+    ("http://localhost:3000/", "01_statewide_command_centre.png"),
+    ("http://localhost:3000/explorer", "02_interactive_risk_explorer.png"),
+    ("http://localhost:3000/districts", "03_district_intelligence.png"),
+    ("http://localhost:3000/rainfall", "04_rainfall_monitor.png"),
+    ("http://localhost:3000/location-check", "05_location_risk_check.png"),
+    ("http://localhost:3000/transparency", "06_model_transparency.png"),
+    ("http://localhost:3000/status", "07_data_system_status.png"),
 ]
 
-def capture():
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    print(f"=== Capturing Browser Screenshots for All 7 GeoSlide-JK Pages ===")
-    print(f"Output directory: {OUTPUT_DIR}\n")
+OUTPUT_DIR = r"D:\Projects\GeoSlide_JK\outputs\figures\page_screenshots"
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context(viewport={"width": 1440, "height": 900})
-        page = context.new_page()
+async def capture_all():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    print("=== Capturing Browser Screenshots for All 7 GeoSlide-JK Pages ===")
 
-        for item in PAGES:
-            name = item["name"]
-            url = item["url"]
-            out_file = OUTPUT_DIR / f"{name}.png"
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(
+            headless=True,
+            args=["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu", "--ignore-certificate-errors"]
+        )
+        context = await browser.new_context(viewport={"width": 1440, "height": 900})
+        page = await context.new_page()
+
+        for url, filename in PAGES:
             print(f"Navigating to {url}...")
-            
-            page.goto(url, wait_until="networkidle")
-            time.sleep(1) # Allow SVG/renders to settle
-            
-            page.screenshot(path=str(out_file), full_page=True)
-            print(f"  [SAVED] {out_file.name} ({out_file.stat().st_size} bytes)")
+            await page.goto(url, wait_until="domcontentloaded", timeout=15000)
+            await asyncio.sleep(1.5)
+            filepath = os.path.join(OUTPUT_DIR, filename)
+            await page.screenshot(path=filepath, full_page=True)
+            size = os.path.getsize(filepath)
+            print(f"  [SAVED] {filename} ({size} bytes)")
 
-        browser.close()
+        await browser.close()
     print("\nAll 7 page screenshots captured successfully!")
 
 if __name__ == "__main__":
-    capture()
+    asyncio.run(capture_all())

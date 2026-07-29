@@ -1,6 +1,6 @@
 "use client";
 
-import { Shield, AlertTriangle, Users, Navigation, CheckCircle } from 'lucide-react';
+import { Shield, AlertTriangle, Users, Navigation } from 'lucide-react';
 
 export function StateKpiCards() {
   return (
@@ -11,13 +11,14 @@ export function StateKpiCards() {
           <Shield className="w-5 h-5" />
         </div>
         <div>
-          <div className="text-[11px] font-medium text-slate-400">J&K State Coverage</div>
+          <div className="text-[11px] font-medium text-slate-300">J&K State Coverage</div>
           <div className="text-xl font-bold text-white flex items-center space-x-1">
             <span>20 / 20</span>
-            <span className="text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-600/40 px-1.5 py-0.5 rounded font-normal">
-              100% UT
+            <span className="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-600/40 px-1.5 py-0.5 rounded font-mono">
+              Verified
             </span>
           </div>
+          <div className="text-[10px] text-slate-400 font-mono">20 J&K UT Districts</div>
         </div>
       </div>
 
@@ -27,13 +28,14 @@ export function StateKpiCards() {
           <AlertTriangle className="w-5 h-5" />
         </div>
         <div>
-          <div className="text-[11px] font-medium text-slate-400">Elevated Priority Zones (Demo)</div>
+          <div className="text-[11px] font-medium text-slate-300">Elevated Priority Zones (Demo)</div>
           <div className="text-xl font-bold text-white flex items-center space-x-1">
             <span>5 Districts</span>
-            <span className="text-[10px] bg-orange-950 text-orange-400 border border-orange-600/40 px-1.5 py-0.5 rounded font-normal">
-              Ramban / Doda
+            <span className="text-[10px] bg-orange-950 text-orange-300 border border-orange-600/40 px-1.5 py-0.5 rounded font-mono">
+              Demo
             </span>
           </div>
+          <div className="text-[10px] text-amber-300 font-mono">Illustrative — not derived from model</div>
         </div>
       </div>
 
@@ -43,13 +45,14 @@ export function StateKpiCards() {
           <Users className="w-5 h-5" />
         </div>
         <div>
-          <div className="text-[11px] font-medium text-slate-400">Exposed Population (Demo)</div>
+          <div className="text-[11px] font-medium text-slate-300">Exposed Population (Demo)</div>
           <div className="text-xl font-bold text-white flex items-center space-x-1">
             <span>~485,000</span>
-            <span className="text-[10px] bg-purple-950 text-purple-300 border border-purple-600/40 px-1.5 py-0.5 rounded font-normal">
-              GHS-POP
+            <span className="text-[10px] bg-purple-950 text-purple-300 border border-purple-600/40 px-1.5 py-0.5 rounded font-mono">
+              Demo
             </span>
           </div>
+          <div className="text-[10px] text-slate-400 font-mono">Pending GHSL Verification</div>
         </div>
       </div>
 
@@ -59,13 +62,14 @@ export function StateKpiCards() {
           <Navigation className="w-5 h-5" />
         </div>
         <div>
-          <div className="text-[11px] font-medium text-slate-400">Focus Corridor</div>
+          <div className="text-[11px] font-medium text-slate-300">Focus Corridor (Demo)</div>
           <div className="text-xl font-bold text-white flex items-center space-x-1">
             <span>NH-44 Highway</span>
-            <span className="text-[10px] bg-sky-950 text-sky-300 border border-sky-600/40 px-1.5 py-0.5 rounded font-normal">
-              Active
+            <span className="text-[10px] bg-sky-950 text-sky-300 border border-sky-600/40 px-1.5 py-0.5 rounded font-mono">
+              Schematic
             </span>
           </div>
+          <div className="text-[10px] text-slate-400 font-mono">Illustrative Overlay</div>
         </div>
       </div>
     </div>

@@ -31,6 +31,9 @@ wheels/
 .env
 !.env.example
 
+# Scratch Directory
+scratch/
+
 # Read-only Raw Data Folder Path & Data Directories
 /data/raw/*
 !/data/raw/.gitkeep
@@ -51,6 +54,9 @@ wheels/
 !/outputs/maps/.gitkeep
 /outputs/reports/*
 !/outputs/reports/.gitkeep
+!/outputs/reports/phase_2_feature_count_reconciliation.*
+!/outputs/reports/phase_2_approved_dem_sources.csv
+!/outputs/reports/phase_2_quality_report.md
 /outputs/figures/*
 !/outputs/figures/.gitkeep
 !/outputs/figures/page_screenshots/

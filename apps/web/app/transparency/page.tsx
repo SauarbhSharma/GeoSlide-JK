@@ -2,7 +2,7 @@
 
 import { Header } from '@/components/layout/Header';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
-import { FileText, Cpu, CheckCircle2, Layers, AlertCircle, BarChart3 } from 'lucide-react';
+import { Cpu, CheckCircle2, AlertCircle, BarChart3 } from 'lucide-react';
 
 export default function ModelTransparency() {
   return (
@@ -10,7 +10,21 @@ export default function ModelTransparency() {
       <Header />
 
       <div className="flex-1 overflow-y-auto p-4 max-w-7xl mx-auto w-full space-y-4">
-        <ResearchDisclaimer />
+        {/* Compact Banner */}
+        <div className="bg-amber-950/70 border border-amber-500/60 p-4 rounded-xl flex items-center justify-between text-xs text-amber-200 shadow-lg">
+          <div className="flex items-center space-x-3">
+            <AlertCircle className="w-5 h-5 text-amber-400 shrink-0" />
+            <div>
+              <h2 className="font-bold text-sm text-amber-300">Model Pipeline Status: Not Trained</h2>
+              <p className="text-amber-100 mt-0.5 font-medium">
+                Current Stage: Awaiting feature engineering and spatial validation. No model has been trained yet.
+              </p>
+            </div>
+          </div>
+          <span className="font-mono text-xs bg-amber-900 border border-amber-400/40 px-3 py-1.5 rounded text-amber-100 font-bold shrink-0">
+            Not Trained
+          </span>
+        </div>
 
         {/* Page Header */}
         <div className="bg-navy-900 border border-navy-700 p-4 rounded-xl flex items-center justify-between">
@@ -19,92 +33,84 @@ export default function ModelTransparency() {
               <Cpu className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-white">Model & Data Transparency</h1>
-              <p className="text-xs text-slate-400 mt-0.5">
-                Methodology, spatial validation strategy, SHAP explainability rules, and model cards.
+              <h1 className="text-xl font-bold text-white">Model & Methodology Transparency</h1>
+              <p className="text-xs text-slate-300 mt-0.5">
+                Planned methods, spatial validation strategy, and explainability architecture.
               </p>
             </div>
           </div>
-          <div className="text-xs font-mono bg-navy-800 border border-navy-700 px-3 py-1.5 rounded-lg text-slate-300">
-            Model Version: XGBoost v0.1.0-prototype
+          <div className="text-xs font-mono bg-navy-800 border border-navy-700 px-3 py-1.5 rounded-lg text-amber-400 font-semibold">
+            Model Pipeline Status: Not Trained
           </div>
         </div>
 
-        {/* Transparency Cards Grid */}
+        {/* Planned Architecture Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Spatial Cross Validation */}
+          {/* Planned Models */}
+          <div className="bg-navy-900 border border-navy-700 p-4 rounded-xl space-y-3">
+            <div className="flex items-center space-x-2 border-b border-navy-800 pb-2">
+              <Cpu className="w-4 h-4 text-blue-400" />
+              <h2 className="font-bold text-white text-sm">Planned Models</h2>
+            </div>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Planned modeling algorithms to be implemented during Phase 4:
+            </p>
+            <ul className="space-y-2 text-xs text-slate-200 font-mono">
+              <li className="flex items-center space-x-2 bg-navy-800/60 p-2 rounded border border-navy-700">
+                <span className="w-2 h-2 rounded-full bg-blue-400"></span>
+                <span>Logistic Regression</span>
+              </li>
+              <li className="flex items-center space-x-2 bg-navy-800/60 p-2 rounded border border-navy-700">
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Random Forest</span>
+              </li>
+              <li className="flex items-center space-x-2 bg-navy-800/60 p-2 rounded border border-navy-700">
+                <span className="w-2 h-2 rounded-full bg-purple-400"></span>
+                <span>XGBoost</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Planned Validation */}
           <div className="bg-navy-900 border border-navy-700 p-4 rounded-xl space-y-3">
             <div className="flex items-center space-x-2 border-b border-navy-800 pb-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <h2 className="font-bold text-white text-sm">Spatial Block Cross-Validation</h2>
+              <h2 className="font-bold text-white text-sm">Planned Validation</h2>
             </div>
             <p className="text-xs text-slate-300 leading-relaxed">
-              To prevent spatial autocorrelation leakage, training and validation splits are strictly grouped by spatial block clusters and district holdouts. Samples from the same landslide polygon are never split across train and test sets.
+              Planned spatial validation framework to prevent spatial autocorrelation leakage:
             </p>
-            <div className="bg-navy-950 border border-navy-800 p-3 rounded-lg text-xs font-mono space-y-1">
-              <div className="flex justify-between">
-                <span className="text-slate-400">Target ROC-AUC:</span>
-                <span className="text-emerald-400 font-bold">&gt; 0.85 (Spatial CV)</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-slate-400">Target PR-AUC:</span>
-                <span className="text-emerald-400 font-bold">&gt; 0.75</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="text-slate-400">Primary Predictor Grid:</span>
-                <span className="text-white">100m UTM (EPSG:32643)</span>
-              </div>
-            </div>
+            <ul className="space-y-2 text-xs text-slate-200 font-mono">
+              <li className="flex items-center space-x-2 bg-navy-800/60 p-2 rounded border border-navy-700">
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Spatial block cross-validation</span>
+              </li>
+              <li className="flex items-center space-x-2 bg-navy-800/60 p-2 rounded border border-navy-700">
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>District holdout</span>
+              </li>
+              <li className="flex items-center space-x-2 bg-navy-800/60 p-2 rounded border border-navy-700">
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Calibration</span>
+              </li>
+              <li className="flex items-center space-x-2 bg-navy-800/60 p-2 rounded border border-navy-700">
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Uncertainty analysis</span>
+              </li>
+            </ul>
           </div>
+        </div>
 
-          {/* Predictor Feature Importance */}
-          <div className="bg-navy-900 border border-navy-700 p-4 rounded-xl space-y-3">
-            <div className="flex items-center space-x-2 border-b border-navy-800 pb-2">
-              <BarChart3 className="w-4 h-4 text-blue-400" />
-              <h2 className="font-bold text-white text-sm">Global SHAP Feature Drivers</h2>
-            </div>
-            <div className="space-y-2 text-xs">
-              <div>
-                <div className="flex justify-between text-slate-300 font-mono text-[11px] mb-1">
-                  <span>Slope Steepness (slope_deg)</span>
-                  <span className="text-blue-400 font-bold">34% Importance</span>
-                </div>
-                <div className="w-full h-2 bg-navy-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-blue-500 rounded-full" style={{ width: '34%' }}></div>
-                </div>
-              </div>
-
-              <div>
-                <div className="flex justify-between text-slate-300 font-mono text-[11px] mb-1">
-                  <span>Distance to Fault/Thrust (dist_fault_m)</span>
-                  <span className="text-blue-400 font-bold">22% Importance</span>
-                </div>
-                <div className="w-full h-2 bg-navy-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-blue-500 rounded-full" style={{ width: '22%' }}></div>
-                </div>
-              </div>
-
-              <div>
-                <div className="flex justify-between text-slate-300 font-mono text-[11px] mb-1">
-                  <span>Antecedent Rainfall Index (IMERG / IMD)</span>
-                  <span className="text-blue-400 font-bold">19% Importance</span>
-                </div>
-                <div className="w-full h-2 bg-navy-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-blue-500 rounded-full" style={{ width: '19%' }}></div>
-                </div>
-              </div>
-
-              <div>
-                <div className="flex justify-between text-slate-300 font-mono text-[11px] mb-1">
-                  <span>Lithology Class (50k GSI)</span>
-                  <span className="text-blue-400 font-bold">15% Importance</span>
-                </div>
-                <div className="w-full h-2 bg-navy-800 rounded-full overflow-hidden">
-                  <div className="h-full bg-blue-500 rounded-full" style={{ width: '15%' }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Mandatory Disclosure Banner */}
+        <div className="bg-navy-900 border border-navy-700 p-6 rounded-xl text-center space-y-3">
+          <BarChart3 className="w-8 h-8 text-slate-500 mx-auto" />
+          <h3 className="font-bold text-white text-base">Model Metrics & Explainability Status</h3>
+          <p className="text-xs text-amber-300 font-mono font-semibold max-w-xl mx-auto bg-navy-950 p-3 rounded-lg border border-navy-800">
+            No model metrics, feature importance or SHAP results are available yet.
+          </p>
+          <p className="text-xs text-slate-400 max-w-lg mx-auto">
+            Current Stage: Awaiting feature engineering and spatial validation. Model evaluation will be performed during Phase 4 after raster feature stack generation.
+          </p>
         </div>
 
         {/* Non-Negotiable Isolation Rules */}
@@ -114,9 +120,9 @@ export default function ModelTransparency() {
             <span>Strict Predictor Isolation Rules</span>
           </h2>
           <ul className="list-disc list-inside space-y-1 text-slate-300">
-            <li>The pre-existing NLSM susceptibility raster is strictly isolated and used <strong>only for benchmark validation</strong>. It is never used as an input feature for training models.</li>
-            <li>Coordinates (Latitude/Longitude) are excluded from training to prevent geographic memorization.</li>
-            <li>Missing data areas are explicitly assigned an <strong>Insufficient Data</strong> mask, never categorized as Low Risk.</li>
+            <li>NLSM raster: Excluded from training features. Used solely for validation benchmarking.</li>
+            <li>Coordinates (Latitude/Longitude) are excluded from training predictors to prevent spatial memorization.</li>
+            <li>Areas with missing data are categorized as Insufficient Data, never as Low Risk.</li>
           </ul>
         </div>
       </div>

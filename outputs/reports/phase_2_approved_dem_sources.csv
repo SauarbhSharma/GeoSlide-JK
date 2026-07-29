@@ -1,0 +1,5 @@
+quadrant,absolute_path,parent_folder,filename,bounds,dimensions,resolution,full_checksum,selection_status
+"Southwest (73.5-75.5°E, 32.0-34.0°N)",C:\Users\Saurabh Sharma\Downloads\J&K\copernicus_glo30\full_jk\Southwest\output_hh.tif,Southwest,output_hh.tif,"[73.4999, 32.0001, 75.4999, 34.0001]",7200x7200,0.000278°,dfdeac97db09c1b9960039dd7500fd87,APPROVED_LOCKED
+"Southeast (75.5-77.5°E, 32.0-34.0°N)",C:\Users\Saurabh Sharma\Downloads\J&K\copernicus_glo30\full_jk\Southeast\output_hh.tif,Southeast,output_hh.tif,"[75.4999, 32.0001, 77.4999, 34.0001]",7200x7200,0.000278°,7560a7bc435ed7449a74a2f4402ab8da,APPROVED_LOCKED
+"Northwest (73.5-75.5°E, 34.0-36.0°N)",C:\Users\Saurabh Sharma\Downloads\J&K\copernicus_glo30\full_jk\Northwest\output_hh.tif,Northwest,output_hh.tif,"[73.4999, 34.0001, 75.4999, 36.0001]",7200x7200,0.000278°,30fe057f628377d7b1f5e2e366a08a32,APPROVED_LOCKED
+"Northeast (75.5-77.5°E, 34.0-36.0°N)",C:\Users\Saurabh Sharma\Downloads\J&K\copernicus_glo30\full_jk\Northeast\output_hh.tif,Northeast,output_hh.tif,"[75.4999, 34.0001, 77.4999, 36.0001]",7200x7200,0.000278°,3d2e2b628ffb6dfdc076eaf35ea577c2,APPROVED_LOCKED
