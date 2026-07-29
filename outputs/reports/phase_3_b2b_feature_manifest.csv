@@ -1,0 +1,7 @@
+feature_name,feature_category,source_raster,source_resolution,calculation_method,neighbourhood_radius,aggregation_method,target_resolution,output_dtype,nodata_value,enabled,notes
+flow_direction,A_terrain,data/processed/terrain/jk_elevation_glo30_cog.tif,30m,WhiteboxTools D8 flow direction on breach-filled 30m DEM,3x3 D8 grid,nearest,100m,uint8,255.0,True,"D8 direction codes (1,2,4,8,16,32,64,128)"
+flow_accumulation,A_terrain,data/processed/terrain/jk_elevation_glo30_cog.tif,30m,WhiteboxTools D8 flow accumulation (upslope cell count),Cumulative catchment,average,100m,float32,-9999.0,True,Cumulative contributing area in cell units
+drainage_network,A_terrain,Derived from flow_accumulation,100m,Threshold flow_accumulation > 500 cells (0.5 km2 contributing area),N/A,thresholding,100m,uint8,255.0,True,"Binary stream network (1=stream, 0=non-stream)"
+distance_to_drainage,A_terrain,Derived from drainage_network,100m,Euclidean distance to nearest stream cell,Global distance transform,distance_transform,100m,float32,-9999.0,True,Proximity to stream channels in metres
+drainage_density,A_terrain,Derived from drainage_network,100m,Stream length per unit area in 500m moving window,500m (5 cells @ 100m),moving_window_sum,100m,float32,-9999.0,True,Drainage density in km/km2
+twi,A_terrain,Derived from flow_accumulation and slope,100m,ln(specific_catchment_area / tan(slope_rad)) via WhiteboxTools WetnessIndex,N/A,element-wise physical formula,100m,float32,-9999.0,True,Topographic Wetness Index (higher = wetter/more pore pressure)

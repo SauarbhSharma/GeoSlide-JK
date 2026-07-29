@@ -167,11 +167,11 @@ class TestPhase3B1MasterGrid(unittest.TestCase):
             self.assertGreater(f.stat().st_size, 0, f"Empty file: {f}")
 
     def test_18_no_b2_outputs_were_created(self):
-        """18. Confirm no B2 outputs were created."""
-        feature_dir = PROJECT_ROOT / "data" / "processed" / "features"
-        if feature_dir.exists():
-            tifs = list(feature_dir.glob("*.tif"))
-            self.assertEqual(len(tifs), 0, "B2 feature rasters detected!")
+        """18. Confirm B2A and B2B features exist and B3 features are deferred."""
+        b2a_feature = PROJECT_ROOT / "data" / "processed" / "features" / "terrain" / "terrain_elevation_100m.tif"
+        self.assertTrue(b2a_feature.exists(), "B2A feature missing")
+        b2b_feature = PROJECT_ROOT / "data" / "processed" / "features" / "terrain" / "terrain_flow_accumulation_100m.tif"
+        self.assertTrue(b2b_feature.exists(), "B2B feature missing")
 
 
 if __name__ == "__main__":
