@@ -1,0 +1,20 @@
+metric,value
+Processing CRS,EPSG:32643 (UTM Zone 43N)
+Grid Resolution,100.0 m x 100.0 m
+Bounding Box Min X,360800.0
+Bounding Box Min Y,3571100.0
+Bounding Box Max X,665800.0
+Bounding Box Max Y,3864800.0
+Grid Width (Columns),3050
+Grid Height (Rows),2937
+Total Grid Cells,8957850
+Valid J&K UT Cells,4619211
+Outside Grid Cells,4338639
+Unassigned Valid Cells,0
+Overlapping Assigned Cells,0
+Valid Land Fraction,51.57%
+Total J&K UT Land Area (sq km),46192.11
+Vector Boundary Area (sq km),46191.91
+Raster NoData Code (Float32),-9999.0
+Raster NoData Code (UInt8),255
+Rasterization Rule,Cell-centre inclusion (all_touched=False)

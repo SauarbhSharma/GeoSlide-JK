@@ -65,7 +65,7 @@ class TestPhase21Synchronization(unittest.TestCase):
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
             page = browser.new_page(viewport={"width": 1280, "height": 900})
-            page.goto("http://localhost:3000", wait_until="load")
+            page.goto("http://localhost:3000", wait_until="domcontentloaded")
             time.sleep(3)
 
             map_el = page.locator("div.relative.w-full.h-full.min-h-\\[620px\\]").first

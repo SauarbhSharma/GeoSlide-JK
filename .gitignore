@@ -52,6 +52,7 @@ scratch/
 *.geoparquet
 /outputs/maps/*
 !/outputs/maps/.gitkeep
+!/outputs/maps/phase_3/b1/*.png
 /outputs/reports/*
 !/outputs/reports/.gitkeep
 !/outputs/reports/phase_2_feature_count_reconciliation.*

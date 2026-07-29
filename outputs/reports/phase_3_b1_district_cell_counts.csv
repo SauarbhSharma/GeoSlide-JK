@@ -1,0 +1,21 @@
+district_id,district_name,normalized_name,source_name,source_identifier,valid_cell_count,rasterized_area_sq_km,vector_area_sq_km,area_difference_percent,notes
+1,Anantnag,anantnag,ANANTNAG,7,277920,2779.2,2779.37,-0.01,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+2,Bandipora,bandipora,BANDIPURA,12,405505,4055.05,4055.15,-0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+3,Baramulla,baramulla,BARAMULA,8,206054,2060.54,2060.6,-0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+4,Budgam,budgam,BADGAM,11,124400,1244.0,1244.12,-0.01,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+5,Doda,doda,DODA,23,237886,2378.86,2378.64,0.01,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+6,Ganderbal,ganderbal,GANDERBAL,13,161061,1610.61,1610.66,-0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+7,Jammu,jammu,JAMMU,25,240855,2408.55,2408.41,0.01,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+8,Kathua,kathua,KATHUA,9,249992,2499.92,2500.02,-0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+9,Kishtwar,kishtwar,KISHTWAR,22,817258,8172.58,8172.65,-0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+10,Kulgam,kulgam,KULGAM,14,95682,956.82,956.71,0.01,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+11,Kupwara,kupwara,KUPWARA,15,274326,2743.26,2743.16,0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+12,Poonch,poonch,PUNCH,6,424488,4244.88,4244.79,0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+13,Pulwama,pulwama,PULWAMA,16,89634,896.34,896.22,0.01,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+14,Rajouri,rajouri,RAJAURI,17,263603,2636.03,2636.08,-0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+15,Ramban,ramban,RAMBAN,18,131724,1317.24,1317.3,-0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+16,Reasi,reasi,RIASI,19,193194,1931.94,1931.8,0.01,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+17,Samba,samba,SAMBA,24,92741,927.41,927.43,-0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+18,Shopian,shopian,SHUPIYAN,20,76081,760.81,760.76,0.01,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+19,Srinagar,srinagar,SRINAGAR,21,28596,285.96,286.03,-0.02,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
+20,Udhampur,udhampur,UDHAMPUR,10,228211,2282.11,2282.0,0.0,Deterministic 1-20 integer ID mapped to EPSG:32643 master grid
