@@ -42,7 +42,7 @@ export default function InteractiveRiskExplorer() {
               <div className="flex items-center space-x-2 font-medium">
                 <Shield className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>
-                  <strong>GeoSlide-JK v1.0.0 Live:</strong> Static XGBoost susceptibility model (ROC-AUC: 0.8694) & 100m EPSG:32643 dynamic hazard index layers are fully active across all 20 J&K UT districts.
+                  <strong>GeoSlide-JK v1.0.0 Live:</strong> The static XGBoost susceptibility model and 100 m scenario-based dynamic hazard layers are available across all 20 J&K UT districts. Dynamic rainfall outputs are research proxy products and not operational observations.
                 </span>
               </div>
               <span className="font-mono text-[10px] bg-emerald-900 px-2 py-0.5 rounded text-emerald-100 shrink-0 ml-2">
