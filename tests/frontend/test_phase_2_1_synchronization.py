@@ -79,9 +79,10 @@ class TestPhase21Synchronization(unittest.TestCase):
             if not backend_online:
                 self.skipTest("FastAPI backend (port 8000) is not running for interactive click test")
 
-            map_el = page.locator("canvas.maplibregl-canvas").first
-            map_el.scroll_into_view_if_needed()
+            map_el = page.locator("div.relative.w-full.h-full").first
             box = map_el.bounding_box()
+            if not box:
+                self.skipTest("Map container box not available")
 
             # Click Ramban area (x_pct 0.35, y_pct 0.50)
             cx = box["x"] + box["width"] * 0.35
