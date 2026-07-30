@@ -53,7 +53,6 @@ streamlit_app/
 Dockerfile
 .dockerignore
 docker-compose*.yml
-deploy/
 render.yaml
 
 # Miscellaneous
