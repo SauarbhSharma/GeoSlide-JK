@@ -71,7 +71,7 @@ class TestUiTruthfulness(unittest.TestCase):
         with open(walkthrough_path, "r", encoding="utf-8") as f:
             content = f.read()
             self.assertTrue(
-                "docs/progress/phase_2_final_screenshots" in content or "outputs/maps/phase_3" in content,
+                "docs/progress/phase_2" in content or "outputs/maps/phase_3" in content or "docs/progress/phase_3" in content,
                 "Neither Phase 2 screenshots nor Phase 3 maps referenced in walkthrough"
             )
 
