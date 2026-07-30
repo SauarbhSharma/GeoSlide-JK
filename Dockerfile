@@ -6,6 +6,7 @@
 FROM node:20-slim AS frontend-builder
 
 WORKDIR /build/web
+RUN mkdir -p public
 COPY apps/web/package.json apps/web/package-lock.json ./
 RUN npm ci --prefer-offline
 
