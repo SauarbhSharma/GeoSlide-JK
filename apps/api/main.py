@@ -66,6 +66,7 @@ DISTRICTS_GEOJSON = PROCESSED_BOUNDARIES / "jk_districts.geojson"
 UT_GEOJSON = PROCESSED_BOUNDARIES / "jk_ut_boundary.geojson"
 
 districts_cache = None
+districts_gdf_cache = None
 
 
 def get_districts_geojson():
@@ -74,6 +75,13 @@ def get_districts_geojson():
         with open(DISTRICTS_GEOJSON, 'r', encoding='utf-8') as f:
             districts_cache = json.load(f)
     return districts_cache
+
+
+def get_districts_gdf():
+    global districts_gdf_cache
+    if districts_gdf_cache is None and DISTRICTS_GEOJSON.exists():
+        districts_gdf_cache = gpd.read_file(DISTRICTS_GEOJSON)
+    return districts_gdf_cache
 
 
 def sample_cog_value(cog_path: Path, lat: float, lon: float) -> Optional[float]:
@@ -234,8 +242,8 @@ def get_terrain_click_value(
 
     district_name = "Outside J&K UT Boundary"
     inside_ut = False
-    if DISTRICTS_GEOJSON.exists():
-        gdf_dist = gpd.read_file(DISTRICTS_GEOJSON)
+    gdf_dist = get_districts_gdf()
+    if gdf_dist is not None:
         pt = Point(lon, lat)
         matched = gdf_dist[gdf_dist.contains(pt)]
         if len(matched) > 0:

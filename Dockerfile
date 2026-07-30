@@ -45,8 +45,7 @@ COPY data/processed/hazard/ ./data/processed/hazard/
 COPY data/processed/rainfall/ ./data/processed/rainfall/
 COPY outputs/reports/ ./outputs/reports/
 
-# Copy terrain rasters if available (optional — app degrades gracefully)
-RUN mkdir -p ./data/processed/terrain
+COPY data/processed/terrain/ ./data/processed/terrain/
 
 # Copy Next.js standalone build
 COPY --from=frontend-builder /build/web/.next/standalone ./apps/web/
