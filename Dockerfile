@@ -17,13 +17,13 @@ RUN npm run build
 # ─── Final runtime stage ────────────────────────────────────────────────────
 FROM python:3.11-slim
 
-# Install Node.js 20 and curl in runtime image
+# Reuse the verified Node.js runtime from the frontend-builder image.
+# The Next.js standalone server only requires the node executable.
+COPY --from=frontend-builder /usr/local/bin/node /usr/local/bin/node
+
+# curl is required by deploy/start.sh for FastAPI health checking.
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl ca-certificates gnupg && \
-    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
-    apt-get install -y --no-install-recommends nodejs && \
-    apt-get purge -y gnupg && \
-    apt-get autoremove -y && \
+    apt-get install -y --no-install-recommends curl ca-certificates libstdc++6 && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
