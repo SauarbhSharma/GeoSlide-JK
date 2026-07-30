@@ -63,14 +63,14 @@ export default function ModelTransparency() {
                   <span className="w-2 h-2 rounded-full bg-blue-400"></span>
                   <span>Logistic Regression (Baseline)</span>
                 </span>
-                <span className="text-slate-400">ROC-AUC: 0.7420</span>
+                <span className="text-slate-400">Evaluated</span>
               </li>
               <li className="flex items-center justify-between bg-navy-800/60 p-2 rounded border border-navy-700">
                 <span className="flex items-center space-x-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
                   <span>Random Forest Classifier</span>
                 </span>
-                <span className="text-slate-400">ROC-AUC: 0.8410</span>
+                <span className="text-slate-400">Evaluated</span>
               </li>
               <li className="flex items-center justify-between bg-navy-800/60 p-2 rounded border border-emerald-500/50 bg-emerald-950/40 font-bold">
                 <span className="flex items-center space-x-2">
@@ -156,7 +156,7 @@ export default function ModelTransparency() {
             <span>NLSM Benchmark Audit Note</span>
           </h2>
           <p className="text-slate-300">
-            NLSM benchmark unavailable because the supplied raster was constant NoData over the evaluated J&K domain.
+            Pre-existing NLSM benchmark comparison was unavailable because the supplied raster was constant NoData (127) over the evaluated J&K domain.
           </p>
         </div>
 

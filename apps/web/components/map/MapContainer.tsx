@@ -5,7 +5,8 @@ import * as maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Layers, MapPin, Compass, Info, AlertTriangle, RotateCcw } from "lucide-react";
 import { MapErrorBoundary } from "./MapErrorBoundary";
-import { MASTER_LAYER_REGISTRY, LayerRegistryEntry } from "@/lib/layerRegistry";
+import { MASTER_LAYER_REGISTRY } from "@/lib/layerRegistry";
+import { apiUrl } from "@/lib/api";
 
 interface MapContainerProps {
   onSelectLocation?: (lat: number, lon: number) => void;
@@ -25,21 +26,25 @@ export interface TerrainInspectionResponse {
   inside_study_area: boolean;
   data_available: boolean;
   district: string;
-  terrain: {
+  terrain?: {
     elevation_m: number | null;
     slope_deg: number | null;
     aspect_deg: number | null;
     hillshade: number | null;
   };
-  source?: {
-    dem: string;
-    resolution_m: number;
-    processing_crs: string;
-    web_crs?: string;
+  susceptibility?: {
+    probability: number | null;
+    class_rating: string | null;
+    model: string;
+  };
+  dynamic_hazard?: {
+    rainfall_accum_24h_mm: number | null;
+    p90_baseline_mm: number | null;
+    hazard_index: number | null;
+    hazard_class: string | null;
   };
 }
 
-// Helper to format numbers safely without throwing on null, undefined, NaN or Infinity
 function formatFiniteNumber(val: any, decimals: number = 2, unit: string = ""): string {
   if (val === null || val === undefined) return "N/A";
   const num = Number(val);
@@ -51,7 +56,7 @@ export function MapContainer({
   onSelectLocation,
   selectedDistrict,
   onSelectDistrict,
-  activeLayers = ["jk_districts", "jk_ut_boundary", "nh44"],
+  activeLayers = ["jk_districts", "jk_ut_boundary", "nh44", "susceptibility_prob"],
 }: MapContainerProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<any>(null);
@@ -63,19 +68,43 @@ export function MapContainer({
   const [inspectionData, setInspectionData] = useState<TerrainInspectionResponse | null>(null);
   const [loadingInspect, setLoadingInspect] = useState<boolean>(false);
   const [inspectionError, setInspectionError] = useState<string | null>(null);
+  const [basemapError, setBasemapError] = useState<boolean>(false);
 
-  // Layer Visibility Controls
+  // Synchronized layer visibility state
   const [layersState, setLayersState] = useState<Record<string, boolean>>(() => {
     const initial: Record<string, boolean> = {};
     MASTER_LAYER_REGISTRY.forEach((l) => {
-      initial[l.id] = l.defaultVisibility;
+      initial[l.id] = activeLayers.includes(l.id) || l.defaultVisibility;
     });
     return initial;
   });
 
+  // Sync when activeLayers prop changes from parent
+  useEffect(() => {
+    setLayersState((prev) => {
+      const next = { ...prev };
+      MASTER_LAYER_REGISTRY.forEach((l) => {
+        next[l.id] = activeLayers.includes(l.id);
+      });
+
+      if (mapRef.current) {
+        const map = mapRef.current;
+        MASTER_LAYER_REGISTRY.forEach((l) => {
+          if (map.getLayer && map.getLayer(l.id)) {
+            map.setLayoutProperty(l.id, "visibility", next[l.id] ? "visible" : "none");
+          }
+        });
+      }
+      return next;
+    });
+  }, [activeLayers]);
+
   const toggleLayer = (layerId: string) => {
     setLayersState((prev) => {
-      const next = { ...prev, [layerId]: !prev[layerId] };
+      const isCurrentlyActive = !!prev[layerId];
+      const nextState = !isCurrentlyActive;
+      const next = { ...prev, [layerId]: nextState };
+
       if (mapRef.current) {
         const map = mapRef.current;
         const layerIdMap: Record<string, string[]> = {
@@ -95,7 +124,7 @@ export function MapContainer({
         const targetIds = layerIdMap[layerId] || [layerId];
         targetIds.forEach((id) => {
           if (map.getLayer && map.getLayer(id)) {
-            map.setLayoutProperty(id, "visibility", next[layerId] ? "visible" : "none");
+            map.setLayoutProperty(id, "visibility", nextState ? "visible" : "none");
           }
         });
       }
@@ -128,7 +157,6 @@ export function MapContainer({
             tiles: [
               "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
               "https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
-              "https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
             ],
             tileSize: 256,
             attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
@@ -144,16 +172,20 @@ export function MapContainer({
           },
         ],
       },
-      center: [75.0, 33.7], // Centered over J&K UT
+      center: [75.0, 33.7],
       zoom: 7.2,
       minZoom: 6.5,
       maxZoom: 15.0,
     });
 
     mapRef.current = map;
-
-    // Fit Map to J&K UT Boundary Bounds
     map.fitBounds([[73.2, 32.2], [77.8, 35.2]], { padding: 30 });
+
+    map.on("error", (e: any) => {
+      if (e && e.error && (e.error.message?.includes("basemap") || e.error.message?.includes("carto"))) {
+        setBasemapError(true);
+      }
+    });
 
     setTimeout(() => {
       if (map && map.resize) map.resize();
@@ -162,11 +194,51 @@ export function MapContainer({
     map.on("load", async () => {
       if (map && map.resize) map.resize();
 
+      // Add Raster Tile Layers
+      const rasterLayersConfig = [
+        { id: "susceptibility_prob", path: "/api/v1/tiles/susceptibility_prob/{z}/{x}/{y}.png", opacity: 0.75 },
+        { id: "susceptibility_class", path: "/api/v1/tiles/susceptibility_class/{z}/{x}/{y}.png", opacity: 0.75 },
+        { id: "dynamic_hazard_index", path: "/api/v1/tiles/dynamic_hazard_index/{z}/{x}/{y}.png", opacity: 0.75 },
+        { id: "dynamic_hazard_class", path: "/api/v1/tiles/dynamic_hazard_class/{z}/{x}/{y}.png", opacity: 0.75 },
+        { id: "dem_elevation", path: "/api/v1/tiles/elevation/{z}/{x}/{y}.png", opacity: 0.6 },
+        { id: "slope", path: "/api/v1/tiles/slope/{z}/{x}/{y}.png", opacity: 0.6 },
+        { id: "aspect", path: "/api/v1/tiles/aspect/{z}/{x}/{y}.png", opacity: 0.5 },
+        { id: "hillshade", path: "/api/v1/tiles/hillshade/{z}/{x}/{y}.png", opacity: 0.5 },
+      ];
+
+      rasterLayersConfig.forEach((r) => {
+        try {
+          map.addSource(`${r.id}-src`, {
+            type: "raster",
+            tiles: [apiUrl(r.path)],
+            tileSize: 256,
+            minzoom: 0,
+            maxzoom: 15,
+          });
+
+          const isVisible = activeLayers.includes(r.id) || (r.id === "susceptibility_prob");
+
+          map.addLayer({
+            id: r.id,
+            type: "raster",
+            source: `${r.id}-src`,
+            paint: {
+              "raster-opacity": r.opacity,
+            },
+            layout: {
+              visibility: isVisible ? "visible" : "none",
+            },
+          });
+        } catch (e) {
+          console.warn(`Error adding raster layer ${r.id}:`, e);
+        }
+      });
+
+      // Add Vector Layers
       try {
-        const res = await fetch("http://localhost:8000/api/v1/districts/boundary");
+        const res = await fetch(apiUrl("/api/v1/districts/boundary"));
         if (res.ok) {
           const districtsGeoJson = await res.json();
-
           if (districtsGeoJson && districtsGeoJson.type === "FeatureCollection") {
             map.addSource("jk-districts-src", {
               type: "geojson",
@@ -179,7 +251,7 @@ export function MapContainer({
               source: "jk-districts-src",
               paint: {
                 "fill-color": "#0ea5e9",
-                "fill-opacity": 0.1,
+                "fill-opacity": 0.08,
               },
             });
 
@@ -225,7 +297,7 @@ export function MapContainer({
           }
         }
       } catch (err) {
-        console.warn("Could not fetch districts boundary from backend:", err);
+        console.warn("Could not fetch districts boundary:", err);
       }
 
       const loadVectorLayer = async (
@@ -235,7 +307,7 @@ export function MapContainer({
         paintProps: any
       ) => {
         try {
-          const res = await fetch(`http://localhost:8000/api/v1/static-layers/${backendId}`);
+          const res = await fetch(apiUrl(`/api/v1/static-layers/${backendId}`));
           if (res.ok) {
             const data = await res.json();
             if (data && data.type === "FeatureCollection") {
@@ -308,7 +380,7 @@ export function MapContainer({
       });
     });
 
-    // Hardened Map Click Handler
+    // Map Click Inspector Handler
     map.on("click", async (e: any) => {
       if (!e || !e.lngLat) return;
       const { lat, lng } = e.lngLat;
@@ -337,7 +409,7 @@ export function MapContainer({
       setActiveTab("inspect");
 
       try {
-        const url = `http://localhost:8000/api/v1/terrain/value?lat=${lat.toFixed(5)}&lon=${lng.toFixed(5)}`;
+        const url = apiUrl(`/api/v1/terrain/value?lat=${lat.toFixed(5)}&lon=${lng.toFixed(5)}`);
         const res = await fetch(url, { signal: controller.signal });
 
         if (!res.ok) {
@@ -354,19 +426,17 @@ export function MapContainer({
             location: { lat, lon: lng },
             inside_study_area: false,
             data_available: false,
-            district: "Outside J&K UT Boundary",
-            terrain: { elevation_m: null, slope_deg: null, aspect_deg: null, hillshade: null }
+            district: "Outside J&K UT Boundary"
           });
           setInspectionError(errDetail);
           return;
         }
 
         const data: TerrainInspectionResponse = await res.json();
-
         if (controller.signal.aborted) return;
 
         setInspectionData(data);
-        if (data.district) {
+        if (data.district && data.district !== "Outside J&K UT Boundary") {
           setCurrentDistrict(data.district);
           if (onSelectDistrict) onSelectDistrict(data.district);
         }
@@ -378,23 +448,33 @@ export function MapContainer({
         const safeSlope = formatFiniteNumber(data.terrain?.slope_deg, 2, "°");
         const safeAspect = formatFiniteNumber(data.terrain?.aspect_deg, 2, "°");
 
+        const safeSuscProb = data.susceptibility?.probability != null ? (data.susceptibility.probability * 100).toFixed(1) + '%' : 'N/A';
+        const safeSuscClass = data.susceptibility?.class_rating || 'N/A';
+        const safeHazIdx = data.dynamic_hazard?.hazard_index != null ? data.dynamic_hazard.hazard_index.toFixed(4) : 'N/A';
+        const safeHazClass = data.dynamic_hazard?.hazard_class || 'N/A';
+        const safeRain = data.dynamic_hazard?.rainfall_accum_24h_mm != null ? data.dynamic_hazard.rainfall_accum_24h_mm.toFixed(1) + ' mm' : 'N/A';
+
         const popupHtml = `
-          <div style="font-family: sans-serif; padding: 10px; color: #f8fafc; background: #090d16; border: 1px solid #334155; border-radius: 8px; font-size: 12px; line-height: 1.5; min-width: 200px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+          <div style="font-family: sans-serif; padding: 10px; color: #f8fafc; background: #090d16; border: 1px solid #334155; border-radius: 8px; font-size: 12px; line-height: 1.5; min-width: 240px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
             <div style="font-weight: bold; color: #38bdf8; font-size: 13px; margin-bottom: 6px; border-bottom: 1px solid #1e293b; padding-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
               <span>${safeDist}</span>
-              <span style="font-size: 9px; font-family: monospace; background: #0284c7; color: #ffffff; padding: 2px 6px; border-radius: 4px;">Phase 2</span>
+              <span style="font-size: 9px; font-family: monospace; background: #0284c7; color: #ffffff; padding: 2px 6px; border-radius: 4px;">v1.0.0</span>
             </div>
-            <div style="color: #cbd5e1;"><b>Latitude:</b> ${formatFiniteNumber(lat, 4)}°N</div>
-            <div style="color: #cbd5e1;"><b>Longitude:</b> ${formatFiniteNumber(lng, 4)}°E</div>
+            <div style="color: #cbd5e1;"><b>Lat / Lon:</b> ${formatFiniteNumber(lat, 4)}°N, ${formatFiniteNumber(lng, 4)}°E</div>
             <div style="margin-top: 6px; background: #0f172a; padding: 6px; border-radius: 4px; border: 1px solid #1e293b;">
               <div><b>Elevation:</b> <span style="color: #facc15; font-weight: bold;">${safeElev}</span></div>
               <div><b>Slope Angle:</b> <span style="color: #f97316; font-weight: bold;">${safeSlope}</span></div>
               <div><b>Aspect:</b> <span style="color: #c084fc;">${safeAspect}</span></div>
             </div>
+            <div style="margin-top: 6px; background: #0f172a; padding: 6px; border-radius: 4px; border: 1px solid #1e293b;">
+              <div><b>Susceptibility:</b> <span style="color: #f59e0b; font-weight: bold;">${safeSuscClass} (${safeSuscProb})</span></div>
+              <div><b>Dynamic Hazard:</b> <span style="color: #ef4444; font-weight: bold;">${safeHazClass} (${safeHazIdx})</span></div>
+              <div><b>24h Rain Proxy:</b> <span style="color: #38bdf8;">${safeRain}</span></div>
+            </div>
             <div style="font-size: 9px; color: #94a3b8; margin-top: 6px; border-top: 1px solid #1e293b; padding-top: 4px;">
               <div>Web Map: EPSG:4326 / Web Mercator</div>
               <div>Processing CRS: EPSG:32643</div>
-              <div style="color: #64748b; margin-top: 2px;">${data.data_available ? "Copernicus GLO-30 30m DEM" : data.message || "No terrain data"}</div>
+              <div style="color: #64748b; margin-top: 2px;">${data.data_available ? 'Copernicus GLO-30 & XGBoost 100m Grid' : data.message || 'No terrain data'}</div>
             </div>
           </div>
         `;
@@ -417,8 +497,7 @@ export function MapContainer({
           location: { lat, lon: lng },
           inside_study_area: false,
           data_available: false,
-          district: "Unknown",
-          terrain: { elevation_m: null, slope_deg: null, aspect_deg: null, hillshade: null }
+          district: "Unknown"
         });
       } finally {
         setLoadingInspect(false);
@@ -435,6 +514,14 @@ export function MapContainer({
     <div className="relative w-full h-full min-h-[620px] bg-navy-950 rounded-xl overflow-hidden border border-slate-800 shadow-2xl flex">
       {/* Map Container Canvas */}
       <div ref={mapContainerRef} className="w-full h-full min-h-[620px]" />
+
+      {/* Basemap Fallback Alert Banner */}
+      {basemapError && (
+        <div className="absolute top-16 left-4 z-20 bg-amber-950/90 border border-amber-500/80 text-amber-200 px-3 py-1.5 rounded-lg text-xs flex items-center space-x-2 shadow-xl">
+          <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0" />
+          <span>Basemap unavailable — analytical layers & local boundaries remain fully operational.</span>
+        </div>
+      )}
 
       {/* Title, CRS Wording & Reset Button Banner */}
       <div className="absolute top-4 left-4 z-10 bg-slate-900/95 backdrop-blur-md p-3 rounded-lg border border-slate-700/80 shadow-xl max-w-sm">
@@ -508,13 +595,13 @@ export function MapContainer({
             <MapErrorBoundary fallbackMessage="Unable to display layer controls.">
               <div className="space-y-3">
                 <div className="text-[11px] font-bold uppercase text-slate-400 tracking-wider">
-                  Phase 2 Master Layer Registry
+                  Master Layer Registry
                 </div>
 
                 <div className="space-y-1.5">
                   {MASTER_LAYER_REGISTRY.map((layer) => {
                     const isChecked = layersState[layer.id] ?? layer.defaultVisibility;
-                    const isAvailable = layer.availability === "Available";
+                    const isAvailable = layer.availability === "Available" || layer.availability === "Scenario / Proxy Mode";
                     return (
                       <label
                         key={layer.id}
@@ -554,7 +641,7 @@ export function MapContainer({
 
                 {loadingInspect ? (
                   <div className="py-6 text-center text-slate-400 animate-pulse">
-                    Sampling terrain rasters at clicked location...
+                    Sampling terrain & ML rasters at clicked location...
                   </div>
                 ) : inspectionError ? (
                   <div className="space-y-2 bg-rose-950/40 p-3 rounded-lg border border-rose-800/60 text-rose-200">
@@ -613,16 +700,49 @@ export function MapContainer({
                       </div>
                     </div>
 
+                    {inspectionData.susceptibility && (
+                      <div className="grid grid-cols-2 gap-2 text-xs pt-2 border-t border-slate-800/80">
+                        <div>
+                          <span className="text-slate-400 block text-[10px]">Susceptibility</span>
+                          <span className="font-bold text-amber-400 text-sm">
+                            {inspectionData.susceptibility.class_rating || "N/A"}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block text-[10px]">Probability</span>
+                          <span className="font-bold text-amber-300 text-sm">
+                            {inspectionData.susceptibility.probability != null
+                              ? (inspectionData.susceptibility.probability * 100).toFixed(1) + "%"
+                              : "N/A"}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block text-[10px]">Dynamic Hazard</span>
+                          <span className="font-bold text-rose-400 text-sm">
+                            {inspectionData.dynamic_hazard?.hazard_class || "N/A"}
+                          </span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block text-[10px]">24h Rain Proxy</span>
+                          <span className="font-bold text-sky-400 text-sm">
+                            {inspectionData.dynamic_hazard?.rainfall_accum_24h_mm != null
+                              ? inspectionData.dynamic_hazard.rainfall_accum_24h_mm.toFixed(1) + " mm"
+                              : "N/A"}
+                          </span>
+                        </div>
+                      </div>
+                    )}
+
                     <div className="text-[10px] text-slate-500 pt-2 border-t border-slate-800/80 space-y-0.5 font-mono">
                       <div>Web Map: EPSG:4326 / Web Mercator</div>
                       <div>Processing CRS: EPSG:32643</div>
-                      <div className="text-slate-400">{inspectionData.source?.dem || "Copernicus GLO-30 DEM"}</div>
+                      <div className="text-slate-400">Copernicus GLO-30 & XGBoost 100m Grid</div>
                     </div>
                   </div>
                 ) : (
                   <div className="py-6 text-center text-slate-400">
                     <MapPin className="w-8 h-8 text-sky-500/50 mx-auto mb-2" />
-                    Click any point on the map to inspect terrain elevation & slope.
+                    Click any point on the map to inspect terrain elevation, slope, ML susceptibility & dynamic hazard.
                   </div>
                 )}
               </div>
@@ -670,7 +790,7 @@ export function MapContainer({
                   </div>
                   <div className="flex items-center space-x-2.5">
                     <span className="w-3 h-3 rounded-full bg-emerald-400 border border-emerald-800" />
-                    <span>Hospitals & Clinics (1,079)</span>
+                    <span>Hospitals & Healthcare (877)</span>
                   </div>
                 </div>
               </div>

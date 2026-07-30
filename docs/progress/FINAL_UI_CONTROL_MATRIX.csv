@@ -1,0 +1,14 @@
+page,control,expected_action,actual_result,status,evidence
+/,District Selector,Filter map to district,Zooms viewport to selected district,PASS,01_command_centre.png
+/,Sidebar Toggle Eye,Toggle layer visibility on map,Updates MapLibre layer layout visibility,PASS,01_command_centre.png
+/,Map Layers Checkbox,Toggle layer visibility from map panel,Synchronized with sidebar and map,PASS,01_command_centre.png
+/,Map Click Inspector,Sample cell values on click,Populates inspector with real raster values,PASS,02b_inspector_active.png
+/,Reset to J&K Button,Reset map bounds,Fits map viewport to [73.2 32.2 77.8 35.2],PASS,01_command_centre.png
+/explorer,Layer Checkbox,Toggle susceptibility/hazard rasters,Renders PNG tiles over map,PASS,02_risk_explorer.png
+/explorer,Inspector Tab,Show clicked pixel values,Displays elevation slope susc hazard,PASS,02b_inspector_active.png
+/districts,District Dropdown,Change active district profile,Fetches zonal summary from API,PASS,03_district_ramban.png
+/rainfall,Sample Values Button,Query 24h rain proxy at location,Displays 24h proxy and P90 baseline,PASS,04_rainfall_monitor.png
+/location-check,Query Button,Execute point-risk check,Returns HTTP 200 with full advisory,PASS,05a_location_panthyal.png
+/location-check,Preset Dropdown,Populate preset coordinates,Loads Ramban Jammu Srinagar presets,PASS,05b_location_jammu.png
+/location-check,Geolocation Button,Request browser GPS position,Handles location request cleanly,PASS,05c_location_srinagar.png
+/status,Page Load Health Check,Poll backend microservices,Displays HTTP 200 for 9 endpoints,PASS,07_data_system_status.png

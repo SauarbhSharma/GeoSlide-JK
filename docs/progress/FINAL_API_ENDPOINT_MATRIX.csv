@@ -1,0 +1,23 @@
+path,method,description,status_code,response_format,functional_status
+/api/v1/health,GET,System health & module availability,200,JSON,Healthy
+/api/v1/status,GET,Pipeline execution lifecycle & phase status,200,JSON,Healthy
+/api/v1/districts,GET,List 20 J&K UT districts,200,JSON,Healthy
+/api/v1/districts/boundary,GET,GeoJSON boundaries for 20 districts,200,GeoJSON,Healthy
+/api/v1/terrain/click,GET,Point raster query (terrain + ML + hazard),200,JSON,Healthy
+/api/v1/terrain/value,GET,Alias for point raster query,200,JSON,Healthy
+/api/v1/location-check,GET,Location risk check with advisory,200,JSON,Healthy
+/api/v1/tiles/susceptibility_prob/{z}/{x}/{y}.png,GET,Static susceptibility probability PNG raster tiles,200,image/png,Healthy
+/api/v1/tiles/susceptibility_class/{z}/{x}/{y}.png,GET,Static susceptibility class PNG raster tiles,200,image/png,Healthy
+/api/v1/tiles/dynamic_hazard_index/{z}/{x}/{y}.png,GET,Dynamic hazard index PNG raster tiles,200,image/png,Healthy
+/api/v1/tiles/dynamic_hazard_class/{z}/{x}/{y}.png,GET,Dynamic hazard class PNG raster tiles,200,image/png,Healthy
+/api/v1/tiles/elevation/{z}/{x}/{y}.png,GET,Copernicus DEM elevation PNG raster tiles,200,image/png,Healthy
+/api/v1/tiles/slope/{z}/{x}/{y}.png,GET,Slope angle PNG raster tiles,200,image/png,Healthy
+/api/v1/tiles/aspect/{z}/{x}/{y}.png,GET,Aspect orientation PNG raster tiles,200,image/png,Healthy
+/api/v1/tiles/hillshade/{z}/{x}/{y}.png,GET,Analytical hillshade PNG raster tiles,200,image/png,Healthy
+/api/v1/layers,GET,Master layer registry manifest,200,JSON,Healthy
+/api/v1/static-layers,GET,Vector layers list,200,JSON,Healthy
+/api/v1/static-layers/{layer_name},GET,Vector layer GeoJSON data,200,GeoJSON,Healthy
+/api/v1/summary/statewide,GET,Statewide zonal statistics & ML metrics,200,JSON,Healthy
+/api/v1/summary/district/{district_id},GET,District zonal summary statistics,200,JSON,Healthy
+/api/v1/transparency,GET,Model transparency & leakage safeguards,200,JSON,Healthy
+/api/v1/map/config,GET,Map viewport & CRS configuration,200,JSON,Healthy

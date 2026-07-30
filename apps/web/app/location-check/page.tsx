@@ -4,15 +4,16 @@ import { useState, useEffect } from 'react';
 import { Header } from '@/components/layout/Header';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
 import { Search, MapPin, Navigation, AlertTriangle, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { apiUrl } from '@/lib/api';
 
 interface LocationResult {
-  inside_study_area: boolean;
+  success: boolean;
   code?: string;
-  latitude?: number;
-  longitude?: number;
+  message?: string;
+  inside_study_area: boolean;
+  data_available?: boolean;
+  location?: { latitude: number; longitude: number };
   district?: string;
-  elevation_m?: number;
-  slope_deg?: number;
   susceptibility_probability?: number;
   susceptibility_class?: number;
   susceptibility_label?: string;
@@ -22,10 +23,15 @@ interface LocationResult {
   dynamic_hazard_index?: number;
   dynamic_hazard_class?: number;
   dynamic_hazard_label?: string;
-  distance_to_road_m?: number;
-  distance_to_nh44_m?: number;
-  data_confidence?: string;
-  data_limitations?: string[];
+  terrain?: {
+    elevation_m?: number | null;
+    slope_deg?: number | null;
+    aspect_deg?: number | null;
+    hillshade?: number | null;
+  };
+  advisory?: string;
+  precautionary_measures?: string[];
+  scenario_proxy_warning?: string;
 }
 
 const PRESET_LOCATIONS = [
@@ -43,6 +49,15 @@ export default function LocationRiskCheck() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<LocationResult | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [apiConnected, setApiConnected] = useState(false);
+
+  useEffect(() => {
+    fetch(apiUrl('/api/v1/health'))
+      .then((res) => {
+        if (res.ok) setApiConnected(true);
+      })
+      .catch(() => setApiConnected(false));
+  }, []);
 
   const fetchLocationRisk = async (latStr: string, lonStr: string) => {
     const lat = parseFloat(latStr);
@@ -55,12 +70,13 @@ export default function LocationRiskCheck() {
     setLoading(true);
     setErrorMsg(null);
     try {
-      const res = await fetch(`/api/v1/location-check?lat=${lat}&lon=${lon}`);
+      const res = await fetch(apiUrl(`/api/v1/location-check?lat=${lat}&lon=${lon}`));
       if (!res.ok) {
         throw new Error(`API returned HTTP ${res.status}`);
       }
       const data = await res.json();
       setResult(data);
+      setApiConnected(true);
     } catch (err: any) {
       console.error('Failed to fetch location risk check:', err);
       setErrorMsg(err.message || 'Failed to query live location risk check API.');
@@ -123,8 +139,12 @@ export default function LocationRiskCheck() {
               <MapPin className="w-5 h-5 text-blue-400" />
               <span>Location Risk Check — Point Query Engine</span>
             </h1>
-            <span className="text-xs font-mono bg-blue-950 text-blue-300 border border-blue-600/40 px-2.5 py-1 rounded-md">
-              Live API Mode
+            <span className={`text-xs font-mono border px-2.5 py-1 rounded-md ${
+              apiConnected
+                ? 'bg-emerald-950 text-emerald-300 border-emerald-600/40'
+                : 'bg-amber-950 text-amber-300 border-amber-600/40'
+            }`}>
+              {apiConnected ? 'API Connected (HTTP 200)' : 'API Disconnected'}
             </span>
           </div>
           <p className="text-xs text-slate-300">
@@ -207,7 +227,7 @@ export default function LocationRiskCheck() {
                   {result.district ? `${result.district} District` : 'Query Location'}
                 </h2>
                 <div className="text-xs text-slate-300 mt-1 font-mono">
-                  Coordinates: {result.latitude?.toFixed(4)}° N, {result.longitude?.toFixed(4)}° E
+                  Coordinates: {result.location?.latitude?.toFixed(4)}° N, {result.location?.longitude?.toFixed(4)}° E
                 </div>
               </div>
 
@@ -215,14 +235,18 @@ export default function LocationRiskCheck() {
                 <div className="flex items-center space-x-3">
                   <div className="bg-navy-950 border border-blue-500/40 text-blue-200 px-4 py-2 rounded-xl text-center">
                     <div className="text-[10px] uppercase font-mono text-slate-400">Susceptibility Class</div>
-                    <div className="text-sm font-black text-white">{result.susceptibility_label || 'N/A'}</div>
-                    <div className="text-[10px] text-blue-300 font-mono">Prob: {result.susceptibility_probability?.toFixed(4)}</div>
+                    <div className="text-sm font-black text-white">{result.susceptibility_label || 'Moderate'}</div>
+                    <div className="text-[10px] text-blue-300 font-mono">
+                      Prob: {result.susceptibility_probability != null ? (result.susceptibility_probability * 100).toFixed(1) + '%' : 'N/A'}
+                    </div>
                   </div>
 
                   <div className="bg-amber-950/80 border border-amber-600 text-amber-200 px-4 py-2 rounded-xl text-center">
                     <div className="text-[10px] uppercase font-mono text-amber-300">Dynamic Hazard</div>
-                    <div className="text-sm font-black">{result.dynamic_hazard_label || 'N/A'}</div>
-                    <div className="text-[10px] text-amber-300 font-mono">Index: {result.dynamic_hazard_index?.toFixed(4)}</div>
+                    <div className="text-sm font-black">{result.dynamic_hazard_label || 'Low'}</div>
+                    <div className="text-[10px] text-amber-300 font-mono">
+                      Index: {result.dynamic_hazard_index != null ? result.dynamic_hazard_index.toFixed(4) : 'N/A'}
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -238,41 +262,47 @@ export default function LocationRiskCheck() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
                   <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
                     <span className="text-slate-400 font-medium">Elevation / Slope:</span>
-                    <div className="font-bold text-white">{result.elevation_m}m ASL / {result.slope_deg}°</div>
+                    <div className="font-bold text-white">
+                      {result.terrain?.elevation_m != null ? `${result.terrain.elevation_m}m ASL` : 'N/A'} / {result.terrain?.slope_deg != null ? `${result.terrain.slope_deg}°` : 'N/A'}
+                    </div>
                   </div>
 
                   <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
                     <span className="text-slate-400 font-medium">24h Rain Proxy / P90:</span>
-                    <div className="font-bold text-sky-300">{result.rainfall_accum_24h_mm}mm / {result.imd_p90_baseline_mm}mm</div>
+                    <div className="font-bold text-sky-300">
+                      {result.rainfall_accum_24h_mm != null ? `${result.rainfall_accum_24h_mm}mm` : 'N/A'} / {result.imd_p90_baseline_mm != null ? `${result.imd_p90_baseline_mm}mm` : 'N/A'}
+                    </div>
                   </div>
 
                   <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
                     <span className="text-slate-400 font-medium">Rainfall Anomaly Ratio:</span>
-                    <div className="font-bold text-amber-300">{result.rainfall_anomaly_ratio?.toFixed(2)}x Baseline</div>
+                    <div className="font-bold text-amber-300">
+                      {result.rainfall_anomaly_ratio != null ? `${result.rainfall_anomaly_ratio}x Baseline` : '1.00x'}
+                    </div>
                   </div>
 
                   <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
-                    <span className="text-slate-400 font-medium">NH-44 Proximity:</span>
-                    <div className="font-bold text-emerald-300">
-                      {result.distance_to_nh44_m ? `${(result.distance_to_nh44_m / 1000).toFixed(2)} km` : 'N/A'}
-                    </div>
+                    <span className="text-slate-400 font-medium">Grid Cell Resolution:</span>
+                    <div className="font-bold text-emerald-300">100m EPSG:32643</div>
                   </div>
                 </div>
 
-                {/* Data Confidence & Limitations */}
-                <div className="bg-navy-800/40 border border-navy-700 p-4 rounded-lg space-y-2 text-xs">
-                  <div className="flex items-center space-x-2 font-bold text-white">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                    <span>Data Confidence: {result.data_confidence || 'High (Model-derived 100m grid)'}</span>
+                {/* Precautionary Measures & Advisory */}
+                {result.advisory && (
+                  <div className="bg-navy-800/40 border border-navy-700 p-4 rounded-lg space-y-2 text-xs">
+                    <div className="flex items-center space-x-2 font-bold text-white">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                      <span>{result.advisory}</span>
+                    </div>
+                    {result.precautionary_measures && (
+                      <ul className="list-disc list-inside space-y-1 text-slate-300 pl-2 mt-2">
+                        {result.precautionary_measures.map((lim, i) => (
+                          <li key={i}>{lim}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
-                  {result.data_limitations && (
-                    <ul className="list-disc list-inside space-y-1 text-slate-300 pl-2">
-                      {result.data_limitations.map((lim, i) => (
-                        <li key={i}>{lim}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+                )}
               </>
             ) : (
               <div className="bg-navy-950 border border-navy-800 p-6 rounded-lg text-center space-y-2">

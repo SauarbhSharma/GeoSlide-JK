@@ -122,42 +122,42 @@ export function Sidebar({ selectedDistrict, onSelectDistrict, activeLayers, onTo
 
         {/* Risk Palette Legend */}
         <div className="bg-navy-800/80 border border-navy-700 p-3 rounded-md">
-          <label className="text-xs font-bold text-slate-200 block mb-2">Risk Scale & Legend (Demo)</label>
+          <label className="text-xs font-bold text-slate-200 block mb-2">Susceptibility Risk Scale</label>
           <div className="space-y-1.5 text-xs font-medium">
             <div className="flex items-center justify-between">
               <span className="flex items-center space-x-2">
                 <span className="w-3 h-3 rounded-full bg-emerald-500"></span>
                 <span>Low</span>
               </span>
-              <span className="text-slate-400 text-[11px]">Demo Priority</span>
+              <span className="text-slate-400 text-[11px]">Very Low</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="flex items-center space-x-2">
                 <span className="w-3 h-3 rounded-full bg-amber-500"></span>
                 <span>Moderate</span>
               </span>
-              <span className="text-slate-400 text-[11px]">Demo Priority</span>
+              <span className="text-slate-400 text-[11px]">Moderate</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="flex items-center space-x-2">
                 <span className="w-3 h-3 rounded-full bg-orange-500"></span>
                 <span>High</span>
               </span>
-              <span className="text-slate-400 text-[11px]">Demo Priority</span>
+              <span className="text-slate-400 text-[11px]">High</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="flex items-center space-x-2">
                 <span className="w-3 h-3 rounded-full bg-red-500"></span>
                 <span>Very High</span>
               </span>
-              <span className="text-slate-400 text-[11px]">Demo Priority</span>
+              <span className="text-slate-400 text-[11px]">Very High</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="flex items-center space-x-2">
                 <span className="w-3 h-3 rounded-full bg-rose-950 border border-rose-600"></span>
                 <span>Critical</span>
               </span>
-              <span className="text-slate-400 text-[11px]">Demo Priority</span>
+              <span className="text-slate-400 text-[11px]">Critical</span>
             </div>
             <div className="flex items-center justify-between">
               <span className="flex items-center space-x-2">

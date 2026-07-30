@@ -1,0 +1,21 @@
+layer_id,title,source_endpoint,http_status,renders_on_map,default_visible,scenario_proxy,status
+susceptibility_prob,Static Susceptibility Probability,/api/v1/tiles/susceptibility_prob/{z}/{x}/{y}.png,200,YES,true,false,OPERATIONAL
+susceptibility_class,Static Susceptibility Class,/api/v1/tiles/susceptibility_class/{z}/{x}/{y}.png,200,YES,false,false,OPERATIONAL
+dynamic_hazard_index,Dynamic Hazard Index,/api/v1/tiles/dynamic_hazard_index/{z}/{x}/{y}.png,200,YES,false,true,OPERATIONAL
+dynamic_hazard_class,Dynamic Hazard Class,/api/v1/tiles/dynamic_hazard_class/{z}/{x}/{y}.png,200,YES,false,true,OPERATIONAL
+dem_elevation,Copernicus DEM Elevation (30m),/api/v1/tiles/elevation/{z}/{x}/{y}.png,200,YES,false,false,OPERATIONAL
+slope,Terrain Slope (Degrees),/api/v1/tiles/slope/{z}/{x}/{y}.png,200,YES,false,false,OPERATIONAL
+aspect,Terrain Aspect,/api/v1/tiles/aspect/{z}/{x}/{y}.png,200,YES,false,false,OPERATIONAL
+hillshade,Copernicus Hillshade,/api/v1/tiles/hillshade/{z}/{x}/{y}.png,200,YES,true,false,OPERATIONAL
+jk_boundary,J&K UT Outer Boundary,/api/v1/districts/boundary,200,YES,true,false,OPERATIONAL
+district_boundaries,20-District Boundaries,/api/v1/districts/boundary,200,YES,true,false,OPERATIONAL
+landslide_points,NGDR Landslide Inventory Points,/api/v1/static-layers/landslides_points,200,YES,true,false,OPERATIONAL
+landslide_polygons,NGDR Landslide Polygons,/api/v1/static-layers/landslides_polygons,200,YES,true,false,OPERATIONAL
+faults,Tectonic Fault Lines,/api/v1/static-layers/faults,200,YES,true,false,OPERATIONAL
+thrusts,Tectonic Thrust Lines,/api/v1/static-layers/thrusts,200,YES,true,false,OPERATIONAL
+lineaments,Structural Lineaments,/api/v1/static-layers/lineaments,200,YES,true,false,OPERATIONAL
+lithology,Lithology (1:50k),/api/v1/static-layers/lithology,200,YES,false,false,OPERATIONAL
+nh44,NH-44 Highway Corridor,/api/v1/static-layers/nh44,200,YES,true,false,OPERATIONAL
+major_roads,Major Roads Network,/api/v1/static-layers/major_roads,200,YES,false,false,OPERATIONAL
+settlements,Settlement Areas,/api/v1/static-layers/settlements,200,YES,false,false,OPERATIONAL
+health_facilities,Hospitals & Healthcare Facilities,/api/v1/static-layers/health_facilities,200,YES,false,false,OPERATIONAL

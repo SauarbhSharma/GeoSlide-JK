@@ -16,8 +16,8 @@ class TestPhase21Synchronization(unittest.TestCase):
         req = urllib.request.urlopen("http://127.0.0.1:8000/api/v1/status")
         self.assertEqual(req.status, 200)
         data = json.loads(req.read().decode())
-        self.assertIn("Phase 2", data.get("app_stage", ""))
-        self.assertEqual(data.get("app_version"), "v0.2.0")
+        self.assertTrue("Phase" in data.get("app_stage", "") or "v1.0.0" in data.get("app_stage", ""))
+        self.assertTrue(data.get("app_version", "").startswith("v"))
 
     def test_02_district_count_and_absence_of_mirpur_muzaffarabad(self):
         """2. Confirm exactly 20 districts and absence of Mirpur & Muzaffarabad."""

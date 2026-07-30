@@ -4,16 +4,43 @@ import { useEffect, useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
 import { Activity, CheckCircle, AlertTriangle, ShieldCheck, Database, Server } from 'lucide-react';
+import { apiUrl } from '@/lib/api';
 
 export default function SystemStatus() {
   const [healthStatus, setHealthStatus] = useState<any>(null);
+  const [endpointsStatus, setEndpointsStatus] = useState<Record<string, number>>({});
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/v1/health')
+    fetch(apiUrl('/api/v1/health'))
       .then((res) => res.json())
       .then((data) => setHealthStatus(data))
-      .catch(() => setHealthStatus({ status: 'offline', service: 'GeoSlide-JK API (Disconnected)' }));
+      .catch(() => setHealthStatus({ status: 'offline', phase: 'Disconnected' }));
+
+    const endpointsToTest = [
+      '/api/v1/health',
+      '/api/v1/status',
+      '/api/v1/districts',
+      '/api/v1/location-check?lat=33.245&lon=75.241',
+      '/api/v1/terrain/value?lat=33.245&lon=75.241',
+      '/api/v1/tiles/susceptibility_prob/8/181/102.png',
+      '/api/v1/layers',
+      '/api/v1/summary/statewide',
+      '/api/v1/summary/district/ramban'
+    ];
+
+    endpointsToTest.forEach((ep) => {
+      fetch(apiUrl(ep))
+        .then((res) => {
+          setEndpointsStatus((prev) => ({ ...prev, [ep]: res.status }));
+        })
+        .catch(() => {
+          setEndpointsStatus((prev) => ({ ...prev, [ep]: 0 }));
+        });
+    });
   }, []);
+
+  const isHealthy = healthStatus?.status === 'healthy';
+  const liveCount = Object.values(endpointsStatus).filter((code) => code === 200).length;
 
   return (
     <div className="flex flex-col h-screen bg-navy-950 text-slate-100 overflow-hidden">
@@ -22,7 +49,7 @@ export default function SystemStatus() {
       <div className="flex-1 overflow-y-auto p-4 max-w-7xl mx-auto w-full space-y-4">
         <ResearchDisclaimer />
 
-        {/* AUDITED RELEASE CONDITIONAL PASS BANNER */}
+        {/* RELEASE AUDIT STATUS BANNER */}
         <div className="bg-amber-950/90 border border-amber-500/90 text-amber-100 p-4 rounded-xl flex items-center justify-between text-xs shadow-xl">
           <div className="flex items-center space-x-3">
             <AlertTriangle className="w-6 h-6 text-amber-400 shrink-0" />
@@ -47,15 +74,19 @@ export default function SystemStatus() {
             <div>
               <h1 className="text-xl font-bold text-white">Data & System Status — v1.0.0 Release</h1>
               <p className="text-xs text-slate-300 mt-0.5">
-                Complete execution verification across Phase 2 static layers, Phase 3 features, Phase 4 XGBoost ML model, Phase 5 dynamic hazard scenario, and Phase 6 API microservices.
+                Live endpoint status across Phase 2 static layers, Phase 4 XGBoost ML model, Phase 5 dynamic hazard scenario, and FastAPI tile microservices.
               </p>
             </div>
           </div>
 
           <div className="flex items-center space-x-2">
-            <div className="flex items-center space-x-2 bg-emerald-950/80 border border-emerald-500/50 px-3 py-1.5 rounded-lg text-emerald-300 text-xs font-mono font-bold">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span>GeoSlide-JK v1.0.0 Operational</span>
+            <div className={`flex items-center space-x-2 border px-3 py-1.5 rounded-lg text-xs font-mono font-bold ${
+              isHealthy
+                ? 'bg-emerald-950/80 border-emerald-500/50 text-emerald-300'
+                : 'bg-amber-950/80 border-amber-500/50 text-amber-300'
+            }`}>
+              <span className={`w-2 h-2 rounded-full ${isHealthy ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`}></span>
+              <span>{isHealthy ? 'FastAPI Backend Operational' : 'Backend Connecting...'}</span>
             </div>
           </div>
         </div>
@@ -74,13 +105,34 @@ export default function SystemStatus() {
           </div>
           <div className="bg-navy-900 border border-navy-700 p-3 rounded-xl">
             <div className="text-[11px] text-slate-400 font-mono">FastAPI Microservices</div>
-            <div className="text-lg font-bold text-white mt-0.5">{healthStatus?.status === 'ok' ? 'Healthy (HTTP 200)' : 'Connected'}</div>
-            <div className="text-[10px] text-emerald-400 font-mono">9 Live Endpoints</div>
+            <div className="text-lg font-bold text-white mt-0.5">{isHealthy ? 'Healthy (HTTP 200)' : 'Offline'}</div>
+            <div className="text-[10px] text-emerald-400 font-mono">{liveCount} Live Tested Endpoints</div>
           </div>
           <div className="bg-navy-900 border border-navy-700 p-3 rounded-xl">
             <div className="text-[11px] text-slate-400 font-mono">Next.js Web UI</div>
             <div className="text-lg font-bold text-white mt-0.5">Healthy (10 Routes)</div>
             <div className="text-[10px] text-emerald-400 font-mono">Build Clean</div>
+          </div>
+        </div>
+
+        {/* Tested Endpoints Matrix */}
+        <div className="bg-navy-900 border border-navy-700 p-4 rounded-xl space-y-3 text-xs">
+          <div className="flex items-center space-x-2 border-b border-navy-800 pb-2 text-white font-bold text-sm">
+            <Server className="w-4 h-4 text-blue-400" />
+            <span>FastAPI Live Service Endpoints Status</span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 font-mono text-[11px]">
+            {Object.entries(endpointsStatus).map(([ep, status]) => (
+              <div key={ep} className={`p-2 rounded border flex items-center justify-between ${
+                status === 200
+                  ? 'bg-navy-950 border-emerald-600/40 text-emerald-300'
+                  : 'bg-rose-950/60 border-rose-600/60 text-rose-300'
+              }`}>
+                <span className="truncate pr-2">{ep}</span>
+                <span className="font-bold shrink-0">{status === 200 ? 'HTTP 200' : status === 0 ? 'Failed' : `HTTP ${status}`}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -129,7 +181,7 @@ export default function SystemStatus() {
                 <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Phase 6: Full API Services & Web Integration</span>
               </span>
-              <span className="text-slate-400">Completed (9 FastAPI Endpoints & 7 Web Frontend Routes Integrated)</span>
+              <span className="text-slate-400">Completed (FastAPI Tile Microservices & Next.js Web UI Integrated)</span>
             </div>
 
             <div className="flex items-center justify-between bg-navy-950 p-2.5 rounded border border-amber-500/50">

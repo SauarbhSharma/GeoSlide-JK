@@ -1,14 +1,47 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from '@/components/layout/Header';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
 import { JK_20_DISTRICTS } from '@/lib/constants';
-import { Building2, ShieldCheck, Info } from 'lucide-react';
+import { Building2, ShieldCheck, Info, BarChart2 } from 'lucide-react';
+import { apiUrl } from '@/lib/api';
+
+interface DistrictSummaryData {
+  success: boolean;
+  district_id: string;
+  district_name: string;
+  state_ut: string;
+  geometry_verified: boolean;
+  grid_alignment: string;
+  mean_susceptibility_probability?: number;
+  susceptibility_rating?: string;
+  high_susceptibility_area_pct?: number;
+  mean_dynamic_hazard_index?: number;
+  dynamic_hazard_rating?: string;
+  scenario_proxy_warning?: string;
+}
 
 export default function DistrictIntelligence() {
   const [selectedId, setSelectedId] = useState('ramban');
+  const [summary, setSummary] = useState<DistrictSummaryData | null>(null);
+  const [loading, setLoading] = useState(false);
+
   const district = JK_20_DISTRICTS.find((d) => d.id === selectedId) || JK_20_DISTRICTS[0];
+
+  useEffect(() => {
+    setLoading(true);
+    fetch(apiUrl(`/api/v1/summary/district/${selectedId}`))
+      .then((res) => res.json())
+      .then((data) => {
+        setSummary(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Failed to fetch district summary:', err);
+        setLoading(false);
+      });
+  }, [selectedId]);
 
   return (
     <div className="flex flex-col h-screen bg-navy-950 text-slate-100 overflow-hidden">
@@ -25,7 +58,7 @@ export default function DistrictIntelligence() {
               <h1 className="text-xl font-bold text-white">District Intelligence Dashboard</h1>
             </div>
             <p className="text-xs text-slate-300 mt-1">
-              Statewide administrative profiles across all 20 Union Territory districts.
+              Statewide administrative profiles and zonal summary metrics across all 20 Union Territory districts.
             </p>
           </div>
 
@@ -60,13 +93,44 @@ export default function DistrictIntelligence() {
               </div>
             </div>
 
-            {/* Truthful District Summary Status Notice */}
+            {/* Zonal Metrics */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+              <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
+                <span className="text-slate-400 font-medium">Mean Susceptibility:</span>
+                <div className="font-bold text-amber-400 text-sm">
+                  {loading ? '...' : summary?.mean_susceptibility_probability != null ? (summary.mean_susceptibility_probability * 100).toFixed(1) + '%' : 'N/A'}
+                </div>
+              </div>
+
+              <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
+                <span className="text-slate-400 font-medium">Susceptibility Rating:</span>
+                <div className="font-bold text-amber-300 text-sm">
+                  {loading ? '...' : summary?.susceptibility_rating || 'Low to Moderate'}
+                </div>
+              </div>
+
+              <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
+                <span className="text-slate-400 font-medium">High Risk Slope Area:</span>
+                <div className="font-bold text-rose-400 text-sm">
+                  {loading ? '...' : summary?.high_susceptibility_area_pct != null ? `${summary.high_susceptibility_area_pct}%` : 'N/A'}
+                </div>
+              </div>
+
+              <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
+                <span className="text-slate-400 font-medium">Dynamic Hazard Rating:</span>
+                <div className="font-bold text-sky-300 text-sm">
+                  {loading ? '...' : summary?.dynamic_hazard_rating || 'Low'}
+                </div>
+              </div>
+            </div>
+
+            {/* Notice */}
             <div className="bg-navy-800/80 border border-navy-700 p-4 rounded-lg flex items-center space-x-3 text-xs text-slate-300">
               <Info className="w-5 h-5 text-blue-400 shrink-0" />
               <div>
-                <h3 className="font-bold text-white text-sm mb-0.5">District-Level Derived Summary: Not calculated in the current release.</h3>
+                <h3 className="font-bold text-white text-sm mb-0.5">District Point & Cell Inspection</h3>
                 <p>
-                  To view point-specific static susceptibility (XGBoost) and dynamic hazard (24h rainfall proxy scenario), use the <strong className="text-blue-300">Statewide Command Centre Map Inspector</strong> or the <strong className="text-blue-300">Location Risk Check tool</strong>.
+                  To inspect specific 100m grid cells for static susceptibility (XGBoost) and dynamic hazard (24h rainfall proxy scenario), use the <strong className="text-blue-300">Statewide Command Centre Map Inspector</strong> or the <strong className="text-blue-300">Location Risk Check tool</strong>.
                 </p>
               </div>
             </div>
