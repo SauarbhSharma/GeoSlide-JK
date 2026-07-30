@@ -23,64 +23,53 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+.pytest_cache/
 
 # Jupyter / IPython
 .ipynb_checkpoints
 
-# Environment variables
+# Environment variables, secrets, keys & tokens
 .env
+.env.*
 !.env.example
+*.pem
+*.key
+*.pfx
+credentials*
+cookies*
+token*
+secrets*
 
 # Scratch Directory
 scratch/
 
 # Read-only Raw Data Folder Path & Data Directories
-/data/raw/*
-!/data/raw/.gitkeep
-/data/interim/*
-!/data/interim/.gitkeep
-/data/processed/*
-!/data/processed/.gitkeep
-!/data/processed/boundaries/*.geojson
-/data/tiles/*
-!/data/tiles/.gitkeep
+data/raw/
+data/interim/
+data/tiles/
+outputs/cache/
+outputs/temp/
+final_functional_screenshots/
+outputs/reports/phase_3_b2b_checksum_report.csv
 
 # Large Generated Rasters & Heavy Outputs
 *.tif
 *.nc
 *.nc4
 *.geoparquet
-/outputs/maps/*
-!/outputs/maps/.gitkeep
-!/outputs/maps/phase_3/b1/*.png
-/outputs/reports/*
-!/outputs/reports/.gitkeep
-!/outputs/reports/phase_2_feature_count_reconciliation.*
-!/outputs/reports/phase_2_approved_dem_sources.csv
-!/outputs/reports/phase_2_quality_report.md
-!/outputs/reports/phase_3_*
-/outputs/figures/*
-!/outputs/figures/.gitkeep
-!/outputs/figures/page_screenshots/
-/outputs/logs/*
-!/outputs/logs/.gitkeep
-/models/registered/*
-!/models/registered/.gitkeep
+*.gpkg
 
-# Temporary GIS files
-*.lock
-*.tmp
-*.gpkg-journal
-*.gpkg-shm
-*.gpkg-wal
-
-# Node / Next.js
+# Node / Next.js / Testing
 node_modules/
-/apps/web/node_modules/
-/apps/web/.next/
-/apps/web/out/
-/apps/web/build/
-.next
+apps/web/node_modules/
+apps/web/.next/
+apps/web/out/
+apps/web/build/
+.next/
+coverage/
+playwright-report/
+test-results/
+*.log
 
 # IDEs & System files
 .vscode/
@@ -89,3 +78,4 @@ node_modules/
 *.swo
 .DS_Store
 Thumbs.db
+

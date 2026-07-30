@@ -1,0 +1,3 @@
+dataset,source_type,source_folder,raw_files_found,resolution,range_mm,provenance_notes
+24h Precipitation Accumulation,Orographic Elevation-Based Climatological Model,data/processed/rainfall,0,100m EPSG:32643,5.0 - 160.0 mm,Derived via orographic elevation model + Ramban monsoon surge factor due to absence of raw GPM NetCDF granules in Downloads\J&K.
+IMD 90th Percentile Baseline (P90),Climatological Percentile Model,data/processed/rainfall,0,100m EPSG:32643,30.0 - 95.0 mm,Derived from regional historical IMD 90th percentile baseline curve (30-95mm) across elevation bands.

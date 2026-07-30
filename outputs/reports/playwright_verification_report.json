@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-07-29T13:56:36Z",
+  "scenarios": {
+    "ramban_click": {
+      "passed": true,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    },
+    "jammu_click": {
+      "passed": true,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    },
+    "srinagar_click": {
+      "passed": true,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    },
+    "kupwara_click": {
+      "passed": true,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    },
+    "kishtwar_click": {
+      "passed": true,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    },
+    "boundary_edge_click": {
+      "passed": true,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    },
+    "outside_jk_click": {
+      "passed": false,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    },
+    "nodata_click": {
+      "passed": false,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    },
+    "rapid_10_clicks": {
+      "passed": true,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    },
+    "backend_offline_click": {
+      "passed": false,
+      "no_app_error_screen": true,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    },
+    "backend_recovery_click": {
+      "passed": true,
+      "panel_snippet": "Map LayersInspectorLegendGeospatial Layers (Phase 2)Raster Derivatives (Copernicus GLO-30)20-District BoundariesCopernicus HillshadeElevation Raster (30m)Slope Derivative (Degrees)Vector Inventory & InfrastructureLandslide Points (2,370)Fault Lines ("
+    }
+  },
+  "console_errors_count": 0,
+  "console_errors": [],
+  "page_exceptions_count": 0,
+  "page_exceptions": [],
+  "overall_status": "FAIL"
+}

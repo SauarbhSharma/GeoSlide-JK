@@ -1,0 +1,9 @@
+name,latitude,longitude,district,elevation_m,slope_deg,susc_prob,susc_class,rainfall_24h_mm,p90_baseline_mm,anomaly_ratio,hazard_index,hazard_class
+"Panthyal, Ramban (NH-44 Corridor)",33.245,75.241,Ramban,1240,34.5,0.785,High,68.5,45.0,1.52,0.642,High
+Doda Town,33.145,75.546,Doda,1107,28.2,0.652,High,52.0,42.0,1.24,0.485,Moderate
+Kishtwar Valley,33.315,75.766,Kishtwar,1638,31.0,0.618,High,48.0,40.0,1.2,0.452,Moderate
+Udhampur Foothills,32.927,75.142,Udhampur,755,18.4,0.365,Moderate,35.0,50.0,0.7,0.162,Low
+Anantnag South,33.731,75.149,Anantnag,1600,14.2,0.312,Low,22.0,38.0,0.58,0.115,Low
+Jammu Plains,32.726,74.857,Jammu,327,3.1,0.085,Very Low,18.0,55.0,0.33,0.035,Very Low
+Kupwara Border Area,34.526,74.255,Kupwara,1580,26.8,0.542,Moderate,31.0,35.0,0.89,0.285,Low
+Bandipora Wular Margin,34.422,74.652,Bandipora,1578,22.4,0.485,Moderate,28.0,36.0,0.78,0.241,Low

@@ -1,0 +1,6 @@
+fold,validation_districts,val_samples,val_positives,xgb_roc_auc,xgb_pr_auc,xgb_brier_score,rf_roc_auc
+1,"Anantnag, Bandipora, Reasi, Shopian",38375,595,0.8919,0.1865,0.2022,0.8779
+2,"Budgam, Ganderbal, Kishtwar, Poonch",69505,932,0.8279,0.203,0.0612,0.7908
+3,"Baramulla, Rajouri, Samba, Srinagar",24372,71,0.621,0.0199,0.2761,0.5873
+4,"Doda, Kulgam, Pulwama, Udhampur",31583,1476,0.8584,0.3749,0.3113,0.8604
+5,"Jammu, Kathua, Kupwara, Ramban",36165,1513,0.9033,0.3916,0.199,0.9089

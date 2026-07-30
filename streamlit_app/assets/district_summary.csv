@@ -1,0 +1,21 @@
+district_id,display_name,state_ut,mean_susceptibility,susceptibility_rating,high_risk_area_pct,dynamic_hazard_class,status
+ramban,Ramban,Jammu and Kashmir,0.584,Moderate to High,42.5,Moderate,Available
+doda,Doda,Jammu and Kashmir,0.562,Moderate to High,39.8,Moderate,Available
+kishtwar,Kishtwar,Jammu and Kashmir,0.541,Moderate to High,37.2,Moderate,Available
+reasi,Reasi,Jammu and Kashmir,0.518,Moderate to High,35.1,Moderate,Available
+poonch,Poonch,Jammu and Kashmir,0.505,Moderate to High,33.6,Moderate,Available
+rajouri,Rajouri,Jammu and Kashmir,0.382,Low to Moderate,21.4,Low,Available
+udhampur,Udhampur,Jammu and Kashmir,0.365,Low to Moderate,19.8,Low,Available
+kathua,Kathua,Jammu and Kashmir,0.312,Low to Moderate,15.2,Low,Available
+samba,Samba,Jammu and Kashmir,0.185,Very Low to Low,4.1,Low,Available
+jammu,Jammu,Jammu and Kashmir,0.142,Very Low to Low,2.5,Low,Available
+anantnag,Anantnag,Jammu and Kashmir,0.421,Low to Moderate,24.3,Low,Available
+kulgam,Kulgam,Jammu and Kashmir,0.395,Low to Moderate,22.1,Low,Available
+shopian,Shopian,Jammu and Kashmir,0.41,Low to Moderate,23.5,Low,Available
+pulwama,Pulwama,Jammu and Kashmir,0.225,Very Low to Low,6.8,Low,Available
+budgam,Budgam,Jammu and Kashmir,0.241,Very Low to Low,7.9,Low,Available
+srinagar,Srinagar,Jammu and Kashmir,0.165,Very Low to Low,3.2,Low,Available
+ganderbal,Ganderbal,Jammu and Kashmir,0.438,Low to Moderate,26.7,Low,Available
+bandipora,Bandipora,Jammu and Kashmir,0.452,Low to Moderate,28.1,Low,Available
+baramulla,Baramulla,Jammu and Kashmir,0.461,Low to Moderate,29.4,Low,Available
+kupwara,Kupwara,Jammu and Kashmir,0.485,Moderate to High,31.8,Low,Available

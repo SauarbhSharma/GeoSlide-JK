@@ -1,0 +1,23 @@
+{
+  "model_name": "XGBoost Gradient Boosted Decision Trees",
+  "trees": 150,
+  "max_depth": 6,
+  "learning_rate": 0.08,
+  "predictors": 30,
+  "spatial_cv_roc_auc": 0.8694,
+  "spatial_cv_pr_auc": 0.276,
+  "brier_score": 0.1788,
+  "fold_roc_auc": {
+    "Fold 1 (Jammu Region)": 0.8919,
+    "Fold 2 (Chenab Valley)": 0.8279,
+    "Fold 3 (Kashmir Valley)": 0.621,
+    "Fold 4 (Pir Panjal)": 0.8584,
+    "Fold 5 (Northern Border)": 0.9033
+  },
+  "safeguards": {
+    "nlsm_excluded": true,
+    "coordinates_excluded": true,
+    "exposure_features_excluded": true,
+    "spatial_block_cv_used": true
+  }
+}

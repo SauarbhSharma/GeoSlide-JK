@@ -1,0 +1,52 @@
+[
+  {
+    "feature": "log1p_distance_to_fault",
+    "importance": 0.0867,
+    "category": "Geology"
+  },
+  {
+    "feature": "snow_ice_fraction",
+    "importance": 0.0812,
+    "category": "Land Cover"
+  },
+  {
+    "feature": "elevation",
+    "importance": 0.042,
+    "category": "Terrain"
+  },
+  {
+    "feature": "log1p_distance_to_active_fault",
+    "importance": 0.0396,
+    "category": "Geology"
+  },
+  {
+    "feature": "distance_to_drainage",
+    "importance": 0.0377,
+    "category": "Hydrology"
+  },
+  {
+    "feature": "slope_degrees",
+    "importance": 0.0354,
+    "category": "Terrain"
+  },
+  {
+    "feature": "log1p_distance_to_thrust",
+    "importance": 0.0321,
+    "category": "Geology"
+  },
+  {
+    "feature": "bare_sparse_fraction",
+    "importance": 0.0298,
+    "category": "Land Cover"
+  },
+  {
+    "feature": "distance_to_road",
+    "importance": 0.0276,
+    "category": "Anthropogenic"
+  },
+  {
+    "feature": "topographic_wetness_index",
+    "importance": 0.0254,
+    "category": "Hydrology"
+  }
+]

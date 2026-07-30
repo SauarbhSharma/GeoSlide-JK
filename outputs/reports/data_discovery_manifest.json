@@ -1,0 +1,1067 @@
+{
+  "project_root": "D:\\Projects\\GeoSlide_JK",
+  "raw_root": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K",
+  "total_categories_scanned": 18,
+  "summary": {
+    "verified": 7,
+    "missing": 0,
+    "multiple_matches": 11
+  },
+  "categories": {
+    "boundaries.district_search": {
+      "category": "boundaries.district_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 4,
+      "patterns": [
+        "Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9/**/*.shp",
+        "Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9/**/*.geojson"
+      ],
+      "matches": [
+        "Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9\\01\\JAMMU_&_KASHMIR_DISTRICT_BDY.shp",
+        "Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9\\01\\JAMMU_&_KASHMIR_DISTRICT_HQ.shp",
+        "Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9\\01\\JAMMU_&_KASHMIR_STATE_BDY.shp",
+        "Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9\\01\\JAMMU_&_KASHMIR_STATE_HQ.shp"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9\\01\\JAMMU_&_KASHMIR_DISTRICT_BDY.shp",
+          "name": "JAMMU_&_KASHMIR_DISTRICT_BDY.shp",
+          "size_bytes": 794420,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9\\01\\JAMMU_&_KASHMIR_DISTRICT_HQ.shp",
+          "name": "JAMMU_&_KASHMIR_DISTRICT_HQ.shp",
+          "size_bytes": 716,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9\\01\\JAMMU_&_KASHMIR_STATE_BDY.shp",
+          "name": "JAMMU_&_KASHMIR_STATE_BDY.shp",
+          "size_bytes": 131212,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Administrative Boundary Database For State Upto Distt level with HQ OVSF_1M_9\\01\\JAMMU_&_KASHMIR_STATE_HQ.shp",
+          "name": "JAMMU_&_KASHMIR_STATE_HQ.shp",
+          "size_bytes": 128,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        }
+      ]
+    },
+    "boundaries.tehsil_search": {
+      "category": "boundaries.tehsil_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 6,
+      "patterns": [
+        "Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8/**/*.shp",
+        "Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8/**/*.geojson"
+      ],
+      "matches": [
+        "Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_DISTRICT_BDY.shp",
+        "Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_DISTRICT_HQ.shp",
+        "Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_STATE_BDY.shp",
+        "Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_STATE_HQ.shp",
+        "Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_SUBDISTRICT_BDY.shp",
+        "Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_SUBDISTRICT_HQ.shp"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_DISTRICT_BDY.shp",
+          "name": "JAMMU_&_KASHMIR_DISTRICT_BDY.shp",
+          "size_bytes": 794420,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_DISTRICT_HQ.shp",
+          "name": "JAMMU_&_KASHMIR_DISTRICT_HQ.shp",
+          "size_bytes": 716,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_STATE_BDY.shp",
+          "name": "JAMMU_&_KASHMIR_STATE_BDY.shp",
+          "size_bytes": 131212,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_STATE_HQ.shp",
+          "name": "JAMMU_&_KASHMIR_STATE_HQ.shp",
+          "size_bytes": 128,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_SUBDISTRICT_BDY.shp",
+          "name": "JAMMU_&_KASHMIR_SUBDISTRICT_BDY.shp",
+          "size_bytes": 810816,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Administrative Boundary Database For State Upto Taluk level with HQ OVSF_1M_8\\01\\JAMMU_&_KASHMIR_SUBDISTRICT_HQ.shp",
+          "name": "JAMMU_&_KASHMIR_SUBDISTRICT_HQ.shp",
+          "size_bytes": 8768,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        }
+      ]
+    },
+    "dem.copernicus_glo30_search": {
+      "category": "dem.copernicus_glo30_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 5,
+      "patterns": [
+        "copernicus_glo30/**/*.tif"
+      ],
+      "matches": [
+        "copernicus_glo30\\full_jk\\Northeast\\output_hh.tif",
+        "copernicus_glo30\\full_jk\\Northwest\\output_hh.tif",
+        "copernicus_glo30\\full_jk\\Southeast\\output_hh.tif",
+        "copernicus_glo30\\full_jk\\Southwest\\output_hh.tif",
+        "copernicus_glo30\\Pilot\\output_hh.tif"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\copernicus_glo30\\full_jk\\Northeast\\output_hh.tif",
+          "name": "output_hh.tif",
+          "size_bytes": 210362901,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\copernicus_glo30\\full_jk\\Northwest\\output_hh.tif",
+          "name": "output_hh.tif",
+          "size_bytes": 212610542,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\copernicus_glo30\\full_jk\\Southeast\\output_hh.tif",
+          "name": "output_hh.tif",
+          "size_bytes": 212798622,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\copernicus_glo30\\full_jk\\Southwest\\output_hh.tif",
+          "name": "output_hh.tif",
+          "size_bytes": 201074783,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\copernicus_glo30\\Pilot\\output_hh.tif",
+          "name": "output_hh.tif",
+          "size_bytes": 48560678,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        }
+      ]
+    },
+    "landcover.worldcover_search": {
+      "category": "landcover.worldcover_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 4,
+      "patterns": [
+        "esa_worldcover_2021/**/*.tif"
+      ],
+      "matches": [
+        "esa_worldcover_2021\\ESA_WorldCover_10m_2021_v200_N30E072_Map (1).tif",
+        "esa_worldcover_2021\\ESA_WorldCover_10m_2021_v200_N30E075_Map.tif",
+        "esa_worldcover_2021\\ESA_WorldCover_10m_2021_v200_N33E072_Map.tif",
+        "esa_worldcover_2021\\ESA_WorldCover_10m_2021_v200_N33E075_Map.tif"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\esa_worldcover_2021\\ESA_WorldCover_10m_2021_v200_N30E072_Map (1).tif",
+          "name": "ESA_WorldCover_10m_2021_v200_N30E072_Map (1).tif",
+          "size_bytes": 122839390,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\esa_worldcover_2021\\ESA_WorldCover_10m_2021_v200_N30E075_Map.tif",
+          "name": "ESA_WorldCover_10m_2021_v200_N30E075_Map.tif",
+          "size_bytes": 102543746,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\esa_worldcover_2021\\ESA_WorldCover_10m_2021_v200_N33E072_Map.tif",
+          "name": "ESA_WorldCover_10m_2021_v200_N33E072_Map.tif",
+          "size_bytes": 153200236,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\esa_worldcover_2021\\ESA_WorldCover_10m_2021_v200_N33E075_Map.tif",
+          "name": "ESA_WorldCover_10m_2021_v200_N33E075_Map.tif",
+          "size_bytes": 97538409,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        }
+      ]
+    },
+    "geology.lithology_geojson": {
+      "category": "geology.lithology_geojson",
+      "status": "VERIFIED",
+      "match_count": 1,
+      "patterns": [
+        "geology_50klithology_jammu_kashmir_geoJSON file/**/*.geojson"
+      ],
+      "matches": [
+        "geology_50klithology_jammu_kashmir_geoJSON file\\lithology_gcs_ngdr_STATE_JK_geojson\\lithology_gcs_ngdr_STATE_JK.geojson"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\geology_50klithology_jammu_kashmir_geoJSON file\\lithology_gcs_ngdr_STATE_JK_geojson\\lithology_gcs_ngdr_STATE_JK.geojson",
+          "name": "lithology_gcs_ngdr_STATE_JK.geojson",
+          "size_bytes": 33599838,
+          "is_file": true,
+          "extension": ".geojson",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        }
+      ]
+    },
+    "geology.lithology_shapefile": {
+      "category": "geology.lithology_shapefile",
+      "status": "VERIFIED",
+      "match_count": 1,
+      "patterns": [
+        "geology_50klithology_jammu_kashmir_shape file/**/*.shp"
+      ],
+      "matches": [
+        "geology_50klithology_jammu_kashmir_shape file\\lithology_gcs_ngdr_STATE_JK\\lithology_gcs_ngdr_STATE_JK.shp"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\geology_50klithology_jammu_kashmir_shape file\\lithology_gcs_ngdr_STATE_JK\\lithology_gcs_ngdr_STATE_JK.shp",
+          "name": "lithology_gcs_ngdr_STATE_JK.shp",
+          "size_bytes": 11136260,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        }
+      ]
+    },
+    "tectonics.fault_search": {
+      "category": "tectonics.fault_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 2,
+      "patterns": [
+        "FAULT and THRUST Tectonic J&K/**/*.shp"
+      ],
+      "matches": [
+        "FAULT and THRUST Tectonic J&K\\fault_tectonic_ngdr_STATE_JK\\fault_tectonic_ngdr_STATE_JK.shp",
+        "FAULT and THRUST Tectonic J&K\\thrust_tectonic_ngdr_STATE_JK\\thrust_tectonic_ngdr_STATE_JK.shp"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\FAULT and THRUST Tectonic J&K\\fault_tectonic_ngdr_STATE_JK\\fault_tectonic_ngdr_STATE_JK.shp",
+          "name": "fault_tectonic_ngdr_STATE_JK.shp",
+          "size_bytes": 1044,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\FAULT and THRUST Tectonic J&K\\thrust_tectonic_ngdr_STATE_JK\\thrust_tectonic_ngdr_STATE_JK.shp",
+          "name": "thrust_tectonic_ngdr_STATE_JK.shp",
+          "size_bytes": 10080,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        }
+      ]
+    },
+    "tectonics.active_fault_search": {
+      "category": "tectonics.active_fault_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 2,
+      "patterns": [
+        "Active Fault, Earthquake J&K/**/*.shp"
+      ],
+      "matches": [
+        "Active Fault, Earthquake J&K\\active_fault_ngdr_STATE_JK\\active_fault_ngdr_STATE_JK.shp",
+        "Active Fault, Earthquake J&K\\earthquake_ngdr_STATE_JK\\earthquake_ngdr_STATE_JK.shp"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Active Fault, Earthquake J&K\\active_fault_ngdr_STATE_JK\\active_fault_ngdr_STATE_JK.shp",
+          "name": "active_fault_ngdr_STATE_JK.shp",
+          "size_bytes": 1196,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Active Fault, Earthquake J&K\\earthquake_ngdr_STATE_JK\\earthquake_ngdr_STATE_JK.shp",
+          "name": "earthquake_ngdr_STATE_JK.shp",
+          "size_bytes": 15584,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        }
+      ]
+    },
+    "tectonics.lineament_search": {
+      "category": "tectonics.lineament_search",
+      "status": "VERIFIED",
+      "match_count": 1,
+      "patterns": [
+        "LINEAMENT and FOLD Tectonic J&K/**/*.shp"
+      ],
+      "matches": [
+        "LINEAMENT and FOLD Tectonic J&K\\fold_tectonic_ngdr_STATE_JK\\fold_tectonic_ngdr_STATE_JK.shp"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\LINEAMENT and FOLD Tectonic J&K\\fold_tectonic_ngdr_STATE_JK\\fold_tectonic_ngdr_STATE_JK.shp",
+          "name": "fold_tectonic_ngdr_STATE_JK.shp",
+          "size_bytes": 34408,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        }
+      ]
+    },
+    "tectonics.geomorphology_lineament_search": {
+      "category": "tectonics.geomorphology_lineament_search",
+      "status": "VERIFIED",
+      "match_count": 1,
+      "patterns": [
+        "Geomorphology Lineatment J&K/**/*.shp"
+      ],
+      "matches": [
+        "Geomorphology Lineatment J&K\\lineament_250k_ngdr_STATE_JK\\lineament_250k_ngdr_STATE_JK.shp"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\Geomorphology Lineatment J&K\\lineament_250k_ngdr_STATE_JK\\lineament_250k_ngdr_STATE_JK.shp",
+          "name": "lineament_250k_ngdr_STATE_JK.shp",
+          "size_bytes": 324212,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        }
+      ]
+    },
+    "landslides.ngdr_geojson_search": {
+      "category": "landslides.ngdr_geojson_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 2,
+      "patterns": [
+        "NGDR GeoJSON File/**/*.geojson"
+      ],
+      "matches": [
+        "NGDR GeoJSON File\\landslide_point_STATE_JK_geojson\\landslide_point_STATE_JK.geojson",
+        "NGDR GeoJSON File\\landslide_polygon_STATE_JK_geojson\\landslide_polygon_STATE_JK.geojson"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\NGDR GeoJSON File\\landslide_point_STATE_JK_geojson\\landslide_point_STATE_JK.geojson",
+          "name": "landslide_point_STATE_JK.geojson",
+          "size_bytes": 6259040,
+          "is_file": true,
+          "extension": ".geojson",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\NGDR GeoJSON File\\landslide_polygon_STATE_JK_geojson\\landslide_polygon_STATE_JK.geojson",
+          "name": "landslide_polygon_STATE_JK.geojson",
+          "size_bytes": 30037440,
+          "is_file": true,
+          "extension": ".geojson",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        }
+      ]
+    },
+    "landslides.ngdr_shapefile_search": {
+      "category": "landslides.ngdr_shapefile_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 2,
+      "patterns": [
+        "NGDR Shape File J&K/**/*.shp"
+      ],
+      "matches": [
+        "NGDR Shape File J&K\\landslide_point_STATE_JK\\landslide_point_STATE_JK.shp",
+        "NGDR Shape File J&K\\landslide_polygon_STATE_JK\\landslide_polygon_STATE_JK.shp"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\NGDR Shape File J&K\\landslide_point_STATE_JK\\landslide_point_STATE_JK.shp",
+          "name": "landslide_point_STATE_JK.shp",
+          "size_bytes": 66712,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\NGDR Shape File J&K\\landslide_polygon_STATE_JK\\landslide_polygon_STATE_JK.shp",
+          "name": "landslide_polygon_STATE_JK.shp",
+          "size_bytes": 13705584,
+          "is_file": true,
+          "extension": ".shp",
+          "vector_inspection": "pyogrio not installed or unreadable vector"
+        }
+      ]
+    },
+    "landslides.nlsm_reference_tif": {
+      "category": "landslides.nlsm_reference_tif",
+      "status": "VERIFIED",
+      "match_count": 1,
+      "patterns": [
+        "JammuandKashmir_Susceptibility.tif_NLSM_20260725210220.036_11842.tif"
+      ],
+      "matches": [
+        "JammuandKashmir_Susceptibility.tif_NLSM_20260725210220.036_11842.tif"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\JammuandKashmir_Susceptibility.tif_NLSM_20260725210220.036_11842.tif",
+          "name": "JammuandKashmir_Susceptibility.tif_NLSM_20260725210220.036_11842.tif",
+          "size_bytes": 556000,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        }
+      ]
+    },
+    "population.ghs_pop_search": {
+      "category": "population.ghs_pop_search",
+      "status": "VERIFIED",
+      "match_count": 1,
+      "patterns": [
+        "GHS_POP_E2025_GLOBE_R2023A_54009_100_V1_0_R6_C26/**/*.tif"
+      ],
+      "matches": [
+        "GHS_POP_E2025_GLOBE_R2023A_54009_100_V1_0_R6_C26\\GHS_POP_E2025_GLOBE_R2023A_54009_100_V1_0_R6_C26.tif"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\GHS_POP_E2025_GLOBE_R2023A_54009_100_V1_0_R6_C26\\GHS_POP_E2025_GLOBE_R2023A_54009_100_V1_0_R6_C26.tif",
+          "name": "GHS_POP_E2025_GLOBE_R2023A_54009_100_V1_0_R6_C26.tif",
+          "size_bytes": 72820650,
+          "is_file": true,
+          "extension": ".tif",
+          "raster_inspection": "rasterio not installed or unreadable header"
+        }
+      ]
+    },
+    "rainfall.imd_search": {
+      "category": "rainfall.imd_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 6,
+      "patterns": [
+        "IMD Yearly Gridded Rainfall Data/**/*.nc"
+      ],
+      "matches": [
+        "IMD Yearly Gridded Rainfall Data\\RF25_ind2020_rfp25.nc",
+        "IMD Yearly Gridded Rainfall Data\\RF25_ind2021_rfp25.nc",
+        "IMD Yearly Gridded Rainfall Data\\RF25_ind2022_rfp25.nc",
+        "IMD Yearly Gridded Rainfall Data\\RF25_ind2023_rfp25.nc",
+        "IMD Yearly Gridded Rainfall Data\\RF25_ind2024_rfp25.nc",
+        "IMD Yearly Gridded Rainfall Data\\RF25_ind2025_rfp25.nc"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMD Yearly Gridded Rainfall Data\\RF25_ind2020_rfp25.nc",
+          "name": "RF25_ind2020_rfp25.nc",
+          "size_bytes": 25501500,
+          "is_file": true,
+          "extension": ".nc",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMD Yearly Gridded Rainfall Data\\RF25_ind2021_rfp25.nc",
+          "name": "RF25_ind2021_rfp25.nc",
+          "size_bytes": 25431832,
+          "is_file": true,
+          "extension": ".nc",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMD Yearly Gridded Rainfall Data\\RF25_ind2022_rfp25.nc",
+          "name": "RF25_ind2022_rfp25.nc",
+          "size_bytes": 25431832,
+          "is_file": true,
+          "extension": ".nc",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMD Yearly Gridded Rainfall Data\\RF25_ind2023_rfp25.nc",
+          "name": "RF25_ind2023_rfp25.nc",
+          "size_bytes": 25431832,
+          "is_file": true,
+          "extension": ".nc",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMD Yearly Gridded Rainfall Data\\RF25_ind2024_rfp25.nc",
+          "name": "RF25_ind2024_rfp25.nc",
+          "size_bytes": 25501532,
+          "is_file": true,
+          "extension": ".nc",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMD Yearly Gridded Rainfall Data\\RF25_ind2025_rfp25.nc",
+          "name": "RF25_ind2025_rfp25.nc",
+          "size_bytes": 25431832,
+          "is_file": true,
+          "extension": ".nc",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        }
+      ]
+    },
+    "rainfall.imerg_search": {
+      "category": "rainfall.imerg_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 144,
+      "patterns": [
+        "IMERG_Download_Helper_Windows/**/*.nc4"
+      ],
+      "matches": [
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S000000-E002959.0000.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S003000-E005959.0030.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S010000-E012959.0060.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S013000-E015959.0090.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S020000-E022959.0120.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S023000-E025959.0150.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S030000-E032959.0180.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S033000-E035959.0210.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S040000-E042959.0240.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S043000-E045959.0270.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S050000-E052959.0300.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S053000-E055959.0330.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S060000-E062959.0360.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S063000-E065959.0390.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S070000-E072959.0420.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S073000-E075959.0450.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S080000-E082959.0480.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S083000-E085959.0510.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S090000-E092959.0540.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S093000-E095959.0570.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S100000-E102959.0600.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S103000-E105959.0630.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S110000-E112959.0660.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S113000-E115959.0690.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S120000-E122959.0720.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S123000-E125959.0750.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S130000-E132959.0780.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S133000-E135959.0810.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S140000-E142959.0840.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S143000-E145959.0870.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S150000-E152959.0900.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S153000-E155959.0930.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S160000-E162959.0960.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S163000-E165959.0990.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S170000-E172959.1020.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S173000-E175959.1050.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S180000-E182959.1080.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S183000-E185959.1110.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S190000-E192959.1140.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S193000-E195959.1170.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S200000-E202959.1200.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S203000-E205959.1230.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S210000-E212959.1260.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S213000-E215959.1290.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S220000-E222959.1320.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S223000-E225959.1350.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S230000-E232959.1380.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S233000-E235959.1410.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S000000-E002959.0000.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S003000-E005959.0030.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S010000-E012959.0060.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S013000-E015959.0090.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S020000-E022959.0120.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S023000-E025959.0150.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S030000-E032959.0180.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S033000-E035959.0210.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S040000-E042959.0240.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S043000-E045959.0270.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S050000-E052959.0300.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S053000-E055959.0330.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S060000-E062959.0360.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S063000-E065959.0390.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S070000-E072959.0420.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S073000-E075959.0450.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S080000-E082959.0480.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S083000-E085959.0510.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S090000-E092959.0540.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S093000-E095959.0570.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S100000-E102959.0600.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S103000-E105959.0630.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S110000-E112959.0660.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S113000-E115959.0690.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S120000-E122959.0720.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S123000-E125959.0750.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S130000-E132959.0780.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S133000-E135959.0810.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S140000-E142959.0840.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S143000-E145959.0870.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S150000-E152959.0900.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S153000-E155959.0930.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S160000-E162959.0960.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S163000-E165959.0990.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S170000-E172959.1020.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S173000-E175959.1050.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S180000-E182959.1080.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S183000-E185959.1110.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S190000-E192959.1140.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S193000-E195959.1170.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S200000-E202959.1200.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S203000-E205959.1230.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S210000-E212959.1260.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S213000-E215959.1290.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S220000-E222959.1320.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S223000-E225959.1350.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S230000-E232959.1380.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260702-S233000-E235959.1410.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S000000-E002959.0000.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S003000-E005959.0030.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S010000-E012959.0060.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S013000-E015959.0090.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S020000-E022959.0120.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S023000-E025959.0150.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S030000-E032959.0180.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S033000-E035959.0210.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S040000-E042959.0240.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S043000-E045959.0270.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S050000-E052959.0300.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S053000-E055959.0330.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S060000-E062959.0360.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S063000-E065959.0390.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S070000-E072959.0420.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S073000-E075959.0450.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S080000-E082959.0480.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S083000-E085959.0510.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S090000-E092959.0540.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S093000-E095959.0570.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S100000-E102959.0600.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S103000-E105959.0630.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S110000-E112959.0660.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S113000-E115959.0690.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S120000-E122959.0720.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S123000-E125959.0750.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S130000-E132959.0780.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S133000-E135959.0810.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S140000-E142959.0840.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S143000-E145959.0870.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S150000-E152959.0900.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S153000-E155959.0930.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S160000-E162959.0960.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S163000-E165959.0990.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S170000-E172959.1020.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S173000-E175959.1050.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S180000-E182959.1080.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S183000-E185959.1110.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S190000-E192959.1140.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S193000-E195959.1170.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S200000-E202959.1200.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S203000-E205959.1230.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S210000-E212959.1260.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S213000-E215959.1290.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S220000-E222959.1320.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S223000-E225959.1350.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S230000-E232959.1380.V07C.HDF5.SUB.nc4",
+        "IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260703-S233000-E235959.1410.V07C.HDF5.SUB.nc4"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S000000-E002959.0000.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S000000-E002959.0000.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44167,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S003000-E005959.0030.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S003000-E005959.0030.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44779,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S010000-E012959.0060.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S010000-E012959.0060.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44068,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S013000-E015959.0090.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S013000-E015959.0090.V07C.HDF5.SUB.nc4",
+          "size_bytes": 42691,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S020000-E022959.0120.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S020000-E022959.0120.V07C.HDF5.SUB.nc4",
+          "size_bytes": 45805,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S023000-E025959.0150.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S023000-E025959.0150.V07C.HDF5.SUB.nc4",
+          "size_bytes": 42665,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S030000-E032959.0180.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S030000-E032959.0180.V07C.HDF5.SUB.nc4",
+          "size_bytes": 42651,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S033000-E035959.0210.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S033000-E035959.0210.V07C.HDF5.SUB.nc4",
+          "size_bytes": 42238,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S040000-E042959.0240.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S040000-E042959.0240.V07C.HDF5.SUB.nc4",
+          "size_bytes": 42083,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S043000-E045959.0270.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S043000-E045959.0270.V07C.HDF5.SUB.nc4",
+          "size_bytes": 42922,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S050000-E052959.0300.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S050000-E052959.0300.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44101,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S053000-E055959.0330.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S053000-E055959.0330.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44019,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S060000-E062959.0360.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S060000-E062959.0360.V07C.HDF5.SUB.nc4",
+          "size_bytes": 43964,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S063000-E065959.0390.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S063000-E065959.0390.V07C.HDF5.SUB.nc4",
+          "size_bytes": 45418,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S070000-E072959.0420.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S070000-E072959.0420.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44521,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S073000-E075959.0450.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S073000-E075959.0450.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44102,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S080000-E082959.0480.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S080000-E082959.0480.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44126,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S083000-E085959.0510.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S083000-E085959.0510.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44205,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S090000-E092959.0540.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S090000-E092959.0540.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44135,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\IMERG_Download_Helper_Windows\\imerg_early_jk_2026-07-01_to_2026-07-03\\3B-HHR-E.MS.MRG.3IMERG.20260701-S093000-E095959.0570.V07C.HDF5.SUB.nc4",
+          "name": "3B-HHR-E.MS.MRG.3IMERG.20260701-S093000-E095959.0570.V07C.HDF5.SUB.nc4",
+          "size_bytes": 44308,
+          "is_file": true,
+          "extension": ".nc4",
+          "netcdf_inspection": "netCDF4 not installed or unreadable dataset"
+        }
+      ]
+    },
+    "rainfall.wris_search": {
+      "category": "rainfall.wris_search",
+      "status": "MULTIPLE_MATCHES",
+      "match_count": 34,
+      "patterns": [
+        "WRIS Rainfall Data/**/*.xlsx"
+      ],
+      "matches": [
+        "WRIS Rainfall Data\\Rainfall_Akhnoor_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Bainch_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Bani_3_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Bardoh_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Basholi.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Basohli_1.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Begoga (daggar).xlsx",
+        "WRIS Rainfall Data\\Rainfall_Bhoond_1.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Bhoond_2.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Bhut nallah_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Dhamkund_MetaData (1).xlsx",
+        "WRIS Rainfall Data\\Rainfall_Dhamkund_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Dharmari_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Ganeshpura_1.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Gulabgarh.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Gulabgarh_MetaData (1).xlsx",
+        "WRIS Rainfall Data\\Rainfall_Gulabgarh_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Hatli_2.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Jammu tawi (sidhra)_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Khanabal.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Khurrwah (raulka)_1.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Kralpora_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Kuriya pul_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Mahanpur_2.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Nandan_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Nunwan.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Patti_4.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Prang_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Rammunshibagh (near srinagar)_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Safapora_MetaData (1).xlsx",
+        "WRIS Rainfall Data\\Rainfall_Safapora_MetaData.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Sangam.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Sirshi.xlsx",
+        "WRIS Rainfall Data\\Rainfall_Sitti (bani arg)_1.xlsx"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Akhnoor_MetaData.xlsx",
+          "name": "Rainfall_Akhnoor_MetaData.xlsx",
+          "size_bytes": 141015,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Bainch_MetaData.xlsx",
+          "name": "Rainfall_Bainch_MetaData.xlsx",
+          "size_bytes": 141011,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Bani_3_MetaData.xlsx",
+          "name": "Rainfall_Bani_3_MetaData.xlsx",
+          "size_bytes": 141001,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Bardoh_MetaData.xlsx",
+          "name": "Rainfall_Bardoh_MetaData.xlsx",
+          "size_bytes": 141005,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Basholi.xlsx",
+          "name": "Rainfall_Basholi.xlsx",
+          "size_bytes": 145543,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Basohli_1.xlsx",
+          "name": "Rainfall_Basohli_1.xlsx",
+          "size_bytes": 1009252,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Begoga (daggar).xlsx",
+          "name": "Rainfall_Begoga (daggar).xlsx",
+          "size_bytes": 1086498,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Bhoond_1.xlsx",
+          "name": "Rainfall_Bhoond_1.xlsx",
+          "size_bytes": 143508,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Bhoond_2.xlsx",
+          "name": "Rainfall_Bhoond_2.xlsx",
+          "size_bytes": 1105166,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Bhut nallah_MetaData.xlsx",
+          "name": "Rainfall_Bhut nallah_MetaData.xlsx",
+          "size_bytes": 141016,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Dhamkund_MetaData (1).xlsx",
+          "name": "Rainfall_Dhamkund_MetaData (1).xlsx",
+          "size_bytes": 141027,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Dhamkund_MetaData.xlsx",
+          "name": "Rainfall_Dhamkund_MetaData.xlsx",
+          "size_bytes": 141027,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Dharmari_MetaData.xlsx",
+          "name": "Rainfall_Dharmari_MetaData.xlsx",
+          "size_bytes": 141012,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Ganeshpura_1.xlsx",
+          "name": "Rainfall_Ganeshpura_1.xlsx",
+          "size_bytes": 1163466,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Gulabgarh.xlsx",
+          "name": "Rainfall_Gulabgarh.xlsx",
+          "size_bytes": 195700,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Gulabgarh_MetaData (1).xlsx",
+          "name": "Rainfall_Gulabgarh_MetaData (1).xlsx",
+          "size_bytes": 141031,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Gulabgarh_MetaData.xlsx",
+          "name": "Rainfall_Gulabgarh_MetaData.xlsx",
+          "size_bytes": 141020,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Hatli_2.xlsx",
+          "name": "Rainfall_Hatli_2.xlsx",
+          "size_bytes": 438873,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Jammu tawi (sidhra)_MetaData.xlsx",
+          "name": "Rainfall_Jammu tawi (sidhra)_MetaData.xlsx",
+          "size_bytes": 141022,
+          "is_file": true,
+          "extension": ".xlsx"
+        },
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\WRIS Rainfall Data\\Rainfall_Khanabal.xlsx",
+          "name": "Rainfall_Khanabal.xlsx",
+          "size_bytes": 163149,
+          "is_file": true,
+          "extension": ".xlsx"
+        }
+      ]
+    },
+    "reference_metadata.data_source_reference": {
+      "category": "reference_metadata.data_source_reference",
+      "status": "VERIFIED",
+      "match_count": 1,
+      "patterns": [
+        "GeoSlide_JK_Data_Source_Reference.xlsx"
+      ],
+      "matches": [
+        "GeoSlide_JK_Data_Source_Reference.xlsx"
+      ],
+      "sample_details": [
+        {
+          "path": "C:\\Users\\Saurabh Sharma\\Downloads\\J&K\\GeoSlide_JK_Data_Source_Reference.xlsx",
+          "name": "GeoSlide_JK_Data_Source_Reference.xlsx",
+          "size_bytes": 49138,
+          "is_file": true,
+          "extension": ".xlsx"
+        }
+      ]
+    }
+  }
+}

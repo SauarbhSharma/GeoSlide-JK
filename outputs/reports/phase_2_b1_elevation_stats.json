@@ -1,0 +1,16 @@
+{
+  "checkpoint": "CHECKPOINT_B1_PASSED",
+  "processing_time_sec": 38.33,
+  "target_crs": "EPSG:32643",
+  "target_resolution_m": 30.0,
+  "dimensions": "10165 x 9788",
+  "total_pixels": 99495020,
+  "valid_pixels": 51322278,
+  "nodata_pixels": 48172742,
+  "nodata_percent": 48.42,
+  "min_elevation_m": 249.0,
+  "max_elevation_m": 7071.17,
+  "mean_elevation_m": 2350.47,
+  "std_elevation_m": 1276.34,
+  "suspicious_extreme_values": 0
+}

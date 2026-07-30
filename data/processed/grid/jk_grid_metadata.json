@@ -1,0 +1,50 @@
+{
+  "crs": "EPSG:32643",
+  "epsg_code": 32643,
+  "processing_crs_name": "WGS 84 / UTM zone 43N",
+  "resolution_m": 100.0,
+  "bounds_utm": {
+    "min_x": 360800.0,
+    "min_y": 3571100.0,
+    "max_x": 665800.0,
+    "max_y": 3864800.0
+  },
+  "dimensions": {
+    "width": 3050,
+    "height": 2937
+  },
+  "affine_transform": [
+    100.0,
+    0.0,
+    360800.0,
+    0.0,
+    -100.0,
+    3864800.0
+  ],
+  "cell_counts": {
+    "total_cells": 8957850,
+    "valid_jk_cells": 4619211,
+    "outside_cells": 4338639,
+    "unassigned_valid_cells": 0,
+    "overlapping_cells": 0,
+    "valid_fraction": 0.515661
+  },
+  "nodata_conventions": {
+    "float32": -9999.0,
+    "uint8": 255,
+    "int16": -9999
+  },
+  "rasterization_method": "Cell-centre inclusion (all_touched=False)",
+  "source_boundary_checksums": {
+    "jk_ut_boundary_geojson_sha256": "b3f23c536ad987b26768f584fc7f7d6afb7f183dbf7385f19ea970ace25dae5b",
+    "jk_districts_geojson_sha256": "d9a73849f6281d6465e4900e4dac26a6891ba748f6f60c00ca2764d5f36fdbe3",
+    "analysis_grid_yaml_sha256": "7731dc14e3ac67c81b66cde5b88424635a1b7e3afe11b7ba061d6793b901b380"
+  },
+  "created_at": "2026-07-29T17:03:33.632378+00:00",
+  "software": {
+    "python": "3.11.9",
+    "rasterio": "1.4.4",
+    "geopandas": "1.1.4",
+    "numpy": "1.26.4"
+  }
+}

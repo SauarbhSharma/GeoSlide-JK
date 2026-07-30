@@ -1,0 +1,6 @@
+station_id,station_name,district,station_rain_24h_mm,gpm_rain_24h_mm,abs_error_mm,bias_pct
+WRIS-01,Ramban IMD AWS,Ramban,88.5,86.2,2.3,-2.6
+WRIS-02,Srinagar Aerodrome,Srinagar,32.0,30.8,1.2,-3.75
+WRIS-03,Batote Station,Ramban,94.0,91.5,2.5,-2.66
+WRIS-04,Banihal Tunnel,Ramban,105.0,102.1,2.9,-2.76
+WRIS-05,Jammu Chatha,Jammu,45.0,44.2,0.8,-1.78

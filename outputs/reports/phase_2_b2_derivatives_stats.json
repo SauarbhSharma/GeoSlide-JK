@@ -1,0 +1,24 @@
+{
+  "checkpoint": "CHECKPOINT_B2_PASSED",
+  "processing_time_sec": 66.86,
+  "elevation_cog": "D:\\Projects\\GeoSlide_JK\\data\\processed\\terrain\\jk_elevation_glo30_cog.tif",
+  "slope_cog": "D:\\Projects\\GeoSlide_JK\\data\\processed\\terrain\\jk_slope_degrees_cog.tif",
+  "aspect_cog": "D:\\Projects\\GeoSlide_JK\\data\\processed\\terrain\\jk_aspect_degrees_cog.tif",
+  "hillshade_cog": "D:\\Projects\\GeoSlide_JK\\data\\processed\\terrain\\jk_hillshade_cog.tif",
+  "slope_stats": {
+    "min_deg": 0.0,
+    "max_deg": 89.48,
+    "mean_deg": 23.55,
+    "steep_pct_gt30deg": 37.44
+  },
+  "aspect_stats": {
+    "min_deg": 0.0,
+    "max_deg": 360.0,
+    "mean_deg": 174.62
+  },
+  "hillshade_stats": {
+    "min_uint8": 0,
+    "max_uint8": 255,
+    "mean_uint8": 94.0
+  }
+}

@@ -1,0 +1,11 @@
+layer_name,raw_count,null_geom_count,invalid_geom_count,duplicate_candidate_count,repaired_count,clipped_count,final_output_count
+landslides_points,2379,0,0,230,2379,2370,2370
+landslides_polygons,7456,0,0,796,7456,7436,7436
+faults,4,0,0,0,4,3,3
+thrusts,14,0,0,0,14,14,14
+lineaments,855,0,0,0,855,774,774
+lithology,4229,0,0,0,4229,4076,4076
+nh44,280589,0,0,0,7,7,7
+major_roads,280589,0,0,0,11101,4762,4762
+settlements,280589,0,0,4,16098,5060,5060
+health_facilities,280589,0,0,1,1574,877,877

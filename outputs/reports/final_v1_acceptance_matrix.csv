@@ -1,0 +1,14 @@
+section,item,status,evidence
+1. Release & Workspace Verification,Git Commit & Tags,PASS,"HEAD commit 35a7fc8, tags phase-6-complete & v1.0.0-release, working tree clean."
+1. Release & Workspace Verification,Raw Data Safety,PASS,"C:\Users\Saurabh Sharma\Downloads\J&K 100% read-only, 432 files untouched."
+2. Clean Test Execution,Master Python Test Suite,PASS,"140 collected tests: 139 passed, 1 skipped (browser offline check), 0 failures in 71.4s."
+2. Clean Test Execution,Next.js Production Build,PASS,"npm run build succeeded, 10 static pages compiled, 0 TypeScript/CSS errors."
+3. Live API Acceptance Tests,FastAPI Endpoints,PASS,All 9 endpoints return HTTP 200 with controlled JSON schemas & valid spatial responses.
+4. Model Reproducibility Test,XGBoost Probability Raster,PASS,"Mean absolute difference = 0.000044 across 1,000 sampled cells vs model predict_proba."
+5. Spatial Cross-Validation Audit,Out-of-Fold Performance,PASS,"Out-of-Fold Spatial CV ROC-AUC: 0.8694, PR-AUC: 0.2760, Brier: 0.1788. 20 districts mapped."
+6. NLSM Benchmark Audit,Comparative Evaluation,PASS / DIAGNOSTIC,GeoSlide-JK ROC-AUC = 0.9868 (full-sample) vs NLSM = 0.5000 (constant NoData 127 over J&K).
+7. Raster Consistency Tests,7 Master Rasters Alignment,PASS,"All 7 rasters align to 100m EPSG:32643 grid, 4,619,211 valid cells. Formula error = 0.0."
+8. Rainfall Provenance Audit,Dynamic Precipitation Source,CONDITIONAL PASS,"Derived from Orographic Topographic Model (Rain_24h: 5-160mm, P90: 30-95mm), not raw NetCDF."
+9. Station Validation Provenance,Surface Raingauge Network,CONDITIONAL PASS,"5 reference station points evaluated (MAE: 1.94mm), representative validation set."
+10. End-to-End UI Verification,Web Frontend Integration,PASS,"All 7 public routes verified via Playwright, 5 sampled map points match API & rasters."
+11. Truthfulness Check,Scientific Wording Integrity,PASS,Zero hardcoded demo values in live endpoints; clear research disclaimers.

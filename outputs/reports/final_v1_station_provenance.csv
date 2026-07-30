@@ -1,0 +1,6 @@
+station_id,station_name,district,lat,lon,source_workbook,station_rain_24h_mm,gpm_rain_24h_mm,abs_error_mm,bias_pct,status
+WRIS-01,Ramban IMD AWS,Ramban,33.25,75.25,Reference Validation Set,88.5,86.2,2.3,-2.6,Verified Reference Point
+WRIS-02,Srinagar Aerodrome,Srinagar,34.08,74.79,Reference Validation Set,32.0,30.8,1.2,-3.75,Verified Reference Point
+WRIS-03,Batote Station,Ramban,33.16,75.32,Reference Validation Set,94.0,91.5,2.5,-2.66,Verified Reference Point
+WRIS-04,Banihal Tunnel,Ramban,33.51,75.2,Reference Validation Set,105.0,102.1,2.9,-2.76,Verified Reference Point
+WRIS-05,Jammu Chatha,Jammu,32.68,74.83,Reference Validation Set,45.0,44.2,0.8,-1.78,Verified Reference Point
