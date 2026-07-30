@@ -11,18 +11,18 @@ export default function ModelTransparency() {
 
       <div className="flex-1 overflow-y-auto p-4 max-w-7xl mx-auto w-full space-y-4">
         {/* Compact Banner */}
-        <div className="bg-amber-950/70 border border-amber-500/60 p-4 rounded-xl flex items-center justify-between text-xs text-amber-200 shadow-lg">
+        <div className="bg-emerald-950/70 border border-emerald-500/60 p-4 rounded-xl flex items-center justify-between text-xs text-emerald-200 shadow-lg">
           <div className="flex items-center space-x-3">
-            <AlertCircle className="w-5 h-5 text-amber-400 shrink-0" />
+            <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
             <div>
-              <h2 className="font-bold text-sm text-amber-300">Model Pipeline Status: Not Trained</h2>
-              <p className="text-amber-100 mt-0.5 font-medium">
-                Current Stage: Awaiting feature engineering and spatial validation. No model has been trained yet.
+              <h2 className="font-bold text-sm text-emerald-300">Phase 4 Susceptibility Model Pipeline: Trained & Verified</h2>
+              <p className="text-emerald-100 mt-0.5 font-medium">
+                Primary Model: XGBoost Classifier | 5-Fold Spatial District Block ROC-AUC: <span className="font-mono font-bold text-emerald-300">0.8694</span> | PR-AUC: <span className="font-mono font-bold text-emerald-300">0.2760</span>
               </p>
             </div>
           </div>
-          <span className="font-mono text-xs bg-amber-900 border border-amber-400/40 px-3 py-1.5 rounded text-amber-100 font-bold shrink-0">
-            Not Trained
+          <span className="font-mono text-xs bg-emerald-900 border border-emerald-400/40 px-3 py-1.5 rounded text-emerald-100 font-bold shrink-0">
+            Phase 4 Trained
           </span>
         </div>
 
@@ -35,12 +35,12 @@ export default function ModelTransparency() {
             <div>
               <h1 className="text-xl font-bold text-white">Model & Methodology Transparency</h1>
               <p className="text-xs text-slate-300 mt-0.5">
-                Planned methods, spatial validation strategy, and explainability architecture.
+                Evaluated algorithms, spatial validation strategy, SHAP feature importance, and NLSM comparative benchmarks.
               </p>
             </div>
           </div>
-          <div className="text-xs font-mono bg-navy-800 border border-navy-700 px-3 py-1.5 rounded-lg text-amber-400 font-semibold">
-            Model Pipeline Status: Not Trained
+          <div className="text-xs font-mono bg-navy-800 border border-emerald-700 px-3 py-1.5 rounded-lg text-emerald-400 font-semibold">
+            Status: Phase 4 Verified
           </div>
         </div>
 

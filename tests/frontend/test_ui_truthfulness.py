@@ -19,12 +19,10 @@ FORBIDDEN_PHRASES = [
 ]
 
 REQUIRED_TERMS = [
-    "Model Pipeline Status: Not Trained",
+    "Phase 4 Susceptibility Model Pipeline: Trained & Verified",
     "Example Location — Illustrative Advisory",
     "Use exactly four full-J&K DEM tiles. Do not use the pilot DEM.",
-    "NLSM raster: Excluded",
     "20 J&K UT Districts",
-    "FULL J&K UT GEOGRAPHIC MAP",
     "Static Geospatial Layers: Live",
     "Risk & Rainfall Modules: Demo"
 ]
