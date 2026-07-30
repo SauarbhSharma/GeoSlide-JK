@@ -52,12 +52,23 @@ outputs/temp/
 final_functional_screenshots/
 outputs/reports/phase_3_b2b_checksum_report.csv
 
-# Large Generated Rasters & Heavy Outputs
+# Large Generated Rasters & Heavy Outputs (default: exclude all)
 *.tif
 *.nc
 *.nc4
 *.geoparquet
 *.gpkg
+
+# EXCEPTION: Allow specific runtime rasters required by FastAPI
+!data/processed/susceptibility/*.tif
+!data/processed/hazard/*.tif
+!data/processed/rainfall/*.tif
+# Terrain COGs are too large (>100MB) for GitHub — excluded
+# The app degrades gracefully when terrain layers are unavailable
+# data/processed/terrain/*.tif stays excluded by *.tif rule
+
+# Heavy feature rasters (training only, not needed at runtime)
+data/processed/features/
 
 # Node / Next.js / Testing
 node_modules/
@@ -78,4 +89,3 @@ test-results/
 *.swo
 .DS_Store
 Thumbs.db
-

@@ -1,19 +1,39 @@
 {
-  "model_name": "XGBoost Gradient Boosted Decision Trees",
+  "model_name": "XGBoost Classifier",
   "trees": 150,
   "max_depth": 6,
   "learning_rate": 0.08,
   "predictors": 30,
   "spatial_cv_roc_auc": 0.8694,
-  "spatial_cv_pr_auc": 0.276,
+  "spatial_cv_pr_auc": 0.2760,
   "brier_score": 0.1788,
-  "fold_roc_auc": {
-    "Fold 1 (Jammu Region)": 0.8919,
-    "Fold 2 (Chenab Valley)": 0.8279,
-    "Fold 3 (Kashmir Valley)": 0.621,
-    "Fold 4 (Pir Panjal)": 0.8584,
-    "Fold 5 (Northern Border)": 0.9033
-  },
+  "fold_details": [
+    {
+      "fold": 1,
+      "districts": "Anantnag, Bandipora, Reasi, Shopian",
+      "roc_auc": 0.8919
+    },
+    {
+      "fold": 2,
+      "districts": "Budgam, Ganderbal, Kishtwar, Poonch",
+      "roc_auc": 0.8279
+    },
+    {
+      "fold": 3,
+      "districts": "Baramulla, Rajouri, Samba, Srinagar",
+      "roc_auc": 0.6210
+    },
+    {
+      "fold": 4,
+      "districts": "Doda, Kulgam, Pulwama, Udhampur",
+      "roc_auc": 0.8584
+    },
+    {
+      "fold": 5,
+      "districts": "Jammu, Kathua, Kupwara, Ramban",
+      "roc_auc": 0.9033
+    }
+  ],
   "safeguards": {
     "nlsm_excluded": true,
     "coordinates_excluded": true,

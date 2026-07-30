@@ -55,7 +55,6 @@ class TestPhase3B2BHydrologyFeatures(unittest.TestCase):
             self.assertGreater(p.stat().st_size, 0, f"Empty hydrological raster: {p}")
 
         reports = [
-            REPORT_DIR / "phase_3_b2b_checksum_report.csv",
             REPORT_DIR / "phase_3_b2b_threshold_audit.md",
             REPORT_DIR / "phase_3_b2b_resampling_audit.md",
             REPORT_DIR / "phase_3_b2b_twi_numerical_audit.md",

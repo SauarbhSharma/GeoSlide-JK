@@ -1,0 +1,112 @@
+{
+  "_metadata": {
+    "description": "Raster-derived demonstration extract for GeoSlide-JK Streamlit companion. All scenario rainfall values are research proxies, not live operational observations.",
+    "formula_anomaly_ratio": "rainfall_24h_mm / p90_baseline_mm",
+    "formula_dynamic_hazard_index": "susceptibility_probability × rainfall_anomaly_ratio",
+    "susceptibility_class_thresholds": {
+      "Very Low": "< 0.20",
+      "Low": "0.20 – 0.40",
+      "Moderate": "0.40 – 0.60",
+      "High": "0.60 – 0.80",
+      "Very High": ">= 0.80"
+    },
+    "dynamic_hazard_class_thresholds": {
+      "Very Low": "< 0.15",
+      "Low": "0.15 – 0.35",
+      "Moderate": "0.35 – 0.60",
+      "High": "0.60 – 0.90",
+      "Critical": ">= 0.90"
+    },
+    "source": "Extracted from Phase 4 susceptibility and Phase 5 hazard rasters (100m EPSG:32643)"
+  },
+  "locations": [
+    {
+      "name": "Panthyal, Ramban (NH-44 Corridor)",
+      "district": "Ramban",
+      "latitude": 33.245,
+      "longitude": 75.241,
+      "elevation_m": 1240,
+      "slope_deg": 34.5,
+      "susceptibility_probability": 0.7850,
+      "rainfall_24h_mm": 68.5,
+      "p90_baseline_mm": 45.0
+    },
+    {
+      "name": "Doda Town",
+      "district": "Doda",
+      "latitude": 33.145,
+      "longitude": 75.546,
+      "elevation_m": 1107,
+      "slope_deg": 28.2,
+      "susceptibility_probability": 0.6520,
+      "rainfall_24h_mm": 52.0,
+      "p90_baseline_mm": 42.0
+    },
+    {
+      "name": "Kishtwar Valley",
+      "district": "Kishtwar",
+      "latitude": 33.315,
+      "longitude": 75.766,
+      "elevation_m": 1638,
+      "slope_deg": 31.0,
+      "susceptibility_probability": 0.6180,
+      "rainfall_24h_mm": 48.0,
+      "p90_baseline_mm": 40.0
+    },
+    {
+      "name": "Udhampur Foothills",
+      "district": "Udhampur",
+      "latitude": 32.927,
+      "longitude": 75.142,
+      "elevation_m": 755,
+      "slope_deg": 18.4,
+      "susceptibility_probability": 0.3650,
+      "rainfall_24h_mm": 35.0,
+      "p90_baseline_mm": 50.0
+    },
+    {
+      "name": "Anantnag South",
+      "district": "Anantnag",
+      "latitude": 33.731,
+      "longitude": 75.149,
+      "elevation_m": 1600,
+      "slope_deg": 14.2,
+      "susceptibility_probability": 0.3120,
+      "rainfall_24h_mm": 22.0,
+      "p90_baseline_mm": 38.0
+    },
+    {
+      "name": "Jammu Plains",
+      "district": "Jammu",
+      "latitude": 32.726,
+      "longitude": 74.857,
+      "elevation_m": 327,
+      "slope_deg": 3.1,
+      "susceptibility_probability": 0.0850,
+      "rainfall_24h_mm": 18.0,
+      "p90_baseline_mm": 55.0
+    },
+    {
+      "name": "Kupwara Border Area",
+      "district": "Kupwara",
+      "latitude": 34.526,
+      "longitude": 74.255,
+      "elevation_m": 1580,
+      "slope_deg": 26.8,
+      "susceptibility_probability": 0.5420,
+      "rainfall_24h_mm": 31.0,
+      "p90_baseline_mm": 35.0
+    },
+    {
+      "name": "Bandipora Wular Margin",
+      "district": "Bandipora",
+      "latitude": 34.422,
+      "longitude": 74.652,
+      "elevation_m": 1578,
+      "slope_deg": 22.4,
+      "susceptibility_probability": 0.4850,
+      "rainfall_24h_mm": 28.0,
+      "p90_baseline_mm": 36.0
+    }
+  ]
+}

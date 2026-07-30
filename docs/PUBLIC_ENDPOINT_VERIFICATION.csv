@@ -1,0 +1,11 @@
+endpoint,http_method,expected_status,expected_content_type,production_url,test_result,notes
+/api/v1/health,GET,200,application/json,https://geoslide-jk.onrender.com/api/v1/health,PASS,Health check endpoint
+/api/v1/status,GET,200,application/json,https://geoslide-jk.onrender.com/api/v1/status,PASS,Data system status
+/api/v1/districts,GET,200,application/json,https://geoslide-jk.onrender.com/api/v1/districts,PASS,20 UT districts list
+/api/v1/districts/boundary,GET,200,application/json,https://geoslide-jk.onrender.com/api/v1/districts/boundary,PASS,District boundary GeoJSON
+/api/v1/layers,GET,200,application/json,https://geoslide-jk.onrender.com/api/v1/layers,PASS,Available master layers
+/api/v1/summary/statewide,GET,200,application/json,https://geoslide-jk.onrender.com/api/v1/summary/statewide,PASS,Statewide summary statistics
+/api/v1/summary/district/ramban,GET,200,application/json,https://geoslide-jk.onrender.com/api/v1/summary/district/ramban,PASS,Ramban district metrics
+/api/v1/location-check?lat=33.245&lon=75.241,GET,200,application/json,https://geoslide-jk.onrender.com/api/v1/location-check?lat=33.245&lon=75.241,PASS,Panthyal location check
+/api/v1/terrain/value?lat=33.245&lon=75.241,GET,200,application/json,https://geoslide-jk.onrender.com/api/v1/terrain/value?lat=33.245&lon=75.241,PASS,Point sampling query
+/api/v1/tiles/susceptibility_prob/8/181/102.png,GET,200,image/png,https://geoslide-jk.onrender.com/api/v1/tiles/susceptibility_prob/8/181/102.png,PASS,Raster tile generation

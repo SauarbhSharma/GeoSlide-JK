@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: geoslide-jk
+    runtime: docker
+    repo: https://github.com/SauarbhSharma/GeoSlide-JK.git
+    branch: main
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_BASE_URL
+        value: ""

@@ -1,0 +1,19 @@
+asset_name,relative_path,size_mb,committed,license,loading_code,endpoint,verification_result
+susceptibility_probability_raster,data/processed/susceptibility/jk_susceptibility_probability_100m.tif,16.1,Yes,Public Research,rasterio.open(),/api/v1/tiles/susceptibility_prob/{z}/{x}/{y}.png,PASS - Serves PNG tiles
+susceptibility_class_raster,data/processed/susceptibility/jk_susceptibility_class_100m.tif,0.6,Yes,Public Research,rasterio.open(),/api/v1/tiles/susceptibility_class/{z}/{x}/{y}.png,PASS - Serves PNG tiles
+dynamic_hazard_index_raster,data/processed/hazard/jk_dynamic_hazard_index_100m.tif,16.1,Yes,Public Research (Scenario Proxy),rasterio.open(),/api/v1/tiles/dynamic_hazard_index/{z}/{x}/{y}.png,PASS - Serves PNG tiles
+dynamic_hazard_class_raster,data/processed/hazard/jk_dynamic_hazard_class_100m.tif,0.6,Yes,Public Research (Scenario Proxy),rasterio.open(),/api/v1/tiles/dynamic_hazard_class/{z}/{x}/{y}.png,PASS - Serves PNG tiles
+rainfall_24h_accumulation_raster,data/processed/rainfall/jk_rainfall_accum_24h_100m.tif,14.7,Yes,Public Research (Scenario Proxy),rasterio.open(),/api/v1/rainfall/value,PASS - Point sampling
+imd_p90_baseline_raster,data/processed/rainfall/jk_imd_p90_baseline_100m.tif,14.1,Yes,Public Research (Scenario Proxy),rasterio.open(),/api/v1/rainfall/value,PASS - Point sampling
+rainfall_anomaly_ratio_raster,data/processed/rainfall/jk_rainfall_anomaly_p90_ratio_100m.tif,14.2,Yes,Public Research (Scenario Proxy),rasterio.open(),/api/v1/rainfall/value,PASS - Point sampling
+district_boundaries_geojson,data/processed/boundaries/jk_districts.geojson,0.1,Yes,Admin Boundary Database,json.load(),/api/v1/districts/boundary,PASS - GeoJSON vector
+ut_boundary_geojson,data/processed/boundaries/jk_ut_boundary.geojson,0.1,Yes,Admin Boundary Database,json.load(),/api/v1/ut/boundary,PASS - GeoJSON vector
+vector_faults,data/processed/vectors/jk_faults.parquet,0.03,Yes,GSI 50K Database,geopandas.read_parquet(),/api/v1/static-layers/faults,PASS - GeoJSON vector
+vector_thrusts,data/processed/vectors/jk_thrusts.parquet,0.02,Yes,GSI 50K Database,geopandas.read_parquet(),/api/v1/static-layers/thrusts,PASS - GeoJSON vector
+vector_lineaments,data/processed/vectors/jk_lineaments.parquet,0.28,Yes,GSI 50K Database,geopandas.read_parquet(),/api/v1/static-layers/lineaments,PASS - GeoJSON vector
+vector_landslide_points,data/processed/vectors/jk_landslides_points.parquet,0.25,Yes,NGDR Inventory,geopandas.read_parquet(),/api/v1/static-layers/landslides_points,PASS - GeoJSON vector
+vector_landslide_polygons,data/processed/vectors/jk_landslides_polygons.parquet,7.68,Yes,NGDR Inventory,geopandas.read_parquet(),/api/v1/static-layers/landslides_polygons,PASS - GeoJSON vector
+elevation_dem_cog,data/processed/terrain/jk_elevation_glo30_cog.tif,216.8,No (Exceeds Git 100MB limit),Copernicus GLO-30,rasterio.open(),/api/v1/tiles/elevation/{z}/{x}/{y}.png,EXCLUDED - Graceful fallback
+slope_degrees_cog,data/processed/terrain/jk_slope_degrees_cog.tif,231.6,No (Exceeds Git 100MB limit),Derived from GLO-30,rasterio.open(),/api/v1/tiles/slope/{z}/{x}/{y}.png,EXCLUDED - Graceful fallback
+aspect_degrees_cog,data/processed/terrain/jk_aspect_degrees_cog.tif,231.5,No (Exceeds Git 100MB limit),Derived from GLO-30,rasterio.open(),/api/v1/tiles/aspect/{z}/{x}/{y}.png,EXCLUDED - Graceful fallback
+hillshade_cog,data/processed/terrain/jk_hillshade_cog.tif,50.3,No (Exceeds Git 100MB limit),Derived from GLO-30,rasterio.open(),/api/v1/tiles/hillshade/{z}/{x}/{y}.png,EXCLUDED - Graceful fallback

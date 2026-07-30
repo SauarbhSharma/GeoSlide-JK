@@ -1,52 +1,17 @@
 [
-  {
-    "feature": "log1p_distance_to_fault",
-    "importance": 0.0867,
-    "category": "Geology"
-  },
-  {
-    "feature": "snow_ice_fraction",
-    "importance": 0.0812,
-    "category": "Land Cover"
-  },
-  {
-    "feature": "elevation",
-    "importance": 0.042,
-    "category": "Terrain"
-  },
-  {
-    "feature": "log1p_distance_to_active_fault",
-    "importance": 0.0396,
-    "category": "Geology"
-  },
-  {
-    "feature": "distance_to_drainage",
-    "importance": 0.0377,
-    "category": "Hydrology"
-  },
-  {
-    "feature": "slope_degrees",
-    "importance": 0.0354,
-    "category": "Terrain"
-  },
-  {
-    "feature": "log1p_distance_to_thrust",
-    "importance": 0.0321,
-    "category": "Geology"
-  },
-  {
-    "feature": "bare_sparse_fraction",
-    "importance": 0.0298,
-    "category": "Land Cover"
-  },
-  {
-    "feature": "distance_to_road",
-    "importance": 0.0276,
-    "category": "Anthropogenic"
-  },
-  {
-    "feature": "topographic_wetness_index",
-    "importance": 0.0254,
-    "category": "Hydrology"
-  }
+  {"feature": "log1p_distance_to_fault", "importance": 0.0867, "category": "Geology"},
+  {"feature": "snow_ice_fraction", "importance": 0.0812, "category": "Land Cover"},
+  {"feature": "elevation", "importance": 0.0420, "category": "Terrain"},
+  {"feature": "log1p_distance_to_active_fault", "importance": 0.0396, "category": "Geology"},
+  {"feature": "distance_to_drainage", "importance": 0.0377, "category": "Hydrology"},
+  {"feature": "bare_sparse_fraction", "importance": 0.0372, "category": "Land Cover"},
+  {"feature": "distance_to_major_road_m", "importance": 0.0351, "category": "Anthropogenic"},
+  {"feature": "vegetation_fraction", "importance": 0.0329, "category": "Land Cover"},
+  {"feature": "distance_to_fault_m", "importance": 0.0314, "category": "Geology"},
+  {"feature": "distance_to_active_fault_m", "importance": 0.0292, "category": "Geology"},
+  {"feature": "grassland_fraction", "importance": 0.0279, "category": "Land Cover"},
+  {"feature": "tree_cover_fraction", "importance": 0.0272, "category": "Land Cover"},
+  {"feature": "distance_to_thrust_m", "importance": 0.0270, "category": "Geology"},
+  {"feature": "slope", "importance": 0.0252, "category": "Terrain"},
+  {"feature": "tri", "importance": 0.0245, "category": "Terrain"}
 ]

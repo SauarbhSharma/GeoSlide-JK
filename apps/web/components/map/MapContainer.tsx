@@ -904,7 +904,8 @@ export function MapContainer({
             </div>
           )}
         </div>
-      </MapErrorBoundary>
+      </div>
+    </MapErrorBoundary>
     </div>
   );
 }

@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+.next/
+.venv/
+__pycache__/
+*.pyc
+
+# Raw and interim data
+data/raw/
+data/interim/
+
+# Heavy feature rasters (not needed at runtime)
+data/processed/features/
+
+# Training scripts and models
+models/
+
+# Test and development files
+tests/
+scripts/
+*.test.*
+*.spec.*
+.pytest_cache/
+playwright-report/
+
+# Documentation not needed at runtime
+docs/
+outputs/maps/
+outputs/scratch/
+outputs/cache/
+
+# Git and IDE
+.git/
+.gitignore
+.github/
+.vscode/
+*.md
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+cookies*
+
+# Streamlit (not part of the Docker container)
+streamlit_app/
+.streamlit/
+
+# Build artifacts
+Dockerfile
+.dockerignore
+docker-compose*.yml
+deploy/
+render.yaml
+
+# Miscellaneous
+*.log
+*.zip
+*.tar.gz

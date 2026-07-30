@@ -1,0 +1,11 @@
+# Minimal API runtime dependencies for production Docker image
+fastapi>=0.104.0
+uvicorn>=0.24.0
+rasterio>=1.3.0
+geopandas>=0.14.0
+shapely>=2.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+Pillow>=10.0.0
+pyogrio>=0.7.0
+pyproj>=3.6.0
