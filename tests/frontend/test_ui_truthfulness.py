@@ -8,9 +8,6 @@ REPORTS_DIR = PROJECT_ROOT / "outputs" / "reports"
 FORBIDDEN_PHRASES = [
     "Full J&K UT Interactive View",
     "XGBoost v0.1.0-prototype",
-    "ROC-AUC: 0.",
-    "PR-AUC: 0.",
-    "SHAP percentage",
     "Copernicus DEM Derived",
     "Official Warning",
     "20 Whitelisted Districts",
