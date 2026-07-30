@@ -14,8 +14,12 @@ import rasterio
 from rasterio.warp import transform as warp_transform, reproject, Resampling
 from rasterio.transform import from_bounds
 from rasterio.crs import CRS
+import warnings
 import geopandas as gpd
 from shapely.geometry import Point
+from rasterio.errors import NotGeoreferencedWarning
+
+warnings.filterwarnings("ignore", category=NotGeoreferencedWarning)
 
 app = FastAPI(
     title="GeoSlide-JK API",
