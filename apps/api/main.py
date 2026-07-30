@@ -44,10 +44,15 @@ RAINFALL_DIR = PROJECT_ROOT / "data" / "processed" / "rainfall"
 HAZARD_DIR = PROJECT_ROOT / "data" / "processed" / "hazard"
 REPORTS_DIR = PROJECT_ROOT / "outputs" / "reports"
 
-ELEV_COG = PROCESSED_TERRAIN / "jk_elevation_glo30_cog.tif"
-SLOPE_COG = PROCESSED_TERRAIN / "jk_slope_degrees_cog.tif"
-ASPECT_COG = PROCESSED_TERRAIN / "jk_aspect_degrees_cog.tif"
-HILLSHADE_COG = PROCESSED_TERRAIN / "jk_hillshade_cog.tif"
+_ELEV_100M = PROCESSED_TERRAIN / "jk_elevation_100m_cog.tif"
+_SLOPE_100M = PROCESSED_TERRAIN / "jk_slope_degrees_100m_cog.tif"
+_ASPECT_100M = PROCESSED_TERRAIN / "jk_aspect_degrees_100m_cog.tif"
+_HILLSHADE_100M = PROCESSED_TERRAIN / "jk_hillshade_100m_cog.tif"
+
+ELEV_COG = _ELEV_100M if _ELEV_100M.exists() else (PROCESSED_TERRAIN / "jk_elevation_glo30_cog.tif")
+SLOPE_COG = _SLOPE_100M if _SLOPE_100M.exists() else (PROCESSED_TERRAIN / "jk_slope_degrees_cog.tif")
+ASPECT_COG = _ASPECT_100M if _ASPECT_100M.exists() else (PROCESSED_TERRAIN / "jk_aspect_degrees_cog.tif")
+HILLSHADE_COG = _HILLSHADE_100M if _HILLSHADE_100M.exists() else (PROCESSED_TERRAIN / "jk_hillshade_cog.tif")
 
 SUSC_PROB_RASTER = SUSC_DIR / "jk_susceptibility_probability_100m.tif"
 SUSC_CLASS_RASTER = SUSC_DIR / "jk_susceptibility_class_100m.tif"

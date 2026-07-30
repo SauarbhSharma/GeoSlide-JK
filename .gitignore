@@ -63,9 +63,8 @@ outputs/reports/phase_3_b2b_checksum_report.csv
 !data/processed/susceptibility/*.tif
 !data/processed/hazard/*.tif
 !data/processed/rainfall/*.tif
-# Terrain COGs are too large (>100MB) for GitHub — excluded
-# The app degrades gracefully when terrain layers are unavailable
-# data/processed/terrain/*.tif stays excluded by *.tif rule
+!data/processed/terrain/*_100m_cog.tif
+# Original 30m terrain COGs (>200MB each) remain excluded by *.tif rule
 
 # Heavy feature rasters (training only, not needed at runtime)
 data/processed/features/
