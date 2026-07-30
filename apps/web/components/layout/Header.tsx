@@ -27,9 +27,9 @@ export function Header() {
           </div>
           <div>
             <div className="flex items-center space-x-2">
-              <span className="font-bold text-lg tracking-wide text-white">GeoSlide J&K</span>
+              <span className="font-bold text-lg tracking-wide text-white">GeoSlide-JK v1.0.0</span>
               <span className="bg-blue-900/60 border border-blue-500/30 text-blue-300 text-xs px-2 py-0.5 rounded font-mono">
-                Phase 2 — Static Geospatial Products
+                Research Decision-Support Prototype
               </span>
             </div>
             <p className="text-xs text-slate-300">Terrain Intelligence & Rainfall-Triggered Landslide Risk</p>
@@ -40,11 +40,11 @@ export function Header() {
         <div className="hidden lg:flex items-center space-x-2.5">
           <div className="flex items-center space-x-1.5 bg-emerald-950/70 border border-emerald-600/70 text-emerald-200 text-xs px-2.5 py-1 rounded-md font-medium shadow-sm">
             <Layers className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Static Geospatial Layers: Live</span>
+            <span>Static Susceptibility Model: Trained</span>
           </div>
           <div className="flex items-center space-x-1.5 bg-amber-950/70 border border-amber-600/70 text-amber-200 text-xs px-2.5 py-1 rounded-md font-medium shadow-sm">
             <CloudRain className="w-3.5 h-3.5 text-amber-400" />
-            <span>Risk & Rainfall Modules: Demo</span>
+            <span>Dynamic Hazard: Scenario / Proxy Mode</span>
           </div>
           <div className="flex items-center space-x-1.5 bg-sky-950/70 border border-sky-600/70 text-sky-200 text-xs px-2.5 py-1 rounded-md font-medium shadow-sm">
             <CheckCircle className="w-3.5 h-3.5 text-sky-400" />

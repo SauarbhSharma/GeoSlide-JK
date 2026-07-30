@@ -1,59 +1,42 @@
 "use client";
 
 import { useState } from 'react';
-import { Play, Pause, RotateCcw, Clock, CloudRain } from 'lucide-react';
+import { RotateCcw, Clock, CloudRain } from 'lucide-react';
 
 export function TimelineSlider() {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [activeWindow, setActiveWindow] = useState('24h');
-
-  const windows = ['30min', '1h', '3h', '6h', '12h', '24h', '48h', '72h'];
 
   return (
     <div className="bg-navy-900 border-t border-navy-700 px-4 py-2 text-xs flex items-center justify-between text-slate-200">
-      {/* Play Controls */}
+      {/* Reset Control */}
       <div className="flex items-center space-x-2">
         <button
-          onClick={() => setIsPlaying(!isPlaying)}
-          className="p-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-md flex items-center space-x-1 font-semibold transition-colors"
-        >
-          {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-          <span>{isPlaying ? 'Pause Demo' : 'Play Timeline Demo'}</span>
-        </button>
-        <button
           onClick={() => setActiveWindow('24h')}
-          className="p-1.5 bg-navy-800 hover:bg-navy-700 text-slate-300 rounded-md"
+          className="p-1.5 bg-navy-800 hover:bg-navy-700 text-slate-300 rounded-md flex items-center space-x-1 font-mono text-[11px]"
           title="Reset Timeline"
         >
           <RotateCcw className="w-3.5 h-3.5" />
+          <span>Reset 24h Window</span>
         </button>
       </div>
 
-      {/* Accumulation Windows */}
+      {/* Accumulation Window */}
       <div className="flex items-center space-x-1 bg-navy-800 p-1 rounded-lg border border-navy-700">
         <div className="flex items-center space-x-1 text-slate-300 px-2 font-mono text-[11px]">
           <Clock className="w-3.5 h-3.5 text-blue-400" />
-          <span>IMERG Window (Demo):</span>
+          <span>24h Precipitation Accumulation:</span>
         </div>
-        {windows.map((w) => (
-          <button
-            key={w}
-            onClick={() => setActiveWindow(w)}
-            className={`px-2.5 py-1 rounded text-xs font-mono transition-colors ${
-              activeWindow === w
-                ? 'bg-blue-600 text-white font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-navy-700'
-            }`}
-          >
-            {w}
-          </button>
-        ))}
+        <button
+          className="px-3 py-1 rounded text-xs font-mono bg-blue-600 text-white font-bold"
+        >
+          24h (Derived Proxy)
+        </button>
       </div>
 
-      {/* Risk & Rainfall Modules: Demo Badge */}
-      <div className="flex items-center space-x-2 bg-blue-950/60 border border-blue-600/40 px-3 py-1 rounded-md text-blue-300 font-medium">
-        <CloudRain className="w-3.5 h-3.5 text-blue-400" />
-        <span>Risk & Rainfall Modules: Demo</span>
+      {/* Dynamic Hazard Status Badge */}
+      <div className="flex items-center space-x-2 bg-amber-950/60 border border-amber-600/40 px-3 py-1 rounded-md text-amber-300 font-medium">
+        <CloudRain className="w-3.5 h-3.5 text-amber-400" />
+        <span>Dynamic Hazard: Scenario / Proxy Mode</span>
       </div>
     </div>
   );

@@ -5,14 +5,15 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { MapContainer } from '@/components/map/MapContainer';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
-import { AlertTriangle } from 'lucide-react';
+import { Shield } from 'lucide-react';
 
 export default function InteractiveRiskExplorer() {
   const [selectedDistrict, setSelectedDistrict] = useState('all');
   const [activeLayers, setActiveLayers] = useState([
     'jk_districts',
     'jk_ut_boundary',
-    'nh44'
+    'nh44',
+    'susceptibility_prob'
   ]);
 
   const handleToggleLayer = (layerId: string) => {
@@ -39,13 +40,13 @@ export default function InteractiveRiskExplorer() {
 
             <div className="bg-emerald-950/60 border border-emerald-500/50 p-2 px-3 rounded-lg flex items-center justify-between text-xs text-emerald-200">
               <div className="flex items-center space-x-2 font-medium">
-                <AlertTriangle className="w-4 h-4 text-emerald-400 shrink-0" />
+                <Shield className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>
-                  <strong>Phase 2 Active:</strong> Full-J&K 30m DEM elevation, slope, aspect, hillshade COGs, and 10 static vector layers are live. District risk classes remain illustrative demonstration data.
+                  <strong>GeoSlide-JK v1.0.0 Live:</strong> Static XGBoost susceptibility model (ROC-AUC: 0.8694) & 100m EPSG:32643 dynamic hazard index layers are fully active across all 20 J&K UT districts.
                 </span>
               </div>
               <span className="font-mono text-[10px] bg-emerald-900 px-2 py-0.5 rounded text-emerald-100 shrink-0 ml-2">
-                Phase 2 — Static Geospatial Products
+                Release v1.0.0
               </span>
             </div>
           </div>

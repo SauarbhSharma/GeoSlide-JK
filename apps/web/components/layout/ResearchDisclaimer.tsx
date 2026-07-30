@@ -8,11 +8,11 @@ export function ResearchDisclaimer() {
       <div className="flex items-center space-x-2">
         <Info className="w-4 h-4 text-amber-400 shrink-0" />
         <span>
-          <strong>Research Disclaimer:</strong> GeoSlide-JK is an explainable landslide susceptibility and rainfall-triggered risk decision-support research prototype. It does not constitute an official government warning system.
+          <strong>Research Disclaimer:</strong> GeoSlide-JK is a research decision-support prototype and is not an official government warning system.
         </span>
       </div>
       <span className="text-[10px] uppercase font-mono tracking-wider bg-amber-900/60 px-2 py-0.5 rounded text-amber-300 ml-4 shrink-0">
-        Demo Mode
+        Research Prototype
       </span>
     </div>
   );

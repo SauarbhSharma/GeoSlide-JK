@@ -75,7 +75,7 @@ export function Sidebar({ selectedDistrict, onSelectDistrict, activeLayers, onTo
             <option value="all">All 20 Districts (Statewide J&K)</option>
             {filteredDistricts.map((d) => (
               <option key={d.id} value={d.id}>
-                {d.displayName} ({d.riskLevel} - Demo)
+                {d.displayName} District
               </option>
             ))}
           </select>
@@ -83,11 +83,11 @@ export function Sidebar({ selectedDistrict, onSelectDistrict, activeLayers, onTo
 
         {/* Master Layer Registry List */}
         <div>
-          <label className="text-xs font-semibold text-slate-300 block mb-2">Phase 2 Geospatial Layers</label>
+          <label className="text-xs font-semibold text-slate-300 block mb-2">GeoSlide-JK v1.0.0 Layers</label>
           <div className="space-y-1.5">
             {MASTER_LAYER_REGISTRY.map((layer) => {
               const isVisible = activeLayers.includes(layer.id) || layer.defaultVisibility;
-              const isAvailable = layer.availability === "Available";
+              const isAvailable = layer.availability === "Available" || layer.availability === "Scenario / Proxy Mode";
               return (
                 <div
                   key={layer.id}
