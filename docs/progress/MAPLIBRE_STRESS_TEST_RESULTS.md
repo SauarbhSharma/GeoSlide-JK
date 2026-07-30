@@ -1,6 +1,6 @@
 # MAPLIBRE STRESS TEST RESULTS REPORT
 
-- **Timestamp**: 2026-07-30 14:07:44
+- **Timestamp**: 2026-07-30 14:08:28
 - **Target URL**: http://127.0.0.1:3000
 - **Overall Pass Status**: **PASS**
 - **Map Clicks Executed**: 25
@@ -11,7 +11,7 @@
 - **Uncaught Page Errors**: 0
 - **Next.js Error Overlay Detected**: False
 - **Red Error Toast Detected**: False
-- **Backend Tile & Query Health**: HTTP 200 OK
+- **Backend Tile & Query Health**: FAILED: timed out
 
 ## Captured Screenshot
 

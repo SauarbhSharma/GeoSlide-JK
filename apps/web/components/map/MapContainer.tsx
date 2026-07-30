@@ -649,7 +649,8 @@ export function MapContainer({
       </div>
 
       {/* Floating Control Panel */}
-      <div className="absolute top-4 right-4 z-10 w-80 bg-slate-900/95 backdrop-blur-md rounded-xl border border-slate-700/80 shadow-2xl overflow-hidden flex flex-col text-slate-200">
+      <MapErrorBoundary>
+        <div className="absolute top-4 right-4 z-10 w-80 bg-slate-900/95 backdrop-blur-md rounded-xl border border-slate-700/80 shadow-2xl overflow-hidden flex flex-col text-slate-200">
         {/* Tab Headers */}
         <div className="flex border-b border-slate-800 bg-slate-950/80">
           <button
@@ -903,7 +904,7 @@ export function MapContainer({
             </div>
           )}
         </div>
-      </div>
+      </MapErrorBoundary>
     </div>
   );
 }
