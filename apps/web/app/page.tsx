@@ -40,6 +40,16 @@ export default function StatewideCommandCentre() {
         {/* Center Map & Summary Area */}
         <div className="flex-1 flex flex-col overflow-hidden relative">
           <div className="p-3 bg-navy-900/60 border-b border-navy-800">
+            <div className="flex items-center justify-between mb-2 px-1">
+              <div className="flex items-center space-x-3">
+                <img
+                  src="/branding/geoslide-jk-logo-horizontal.png"
+                  alt="GeoSlide-JK — Landslide Risk Intelligence"
+                  className="h-7 sm:h-8 w-auto object-contain drop-shadow"
+                />
+              </div>
+            </div>
+
             <ResearchDisclaimer />
 
             {/* AUDITED RELEASE STATUS BANNER */}

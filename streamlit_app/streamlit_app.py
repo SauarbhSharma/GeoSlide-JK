@@ -1,13 +1,23 @@
 """
-GeoSlide-JK — Streamlit Wrapper
+GeoSlide-JK — Streamlit Companion Wrapper
 Embeds the authoritative Next.js + FastAPI application hosted on Render.
 This is NOT an independent dashboard. The full application runs at the public URL.
 """
+from pathlib import Path
+from PIL import Image
 import streamlit as st
 
+EMBLEM_PATH = Path(__file__).parent / "assets" / "geoslide-jk-emblem.png"
+page_icon_asset = "🏔️"
+if EMBLEM_PATH.exists():
+    try:
+        page_icon_asset = Image.open(EMBLEM_PATH)
+    except Exception:
+        pass
+
 st.set_page_config(
-    page_title="GeoSlide-JK — Landslide Intelligence",
-    page_icon="🏔️",
+    page_title="GeoSlide-JK | Landslide Risk Intelligence",
+    page_icon=page_icon_asset,
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -44,19 +54,17 @@ if not APP_URL:
     APP_URL = os.environ.get("GEOSLIDE_PUBLIC_APP_URL", None)
 
 if not APP_URL:
-    st.error(
-        "⚠️ **Configuration Required**\n\n"
-        "The `GEOSLIDE_PUBLIC_APP_URL` secret is not configured.\n\n"
-        "Set it in **Streamlit Community Cloud → App Settings → Secrets**:\n\n"
-        "```toml\n"
-        'GEOSLIDE_PUBLIC_APP_URL = "https://geoslide-jk.onrender.com"\n'
-        "```\n\n"
-        "This URL should point to the deployed GeoSlide-JK application on Render."
-    )
-    st.stop()
+    # Default to public Render URL if no secret is set
+    APP_URL = "https://geoslide-jk.onrender.com"
 
-# Display the authoritative application
-st.components.v1.iframe(APP_URL, height=900, scrolling=True)
+# Display the authoritative application via full-screen iframe wrapper
+try:
+    st.components.v1.iframe(APP_URL, height=900, scrolling=True)
+except Exception:
+    st.error(
+        "⚠️ **GeoSlide-JK Service Connection Notice**\n\n"
+        f"Unable to render iframe preview directly. [Click here to launch GeoSlide-JK full screen]({APP_URL})"
+    )
 
 st.markdown(
     f'<p style="text-align:center; color:#94a3b8; font-size:0.85rem; margin-top:0.5rem;">'

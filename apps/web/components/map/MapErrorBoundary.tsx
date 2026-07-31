@@ -38,6 +38,12 @@ export class MapErrorBoundary extends Component<Props, State> {
       return (
         <div className="p-4 bg-navy-950 border border-slate-800 rounded-xl text-slate-200 text-xs space-y-3 shadow-xl">
           <div className="flex items-center space-x-2 text-amber-400 font-bold">
+            <img
+              src="/branding/geoslide-jk-emblem.png"
+              alt="GeoSlide-JK"
+              className="h-5 w-auto object-contain shrink-0"
+              onError={(e) => { (e.currentTarget as HTMLElement).style.display = 'none'; }}
+            />
             <AlertTriangle className="w-4 h-4 shrink-0" />
             <span>Inspector Component Display Notice</span>
           </div>

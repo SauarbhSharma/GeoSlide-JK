@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="apps/web/public/branding/geoslide-jk-logo-horizontal.png" alt="GeoSlide-JK — Landslide Risk Intelligence" width="560">
+</p>
+
+<p align="center">
+  <b>Machine-Learning Landslide Susceptibility and Rainfall-Triggered Hazard Decision Support for Jammu & Kashmir</b>
+</p>
+
 # 🏔️ GeoSlide-JK v1.0.0 — Full-J&K Landslide Susceptibility & Dynamic Hazard Intelligence Engine
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)

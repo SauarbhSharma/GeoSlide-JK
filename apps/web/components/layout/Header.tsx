@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Shield, Layers, CloudRain, CheckCircle } from 'lucide-react';
+import { Layers, CloudRain, CheckCircle } from 'lucide-react';
 
 export function Header() {
   const pathname = usePathname();
@@ -19,20 +19,28 @@ export function Header() {
 
   return (
     <header className="bg-navy-900 border-b border-navy-700 text-slate-100 sticky top-0 z-50">
-      <div className="flex items-center justify-between px-4 py-2.5">
+      <div className="flex items-center justify-between px-4 py-2">
         {/* Brand */}
-        <div className="flex items-center space-x-3">
-          <div className="bg-blue-600/20 border border-blue-500/40 p-2 rounded-lg text-blue-400">
-            <Shield className="w-6 h-6" />
-          </div>
+        <div className="flex items-center space-x-3 shrink-0">
+          <Link href="/" className="flex items-center shrink-0" title="GeoSlide-JK Home">
+            {/* emblem height ~32-40px */}
+            <img
+              src="/branding/geoslide-jk-emblem.png"
+              alt="GeoSlide-JK — Landslide Risk Intelligence"
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain drop-shadow-md shrink-0"
+              onError={(e) => {
+                (e.currentTarget as HTMLElement).style.display = 'none';
+              }}
+            />
+          </Link>
           <div>
             <div className="flex items-center space-x-2">
-              <span className="font-bold text-lg tracking-wide text-white">GeoSlide-JK v1.0.0</span>
-              <span className="bg-blue-900/60 border border-blue-500/30 text-blue-300 text-xs px-2 py-0.5 rounded font-mono">
+              <span className="font-bold text-base sm:text-lg tracking-wide text-white">GeoSlide-JK v1.0.0</span>
+              <span className="bg-blue-900/60 border border-blue-500/30 text-blue-300 text-[10px] sm:text-xs px-2 py-0.5 rounded font-mono">
                 Research Decision-Support Prototype
               </span>
             </div>
-            <p className="text-xs text-slate-300">Terrain Intelligence & Rainfall-Triggered Landslide Risk</p>
+            <p className="text-[11px] sm:text-xs text-slate-300">Terrain Intelligence & Rainfall-Triggered Landslide Risk</p>
           </div>
         </div>
 
