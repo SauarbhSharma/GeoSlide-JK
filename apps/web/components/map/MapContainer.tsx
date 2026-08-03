@@ -80,6 +80,7 @@ export function MapContainer({
   const [loadingInspect, setLoadingInspect] = useState<boolean>(false);
   const [inspectionError, setInspectionError] = useState<string | null>(null);
   const [basemapError, setBasemapError] = useState<boolean>(false);
+  const [isDrawerCollapsed, setIsDrawerCollapsed] = useState<boolean>(false);
 
   // Global unhandled promise rejection handler to safely prevent Next.js error overlays for expected MapLibre tile AbortError
   useEffect(() => {
@@ -650,43 +651,62 @@ export function MapContainer({
 
       {/* Floating Control Panel */}
       <MapErrorBoundary>
-        <div className="absolute top-4 right-4 z-10 w-80 bg-slate-900/95 backdrop-blur-md rounded-xl border border-slate-700/80 shadow-2xl overflow-hidden flex flex-col text-slate-200">
-        {/* Tab Headers */}
-        <div className="flex border-b border-slate-800 bg-slate-950/80">
+        {isDrawerCollapsed ? (
           <button
-            onClick={() => setActiveTab("layers")}
-            className={`flex-1 py-2.5 text-xs font-semibold flex items-center justify-center space-x-1.5 transition-colors ${
-              activeTab === "layers"
-                ? "bg-sky-950/90 text-sky-400 border-b-2 border-sky-500"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50"
-            }`}
+            onClick={() => setIsDrawerCollapsed(false)}
+            className="absolute top-4 right-4 z-10 bg-slate-900/95 hover:bg-slate-800 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-700 text-sky-400 text-xs font-semibold flex items-center space-x-2 shadow-2xl transition-all"
+            title="Expand Map Layers Drawer"
           >
-            <Layers className="w-3.5 h-3.5" />
-            <span>Map Layers</span>
+            <Layers className="w-4 h-4" />
+            <span>Map Layers & Inspector</span>
           </button>
-          <button
-            onClick={() => setActiveTab("legend")}
-            className={`flex-1 py-2.5 text-xs font-semibold flex items-center justify-center space-x-1.5 transition-colors ${
-              activeTab === "legend"
-                ? "bg-sky-950/90 text-sky-400 border-b-2 border-sky-500"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50"
-            }`}
-          >
-            <Info className="w-3.5 h-3.5" />
-            <span>Legend</span>
-          </button>
-          <button
-            onClick={() => setActiveTab("inspect")}
-            className={`flex-1 py-2.5 text-xs font-semibold flex items-center justify-center space-x-1.5 transition-colors ${
-              activeTab === "inspect"
-                ? "bg-sky-950/90 text-sky-400 border-b-2 border-sky-500"
-                : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50"
-            }`}
-          >
-            <Compass className="w-3.5 h-3.5" />
-            <span>Inspector</span>
-          </button>
-        </div>
+        ) : (
+          <div className="absolute top-4 right-4 z-10 w-80 bg-slate-900/95 backdrop-blur-md rounded-xl border border-slate-700/80 shadow-2xl overflow-hidden flex flex-col text-slate-200">
+            {/* Tab Headers */}
+            <div className="flex items-center justify-between border-b border-slate-800 bg-slate-950/80 pr-2">
+              <div className="flex flex-1">
+                <button
+                  onClick={() => setActiveTab("layers")}
+                  className={`flex-1 py-2.5 text-xs font-semibold flex items-center justify-center space-x-1 transition-colors ${
+                    activeTab === "layers"
+                      ? "bg-sky-950/90 text-sky-400 border-b-2 border-sky-500"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50"
+                  }`}
+                >
+                  <Layers className="w-3.5 h-3.5" />
+                  <span>Layers</span>
+                </button>
+                <button
+                  onClick={() => setActiveTab("legend")}
+                  className={`flex-1 py-2.5 text-xs font-semibold flex items-center justify-center space-x-1 transition-colors ${
+                    activeTab === "legend"
+                      ? "bg-sky-950/90 text-sky-400 border-b-2 border-sky-500"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50"
+                  }`}
+                >
+                  <Info className="w-3.5 h-3.5" />
+                  <span>Legend</span>
+                </button>
+                <button
+                  onClick={() => setActiveTab("inspect")}
+                  className={`flex-1 py-2.5 text-xs font-semibold flex items-center justify-center space-x-1 transition-colors ${
+                    activeTab === "inspect"
+                      ? "bg-sky-950/90 text-sky-400 border-b-2 border-sky-500"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-slate-900/50"
+                  }`}
+                >
+                  <Compass className="w-3.5 h-3.5" />
+                  <span>Inspect</span>
+                </button>
+              </div>
+              <button
+                onClick={() => setIsDrawerCollapsed(true)}
+                className="p-1 text-slate-400 hover:text-white rounded hover:bg-slate-800 transition-colors"
+                title="Collapse Drawer"
+              >
+                ✕
+              </button>
+            </div>
 
         {/* Tab Body */}
         <div className="p-4 max-h-[500px] overflow-y-auto space-y-4 font-sans">
@@ -905,8 +925,9 @@ export function MapContainer({
           )}
         </div>
       </div>
-    </MapErrorBoundary>
-    </div>
+    )}
+  </MapErrorBoundary>
+</div>
   );
 }
 

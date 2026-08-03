@@ -1,5 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { RoleProvider } from '@/lib/RoleContext';
+import { RoleSelectionModal } from '@/components/layout/RoleSelectionModal';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://geoslide-jk.onrender.com'),
@@ -58,7 +60,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-navy-950 text-slate-100 antialiased">{children}</body>
+      <body className="bg-navy-950 text-slate-100 antialiased">
+        <RoleProvider>
+          {children}
+          <RoleSelectionModal />
+        </RoleProvider>
+      </body>
     </html>
   );
 }
