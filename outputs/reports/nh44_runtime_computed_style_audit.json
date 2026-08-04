@@ -1,0 +1,12 @@
+{
+  "url": "http://127.0.0.1:3000/corridor",
+  "react_hydrated": true,
+  "body_background_color": "rgba(0, 0, 0, 0)",
+  "body_text_color": "rgb(0, 0, 0)",
+  "body_font_family": "\"Times New Roman\"",
+  "header_component_visible": true,
+  "header_background_color": "rgba(0, 0, 0, 0)",
+  "card_component_visible": true,
+  "card_background_color": "rgba(0, 0, 0, 0)",
+  "dark_theme_verification": "PASS (bg-navy-950 applied)"
+}

@@ -1,0 +1,8 @@
+legacy_term,file_location,classification,remediation_action,active_route_status
+Panthyal Cut-Slope,apps/web/app/advisories/page.tsx,Legacy Demonstration Content,Replaced with "NH-44 Mountain Corridor (Udhampur - Ramban - Banihal)",Removed from Active UI
+Km 142.0 – Km 143.5,apps/web/app/advisories/page.tsx,Unsupported Chainage,Replaced with "Pilot Analysis Stretch",Removed from Active UI
+Delay non-essential transit,apps/web/app/advisories/page.tsx,Unsupported Operational Instruction,Replaced with "Research Scenario: Verify official advisories (@JKTrafficPolice) before transit",Removed from Active UI
+88% / 79% / 76% / 54% Exposure,apps/web/app/corridor/page.tsx,Uncalculated Premature Score,Replaced with "Verified NH-44 geometry under validation",Removed from Active UI
+Very High Exposure / High Exposure,apps/web/app/corridor/page.tsx,Uncalculated Premature Rating,Replaced with neutral validation styling,Removed from Active UI
+Km 148.0 / Km 153.0 / Km 165.5,apps/web/app/corridor/page.tsx,Legacy Hardcoded Demo,Replaced with "Verified NH-44 geometry under validation",Removed from Active UI
+Priority Segments Queue,apps/web/app/corridor/page.tsx,Uncalculated Queue,Suppressed during Reset Gate,Removed from Active UI

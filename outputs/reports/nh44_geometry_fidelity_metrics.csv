@@ -1,0 +1,2 @@
+dataset_label,accepted_source_edges_count,total_original_vertices,total_unsimplified_length_km,disconnected_components_count,largest_gap_m,longest_individual_chord_m,artificial_connector_count,fidelity_verdict
+OSM-derived NH-44 research alignment,372,13073,330.859,1,0.0,13688.38,0,PASS (100% Unmodified Real Source Coordinates)
