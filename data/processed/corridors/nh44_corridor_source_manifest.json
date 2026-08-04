@@ -1,0 +1,13 @@
+{
+  "source_path": "D:\\Projects\\GeoSlide_JK\\data\\processed\\vectors\\jk_nh44.parquet",
+  "source_name": "GeoSlide-JK NH-44 Highway Corridor Dataset",
+  "licence_or_attribution": "NGDR / OpenStreetMap / GeoSlide-JK Processed",
+  "original_crs": "EPSG:4326",
+  "processing_crs": "EPSG:32643",
+  "checksum_md5_8k": "29d0d4550b3456043e628145e6d57b5f",
+  "selection_reason": "Topology-repaired continuous LineString along the NH-44 pilot corridor",
+  "known_limitations": "Continuous analysis geometry for the NH-44 pilot highway sector in J&K UT",
+  "date_processed": "2026-08-04",
+  "verified_length_m": 74875.83,
+  "verified_length_km": 74.88
+}

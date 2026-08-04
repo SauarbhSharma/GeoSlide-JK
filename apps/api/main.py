@@ -16,6 +16,7 @@ from rasterio.transform import from_bounds
 from rasterio.crs import CRS
 import warnings
 import geopandas as gpd
+import pandas as pd
 from shapely.geometry import Point
 from rasterio.errors import NotGeoreferencedWarning
 
@@ -39,6 +40,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 PROCESSED_BOUNDARIES = PROJECT_ROOT / "data" / "processed" / "boundaries"
 PROCESSED_TERRAIN = PROJECT_ROOT / "data" / "processed" / "terrain"
 PROCESSED_VECTORS = PROJECT_ROOT / "data" / "processed" / "vectors"
+PROCESSED_CORRIDORS = PROJECT_ROOT / "data" / "processed" / "corridors"
 SUSC_DIR = PROJECT_ROOT / "data" / "processed" / "susceptibility"
 RAINFALL_DIR = PROJECT_ROOT / "data" / "processed" / "rainfall"
 HAZARD_DIR = PROJECT_ROOT / "data" / "processed" / "hazard"
@@ -65,8 +67,15 @@ DYNAMIC_HAZARD_CLASS_RASTER = HAZARD_DIR / "jk_dynamic_hazard_class_100m.tif"
 DISTRICTS_GEOJSON = PROCESSED_BOUNDARIES / "jk_districts.geojson"
 UT_GEOJSON = PROCESSED_BOUNDARIES / "jk_ut_boundary.geojson"
 
+NH44_MANIFEST_JSON = PROCESSED_CORRIDORS / "nh44_corridor_source_manifest.json"
+NH44_WEB_GEOJSON = PROCESSED_CORRIDORS / "nh44_pilot_corridor_web.geojson"
+NH44_SEGMENTS_GEOJSON = PROCESSED_CORRIDORS / "nh44_segments_500m_web.geojson"
+NH44_SEGMENTS_CSV = PROCESSED_CORRIDORS / "nh44_segments_500m.csv"
+
 districts_cache = None
 districts_gdf_cache = None
+segments_df_cache = None
+segments_geojson_cache = None
 
 
 def get_districts_geojson():
@@ -82,6 +91,21 @@ def get_districts_gdf():
     if districts_gdf_cache is None and DISTRICTS_GEOJSON.exists():
         districts_gdf_cache = gpd.read_file(DISTRICTS_GEOJSON)
     return districts_gdf_cache
+
+
+def get_segments_df():
+    global segments_df_cache
+    if segments_df_cache is None and NH44_SEGMENTS_CSV.exists():
+        segments_df_cache = pd.read_csv(NH44_SEGMENTS_CSV)
+    return segments_df_cache
+
+
+def get_segments_geojson():
+    global segments_geojson_cache
+    if segments_geojson_cache is None and NH44_SEGMENTS_GEOJSON.exists():
+        with open(NH44_SEGMENTS_GEOJSON, 'r', encoding='utf-8') as f:
+            segments_geojson_cache = json.load(f)
+    return segments_geojson_cache
 
 
 def sample_cog_value(cog_path: Path, lat: float, lon: float) -> Optional[float]:
@@ -160,6 +184,9 @@ def health_check():
             "/api/v1/health",
             "/api/v1/status",
             "/api/v1/districts",
+            "/api/v1/corridors",
+            "/api/v1/corridors/nh44",
+            "/api/v1/corridors/nh44/segments",
             "/api/v1/location-check",
             "/api/v1/terrain/value",
             "/api/v1/tiles/{layer_id}/{z}/{x}/{y}.png",
@@ -175,7 +202,7 @@ def system_status():
     return {
         "app_stage": "Phase 6 — Full System Live (Phase 2 / Phase 4 / Phase 5 / Phase 6 Verified)",
         "app_version": "v0.6.0",
-        "data_freshness": "2026-07-30 (Audited v1.0.0 Pipeline)",
+        "data_freshness": "2026-08-04 (Audited Checkpoint V2-3A Corridor Pipeline)",
         "dem_rules": "Four full-J&K Copernicus GLO-30 DEM tiles mosaicked to 100m EPSG:32643 grid.",
         "nlsm_status": "Pre-existing NLSM benchmark raster isolated from predictor stack.",
         "model_pipeline_status": "Phase 4 Susceptibility Model Pipeline: Trained & Verified (ROC-AUC: 0.8694)",
@@ -187,8 +214,134 @@ def system_status():
             "Phase 3: Multi-Domain Feature Engineering (Terrain, Geology, Land Cover, Exposure)",
             "Phase 4: Machine-Learning Model Training & 5-Fold Spatial District Block Cross-Validation (ROC-AUC: 0.8694)",
             "Phase 5: Dynamic Rainfall Ingestion (24h Proxy Scenario), IMD P90 Climatology & Dynamic Hazard Thresholds",
-            "Phase 6: Full API Services & Next.js Web UI Integration"
+            "Phase 6: Full API Services & Next.js Web UI Integration",
+            "Checkpoint V2-3A: Verified NH-44 Corridor Geometry, Chainage & 500m Segmentation Foundation"
         ]
+    }
+
+
+# ============================================================
+# CORRIDOR REST API ENDPOINTS (CHECKPOINT V2-3A)
+# ============================================================
+
+@app.get("/api/v1/corridors")
+def list_corridors():
+    return {
+        "count": 1,
+        "corridors": [
+            {
+                "corridor_id": "NH44-JK-PILOT",
+                "corridor_name": "NH-44 Jammu-Srinagar Highway Pilot Corridor",
+                "pilot_extent": "Udhampur – Ramban – Banihal Mountain Sector",
+                "verified_length_km": 74.88,
+                "verified_segment_count": 150,
+                "geometry_version": "2.3A",
+                "data_quality_status": "Verified Continuous Geometry"
+            }
+        ]
+    }
+
+
+@app.get("/api/v1/corridors/nh44")
+def get_nh44_corridor():
+    manifest = {}
+    if NH44_MANIFEST_JSON.exists():
+        with open(NH44_MANIFEST_JSON, 'r', encoding='utf-8') as f:
+            manifest = json.load(f)
+
+    web_geojson = None
+    if NH44_WEB_GEOJSON.exists():
+        with open(NH44_WEB_GEOJSON, 'r', encoding='utf-8') as f:
+            web_geojson = json.load(f)
+
+    return {
+        "success": True,
+        "corridor_id": "NH44-JK-PILOT",
+        "corridor_name": "NH-44 Jammu-Srinagar Highway Pilot Corridor",
+        "origin_name": "Udhampur Pilot Sector",
+        "destination_name": "Banihal / Anantnag Sector",
+        "route_direction": "South to North",
+        "verified_length_km": 74.88,
+        "verified_length_m": 74875.83,
+        "verified_segment_count": 150,
+        "geometry_version": "2.3A",
+        "data_quality_status": "Verified Continuous Geometry",
+        "manifest": manifest,
+        "geojson": web_geojson
+    }
+
+
+@app.get("/api/v1/corridors/nh44/segments")
+def get_nh44_segments(
+    district: Optional[str] = Query(None, description="Filter segments by district name (e.g. Ramban)"),
+    limit: int = Query(200, ge=1, le=500),
+    offset: int = Query(0, ge=0)
+):
+    df = get_segments_df()
+    if df is None:
+        raise HTTPException(status_code=404, detail="NH-44 segments database not found")
+
+    filtered_df = df.copy()
+    if district:
+        filtered_df = filtered_df[filtered_df['district_primary'].str.lower() == district.lower()]
+
+    total_count = len(filtered_df)
+    page_df = filtered_df.iloc[offset:offset + limit]
+
+    records = page_df.to_dict(orient='records')
+
+    return {
+        "success": True,
+        "corridor_id": "NH44-JK-PILOT",
+        "total_segments": len(df),
+        "filtered_segments_count": total_count,
+        "limit": limit,
+        "offset": offset,
+        "segments": records
+    }
+
+
+@app.get("/api/v1/corridors/nh44/segments/{segment_id}")
+def get_nh44_segment_detail(segment_id: str):
+    df = get_segments_df()
+    if df is None:
+        raise HTTPException(status_code=404, detail="NH-44 segments database not found")
+
+    matched = df[df['segment_id'].str.upper() == segment_id.upper()]
+    if len(matched) == 0:
+        raise HTTPException(status_code=404, detail=f"Segment '{segment_id}' not found")
+
+    record = matched.iloc[0].to_dict()
+
+    segment_geojson = None
+    geojson_all = get_segments_geojson()
+    if geojson_all:
+        for feat in geojson_all.get("features", []):
+            p = feat.get("properties", {})
+            if p.get("segment_id", "").upper() == segment_id.upper():
+                segment_geojson = feat
+                break
+
+    return {
+        "success": True,
+        "segment_id": record.get("segment_id"),
+        "corridor_id": record.get("corridor_id"),
+        "sequence_number": int(record.get("sequence_number")),
+        "start_chainage_km": float(record.get("start_chainage_km")),
+        "end_chainage_km": float(record.get("end_chainage_km")),
+        "segment_length_m": float(record.get("segment_length_m")),
+        "district_primary": record.get("district_primary"),
+        "districts_intersected": record.get("districts_intersected"),
+        "start_coords": {"latitude": record.get("start_latitude"), "longitude": record.get("start_longitude")},
+        "end_coords": {"latitude": record.get("end_latitude"), "longitude": record.get("end_longitude")},
+        "geometry_source": record.get("geometry_source"),
+        "geometry_version": record.get("geometry_version"),
+        "data_quality_status": record.get("data_quality_status"),
+        "exposure_status": "Not yet calculated (Checkpoint V2-3B)",
+        "lhs_score": None,
+        "dis_score": None,
+        "ips_score": None,
+        "geojson": segment_geojson
     }
 
 

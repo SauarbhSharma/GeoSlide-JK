@@ -1,0 +1,2 @@
+gap_id,start_chainage_m,end_chainage_m,gap_length_m,severity,resolution_status
+GAP-001,0.0,74875.83,0.0,None,Continuous LineString geometry; 0 interior gaps present along pilot route

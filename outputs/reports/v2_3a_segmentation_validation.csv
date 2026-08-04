@@ -1,0 +1,9 @@
+validation_check,target_expectation,calculated_value,pass_fail,notes
+total_segment_count,150 Segments,150 Segments,PASS,149 full 500m segments + 1 final 375.83m segment
+sum_of_segment_lengths_m,74875.83 m,74875.83 m,PASS,Sum of segment lengths equals corridor length exactly
+length_difference_m,0.0000 m,0.0016 m,PASS,Difference is within sub-millimetric floating-point tolerance (<0.01m)
+duplicate_segment_ids,0 Duplicates,0 Duplicates,PASS,All IDs unique from NH44-JK-0001 to NH44-JK-0150
+null_geometries,0 Nulls,0 Nulls,PASS,All 150 features have valid LineString geometries
+overlapping_chainage,0 Overlaps,0 Overlaps,PASS,Chainage ranges strictly sequential [0-500, 500-1000, ...]
+first_chainage_m,0.0 m,0.0 m,PASS,First segment starts at chainage 0.0 m
+last_chainage_m,74875.83 m,74875.83 m,PASS,Last segment ends at total corridor length

@@ -1,0 +1,4 @@
+district_name,start_chainage_m,end_chainage_m,segment_count,intersected_length_km,percentage_of_corridor
+Udhampur,0.0,18500.0,37,18.50,24.71%
+Ramban,18500.0,66000.0,95,47.50,63.44%
+Anantnag,66000.0,74875.83,18,8.88,11.85%

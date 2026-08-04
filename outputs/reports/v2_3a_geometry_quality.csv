@@ -1,0 +1,8 @@
+check_item,pass_fail,metric_value,threshold_rule,status_notes
+geometry_validity,PASS,True,Must be valid LineString,Valid Shapely LineString geometry
+geometry_continuity,PASS,1 Component,Disconnected components == 1,Single continuous LineString without interior breaks
+self_intersections,PASS,0 Intersections,Self-intersections == 0,No self-intersecting loops
+exact_duplicates,PASS,0 Duplicates,Duplicates == 0,All line segments deduplicated
+total_corridor_length_m,PASS,74875.83,Length > 0 and bounded,Exactly 74.88 km
+raster_coverage_overlap,PASS,100.0%,Overlap >= 99.0%,100% within 100m COG raster bounds
+district_intersection_count,PASS,3 Districts,Intersected districts > 0,Traverses Udhampur, Ramban, and Anantnag
