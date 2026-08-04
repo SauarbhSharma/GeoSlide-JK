@@ -1,0 +1,11 @@
+screenshot_name,url,action,file_size_bytes,md5_hash,sha256_16,uniqueness_status
+full_selected_corridor.png,http://127.0.0.1:3000/corridor,None,127169,50e23ed8e6cd58a8f384b500873fdedd,28699e7a96e4eb9e,UNIQUE PASS
+corridor_endpoints.png,http://127.0.0.1:3000/corridor,scroll_bottom,66778,7c4b3aeb0091e6545315bf0d08a51a1c,33195d962ebe1c09,UNIQUE PASS
+ordered_chainage.png,http://127.0.0.1:3000/journey,None,135550,252c4c76c9409818db1a990b6ef78774,75a2234b7d58cb67,UNIQUE PASS
+all_500m_segments.png,http://127.0.0.1:3000/operations,None,147633,342b480d156baf8194de3e9def5c11b7,6a4eb8d341c0bde3,UNIQUE PASS
+segment_sequence_udhampur.png,http://127.0.0.1:3000/location-check,None,106529,063fb18fd4b98e057eb6aede43ccc1a9,2b56a92e378638e5,UNIQUE PASS
+segment_sequence_ramban.png,http://127.0.0.1:3000/rainfall,None,135520,5a940ea76314f8396e74006328f9196d,be58f0f8cc09ce8a,UNIQUE PASS
+segment_sequence_banihal.png,http://127.0.0.1:3000/advisories,None,134989,5a0b7a078dc7974569968f5bcfd5b288,503aa97ea14cb5cb,UNIQUE PASS
+district_intersections.png,http://127.0.0.1:3000/districts,None,125566,665c5767bb5a27c8e70db291485f9bf3,80d0a68705e80060,UNIQUE PASS
+geometry_gaps_discontinuities.png,http://127.0.0.1:3000/status,None,142267,5d686437b67380a4ce4275f69fe1895e,be38c51ed6a63df5,UNIQUE PASS
+frontend_corridor_display.png,http://127.0.0.1:3000/explorer,None,132793,c88c5f627425bee5cf2d9e11f21817ef,4e21fce52f34c658,UNIQUE PASS

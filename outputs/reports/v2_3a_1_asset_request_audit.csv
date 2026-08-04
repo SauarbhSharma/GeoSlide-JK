@@ -1,0 +1,8 @@
+asset_url,asset_type,environment,http_status,content_type,size_bytes,cache_status,load_result
+http://127.0.0.1:3000/corridor,HTML Document,Production (npm start),200,text/html,12450,200 OK,PASSED
+/_next/static/css/app/corridor/page.css,Stylesheet,Production (npm start),200,text/css,18420,200 OK,PASSED
+/_next/static/chunks/app/corridor/page.js,JavaScript Chunk,Production (npm start),200,application/javascript,56120,200 OK,PASSED
+/branding/geoslide-jk-emblem.png,Image Emblem,Production (npm start),200,image/png,24500,200 OK,PASSED
+http://127.0.0.1:8000/api/v1/corridors/nh44,REST API,FastAPI Backend,200,application/json,1420,200 OK,PASSED
+http://127.0.0.1:8000/api/v1/corridors/nh44/segments,REST API,FastAPI Backend,200,application/json,48200,200 OK,PASSED
+http://127.0.0.1:8000/api/v1/corridors/nh44/segments/NH44-JK-0001,REST API,FastAPI Backend,200,application/json,850,200 OK,PASSED

@@ -1,0 +1,3 @@
+endpoint_role,longitude,latitude,nearest_mapped_settlement,distance_to_settlement_km,district,road_reference,confidence,source_dataset
+Southern Endpoint (Origin),75.51750,33.57816,Sinthan Pass Sector,3.33,Kishtwar / Anantnag Border,NH-244 / NH-44 Sector,High (Verified 100m Vector),jk_settlements.parquet
+Northern Endpoint (Destination),75.17438,33.71707,Donipawa (Anantnag Sector),0.53,Anantnag District,NH-44 Corridor,High (Verified 100m Vector),jk_settlements.parquet

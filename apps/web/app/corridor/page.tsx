@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '@/components/layout/Header';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
 import { TrustStatusComponent } from '@/components/common/TrustStatusComponent';
+import { useUserRole } from '@/lib/RoleContext';
 import { ShieldAlert, Activity, CheckCircle2, MapPin, Info, ArrowRight, Layers, FileText } from 'lucide-react';
 
 interface SegmentDetail {
@@ -26,17 +27,28 @@ interface SegmentDetail {
 }
 
 export default function CorridorMonitorPage() {
+  const { setRole } = useUserRole();
+
+  // Enforce Highway Operations role context on /corridor
+  useEffect(() => {
+    setRole('highway');
+  }, [setRole]);
+
   const [corridorInfo, setCorridorInfo] = useState<{
     corridor_name: string;
+    origin_name: string;
+    destination_name: string;
     verified_length_km: number;
     verified_segment_count: number;
     geometry_version: string;
     data_quality_status: string;
   }>({
-    corridor_name: 'NH-44 Jammu-Srinagar Highway Pilot Corridor',
+    corridor_name: 'NH-44 Mountain Highway Pilot Corridor',
+    origin_name: 'Sinthan Pass Sector (Kishtwar/Anantnag Border)',
+    destination_name: 'Anantnag Sector (Donipawa)',
     verified_length_km: 74.88,
     verified_segment_count: 150,
-    geometry_version: '2.3A',
+    geometry_version: '2.3A.1',
     data_quality_status: 'Verified Continuous Geometry'
   });
 
@@ -54,10 +66,12 @@ export default function CorridorMonitorPage() {
         if (infoRes.ok) {
           const data = await infoRes.json();
           setCorridorInfo({
-            corridor_name: data.corridor_name || 'NH-44 Jammu-Srinagar Highway Pilot Corridor',
+            corridor_name: data.corridor_name || 'NH-44 Mountain Highway Pilot Corridor',
+            origin_name: data.origin_name || 'Sinthan Pass Sector',
+            destination_name: data.destination_name || 'Anantnag Sector',
             verified_length_km: data.verified_length_km || 74.88,
             verified_segment_count: data.verified_segment_count || 150,
-            geometry_version: data.geometry_version || '2.3A',
+            geometry_version: data.geometry_version || '2.3A.1',
             data_quality_status: data.data_quality_status || 'Verified Continuous Geometry'
           });
         }
@@ -69,7 +83,7 @@ export default function CorridorMonitorPage() {
         }
       } catch (err) {
         console.warn('API fetch warning, using fallback local segment dataset');
-      } finally {
+      } fontFinally: {
         setLoading(false);
       }
     }
@@ -86,12 +100,11 @@ export default function CorridorMonitorPage() {
           setSelectedSegDetail(detail);
         }
       } catch (err) {
-        // Fallback local match
         const localMatch = segments.find(s => s.segment_id === selectedSegId);
         if (localMatch) {
           setSelectedSegDetail({
             ...localMatch,
-            exposure_status: 'Not yet calculated (Checkpoint V2-3B)'
+            exposure_status: 'Not yet calculated — Checkpoint V2-3B'
           });
         }
       }
@@ -120,7 +133,7 @@ export default function CorridorMonitorPage() {
               NH-44 Landslide Exposure Screening
             </h1>
             <p className="text-xs text-slate-300 max-w-3xl leading-relaxed">
-              Screen static slope susceptibility along verified 500m corridor chainage segments across Udhampur, Ramban, and Banihal sectors.
+              Screen static slope susceptibility along verified 500m corridor chainage segments across {corridorInfo.origin_name} to {corridorInfo.destination_name}.
             </p>
           </div>
 
@@ -135,11 +148,11 @@ export default function CorridorMonitorPage() {
         {/* Verified Metadata Overview Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
           <div className="bg-navy-900 border border-navy-700 p-4 rounded-xl space-y-1">
-            <span className="text-slate-400 text-xs font-medium">Verified Pilot Corridor Length</span>
+            <span className="text-slate-400 text-xs font-medium">Pilot Analysis Chainage Span</span>
             <div className="text-2xl font-black text-white font-mono">
-              {corridorInfo.verified_length_km} km
+              0.00 – {corridorInfo.verified_length_km} km
             </div>
-            <span className="text-[10px] text-emerald-400 font-mono">Udhampur–Ramban–Banihal Sector</span>
+            <span className="text-[10px] text-emerald-400 font-mono">Verified Mountain Pilot Corridor</span>
           </div>
 
           <div className="bg-navy-900 border border-navy-700 p-4 rounded-xl space-y-1">
@@ -151,11 +164,12 @@ export default function CorridorMonitorPage() {
           </div>
 
           <div className="bg-navy-900 border border-navy-700 p-4 rounded-xl space-y-1">
-            <span className="text-slate-400 text-xs font-medium">Geometric CRS & Basis</span>
-            <div className="text-lg font-bold text-slate-200 font-mono">
-              EPSG:32643
+            <span className="text-slate-400 text-xs font-medium">Geographic Endpoints</span>
+            <div className="text-xs font-bold text-slate-200 font-mono leading-tight">
+              South: {corridorInfo.origin_name} <br />
+              North: {corridorInfo.destination_name}
             </div>
-            <span className="text-[10px] text-slate-400 font-mono">UTM Zone 43N Projected Distance</span>
+            <span className="text-[10px] text-slate-400 font-mono">Verified Mapped Settlements</span>
           </div>
 
           <div className="bg-navy-900 border border-navy-700 p-4 rounded-xl space-y-1">
@@ -163,7 +177,7 @@ export default function CorridorMonitorPage() {
             <div className="text-sm font-bold text-amber-300 font-mono mt-1">
               Checkpoint V2-3B Target
             </div>
-            <span className="text-[10px] text-amber-400 font-mono">Exposure calculation begins in V2-3B</span>
+            <span className="text-[10px] text-amber-400 font-mono">Not yet calculated — Checkpoint V2-3B</span>
           </div>
         </div>
 
@@ -196,7 +210,7 @@ export default function CorridorMonitorPage() {
                     <div>
                       <div className="font-bold">{seg.segment_id}</div>
                       <div className="text-[10px] opacity-80">
-                        KM {seg.start_chainage_km.toFixed(1)} – {seg.end_chainage_km.toFixed(1)}
+                        Pilot Analysis Chainage: {seg.start_chainage_km.toFixed(1)} – {seg.end_chainage_km.toFixed(1)} km
                       </div>
                     </div>
                     <div className="text-right text-[10px]">
@@ -230,7 +244,7 @@ export default function CorridorMonitorPage() {
               {selectedSegDetail ? (
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
                   <div className="bg-navy-950 p-3 rounded-xl border border-navy-800 space-y-0.5">
-                    <span className="text-slate-400 text-[10px]">Chainage Span</span>
+                    <span className="text-slate-400 text-[10px]">Pilot Analysis Chainage</span>
                     <div className="font-bold text-white font-mono text-sm">
                       {selectedSegDetail.start_chainage_km.toFixed(3)} – {selectedSegDetail.end_chainage_km.toFixed(3)} km
                     </div>
@@ -288,20 +302,20 @@ export default function CorridorMonitorPage() {
                 </p>
                 <div className="grid grid-cols-3 gap-2 pt-1 font-mono text-[11px]">
                   <div className="p-2 rounded bg-navy-900 border border-navy-800 text-slate-400 text-center">
-                    LHS: Not yet calculated
+                    LHS: Not yet calculated — Checkpoint V2-3B
                   </div>
                   <div className="p-2 rounded bg-navy-900 border border-navy-800 text-slate-400 text-center">
-                    DIS: Not yet calculated
+                    DIS: Not yet calculated — Checkpoint V2-3B
                   </div>
                   <div className="p-2 rounded bg-navy-900 border border-navy-800 text-slate-400 text-center">
-                    IPS: Not yet calculated
+                    IPS: Not yet calculated — Checkpoint V2-3B
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="pt-2 text-[11px] text-slate-400 border-t border-navy-800">
-              NH-44 Highway Operations Screening Shell — GeoSlide-JK 2.0 Checkpoint V2-3A Foundation
+              NH-44 Highway Operations Screening Shell — GeoSlide-JK 2.0 Checkpoint V2-3A.1 Corrective Runtime
             </div>
           </div>
         </div>

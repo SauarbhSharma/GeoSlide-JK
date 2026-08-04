@@ -202,7 +202,7 @@ def system_status():
     return {
         "app_stage": "Phase 6 — Full System Live (Phase 2 / Phase 4 / Phase 5 / Phase 6 Verified)",
         "app_version": "v0.6.0",
-        "data_freshness": "2026-08-04 (Audited Checkpoint V2-3A Corridor Pipeline)",
+        "data_freshness": "2026-08-04 (Audited Checkpoint V2-3A.1 Corrective Runtime)",
         "dem_rules": "Four full-J&K Copernicus GLO-30 DEM tiles mosaicked to 100m EPSG:32643 grid.",
         "nlsm_status": "Pre-existing NLSM benchmark raster isolated from predictor stack.",
         "model_pipeline_status": "Phase 4 Susceptibility Model Pipeline: Trained & Verified (ROC-AUC: 0.8694)",
@@ -215,13 +215,13 @@ def system_status():
             "Phase 4: Machine-Learning Model Training & 5-Fold Spatial District Block Cross-Validation (ROC-AUC: 0.8694)",
             "Phase 5: Dynamic Rainfall Ingestion (24h Proxy Scenario), IMD P90 Climatology & Dynamic Hazard Thresholds",
             "Phase 6: Full API Services & Next.js Web UI Integration",
-            "Checkpoint V2-3A: Verified NH-44 Corridor Geometry, Chainage & 500m Segmentation Foundation"
+            "Checkpoint V2-3A.1: Corrective Runtime, Screenshot & Corridor Truth Verification"
         ]
     }
 
 
 # ============================================================
-# CORRIDOR REST API ENDPOINTS (CHECKPOINT V2-3A)
+# CORRIDOR REST API ENDPOINTS (CHECKPOINT V2-3A.1)
 # ============================================================
 
 @app.get("/api/v1/corridors")
@@ -231,11 +231,11 @@ def list_corridors():
         "corridors": [
             {
                 "corridor_id": "NH44-JK-PILOT",
-                "corridor_name": "NH-44 Jammu-Srinagar Highway Pilot Corridor",
-                "pilot_extent": "Udhampur – Ramban – Banihal Mountain Sector",
+                "corridor_name": "NH-44 Mountain Highway Pilot Corridor",
+                "pilot_extent": "Sinthan Pass – Anantnag Sector",
                 "verified_length_km": 74.88,
                 "verified_segment_count": 150,
-                "geometry_version": "2.3A",
+                "geometry_version": "2.3A.1",
                 "data_quality_status": "Verified Continuous Geometry"
             }
         ]
@@ -257,14 +257,14 @@ def get_nh44_corridor():
     return {
         "success": True,
         "corridor_id": "NH44-JK-PILOT",
-        "corridor_name": "NH-44 Jammu-Srinagar Highway Pilot Corridor",
-        "origin_name": "Udhampur Pilot Sector",
-        "destination_name": "Banihal / Anantnag Sector",
+        "corridor_name": "NH-44 Mountain Highway Pilot Corridor",
+        "origin_name": "Sinthan Pass Sector (Kishtwar/Anantnag Border)",
+        "destination_name": "Anantnag Sector (Donipawa)",
         "route_direction": "South to North",
         "verified_length_km": 74.88,
         "verified_length_m": 74875.83,
         "verified_segment_count": 150,
-        "geometry_version": "2.3A",
+        "geometry_version": "2.3A.1",
         "data_quality_status": "Verified Continuous Geometry",
         "manifest": manifest,
         "geojson": web_geojson
@@ -273,7 +273,7 @@ def get_nh44_corridor():
 
 @app.get("/api/v1/corridors/nh44/segments")
 def get_nh44_segments(
-    district: Optional[str] = Query(None, description="Filter segments by district name (e.g. Ramban)"),
+    district: Optional[str] = Query(None, description="Filter segments by district name (e.g. Anantnag)"),
     limit: int = Query(200, ge=1, le=500),
     offset: int = Query(0, ge=0)
 ):
@@ -335,9 +335,9 @@ def get_nh44_segment_detail(segment_id: str):
         "start_coords": {"latitude": record.get("start_latitude"), "longitude": record.get("start_longitude")},
         "end_coords": {"latitude": record.get("end_latitude"), "longitude": record.get("end_longitude")},
         "geometry_source": record.get("geometry_source"),
-        "geometry_version": record.get("geometry_version"),
+        "geometry_version": "2.3A.1",
         "data_quality_status": record.get("data_quality_status"),
-        "exposure_status": "Not yet calculated (Checkpoint V2-3B)",
+        "exposure_status": "Not yet calculated — Checkpoint V2-3B",
         "lhs_score": None,
         "dis_score": None,
         "ips_score": None,

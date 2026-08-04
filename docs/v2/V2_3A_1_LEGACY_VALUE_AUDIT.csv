@@ -1,0 +1,7 @@
+legacy_term,file_location,classification,remediation_action,current_status
+Panthyal Cut-Slope,apps/web/app/advisories/page.tsx,Legacy Demonstration Content,Replaced with "NH-44 Mountain Corridor (Pilot Analysis Chainage KM 12.0 – KM 15.0)",Removed / Replaced
+Km 142.0 – Km 143.5,apps/web/app/advisories/page.tsx,Unsupported Chainage,Replaced with "Pilot Analysis Chainage KM 12.0 – KM 15.0",Removed / Replaced
+Delay non-essential transit,apps/web/app/advisories/page.tsx,Unsupported Operational Instruction,Replaced with "Research Scenario: Verify official advisories (@JKTrafficPolice) before transit",Removed / Replaced
+Km 148.0 / Km 153.0 / Km 165.5,apps/web/app/corridor/page.tsx,Legacy Hardcoded Demo,Replaced with dynamic segment chainage start_chainage_km and end_chainage_km,Removed / Replaced
+88% / 79% / 76% / 54% Exposure,apps/web/app/corridor/page.tsx,Uncalculated Premature Score,Replaced with "Not yet calculated — Checkpoint V2-3B",Removed / Replaced
+Very High Exposure / High Exposure,apps/web/app/corridor/page.tsx,Uncalculated Premature Rating,Replaced with neutral segment styling and Checkpoint V2-3B target label,Removed / Replaced
