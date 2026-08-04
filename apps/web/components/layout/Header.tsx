@@ -4,12 +4,13 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useUserRole, UserRole } from '@/lib/RoleContext';
-import { Navigation, ShieldAlert, Building2, Cpu, ChevronDown } from 'lucide-react';
+import { Navigation, ShieldAlert, Building2, Cpu, ChevronDown, Menu, X } from 'lucide-react';
 
 export function Header() {
   const pathname = usePathname();
   const { role, setRole, openRoleModal } = useUserRole();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Role-specific navigation tabs
   const getNavItems = () => {
@@ -17,7 +18,7 @@ export function Header() {
       case 'traveller':
         return [
           { label: 'Home', path: '/' },
-          { label: 'Check My Area', path: '/location-check' },
+          { label: 'Check Area', path: '/location-check' },
           { label: 'Plan Journey', path: '/journey' },
           { label: 'Advisories', path: '/advisories' },
           { label: 'Help', path: '/help' },
@@ -63,43 +64,43 @@ export function Header() {
 
   return (
     <header className="bg-navy-900 border-b border-navy-700 text-slate-100 sticky top-0 z-50">
-      <div className="flex items-center justify-between px-4 py-2">
+      <div className="flex items-center justify-between px-3 sm:px-4 py-2">
         {/* Brand */}
-        <div className="flex items-center space-x-3 shrink-0">
+        <div className="flex items-center space-x-2 sm:space-x-3 shrink-0">
           <Link href="/" className="flex items-center shrink-0" title="GeoSlide-JK Home">
             <img
               src="/branding/geoslide-jk-emblem.png"
               alt="GeoSlide-JK — Landslide Risk Intelligence"
-              className="h-8 sm:h-9 md:h-10 w-auto object-contain drop-shadow-md shrink-0"
+              className="h-7 sm:h-9 md:h-10 w-auto object-contain drop-shadow-md shrink-0"
               onError={(e) => {
                 (e.currentTarget as HTMLElement).style.display = 'none';
               }}
             />
           </Link>
           <div>
-            <div className="flex items-center space-x-2">
-              <span className="font-bold text-base sm:text-lg tracking-wide text-white">GeoSlide-JK v2.0</span>
-              <span className="bg-blue-900/60 border border-blue-500/30 text-blue-300 text-[10px] sm:text-xs px-2 py-0.5 rounded font-mono hidden sm:inline-block">
-                Research Decision Support
+            <div className="flex items-center space-x-1.5 sm:space-x-2">
+              <span className="font-bold text-sm sm:text-base md:text-lg tracking-wide text-white">GeoSlide-JK v2.0</span>
+              <span className="bg-blue-900/60 border border-blue-500/30 text-blue-300 text-[10px] sm:text-xs px-1.5 py-0.5 rounded font-mono hidden sm:inline-block">
+                Research Prototype
               </span>
             </div>
-            <p className="text-[11px] sm:text-xs text-slate-300">Landslide & Corridor Risk Intelligence Platform</p>
+            <p className="text-[10px] sm:text-xs text-slate-300">Landslide Risk Intelligence</p>
           </div>
         </div>
 
-        {/* Role Switcher & Mode Indicator */}
-        <div className="flex items-center space-x-2 relative">
+        {/* Role Switcher & Mobile Menu Trigger */}
+        <div className="flex items-center space-x-2">
+          {/* Role Switcher Dropdown */}
           <div className="relative">
             <button
               onClick={() => setDropdownOpen(!dropdownOpen)}
-              className={`flex items-center space-x-2 border px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${currentRole.color}`}
+              className={`flex items-center space-x-1.5 border px-2.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${currentRole.color}`}
             >
               {currentRole.icon}
-              <span className="hidden md:inline">{currentRole.title}</span>
+              <span className="hidden sm:inline">{currentRole.title}</span>
               <ChevronDown className="w-3.5 h-3.5 opacity-75" />
             </button>
 
-            {/* Dropdown Menu */}
             {dropdownOpen && (
               <div className="absolute right-0 mt-2 w-56 bg-navy-900 border border-navy-700 rounded-xl shadow-2xl z-50 py-1.5 overflow-hidden">
                 <div className="px-3 py-1.5 text-[10px] font-mono text-slate-400 uppercase tracking-wider border-b border-navy-800">
@@ -134,11 +135,20 @@ export function Header() {
               </div>
             )}
           </div>
+
+          {/* Mobile Menu Toggle Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-1.5 rounded-lg bg-navy-800 border border-navy-700 text-slate-300 hover:text-white"
+            title="Toggle Mobile Navigation"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
         </div>
       </div>
 
-      {/* Dynamic Role-Based Navigation Bar */}
-      <nav className="flex items-center space-x-1 px-4 overflow-x-auto border-t border-navy-800 text-xs font-semibold">
+      {/* Desktop Navigation Bar */}
+      <nav className="hidden md:flex items-center space-x-1 px-4 border-t border-navy-800 text-xs font-semibold">
         {navItems.map((item) => {
           const isActive = pathname === item.path;
           return (
@@ -156,6 +166,29 @@ export function Header() {
           );
         })}
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <nav className="md:hidden border-t border-navy-800 bg-navy-950 p-2 space-y-1 text-xs">
+          {navItems.map((item) => {
+            const isActive = pathname === item.path;
+            return (
+              <Link
+                key={item.path}
+                href={item.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block px-3 py-2 rounded-lg font-semibold transition-colors ${
+                  isActive
+                    ? 'bg-blue-600 text-white font-bold'
+                    : 'text-slate-300 hover:bg-navy-800 hover:text-white'
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+      )}
     </header>
   );
 }

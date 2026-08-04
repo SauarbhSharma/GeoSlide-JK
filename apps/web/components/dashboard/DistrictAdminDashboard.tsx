@@ -6,6 +6,7 @@ import { Building2, Layers, AlertTriangle, ArrowRight, ShieldCheck, CheckCircle2
 import { MapContainer } from '@/components/map/MapContainer';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
 import { JK_20_DISTRICTS } from '@/lib/constants';
+import { TrustStatusComponent } from '@/components/common/TrustStatusComponent';
 
 export function DistrictAdminDashboard() {
   const [selectedDistrict, setSelectedDistrict] = useState('ramban');
@@ -13,28 +14,29 @@ export function DistrictAdminDashboard() {
     'jk_districts',
     'jk_ut_boundary',
     'nh44',
-    'susceptibility_prob'
+    'susceptibility_class'
   ]);
 
   const currentDist = JK_20_DISTRICTS.find((d) => d.id === selectedDistrict) || JK_20_DISTRICTS[0];
 
   return (
-    <div className="flex-1 flex flex-col overflow-y-auto p-4 max-w-7xl mx-auto w-full space-y-4">
+    <div className="flex-1 flex flex-col overflow-y-auto p-3 sm:p-4 max-w-7xl mx-auto w-full space-y-4">
       <ResearchDisclaimer />
 
       {/* Header Banner */}
       <div className="bg-navy-900 border border-navy-700 p-5 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
-        <div className="space-y-1">
+        <div className="space-y-2">
           <div className="flex items-center space-x-2">
             <span className="px-2.5 py-0.5 rounded-full bg-purple-950 border border-purple-600/50 text-purple-300 text-[11px] font-mono">
               District Administration Mode (DDMA)
             </span>
+            <TrustStatusComponent compact />
           </div>
           <h1 className="text-xl sm:text-2xl font-black text-white">
-            Statewide District Vulnerability & Preparedness Portal
+            District Landslide Preparedness Screening
           </h1>
-          <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
-            Identify high-susceptibility zones, vulnerable rural access roads, and pre-monsoon staging priorities across all 20 Union Territory districts.
+          <p className="text-xs text-slate-300 max-w-3xl leading-relaxed">
+            Screen district-level slope susceptibility and potentially vulnerable rural access routes to support pre-monsoon DDMA planning.
           </p>
         </div>
 
@@ -51,6 +53,31 @@ export function DistrictAdminDashboard() {
             ))}
           </select>
         </div>
+      </div>
+
+      {/* Outcome Card — "What this platform helps you do" */}
+      <div className="bg-navy-900 border border-navy-700 p-4 rounded-2xl space-y-2">
+        <h2 className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+          What this platform helps you do:
+        </h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 text-xs text-slate-300">
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Screen district-level slope susceptibility across all 20 J&K districts.</span>
+          </li>
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Identify candidate areas for pre-monsoon preparedness attention.</span>
+          </li>
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Review potential access-road exposure for rural hamlets.</span>
+          </li>
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Plan further field verification and culvert clearing audits.</span>
+          </li>
+        </ul>
       </div>
 
       {/* District Vulnerability Profile Grid */}
@@ -72,25 +99,25 @@ export function DistrictAdminDashboard() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
             <div className="bg-navy-800/60 p-3 rounded-xl border border-navy-700">
-              <span className="text-slate-400 font-medium">Susceptibility Rating:</span>
+              <span className="text-slate-400 font-medium">Susceptibility Profile:</span>
               <div className="font-bold text-amber-400 text-sm mt-0.5">
                 {['ramban', 'doda', 'kishtwar', 'reasi', 'poonch'].includes(selectedDistrict) ? 'High Instability' : 'Moderate Baseline'}
               </div>
             </div>
             <div className="bg-navy-800/60 p-3 rounded-xl border border-navy-700">
-              <span className="text-slate-400 font-medium">Vulnerable Access Roads:</span>
-              <div className="font-bold text-white text-sm mt-0.5">Identified & Mapped</div>
+              <span className="text-slate-400 font-medium">Potentially Vulnerable Routes:</span>
+              <div className="font-bold text-white text-sm mt-0.5">Screened & Mapped</div>
             </div>
             <div className="bg-navy-800/60 p-3 rounded-xl border border-navy-700">
-              <span className="text-slate-400 font-medium">Pre-Monsoon Status:</span>
-              <div className="font-bold text-emerald-400 text-sm mt-0.5">Preparedness Audit Ready</div>
+              <span className="text-slate-400 font-medium">Preparedness Status:</span>
+              <div className="font-bold text-emerald-400 text-sm mt-0.5">Preliminary Screening Available</div>
             </div>
           </div>
 
           <div className="bg-navy-950 p-3 rounded-xl border border-navy-800 text-xs text-slate-300 space-y-1">
             <div className="flex items-center space-x-2 font-bold text-slate-200">
               <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>DDMA Pre-Monsoon Action Items ({currentDist.displayName}):</span>
+              <span>Suggested DDMA Pre-Monsoon Actions ({currentDist.displayName}):</span>
             </div>
             <ul className="list-disc list-inside space-y-1 pl-2 text-[11px] text-slate-300">
               <li>Inspect culvert drainage and clearing along main district connectivity roads.</li>
@@ -129,7 +156,7 @@ export function DistrictAdminDashboard() {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-sm font-bold text-white">District Vulnerability Map</h2>
-            <p className="text-xs text-slate-400">District administrative boundary overlaid on 100m master grid.</p>
+            <p className="text-xs text-slate-400">District administrative boundary overlaid on 100m 5-class susceptibility grid.</p>
           </div>
           <Link
             href="/districts"

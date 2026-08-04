@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ShieldAlert, Activity, AlertTriangle, ArrowRight, Layers, FileText, CheckCircle2 } from 'lucide-react';
 import { MapContainer } from '@/components/map/MapContainer';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
+import { TrustStatusComponent } from '@/components/common/TrustStatusComponent';
 
 export function HighwayOpsDashboard() {
   const [selectedDistrict, setSelectedDistrict] = useState('ramban');
@@ -12,26 +13,27 @@ export function HighwayOpsDashboard() {
     'jk_districts',
     'jk_ut_boundary',
     'nh44',
-    'susceptibility_prob'
+    'susceptibility_class'
   ]);
 
   return (
-    <div className="flex-1 flex flex-col overflow-y-auto p-4 max-w-7xl mx-auto w-full space-y-4">
+    <div className="flex-1 flex flex-col overflow-y-auto p-3 sm:p-4 max-w-7xl mx-auto w-full space-y-4">
       <ResearchDisclaimer />
 
       {/* Header Banner */}
       <div className="bg-navy-900 border border-navy-700 p-5 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
-        <div className="space-y-1">
+        <div className="space-y-2">
           <div className="flex items-center space-x-2">
             <span className="px-2.5 py-0.5 rounded-full bg-amber-950 border border-amber-600/50 text-amber-300 text-[11px] font-mono">
               Highway Operations Mode (NHAI)
             </span>
+            <TrustStatusComponent compact />
           </div>
           <h1 className="text-xl sm:text-2xl font-black text-white">
-            NH-44 Corridor Instability & Maintenance Monitor
+            NH-44 Landslide Exposure Screening
           </h1>
-          <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
-            Monitor static road-segment landslide exposure along the 295 km NH-44 highway corridor and prioritize slope maintenance inspections.
+          <p className="text-xs text-slate-300 max-w-3xl leading-relaxed">
+            Screen static susceptibility along the highway corridor to identify segments requiring further geotechnical and field inspection.
           </p>
         </div>
 
@@ -41,47 +43,85 @@ export function HighwayOpsDashboard() {
             className="px-4 py-2.5 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded-xl flex items-center space-x-2 transition-colors shadow-lg shadow-amber-900/30"
           >
             <Activity className="w-4 h-4" />
-            <span>Open Corridor Monitor</span>
+            <span>Open Corridor Screening</span>
           </Link>
         </div>
       </div>
 
-      {/* Corridor Overview Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
-        <div className="bg-navy-900 border border-navy-700 p-4 rounded-2xl space-y-1">
-          <span className="text-slate-400 text-[11px] font-mono uppercase tracking-wider">Pilot Corridor</span>
-          <div className="text-lg font-black text-white">NH-44 Jammu–Srinagar</div>
-          <div className="text-[11px] text-amber-400 font-mono">295 km Total Length</div>
-        </div>
-
-        <div className="bg-navy-900 border border-navy-700 p-4 rounded-2xl space-y-1">
-          <span className="text-slate-400 text-[11px] font-mono uppercase tracking-wider">Evaluation Segments</span>
-          <div className="text-lg font-black text-white">590 Segments (500m)</div>
-          <div className="text-[11px] text-emerald-400 font-mono">Chainage Indexed</div>
-        </div>
-
-        <div className="bg-navy-900 border border-navy-700 p-4 rounded-2xl space-y-1">
-          <span className="text-slate-400 text-[11px] font-mono uppercase tracking-wider">High Instability Segments</span>
-          <div className="text-lg font-black text-amber-400">29 Segments (14.5 km)</div>
-          <div className="text-[11px] text-slate-400 font-mono">Ramban–Banihal Stretch</div>
-        </div>
-
-        <div className="bg-navy-900 border border-navy-700 p-4 rounded-2xl space-y-1">
-          <span className="text-slate-400 text-[11px] font-mono uppercase tracking-wider">Data Status</span>
-          <div className="text-lg font-black text-sky-400">Static Exposure Only</div>
-          <div className="text-[11px] text-slate-400 font-mono">Live Telemetry Future Work</div>
-        </div>
+      {/* Outcome Card — "What this platform helps you do" */}
+      <div className="bg-navy-900 border border-navy-700 p-4 rounded-2xl space-y-2">
+        <h2 className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+          What this platform helps you do:
+        </h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 text-xs text-slate-300">
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Screen highway segments for static slope susceptibility exposure.</span>
+          </li>
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Identify candidate corridor areas requiring field inspection.</span>
+          </li>
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Understand underlying morphometric terrain & geological factors.</span>
+          </li>
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Document data gaps and missing operational telemetry inputs.</span>
+          </li>
+        </ul>
       </div>
 
-      {/* Operational Disclaimer Notice */}
-      <div className="bg-navy-950 border border-amber-500/60 p-4 rounded-2xl text-xs space-y-2">
-        <div className="flex items-center space-x-2 text-amber-300 font-bold">
-          <AlertTriangle className="w-4 h-4 shrink-0" />
-          <span>Operational Terminology & Safety Disclaimer</span>
+      {/* Available vs Unavailable Data Separation */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-navy-900 border border-emerald-600/40 p-4 rounded-2xl space-y-2">
+          <h3 className="text-xs font-bold text-emerald-300 uppercase tracking-wider">
+            Available Verified Data (Current System)
+          </h3>
+          <ul className="space-y-1.5 text-xs text-slate-300 font-mono text-[11px]">
+            <li className="flex items-center space-x-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>100m Static XGBoost Susceptibility Probability & 5-Class Rating</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>Copernicus DEM 30m Morphometrics (Elevation, Slope, Aspect)</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>GSI 50K Tectonic Vectors (Faults, Thrusts, Lineaments)</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+              <span>NGDR Historical Landslide Point & Polygon Inventory</span>
+            </li>
+          </ul>
         </div>
-        <p className="text-slate-300 leading-relaxed">
-          GeoSlide-JK 2.0 measures <strong>Static Road-Segment Landslide Exposure</strong> based on 100m terrain slope, geology, and historical landslide density. It DOES NOT report current structural pavement condition, live road closures, or real-time traffic status.
-        </p>
+
+        <div className="bg-navy-900 border border-slate-700 p-4 rounded-2xl space-y-2">
+          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+            Not Currently Available (Future Integration)
+          </h3>
+          <ul className="space-y-1.5 text-xs text-slate-400 font-mono text-[11px]">
+            <li className="flex items-center space-x-2">
+              <span className="w-2 h-2 rounded-full bg-slate-600"></span>
+              <span>NHAI RAMS Pavement Structural Condition Telemetry</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <span className="w-2 h-2 rounded-full bg-slate-600"></span>
+              <span>Live Traffic Police Road Blockage & Clearance Feeds</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <span className="w-2 h-2 rounded-full bg-slate-600"></span>
+              <span>Real-Time Geotechnical Slope Displacement Sensors</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <span className="w-2 h-2 rounded-full bg-slate-600"></span>
+              <span>Official Assigned Maintenance Work Orders & Inspection Logs</span>
+            </li>
+          </ul>
+        </div>
       </div>
 
       {/* Corridor Map Preview */}
@@ -89,7 +129,7 @@ export function HighwayOpsDashboard() {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-sm font-bold text-white">NH-44 Highway Spatial Map</h2>
-            <p className="text-xs text-slate-400">Corridor polyline overlaid on 100m slope susceptibility master grid.</p>
+            <p className="text-xs text-slate-400">Corridor polyline overlaid on 100m 5-class susceptibility master grid.</p>
           </div>
           <Link
             href="/corridor"

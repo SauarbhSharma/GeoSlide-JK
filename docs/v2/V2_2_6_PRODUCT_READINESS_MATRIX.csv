@@ -1,0 +1,15 @@
+capability_name,target_user,readiness_classification,verified_data_basis,operational_safety_disclaimer
+100m Static Susceptibility Mapping,All Users,Available and Verified,100m XGBoost Model (5-fold spatial CV ROC-AUC 0.8694),Displays relative slope instability exposure; not deterministic failure prediction
+5-Class Susceptibility Ratings,Citizens & Authorities,Available and Verified,jk_susceptibility_class_100m.tif (Very Low to Very High),Categorical relative exposure rating
+24h Rainfall Proxy Scenario,Researchers & Authorities,Available as Research Scenario,jk_rainfall_accum_24h_100m.tif orographic proxy model,Scenario / Proxy Rainfall — Not Current Operational Rainfall
+P90 Baseline Climatology,Researchers,Available as Research Scenario,jk_imd_p90_baseline_100m.tif historical proxy,Historical baseline proxy scenario
+Point Location Risk Query,Citizens & Field Patrols,Available and Verified,FastAPI /api/v1/location-check endpoint,Point-level relative susceptibility query
+Plan My Journey Preview,Travellers,UI Preview Only,Static route polyline intersection,Research-based route exposure comparison; verify official advisories
+NH-44 Corridor Exposure Screening,NHAI Officers,UI Preview Only,NH-44 polyline + 500m fixed chainage concept,Static Road-Segment Landslide Exposure; not structural pavement condition
+District Preparedness Screening,DDMA Officials,UI Preview Only,20-District GeoJSON boundaries + susceptibility,Preliminary Preparedness Screening Available; field verification required
+Live Traffic Road Closures,Travellers & Operations,Requires Official Integration,Missing J&K Traffic Police live API,Not Yet Integrated — Consult @JKTrafficPolice
+Automated Mass SMS Alerts,Citizens,Requires Official Integration,Missing SDMA formal authorization & SMS gateway,Not Yet Integrated — Official SDMA authorization required
+Disruption Impact Scoring (DIS),NHAI Officers,UI Preview Only,Requires NHAI freight volume & detour data,Analysis under development
+Intervention Priority Scoring (IPS),NHAI Officers,UI Preview Only,Requires verified LHS x DIS formula,Analysis under development
+Multilingual AI Assistant (Saathi),All Users,Not Safe to Claim,Requires RAG LLM integration with citation guards,Planned for v2.5; currently disabled
+Voice Query Assistance,Low-Literacy Users,Not Safe to Claim,Requires STT/TTS engine integration,Planned for v2.5; currently disabled

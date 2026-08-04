@@ -1,0 +1,11 @@
+metric_name,ui_location,displayed_value,provenance_classification,data_source_and_basis,operational_display_status
+ROC-AUC Metric,app/transparency/page.tsx,0.8694,A. Directly returned by API,FastAPI /api/v1/health & model metadata,Static Project Metadata (Research Only)
+5-Fold Spatial CV,app/transparency/page.tsx,5 Folds (District-Block),A. Directly returned by API,FastAPI /api/v1/health & model metadata,Static Project Metadata (Research Only)
+100m Grid Resolution,components/map/MapContainer.tsx,100m (3050x2937),B. Reproducibly calculated from dataset,jk_susceptibility_probability_100m.tif metadata,Verified Dataset Parameter
+NH-44 Corridor Length,app/corridor/page.tsx,295 km,C. Static project metadata,jk_nh44.parquet spatial length sum,Verified Project Metadata
+Candidate 500m Segments,app/corridor/page.tsx,590 Segments,B. Reproducibly calculated from dataset,500m fixed chainage buffer along NH-44 polyline,Candidate Screening Segment
+24h Rainfall Proxy Range,app/rainfall/page.tsx,5.0 - 160.0 mm,B. Reproducibly calculated from dataset,jk_rainfall_accum_24h_100m.tif raster min/max,Research Scenario Value
+P90 Baseline Range,app/rainfall/page.tsx,30.0 - 95.0 mm,B. Reproducibly calculated from dataset,jk_imd_p90_baseline_100m.tif raster min/max,Research Scenario Value
+Live Incident Count,app/operations/page.tsx,Not currently available,F. Unsupported,Requires live J&K Traffic Police API integration,Relabelled: Verified value not currently available
+Structural Pavement Rating,app/operations/page.tsx,Not currently available,F. Unsupported,Requires NHAI RAMS pavement sensor integration,Relabelled: Analysis under development
+Assigned Work Orders,app/operations/page.tsx,Not currently available,F. Unsupported,Requires official NHAI work-order database,Relabelled: Verified value not currently available

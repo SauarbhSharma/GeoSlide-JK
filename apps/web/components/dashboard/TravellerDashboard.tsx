@@ -2,9 +2,11 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Navigation, MapPin, ShieldAlert, ArrowRight, CheckCircle2, AlertTriangle, Calendar, Car } from 'lucide-react';
+import { Navigation, MapPin, ShieldAlert, ArrowRight, CheckCircle2, AlertTriangle, Info, HelpCircle } from 'lucide-react';
 import { MapContainer } from '@/components/map/MapContainer';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
+import { TrustStatusComponent } from '@/components/common/TrustStatusComponent';
+import { ExecutiveDemoGuide } from '@/components/common/ExecutiveDemoGuide';
 
 export function TravellerDashboard() {
   const [selectedDistrict, setSelectedDistrict] = useState('ramban');
@@ -12,26 +14,27 @@ export function TravellerDashboard() {
     'jk_districts',
     'jk_ut_boundary',
     'nh44',
-    'susceptibility_prob'
+    'susceptibility_class'
   ]);
 
   return (
-    <div className="flex-1 flex flex-col overflow-y-auto p-4 max-w-7xl mx-auto w-full space-y-4">
+    <div className="flex-1 flex flex-col overflow-y-auto p-3 sm:p-4 max-w-7xl mx-auto w-full space-y-4">
       <ResearchDisclaimer />
 
-      {/* Main Banner / Welcome Card */}
-      <div className="bg-navy-900 border border-navy-700 p-5 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
-        <div className="space-y-1">
+      {/* Main Landing Banner — Product Value Statement */}
+      <div className="bg-navy-900 border border-navy-700 p-5 sm:p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xl">
+        <div className="space-y-2">
           <div className="flex items-center space-x-2">
             <span className="px-2.5 py-0.5 rounded-full bg-emerald-950 border border-emerald-600/50 text-emerald-300 text-[11px] font-mono">
               Traveller & Resident Mode
             </span>
+            <TrustStatusComponent compact />
           </div>
-          <h1 className="text-xl sm:text-2xl font-black text-white">
-            Jammu & Kashmir Landslide Risk Intelligence
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tight">
+            Understand Landslide Exposure for Your Location or Journey
           </h1>
-          <p className="text-xs text-slate-300 max-w-2xl leading-relaxed">
-            Check slope instability exposure at any location or review travel advisories before departing along mountain highways.
+          <p className="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+            GeoSlide-JK combines terrain, geology, historical landslides and rainfall-scenario information to support screening, preparedness and inspection decisions across Jammu and Kashmir.
           </p>
         </div>
 
@@ -48,38 +51,63 @@ export function TravellerDashboard() {
             className="px-4 py-2.5 bg-navy-800 hover:bg-navy-700 text-slate-200 border border-navy-700 text-xs font-bold rounded-xl flex items-center space-x-2 transition-colors"
           >
             <Navigation className="w-4 h-4 text-blue-400" />
-            <span>Plan Journey</span>
+            <span>Plan Journey Preview</span>
           </Link>
         </div>
       </div>
 
-      {/* Quick Action Grid & Advisory */}
+      {/* Outcome Card — "What this platform helps you do" */}
+      <div className="bg-navy-900 border border-navy-700 p-4 rounded-2xl space-y-2">
+        <h2 className="text-xs font-bold text-slate-300 uppercase tracking-wider">
+          What this platform helps you do:
+        </h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 text-xs text-slate-300">
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Check relative slope susceptibility at your specific location.</span>
+          </li>
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Understand research route-exposure scenarios along mountain highways.</span>
+          </li>
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>View practical non-operational travel & safety precautions.</span>
+          </li>
+          <li className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 flex items-start space-x-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+            <span>Identify where official verification is required before travel.</span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Quick Action Grid & Research Scenario */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Active Research Advisory Summary */}
-        <div className="bg-navy-900 border border-amber-500/50 p-4 rounded-2xl space-y-3 md:col-span-2">
+        {/* Research Scenario Card */}
+        <div className="bg-navy-900 border border-amber-500/50 p-4 rounded-2xl space-y-3 md:col-span-2 shadow-lg">
           <div className="flex items-center justify-between border-b border-navy-800 pb-2">
             <div className="flex items-center space-x-2 text-amber-300 font-bold text-sm">
               <AlertTriangle className="w-4 h-4 shrink-0" />
-              <span>Active Corridor Advisory — NH-44 Ramban Stretch</span>
+              <span>Research Scenario — NH-44 Ramban Stretch</span>
             </div>
             <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950 text-amber-200 border border-amber-600/40">
-              Research Advisory Scenario
+              Research Scenario Only
             </span>
           </div>
 
           <div className="space-y-2 text-xs">
             <div className="text-white font-bold text-sm">
-              Moderate to High Slope Instability Exposure (Km 142.0 – Km 155.0)
+              Elevated Relative Slope Exposure (Panthyal & Ramban Cut-Slopes)
             </div>
             <p className="text-slate-300 leading-relaxed">
-              Terrain models indicate elevated slope vulnerability around Panthyal, Ramban, and Digdol cut-slopes under moderate 24h rainfall proxy scenarios. Exercise caution when traveling along the Ramban-Banihal stretch.
+              Terrain models indicate higher relative slope susceptibility around Panthyal, Ramban, and Digdol cut-slopes under assumed 24h rainfall proxy scenarios.
             </p>
           </div>
 
-          {/* Practical Precautions */}
+          {/* Plain Language Precautions */}
           <div className="bg-navy-950 p-3 rounded-xl border border-navy-800 space-y-2 text-xs">
             <span className="font-bold text-slate-200 block text-[11px] uppercase tracking-wider">
-              Suggested Travel Precautions:
+              Suggested General Precautions:
             </span>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-slate-300 font-medium">
               <li className="flex items-center space-x-2">
@@ -102,29 +130,29 @@ export function TravellerDashboard() {
           </div>
         </div>
 
-        {/* Understand Risk Levels Card */}
-        <div className="bg-navy-900 border border-navy-700 p-4 rounded-2xl space-y-3 flex flex-col justify-between">
+        {/* Understand Susceptibility Tiers Card */}
+        <div className="bg-navy-900 border border-navy-700 p-4 rounded-2xl space-y-3 flex flex-col justify-between shadow-lg">
           <div className="space-y-2">
             <h3 className="text-sm font-bold text-white flex items-center space-x-2">
               <ShieldAlert className="w-4 h-4 text-blue-400" />
-              <span>Understanding Risk Ratings</span>
+              <span>Understanding Susceptibility Tiers</span>
             </h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              GeoSlide-JK classifies slope instability using 5 relative risk tiers based on terrain slope, geology, drainage, and rainfall proxy scenarios.
+              GeoSlide-JK classifies slope susceptibility into 5 relative tiers based on terrain slope, geology, drainage, and rainfall proxy scenarios.
             </p>
 
             <div className="space-y-1.5 pt-1 text-[11px] font-medium">
               <div className="flex items-center justify-between p-1.5 rounded bg-emerald-950/60 border border-emerald-600/40 text-emerald-200">
-                <span>Green / Yellow: Baseline Risk</span>
-                <span className="font-mono text-[10px]">Normal Transit</span>
+                <span>Green / Yellow: Baseline Relative Exposure</span>
+                <span className="font-mono text-[10px]">Normal Baseline</span>
               </div>
               <div className="flex items-center justify-between p-1.5 rounded bg-amber-950/60 border border-amber-600/40 text-amber-200">
-                <span>Orange: High Relative Risk</span>
+                <span>Orange: Elevated Relative Exposure</span>
                 <span className="font-mono text-[10px]">Caution Required</span>
               </div>
               <div className="flex items-center justify-between p-1.5 rounded bg-rose-950/60 border border-rose-600/40 text-rose-200">
-                <span>Red: Critical Exposure</span>
-                <span className="font-mono text-[10px]">Delay Travel</span>
+                <span>Red: Very High Exposure Scenario</span>
+                <span className="font-mono text-[10px]">Verify Advisories</span>
               </div>
             </div>
           </div>
@@ -139,12 +167,12 @@ export function TravellerDashboard() {
         </div>
       </div>
 
-      {/* Interactive Map View */}
+      {/* Interactive Map View with Visible Susceptibility Classes */}
       <div className="bg-navy-900 border border-navy-700 p-4 rounded-2xl space-y-3">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-sm font-bold text-white">Interactive J&K Instability Map</h2>
-            <p className="text-xs text-slate-400">Click any location on the map to inspect slope risk and elevation.</p>
+            <h2 className="text-sm font-bold text-white">5-Class Susceptibility Overlay Map</h2>
+            <p className="text-xs text-slate-400">High-contrast 5-class susceptibility layer overlaid on basemap.</p>
           </div>
           <Link
             href="/location-check"
@@ -163,6 +191,8 @@ export function TravellerDashboard() {
           />
         </div>
       </div>
+
+      <ExecutiveDemoGuide />
     </div>
   );
 }
