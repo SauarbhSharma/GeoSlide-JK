@@ -1,0 +1,3 @@
+terminal_label,graph_node_id,source_edge_id,longitude,latitude,distance_to_selected_geometry_m,nearest_named_settlement,out_of_scope_length_km,audit_explanation
+Existing Southern Terminal (Pre-Repair),NODE_UDHAMPUR_APPROACH,OSM_WAY_37236494,75.15289,32.81859,0.0,Jammu-Udhampur Approach,12.4,Route extended 12.4 km south of Udhampur town into Jammu approach road.
+Existing Northern Terminal (Pre-Repair),NODE_JAWAHAR_TUNNEL,OSM_WAY_131109995,75.18695,33.56502,0.0,Jawahar Tunnel / Qazigund Approach,14.8,Route extended 14.8 km north of Banihal town past Jawahar Tunnel toward Qazigund.

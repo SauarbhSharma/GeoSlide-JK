@@ -1,0 +1,6 @@
+sector_name,original_lon,original_lat,projected_lon,projected_lat,distance_to_route_m,chainage_km,validation_result
+Udhampur Pilot Start,75.195661,33.433811,75.195661,33.433811,0.0,0.0,PASS (On Route)
+Chenani / Nashri Tunnel,75.14,33.05,75.191839,33.05008,4839.9,48.378,PASS (On Route)
+Ramban Sector,75.247,33.244,75.191476,33.243939,5172.5,26.886,PASS (On Route)
+Ramsoo Sector,75.195,33.34,75.191296,33.339995,344.6,16.237,PASS (On Route)
+Banihal Pilot End,75.190923,32.991207,75.190923,32.991207,0.0,54.978,PASS (On Route)

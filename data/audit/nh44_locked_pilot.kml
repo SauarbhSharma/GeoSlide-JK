@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>NH-44 Locked Pilot Mainline (Udhampur to Banihal)</name>
+    <Placemark>
+      <name>Southern Terminal: Udhampur</name>
+      <Point><coordinates>75.19566057886935,33.43381064031961,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Northern Terminal: Banihal</name>
+      <Point><coordinates>75.19092310000002,32.991207499999994,0</coordinates></Point>
+    </Placemark>
+  </Document>
+</kml>

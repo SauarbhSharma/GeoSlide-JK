@@ -1,0 +1,3 @@
+candidate_id,terminal_name,longitude,latitude,source_edge_id,nearest_named_settlement,distance_to_settlement_m,terminal_rationale,selection_status
+SOUTH_CAND_1,Southern Analysis Terminal (Udhampur Start),75.195661,33.433811,OSM_WAY_131109961,Udhampur Sector,0.0,Exact Udhampur pilot start terminal on NH-44 mainline,RECOMMENDED & SELECTED
+NORTH_CAND_1,Northern Analysis Terminal (Banihal End),75.190923,32.991207,OSM_WAY_131109995,Banihal Sector,0.0,Exact Banihal pilot end terminal on NH-44 mainline,RECOMMENDED & SELECTED
