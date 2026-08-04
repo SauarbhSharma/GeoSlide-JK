@@ -1,0 +1,5 @@
+url,target,asset_type,http_status,content_type,size_bytes,verification_status
+http://127.0.0.1:3000/,Next.js Frontend Root,HTML Document,ERROR,N/A,0,FAIL: timed out
+http://127.0.0.1:3000/corridor,Corridor Page,HTML Document,200,text/html; charset=utf-8,21078,PASS (200 OK)
+http://127.0.0.1:8000/api/v1/health,FastAPI Health,JSON API,ERROR,N/A,0,FAIL: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>
+http://127.0.0.1:8000/api/v1/districts,FastAPI Districts,JSON API,ERROR,N/A,0,FAIL: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>

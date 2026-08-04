@@ -1,0 +1,6 @@
+screenshot_name,file_size_bytes,md5_hash,sha256_16,uniqueness_status,evidence_verification
+styled_runtime_home.png,147328,c644ee6dd497fe4ad04da7126ec5065e,d09289cf4a8905d3,PASS (UNIQUE),Visual evidence verified for styled_runtime_home.png
+road_candidate_comparison.png,539956,96c4685f8d0672426abbdc5c8db38fd3,d2b7fd4c1a448ea9,PASS (UNIQUE),Visual evidence verified for road_candidate_comparison.png
+nh44_full_candidate.png,391944,954f7eaa7deed965281e1705baef9c37,854b7776c1766eae,PASS (UNIQUE),Visual evidence verified for nh44_full_candidate.png
+nh44_anchor_validation.png,395582,9d326811a9786a60f712647926fdf9e9,1dd3dfd2deb6246a,PASS (UNIQUE),Visual evidence verified for nh44_anchor_validation.png
+corridor_ui_validation_state.png,127169,50e23ed8e6cd58a8f384b500873fdedd,28699e7a96e4eb9e,PASS (UNIQUE),Visual evidence verified for corridor_ui_validation_state.png
