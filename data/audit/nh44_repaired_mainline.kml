@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>NH-44 Repaired Mainline (Udhampur to Banihal)</name>
+    <Placemark>
+      <name>Southern Terminal: Udhampur</name>
+      <Point><coordinates>75.15289270000001,32.818589100000004,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>Northern Terminal: Banihal</name>
+      <Point><coordinates>75.1869486,33.5650161,0</coordinates></Point>
+    </Placemark>
+  </Document>
+</kml>
