@@ -1,0 +1,3 @@
+terminal_role,snapped_lat,snapped_lon,source_edge_id,osm_way_id,road_name,road_ref,nearest_named_place,snap_distance_m,direction_of_travel
+Southern Terminal (Udhampur Start),32.848731,74.957135,OSM_WAY_131109961,131109961,NH-44 Jammu-Srinagar Highway (Udhampur),NH 44,Udhampur Pilot Terminal,0.0,Northbound (towards Ramban / Banihal)
+Northern Terminal (Banihal End),33.037735,75.277979,OSM_WAY_131109995,131109995,NH-44 Jammu-Srinagar Highway (Banihal),NH 44,Banihal Pilot Terminal,0.0,Northbound Terminal End

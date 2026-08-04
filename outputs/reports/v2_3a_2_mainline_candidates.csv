@@ -1,0 +1,2 @@
+candidate_id,extraction_method,length_km,source_edge_count,total_vertices_count,tunnel_count,bridge_count,anchor_sequence_validation,nh244_exclusion,acceptance_verdict
+MAINLINE_PATH_01 (Selected),Method B: Constrained Topology Graph Path,64.421,78,2471,4,12,PASS (Udhampur -> Chenani -> Ramban -> Ramsoo -> Banihal),PASS (100% Excluded),ACCEPTED (Single Source-Faithful NH-44 Analysis Mainline)

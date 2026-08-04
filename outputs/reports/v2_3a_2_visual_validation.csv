@@ -1,0 +1,11 @@
+screenshot_name,file_size_bytes,md5_hash,exact_two_endpoints,excluded_branch_layer_non_empty,distinct_hash_status,lies_on_accepted_source_edges
+candidate_network_with_branches.png,428690,8fa6d3731c184bf593e5fa2a3f6a823a,True,True,PASS (100% Unique),True
+selected_mainline_overview.png,428958,22ca6c9306f508adb25558557b989614,True,True,PASS (100% Unique),True
+mainline_udhampur.png,339761,ad977181d59b6b7c6f4b3a644dadfae8,True,True,PASS (100% Unique),True
+mainline_chenani_nashri.png,200532,1f87451ad3db37189dcbc62b236edee6,True,True,PASS (100% Unique),True
+mainline_ramban.png,203927,84e8290e6f53d27ec9543d2f61faff31,True,True,PASS (100% Unique),True
+mainline_ramsoo.png,173353,dc9c3b1845571bbb93d1137b76a6b585,True,True,PASS (100% Unique),True
+mainline_banihal.png,190582,e52843616db52003ea65de78f56c8b76,True,True,PASS (100% Unique),True
+tunnel_bridge_inventory.png,327421,2612d15449b7e8fffe97ebec2dabb2cd,True,N/A,PASS (100% Unique),True
+source_edge_traceability.png,191897,b3ec5321fb3c7f415712eeb69e8ebddc,True,True,PASS (100% Unique),True
+final_mainline_without_branches.png,411615,92d92f679757b859d79396ed6d8db981,True,N/A,PASS (100% Unique),True

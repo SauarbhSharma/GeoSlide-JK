@@ -1,0 +1,2 @@
+total_nodes,total_edges,degree_1_nodes_count,degree_2_nodes_count,branch_nodes_count_degree_gt_2,cycles_count,disconnected_components_count,topology_status
+375,372,25,331,19,8,11,Graph Topology Built (372 Candidate Edges)

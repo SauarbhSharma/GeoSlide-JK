@@ -1,0 +1,2 @@
+relation_id,relation_name,relation_ref,network,route,operator,member_type,member_id,member_role,member_order,verification_status
+OSM_REL_NH44_JK,NH 44 Jammu-Srinagar Highway,NH 44,IN:NH,road,NHAI,way,MULTIPLE_WAY_MEMBERS,outer,UNORDERED,NH-44 relation not independently established
