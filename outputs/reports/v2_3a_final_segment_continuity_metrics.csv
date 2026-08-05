@@ -1,0 +1,12 @@
+metric_description,observed_value,validation_threshold,status
+Total Segment Count,158,158 Segments,PASS
+Max Consecutive Endpoint Gap,0.000 m,<= 0.010 m,PASS
+Max Chainage Gap,0.000 m,0.000 m,PASS
+Max Chainage Overlap,0.000 m,0.000 m,PASS
+First Segment Start Diff from Route Start,0.000 m,0.000 m,PASS
+Final Segment End Diff from Route End,0.000 m,0.000 m,PASS
+Summed Segment Length,"78,619.370 m","78,619.370 m",PASS
+Authoritative Route Length,"78,619.370 m","78,619.370 m",PASS
+Length Reconciliation Difference,0.000 m,<= 0.100 m,PASS
+Segment Union-to-Route Max Distance,0.000 m,<= 0.010 m,PASS
+OVERALL CONTINUITY RESULT,100% CONTINUOUS,ZERO GAP / ZERO OVERLAP,PASS

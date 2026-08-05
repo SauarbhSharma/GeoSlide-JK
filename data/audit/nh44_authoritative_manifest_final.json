@@ -14,5 +14,11 @@
     "terminal_reference_audit_csv": "e983faaa6082e64c9b981be5ecdb73b37c8dba0afeeb74b11ecaa571c478e540",
     "provenance_csv": "24844edc0b3494e69fc3d77e59a0f6179de5a55c4eae1c672d6b6b615a58eb44",
     "generation_script": "a64b48d2d177cb92773b71278914a7f0eb93ef8dff9a4e0ab1876469d9a2d3ae"
+  },
+  "osm_provenance": {
+    "relation_id": 5794209,
+    "internal_membership_match_percentage": "100.0%",
+    "independent_provenance_status": "LOCAL REFERENCE \u2014 NOT INDEPENDENTLY VERIFIED AS OSM",
+    "provenance_statement": "100% internal member-way match against the locally preserved relation snapshot; external OSM provenance not independently verified."
   }
 }

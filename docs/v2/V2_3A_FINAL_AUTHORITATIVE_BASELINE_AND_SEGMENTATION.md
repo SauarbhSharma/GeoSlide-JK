@@ -1,9 +1,9 @@
 # GeoSlide-JK 2.0 — Final NH-44 Authoritative Baseline Freeze and 500 m Segmentation Report
 
-> **Document Version:** 2.3A-FINAL.1  
+> **Document Version:** 2.3A-FINAL.2  
 > **Gate Status:** APPROVED & COMPLETED (Decision A)  
 > **Target Branch:** `geoslide-jk-v2-nh44-final-baseline-segmentation`  
-> **Source Commit:** `0f79c242f72be5ba82873b028fdc162fd5cd10b6`
+> **Source Commit:** `6fc7ee50e5a67c2d7d40d034ae0e6802e6bf7c21`
 
 ---
 
@@ -17,6 +17,7 @@ The **NH-44 Udhampur–Banihal Pilot Corridor** has achieved final baseline free
 - **Northern Terminal:** Banihal NH-44 Pilot End (`33.436961°N, 75.194231°E`) — Km 78.619
 - **500 m Segments Created:** **158 segments** (157 x 500.0 m + 1 x 119.37 m residual)
 - **Geodesic Invariants:** 100% PASSED across all consecutive anchor pairs.
+- **OSM Provenance Wording:** **100% internal member-way match against the locally preserved relation snapshot; external OSM provenance not independently verified.**
 
 ---
 
