@@ -1,0 +1,6 @@
+file,scan_target,status
+outputs/reports/v2_3a_final_stale_value_scan.csv,54.978,CLEAN
+outputs/reports/v2_3a_final_stale_value_scan.csv,74.915,HISTORICAL_AUDIT_ONLY
+outputs/reports/v2_3a_final_stale_value_scan.csv,78.619,ACTIVE_CANONICAL_VALUE
+outputs/reports/v2_3a_final_stale_value_scan.csv,79.308,HISTORICAL_AUDIT_ONLY
+outputs/reports/v2_3a_final_stale_value_scan.csv,89.204,HISTORICAL_AUDIT_ONLY
