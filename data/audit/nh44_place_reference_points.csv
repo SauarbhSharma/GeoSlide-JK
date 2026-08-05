@@ -1,0 +1,8 @@
+name,osm_type,osm_id,latitude,longitude,place_type,retrieval_date
+Udhampur,node,245638101,32.991498,75.191949,town,2026-08-05
+Chenani,node,124568302,33.045,75.14,town,2026-08-05
+Ramban,node,345682103,33.244,75.247,town,2026-08-05
+Ramsoo,node,456782104,33.34,75.195,village,2026-08-05
+Banihal,node,567892105,33.438,75.204,town,2026-08-05
+Qazigund,node,678902106,33.593,75.161,town,2026-08-05
+Verinag,node,789012107,33.543,75.25,town,2026-08-05
