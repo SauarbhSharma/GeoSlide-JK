@@ -1,4 +1,5 @@
 {
+  "place_key": "ramsoo",
   "filename": "ramsoo.json",
   "name": "Ramsoo",
   "osm_type": "node",
@@ -8,5 +9,7 @@
   "longitude": 75.195,
   "display_name": "Ramsoo, Ramban District, Jammu and Kashmir, India",
   "retrieval_timestamp": "2026-08-05T14:00:00Z",
-  "verification_status": "VERIFIED"
+  "verification_status": "VERIFIED",
+  "http_status": 200,
+  "request_endpoint": "https://nominatim.openstreetmap.org/search?q=Ramsoo&format=json"
 }
