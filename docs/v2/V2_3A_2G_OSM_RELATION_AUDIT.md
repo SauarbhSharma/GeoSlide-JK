@@ -9,4 +9,4 @@
 ## 1. OSM Relation 5794209 Audit Results
 
 - **Fetched Relation ID:** `OSM_REL_5794209` (NH-44 Jammu to Srinagar Highway Relation).
-- **Matched Selected Edges:** 143 edges matched (100% exact or spatial relation match).
+- **Matched Selected Edges:** 134 edges matched (100% exact or spatial relation match).

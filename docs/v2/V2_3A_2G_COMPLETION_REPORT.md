@@ -10,14 +10,14 @@
 
 > **COMPLETION DECISION:** **UDHAMPUR–BANIHAL PLACE-ANCHORED PILOT VERIFIED**
 > 
-> The NH-44 pilot analysis corridor has been strictly anchored to independently traceable OpenStreetMap place references and clipped to the true Banihal terminal at `33.4380°N, 75.2040°E` (137.985 km continuous winding mainline).
+> The NH-44 pilot analysis corridor has been strictly anchored to independently traceable OpenStreetMap place references and clipped to the true Banihal terminal at `33.4380°N, 75.2040°E` (74.915 km continuous winding mainline).
 
 ---
 
 ## 2. Summary Metrics
 
-- **Clipped Place-Anchored Pilot Length:** **137.985 km**
-- **Removed Out-of-Scope Northern Length:** **25.736 km**
+- **Clipped Place-Anchored Pilot Length:** **74.915 km**
+- **Removed Out-of-Scope Northern Length:** **15.437 km**
 - **Southern Terminal Label:** `"Udhampur North NH-44 Pilot Start"`
 - **Northern Terminal Label:** `"Banihal NH-44 Pilot End"`
 - **Monotonic Place Order:** PASSED (Udhampur -> Chenani -> Ramban -> Ramsoo -> Banihal)
