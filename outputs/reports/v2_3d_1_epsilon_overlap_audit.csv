@@ -1,0 +1,8 @@
+parameter,value
+Epsilon Threshold,5.0 Percentile Points
+Epsilon-Dominance Membership Count,42
+Consensus Top-10% Count,16
+Epsilon Overlap with Consensus Top 16,13 Segments
+Consensus Top-Set Capture Proportion,13 / 16 = 0.8125 (81.25%)
+Epsilon-Front Capture Proportion,13 / 42 = 0.3095 (30.95%)
+Jaccard Similarity Index,13 / (16 + 42 - 13) = 0.2889 (28.89%)

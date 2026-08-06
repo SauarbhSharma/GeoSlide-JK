@@ -1,0 +1,4 @@
+block_size_km,number_of_blocks,replicates,random_seed,sampling_unit,ci_method
+2.5,32,1000,42,Contiguous 500m Segment Blocks,"Empirical Percentile (5th, 95th)"
+5.0,16,1000,42,Contiguous 500m Segment Blocks,"Empirical Percentile (5th, 95th)"
+10.0,8,1000,42,Contiguous 500m Segment Blocks,"Empirical Percentile (5th, 95th)"

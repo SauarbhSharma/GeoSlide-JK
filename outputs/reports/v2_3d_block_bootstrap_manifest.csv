@@ -1,0 +1,4 @@
+block_size_km,number_of_blocks,replicates,random_seed
+2.5,32,1000,42
+5.0,16,1000,42
+10.0,8,1000,42

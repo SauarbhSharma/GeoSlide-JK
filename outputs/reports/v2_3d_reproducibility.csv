@@ -1,0 +1,4 @@
+reproducibility_check,status
+output_hash_manifest_match,PASS
+segment_rank_order_stability,PASS
+deterministic_weight_perturbation_seed_42,PASS

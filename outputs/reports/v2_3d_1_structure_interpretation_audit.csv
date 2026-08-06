@@ -1,0 +1,5 @@
+structure_type,flag,numerical_distortion
+TUNNEL_INTERIOR,SURFACE_INTERPRETATION_LIMITED,ZERO — Score unchanged; surface slope failure decoupled from deck.
+BRIDGE_OR_VIADUCT,ELEVATED_STRUCTURE_CONTEXT,ZERO — Score unchanged; elevated valley crossing context preserved.
+MIXED_STRUCTURE,MIXED_STRUCTURE_INTERPRETATION,ZERO — Score unchanged; portal/pier transition context preserved.
+OPEN_SURFACE_ROAD,DIRECT_SURFACE_ROAD_EXPOSURE,ZERO — Score unchanged; direct surface cut exposure.

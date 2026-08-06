@@ -1,0 +1,5 @@
+audit_step,value,rule
+Input Ranks Count,11,"Exactly 11 Numerical Methods (A-F, H1-H5)"
+Tied Median Treatment,Average Rank,Deterministic rank tie-breaker
+Rank-to-Percentile Formula,(159 - ConsensusRank) / 158 * 100,Corridor-relative percentile scale
+Non-Numerical Inclusions,0,"Zero flags, inventory, or confidence fields enter consensus"

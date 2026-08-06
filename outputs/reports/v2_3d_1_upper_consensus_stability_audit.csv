@@ -1,0 +1,4 @@
+classification_metric,segment_count,criterion
+Consensus Top 10% (Ranks 1-16),16,Consensus Rank <= 16
+Independent High-Stability (Prob >= 0.80),16,"Probability Top 10% >= 0.80 under 2,000 weight perturbations"
+Consensus Top 10% AND Stable (Prob >= 0.80),16,Satisfies both consensus top-decile membership and stability rule

@@ -1,0 +1,2 @@
+metric,observed_morans_i,expected_morans_i,permutations,empirical_p_value,formatted_p_value_text,z_score,spatial_status
+Consensus Percentile Rank,0.985,-0.0064,999,0.001,p = 0.001 (Exact Permutation Limit 1/(999+1)),8.42,STRONG_POSITIVE_SPATIAL_CLUSTERING

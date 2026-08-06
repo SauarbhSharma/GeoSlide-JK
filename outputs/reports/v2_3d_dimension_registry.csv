@@ -1,0 +1,7 @@
+dimension_name,source_field,range,direction,unit,eligibility,exclusion_reason,provenance
+STATIC_SUSCEPTIBILITY_PROFILE,static_susceptibility_score_primary,"[0.0, 100.0]",+1 (Higher = Higher Priority),Percentile Rank,ELIGIBLE_PHYSICAL,N/A,Released V2-3C Baseline
+TERRAIN_SEVERITY_PROFILE,terrain_severity_score_primary,"[0.0, 100.0]",+1 (Higher = Higher Priority),Percentile Rank,ELIGIBLE_PHYSICAL,N/A,Released V2-3C Baseline
+GEOLOGICAL_CONTEXT_PROFILE,geological_context_score_primary,"[0.0, 100.0]",+1 (Higher = Higher Priority),Percentile Rank,ELIGIBLE_PHYSICAL,N/A,Released V2-3C Baseline
+SURFACE_DRAINAGE_PROFILE,surface_drainage_score_primary,"[0.0, 100.0]",+1 (Higher = Higher Priority),Percentile Rank,ELIGIBLE_PHYSICAL,N/A,Released V2-3C Baseline
+ROAD_STRUCTURE_CONTEXT,structure_dominant_type,Categorical,N/A,Text Category,EXCLUDED_CONTEXT_ONLY,Non-ordinal engineering structure category,Released V2-3C Baseline
+DATA_CONFIDENCE_METADATA,valid_coverage_pct,"[100.0, 100.0]",N/A,Percentage,EXCLUDED_METADATA_ONLY,Uniform complete coverage metadata,Released V2-3C Baseline

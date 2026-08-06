@@ -1,0 +1,7 @@
+configuration_parameter,value
+Normalization Method,"Min-Max Normalized [0.0001, 1.0000]"
+Ideal Point (P*),"(1.0, 1.0, 1.0, 1.0)"
+Anti-Ideal Point (P-),"(1e-4, 1e-4, 1e-4, 1e-4)"
+Distance Metric,Euclidean (L2 Norm)
+Benefit Direction,+1 (Higher Score = Greater Distance to Anti-Ideal)
+Component Weights,"Equal (0.25, 0.25, 0.25, 0.25)"
