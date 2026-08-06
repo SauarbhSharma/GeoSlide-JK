@@ -1,0 +1,9 @@
+class_code,class_name,description
+10,Tree cover (Forest),Continuous or open tree canopy cover (>10%)
+20,Shrubland / Grassland,Low woody or herbaceous vegetation cover
+30,Grassland,Natural or managed herbaceous pasture
+40,Cropland,Cultivated agricultural land
+50,Built-up,"Human settlements, infrastructure and roads"
+60,Bare / Sparsely vegetated,"Exposed bedrock, talus, scree and soil"
+80,Water bodies,"Rivers, streams, reservoirs and lakes"
+90,Snow and ice,Permanent or seasonal snow and glacier cover

@@ -1,0 +1,29 @@
+
+============================================================
+GEOSLIDE-JK V2 — V2-3B PYTHON UNIT TEST EXECUTION LOG
+============================================================
+Command: python -m unittest discover -s tests -p test_*.py
+Start Timestamp: 2026-08-06T09:07:04.547468+00:00
+End Timestamp: 2026-08-06T09:07:11.557228+00:00
+Exit Code: 1
+Status: FAILED
+============================================================
+STDOUT:
+
+STDERR:
+...............................................................................F...........
+======================================================================
+FAIL: test_08_all_metric_distances_calculated_in_epsg_32643 (test_nh44_segment_features.TestNH44SegmentFeatures.test_08_all_metric_distances_calculated_in_epsg_32643)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\GeoSlide_JK\tests\test_nh44_segment_features.py", line 52, in test_08_all_metric_distances_calculated_in_epsg_32643
+    self.assertEqual(str(self.gdf_feats.crs), "EPSG:32643")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"$schema": "https://proj.org/schemas/v0.[2352 chars]43}}' != 'EPSG:32643'
+Diff is 2411 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 91 tests in 4.603s
+
+FAILED (failures=1)
+

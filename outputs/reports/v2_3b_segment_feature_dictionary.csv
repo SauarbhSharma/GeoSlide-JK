@@ -1,0 +1,93 @@
+feature_column,data_type,units,category,description
+segment_id,str,metres,Identification,Extracted static geospatial metric: segment id across 100m segment buffer.
+segment_index,int64,metres,Identification,Extracted static geospatial metric: segment index across 100m segment buffer.
+chainage_start_m,float64,metres,Identification,Extracted static geospatial metric: chainage start m across 100m segment buffer.
+chainage_end_m,float64,metres,Identification,Extracted static geospatial metric: chainage end m across 100m segment buffer.
+chainage_mid_m,float64,metres,Identification,Extracted static geospatial metric: chainage mid m across 100m segment buffer.
+length_m,float64,metres,Identification,Extracted static geospatial metric: length m across 100m segment buffer.
+is_residual_segment,bool,metres,Identification,Extracted static geospatial metric: is residual segment across 100m segment buffer.
+start_longitude,float64,count / text,Identification,Extracted static geospatial metric: start longitude across 100m segment buffer.
+start_latitude,float64,count / text,Identification,Extracted static geospatial metric: start latitude across 100m segment buffer.
+end_longitude,float64,count / text,Identification,Extracted static geospatial metric: end longitude across 100m segment buffer.
+end_latitude,float64,count / text,Identification,Extracted static geospatial metric: end latitude across 100m segment buffer.
+midpoint_longitude,float64,metres,Identification,Extracted static geospatial metric: midpoint longitude across 100m segment buffer.
+midpoint_latitude,float64,metres,Identification,Extracted static geospatial metric: midpoint latitude across 100m segment buffer.
+district_name,str,metres,Identification,Extracted static geospatial metric: district name across 100m segment buffer.
+analysis_buffer_m,int64,metres,Identification,Extracted static geospatial metric: analysis buffer m across 100m segment buffer.
+elevation_min_m,object,metres,Terrain,Extracted static geospatial metric: elevation min m across 100m segment buffer.
+elevation_max_m,object,metres,Terrain,Extracted static geospatial metric: elevation max m across 100m segment buffer.
+elevation_mean_m,object,metres,Terrain,Extracted static geospatial metric: elevation mean m across 100m segment buffer.
+elevation_median_m,object,metres,Terrain,Extracted static geospatial metric: elevation median m across 100m segment buffer.
+elevation_std_m,object,metres,Terrain,Extracted static geospatial metric: elevation std m across 100m segment buffer.
+elevation_range_m,object,metres,Terrain,Extracted static geospatial metric: elevation range m across 100m segment buffer.
+elevation_p90_m,object,metres,Terrain,Extracted static geospatial metric: elevation p90 m across 100m segment buffer.
+slope_min_deg,object,metres,Terrain,Extracted static geospatial metric: slope min deg across 100m segment buffer.
+slope_max_deg,object,metres,Terrain,Extracted static geospatial metric: slope max deg across 100m segment buffer.
+slope_mean_deg,object,metres,Terrain,Extracted static geospatial metric: slope mean deg across 100m segment buffer.
+slope_median_deg,object,metres,Terrain,Extracted static geospatial metric: slope median deg across 100m segment buffer.
+slope_std_deg,object,degrees,Terrain,Extracted static geospatial metric: slope std deg across 100m segment buffer.
+slope_p90_deg,object,degrees,Terrain,Extracted static geospatial metric: slope p90 deg across 100m segment buffer.
+slope_pct_above_15deg,object,degrees,Terrain,Extracted static geospatial metric: slope pct above 15deg across 100m segment buffer.
+slope_pct_above_25deg,object,degrees,Terrain,Extracted static geospatial metric: slope pct above 25deg across 100m segment buffer.
+slope_pct_above_35deg,object,degrees,Terrain,Extracted static geospatial metric: slope pct above 35deg across 100m segment buffer.
+aspect_circular_mean_deg,object,metres,Terrain,Extracted static geospatial metric: aspect circular mean deg across 100m segment buffer.
+aspect_north_fraction,object,fraction [0-1],Terrain,Extracted static geospatial metric: aspect north fraction across 100m segment buffer.
+aspect_east_fraction,object,fraction [0-1],Terrain,Extracted static geospatial metric: aspect east fraction across 100m segment buffer.
+aspect_south_fraction,object,fraction [0-1],Terrain,Extracted static geospatial metric: aspect south fraction across 100m segment buffer.
+aspect_west_fraction,object,fraction [0-1],Terrain,Extracted static geospatial metric: aspect west fraction across 100m segment buffer.
+aspect_dominant_class,object,metres,Terrain,Extracted static geospatial metric: aspect dominant class across 100m segment buffer.
+hillshade_mean,object,metres,Terrain,Extracted static geospatial metric: hillshade mean across 100m segment buffer.
+hillshade_median,object,metres,Terrain,Extracted static geospatial metric: hillshade median across 100m segment buffer.
+hillshade_std,object,count / text,Terrain,Extracted static geospatial metric: hillshade std across 100m segment buffer.
+susceptibility_min_prob,object,metres,Susceptibility,Extracted static geospatial metric: susceptibility min prob across 100m segment buffer.
+susceptibility_max_prob,object,metres,Susceptibility,Extracted static geospatial metric: susceptibility max prob across 100m segment buffer.
+susceptibility_mean_prob,object,metres,Susceptibility,Extracted static geospatial metric: susceptibility mean prob across 100m segment buffer.
+susceptibility_median_prob,object,metres,Susceptibility,Extracted static geospatial metric: susceptibility median prob across 100m segment buffer.
+susceptibility_std_prob,object,count / text,Susceptibility,Extracted static geospatial metric: susceptibility std prob across 100m segment buffer.
+susceptibility_p75_prob,object,count / text,Susceptibility,Extracted static geospatial metric: susceptibility p75 prob across 100m segment buffer.
+susceptibility_p90_prob,object,count / text,Susceptibility,Extracted static geospatial metric: susceptibility p90 prob across 100m segment buffer.
+susceptibility_p95_prob,object,count / text,Susceptibility,Extracted static geospatial metric: susceptibility p95 prob across 100m segment buffer.
+susceptibility_very_low_fraction,object,fraction [0-1],Susceptibility,Extracted static geospatial metric: susceptibility very low fraction across 100m segment buffer.
+susceptibility_low_fraction,object,fraction [0-1],Susceptibility,Extracted static geospatial metric: susceptibility low fraction across 100m segment buffer.
+susceptibility_moderate_fraction,object,fraction [0-1],Susceptibility,Extracted static geospatial metric: susceptibility moderate fraction across 100m segment buffer.
+susceptibility_high_fraction,object,fraction [0-1],Susceptibility,Extracted static geospatial metric: susceptibility high fraction across 100m segment buffer.
+susceptibility_very_high_fraction,object,fraction [0-1],Susceptibility,Extracted static geospatial metric: susceptibility very high fraction across 100m segment buffer.
+susceptibility_dominant_class,object,metres,Susceptibility,Extracted static geospatial metric: susceptibility dominant class across 100m segment buffer.
+susceptibility_pct_high_very_high,object,percentage,Susceptibility,Extracted static geospatial metric: susceptibility pct high very high across 100m segment buffer.
+susceptibility_max_contiguous_high_len_m,object,metres,Susceptibility,Extracted static geospatial metric: susceptibility max contiguous high len m across 100m segment buffer.
+landcover_dominant_class,str,metres,LandCover,Extracted static geospatial metric: landcover dominant class across 100m segment buffer.
+landcover_builtup_fraction,float64,fraction [0-1],LandCover,Extracted static geospatial metric: landcover builtup fraction across 100m segment buffer.
+landcover_cropland_fraction,float64,fraction [0-1],LandCover,Extracted static geospatial metric: landcover cropland fraction across 100m segment buffer.
+landcover_forest_fraction,float64,fraction [0-1],LandCover,Extracted static geospatial metric: landcover forest fraction across 100m segment buffer.
+landcover_grassland_fraction,float64,fraction [0-1],LandCover,Extracted static geospatial metric: landcover grassland fraction across 100m segment buffer.
+landcover_bareground_fraction,float64,fraction [0-1],LandCover,Extracted static geospatial metric: landcover bareground fraction across 100m segment buffer.
+landcover_water_fraction,float64,fraction [0-1],LandCover,Extracted static geospatial metric: landcover water fraction across 100m segment buffer.
+landcover_snow_ice_fraction,float64,fraction [0-1],LandCover,Extracted static geospatial metric: landcover snow ice fraction across 100m segment buffer.
+geology_dominant_lithology,str,metres,Geology,Extracted static geospatial metric: geology dominant lithology across 100m segment buffer.
+geology_lithological_diversity_count,int64,count / text,Geology,Extracted static geospatial metric: geology lithological diversity count across 100m segment buffer.
+geology_overlap_pct,float64,percentage,Geology,Extracted static geospatial metric: geology overlap pct across 100m segment buffer.
+fault_distance_nearest_m,float64,metres,Geology,Extracted static geospatial metric: fault distance nearest m across 100m segment buffer.
+fault_intersection_count,int64,count / text,Geology,Extracted static geospatial metric: fault intersection count across 100m segment buffer.
+fault_density_100m_m_per_sqkm,float64,metres,Geology,Extracted static geospatial metric: fault density 100m m per sqkm across 100m segment buffer.
+fault_density_250m_m_per_sqkm,float64,metres,Geology,Extracted static geospatial metric: fault density 250m m per sqkm across 100m segment buffer.
+fault_distance_active_m,float64,metres,Geology,Extracted static geospatial metric: fault distance active m across 100m segment buffer.
+fault_active_intersection_count,int64,count / text,Geology,Extracted static geospatial metric: fault active intersection count across 100m segment buffer.
+drainage_distance_min_m,float64,metres,Identification,Extracted static geospatial metric: drainage distance min m across 100m segment buffer.
+drainage_distance_mean_m,float64,metres,Identification,Extracted static geospatial metric: drainage distance mean m across 100m segment buffer.
+drainage_intersection_count,int64,count / text,Identification,Extracted static geospatial metric: drainage intersection count across 100m segment buffer.
+drainage_density_100m_m_per_sqkm,float64,metres,Identification,Extracted static geospatial metric: drainage density 100m m per sqkm across 100m segment buffer.
+road_distance_min_m,float64,metres,Identification,Extracted static geospatial metric: road distance min m across 100m segment buffer.
+road_intersection_count,int64,count / text,Identification,Extracted static geospatial metric: road intersection count across 100m segment buffer.
+road_density_m_per_sqkm,float64,metres,Identification,Extracted static geospatial metric: road density m per sqkm across 100m segment buffer.
+road_cut_exposure_proxy,object,count / text,Identification,Extracted static geospatial metric: road cut exposure proxy across 100m segment buffer.
+structure_open_road_length_m,float64,metres,Structure,Extracted static geospatial metric: structure open road length m across 100m segment buffer.
+structure_tunnel_length_m,float64,metres,Structure,Extracted static geospatial metric: structure tunnel length m across 100m segment buffer.
+structure_bridge_length_m,float64,metres,Structure,Extracted static geospatial metric: structure bridge length m across 100m segment buffer.
+structure_open_road_fraction,float64,fraction [0-1],Structure,Extracted static geospatial metric: structure open road fraction across 100m segment buffer.
+structure_tunnel_fraction,float64,fraction [0-1],Structure,Extracted static geospatial metric: structure tunnel fraction across 100m segment buffer.
+structure_bridge_fraction,float64,fraction [0-1],Structure,Extracted static geospatial metric: structure bridge fraction across 100m segment buffer.
+structure_dominant_type,str,metres,Structure,Extracted static geospatial metric: structure dominant type across 100m segment buffer.
+structure_mixed_flag,bool,metres,Structure,Extracted static geospatial metric: structure mixed flag across 100m segment buffer.
+structure_boundary_crossing_flag,bool,count / text,Structure,Extracted static geospatial metric: structure boundary crossing flag across 100m segment buffer.
+valid_coverage_pct,float64,percentage,Identification,Extracted static geospatial metric: valid coverage pct across 100m segment buffer.
+coverage_quality_flag,str,count / text,Identification,Extracted static geospatial metric: coverage quality flag across 100m segment buffer.
