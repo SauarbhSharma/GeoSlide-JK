@@ -1,0 +1,47 @@
+
+============================================================
+GEOSLIDE-JK V2 — POST-MERGE V2-3B PYTHON TEST LOG
+============================================================
+Command: python -m unittest discover -s tests -p test_*.py
+Start Timestamp: 2026-08-06T12:16:01.317260+00:00
+End Timestamp: 2026-08-06T12:16:05.984528+00:00
+Exit Code: 1
+Status: FAILED
+============================================================
+STDOUT:
+
+STDERR:
+................................................................................FF..........F...........
+======================================================================
+FAIL: test_09_fraction_sums_equal_one (test_nh44_segment_feature_scientific_review.TestNH44SegmentFeatureScientificReview.test_09_fraction_sums_equal_one)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\GeoSlide_JK\tests\test_nh44_segment_feature_scientific_review.py", line 60, in test_09_fraction_sums_equal_one
+    self.assertTrue(all(df_frac["susceptibility_sum_valid"]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_10_susceptibility_ordering_and_high_sums (test_nh44_segment_feature_scientific_review.TestNH44SegmentFeatureScientificReview.test_10_susceptibility_ordering_and_high_sums)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\GeoSlide_JK\tests\test_nh44_segment_feature_scientific_review.py", line 66, in test_10_susceptibility_ordering_and_high_sums
+    self.assertTrue(all(df_sus["monotonic_ordering_valid"]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_08_all_metric_distances_calculated_in_epsg_32643 (test_nh44_segment_features.TestNH44SegmentFeatures.test_08_all_metric_distances_calculated_in_epsg_32643)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\GeoSlide_JK\tests\test_nh44_segment_features.py", line 52, in test_08_all_metric_distances_calculated_in_epsg_32643
+    self.assertEqual(str(self.gdf_feats.crs), "EPSG:32643")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"$schema": "https://proj.org/schemas/v0.[2352 chars]43}}' != 'EPSG:32643'
+Diff is 2411 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 104 tests in 2.896s
+
+FAILED (failures=3)
+
