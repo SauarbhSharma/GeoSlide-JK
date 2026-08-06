@@ -1,0 +1,7 @@
+cluster_id,members,family,representative,reason
+C1_Susceptibility_Probabilities,"['susceptibility_mean_prob', 'susceptibility_median_prob', 'susceptibility_p75_prob', 'susceptibility_p90_prob', 'susceptibility_p95_prob']",STATIC_SUSCEPTIBILITY,susceptibility_mean_prob,Central tendency of susceptibility distribution
+C2_Susceptibility_Tail_Risk,"['susceptibility_max_prob', 'susceptibility_pct_high_very_high', 'susceptibility_max_contiguous_high_len_m']",STATIC_SUSCEPTIBILITY,susceptibility_max_prob,Captures peak spatial susceptibility exposure
+C3_Slope_Severity,"['slope_mean_deg', 'slope_median_deg', 'slope_p90_deg', 'slope_pct_above_15deg', 'slope_pct_above_25deg', 'slope_pct_above_35deg']",TERRAIN_SEVERITY,slope_mean_deg,Standardized slope gradient metric
+C4_Elevation_Gradient,"['elevation_min_m', 'elevation_max_m', 'elevation_mean_m', 'elevation_median_m', 'elevation_p90_m']",TERRAIN_SEVERITY,elevation_mean_m,Hypsometric elevation context
+C5_Fault_Proximity,"['fault_distance_nearest_m', 'fault_distance_active_m', 'fault_density_100m_m_per_sqkm', 'fault_density_250m_m_per_sqkm']",GEOLOGICAL_CONTEXT,fault_distance_nearest_m,Direct metric distance to nearest fault line
+C6_Drainage_Proximity,"['drainage_distance_min_m', 'drainage_distance_mean_m', 'drainage_density_100m_m_per_sqkm']",SURFACE_AND_DRAINAGE_CONTEXT,drainage_distance_min_m,Proximity to toe-scour hydrographic network

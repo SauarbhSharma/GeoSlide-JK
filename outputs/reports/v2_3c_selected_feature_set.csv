@@ -1,0 +1,15 @@
+feature_name,component_assignment,scientific_direction,normalization_method,selection_justification
+susceptibility_mean_prob,STATIC_SUSCEPTIBILITY,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for STATIC_SUSCEPTIBILITY domain.
+susceptibility_max_prob,STATIC_SUSCEPTIBILITY,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for STATIC_SUSCEPTIBILITY domain.
+susceptibility_pct_high_very_high,STATIC_SUSCEPTIBILITY,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for STATIC_SUSCEPTIBILITY domain.
+slope_mean_deg,TERRAIN_SEVERITY,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for TERRAIN_SEVERITY domain.
+slope_p90_deg,TERRAIN_SEVERITY,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for TERRAIN_SEVERITY domain.
+slope_pct_above_25deg,TERRAIN_SEVERITY,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for TERRAIN_SEVERITY domain.
+elevation_mean_m,TERRAIN_SEVERITY,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for TERRAIN_SEVERITY domain.
+fault_distance_nearest_m,GEOLOGICAL_CONTEXT,Inverse (-1: lower value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for GEOLOGICAL_CONTEXT domain.
+fault_distance_active_m,GEOLOGICAL_CONTEXT,Inverse (-1: lower value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for GEOLOGICAL_CONTEXT domain.
+geology_lithological_diversity_count,GEOLOGICAL_CONTEXT,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for GEOLOGICAL_CONTEXT domain.
+drainage_distance_min_m,SURFACE_AND_DRAINAGE_CONTEXT,Inverse (-1: lower value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for SURFACE_AND_DRAINAGE_CONTEXT domain.
+landcover_bareground_fraction,SURFACE_AND_DRAINAGE_CONTEXT,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for SURFACE_AND_DRAINAGE_CONTEXT domain.
+landcover_forest_fraction,SURFACE_AND_DRAINAGE_CONTEXT,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for SURFACE_AND_DRAINAGE_CONTEXT domain.
+structure_tunnel_length_m,ROAD_STRUCTURE_CONTEXT,Direct (+1: higher value = higher concern),Empirical Percentile Rank [0-100] & Robust MAD Z-Score,Selected representative for ROAD_STRUCTURE_CONTEXT domain.

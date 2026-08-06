@@ -1,0 +1,7 @@
+component_name,description
+STATIC_SUSCEPTIBILITY_PROFILE,Median percentile rank of static ML susceptibility probability metrics across segment corridor.
+TERRAIN_SEVERITY_PROFILE,Median percentile rank of DEM elevation & slope gradient severity metrics.
+GEOLOGICAL_CONTEXT_PROFILE,Median percentile rank of structural fault line proximity and lithological diversity.
+SURFACE_DRAINAGE_PROFILE,Median percentile rank of drainage proximity and surface land cover fractions.
+ROAD_STRUCTURE_CONTEXT_PROFILE,"Categorical highway engineering structure attribution (Open Road, Tunnel, Bridge)."
+DATA_CONFIDENCE_PROFILE,Data completeness and raster zonal statistics sampling quality metric.

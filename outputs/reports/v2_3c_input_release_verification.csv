@@ -1,0 +1,5 @@
+input_artifact,expected_sha256,observed_sha256,status,expected_rows,observed_rows,expected_cols,observed_cols
+v2_3a_route_geojson,7141c209c578f8e8f19bc13b85409eeb220b709703c62691fac732594b2e3564,7141c209c578f8e8f19bc13b85409eeb220b709703c62691fac732594b2e3564,PASS,,,,
+v2_3a_segment_inventory,775998e07bbb332d352093961ce2d47b7ca3488179885abceca1df843a50f172,775998e07bbb332d352093961ce2d47b7ca3488179885abceca1df843a50f172,PASS,,,,
+v2_3b_static_features_csv,,,PASS,158.0,158.0,,
+v2_3b_static_features_cols,,,PASS,,,92.0,92.0
