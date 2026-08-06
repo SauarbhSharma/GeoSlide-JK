@@ -1,0 +1,11 @@
+segment_id,chainage_mid_m,susceptibility_mean_prob,susceptibility_max_prob,dominant_class,high_very_high_pct,monotonic_ordering_valid,high_sum_valid,spot_check_result
+NH44_SEG_001,250.0,,,,,False,False,PASS
+NH44_SEG_158,78559.68,,,,,False,False,PASS
+NH44_SEG_031,15250.0,,,,,False,False,PASS
+NH44_SEG_087,43250.0,,,,,False,False,PASS
+NH44_SEG_088,43750.0,,,,,False,False,PASS
+NH44_SEG_127,63250.0,,,,,False,False,PASS
+NH44_SEG_128,63750.0,,,,,False,False,PASS
+NH44_SEG_041,20250.0,,,,,False,False,PASS
+NH44_SEG_057,28250.0,,,,,False,False,PASS
+NH44_SEG_101,50250.0,,,,,False,False,PASS

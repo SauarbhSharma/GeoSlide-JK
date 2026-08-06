@@ -1,0 +1,93 @@
+column_name,feature_family,data_type,unit,is_identifier,is_geometry_metadata,is_quality_metadata,is_unique_scientific_feature,multi_category_overlap_in_v2_3b_response,retained_in_final_table
+segment_id,Identifier / Metadata,str,metres,True,False,False,False,Overlapped domain categories in summary text (sum 67),True
+segment_index,Identifier / Metadata,int64,metres,True,False,False,False,Overlapped domain categories in summary text (sum 67),True
+chainage_start_m,Chainage / Geometry Metadata,float64,metres,False,True,False,False,Overlapped domain categories in summary text (sum 67),True
+chainage_end_m,Chainage / Geometry Metadata,float64,metres,False,True,False,False,Overlapped domain categories in summary text (sum 67),True
+chainage_mid_m,Chainage / Geometry Metadata,float64,metres,False,True,False,False,Overlapped domain categories in summary text (sum 67),True
+length_m,Chainage / Geometry Metadata,float64,metres,False,True,False,False,Overlapped domain categories in summary text (sum 67),True
+is_residual_segment,Identifier / Metadata,bool,metres,True,False,False,False,Overlapped domain categories in summary text (sum 67),True
+start_longitude,Chainage / Geometry Metadata,float64,text/count,False,True,False,False,Overlapped domain categories in summary text (sum 67),True
+start_latitude,Chainage / Geometry Metadata,float64,text/count,False,True,False,False,Overlapped domain categories in summary text (sum 67),True
+end_longitude,Chainage / Geometry Metadata,float64,text/count,False,True,False,False,Overlapped domain categories in summary text (sum 67),True
+end_latitude,Chainage / Geometry Metadata,float64,text/count,False,True,False,False,Overlapped domain categories in summary text (sum 67),True
+midpoint_longitude,Chainage / Geometry Metadata,float64,metres,False,True,False,False,Overlapped domain categories in summary text (sum 67),True
+midpoint_latitude,Chainage / Geometry Metadata,float64,metres,False,True,False,False,Overlapped domain categories in summary text (sum 67),True
+district_name,Identifier / Metadata,str,metres,True,False,False,False,Overlapped domain categories in summary text (sum 67),True
+analysis_buffer_m,Quality / Coverage Metadata,int64,metres,False,False,True,False,Overlapped domain categories in summary text (sum 67),True
+elevation_min_m,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+elevation_max_m,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+elevation_mean_m,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+elevation_median_m,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+elevation_std_m,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+elevation_range_m,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+elevation_p90_m,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+slope_min_deg,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+slope_max_deg,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+slope_mean_deg,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+slope_median_deg,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+slope_std_deg,Terrain,float64,degrees,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+slope_p90_deg,Terrain,float64,degrees,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+slope_pct_above_15deg,Terrain,float64,degrees,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+slope_pct_above_25deg,Terrain,float64,degrees,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+slope_pct_above_35deg,Terrain,float64,degrees,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+aspect_circular_mean_deg,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+aspect_north_fraction,Terrain,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+aspect_east_fraction,Terrain,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+aspect_south_fraction,Terrain,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+aspect_west_fraction,Terrain,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+aspect_dominant_class,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+hillshade_mean,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+hillshade_median,Terrain,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+hillshade_std,Terrain,float64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_min_prob,Static Susceptibility,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_max_prob,Static Susceptibility,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_mean_prob,Static Susceptibility,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_median_prob,Static Susceptibility,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_std_prob,Static Susceptibility,float64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_p75_prob,Static Susceptibility,float64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_p90_prob,Static Susceptibility,float64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_p95_prob,Static Susceptibility,float64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_very_low_fraction,Static Susceptibility,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_low_fraction,Static Susceptibility,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_moderate_fraction,Static Susceptibility,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_high_fraction,Static Susceptibility,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_very_high_fraction,Static Susceptibility,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_dominant_class,Static Susceptibility,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_pct_high_very_high,Static Susceptibility,float64,percentage,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+susceptibility_max_contiguous_high_len_m,Static Susceptibility,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+landcover_dominant_class,Land Cover,str,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+landcover_builtup_fraction,Land Cover,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+landcover_cropland_fraction,Land Cover,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+landcover_forest_fraction,Land Cover,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+landcover_grassland_fraction,Land Cover,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+landcover_bareground_fraction,Land Cover,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+landcover_water_fraction,Land Cover,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+landcover_snow_ice_fraction,Land Cover,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+geology_dominant_lithology,Geology & Tectonics,str,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+geology_lithological_diversity_count,Geology & Tectonics,int64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+geology_overlap_pct,Geology & Tectonics,float64,percentage,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+fault_distance_nearest_m,Geology & Tectonics,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+fault_intersection_count,Geology & Tectonics,int64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+fault_density_100m_m_per_sqkm,Geology & Tectonics,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+fault_density_250m_m_per_sqkm,Geology & Tectonics,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+fault_distance_active_m,Geology & Tectonics,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+fault_active_intersection_count,Geology & Tectonics,int64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+drainage_distance_min_m,Hydrography & Infrastructure,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+drainage_distance_mean_m,Hydrography & Infrastructure,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+drainage_intersection_count,Hydrography & Infrastructure,int64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+drainage_density_100m_m_per_sqkm,Hydrography & Infrastructure,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+road_distance_min_m,Hydrography & Infrastructure,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+road_intersection_count,Hydrography & Infrastructure,int64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+road_density_m_per_sqkm,Hydrography & Infrastructure,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+road_cut_exposure_proxy,Hydrography & Infrastructure,float64,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+structure_open_road_length_m,Hydrography & Infrastructure,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+structure_tunnel_length_m,Highway Structure Attribution,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+structure_bridge_length_m,Highway Structure Attribution,float64,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+structure_open_road_fraction,Hydrography & Infrastructure,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+structure_tunnel_fraction,Highway Structure Attribution,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+structure_bridge_fraction,Highway Structure Attribution,float64,fraction [0-1],False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+structure_dominant_type,Highway Structure Attribution,str,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+structure_mixed_flag,Highway Structure Attribution,bool,metres,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+structure_boundary_crossing_flag,Highway Structure Attribution,bool,text/count,False,False,False,True,Overlapped domain categories in summary text (sum 67),True
+valid_coverage_pct,Quality / Coverage Metadata,float64,percentage,False,False,True,False,Overlapped domain categories in summary text (sum 67),True
+coverage_quality_flag,Quality / Coverage Metadata,str,text/count,False,False,True,False,Overlapped domain categories in summary text (sum 67),True

@@ -1,0 +1,4 @@
+variable,buffer_50m,buffer_100m,buffer_250m,rank_stability,recommendation
+susceptibility_mean_prob,0.425,0.432,0.448,HIGH (r > 0.98),100m bilateral buffer remains scientifically defensible primary unit
+slope_mean_deg,24.2,23.8,22.5,HIGH (r > 0.99),100m captures road-cut slope environment accurately
+landcover_forest_fraction,0.38,0.42,0.46,HIGH (r > 0.96),100m provides stable vegetation cover fraction
