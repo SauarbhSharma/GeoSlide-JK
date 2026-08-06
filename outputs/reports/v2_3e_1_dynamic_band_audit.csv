@@ -1,0 +1,3 @@
+scenario_id,all_dhi_zero,assigned_classification,explanation
+S0 (Dry Control),True,NO_DYNAMIC_DIFFERENTIATION,Zero rainfall across corridor; empirical quintiles suppressed to avoid misleading hazard assignment.
+S1-S5,False,RELATIVE_DYNAMIC_RESEARCH_HAZARD_BAND,Corridor-relative empirical quintile bands.

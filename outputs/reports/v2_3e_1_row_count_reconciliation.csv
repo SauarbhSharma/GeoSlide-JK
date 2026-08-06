@@ -1,0 +1,9 @@
+semantic_category,count,explanation
+Raw GPM Daily Archive Timesteps,3653,Ten years of daily GPM IMERG observations (2015-2024).
+Raw GPM Monsoon Sub-Daily Timesteps,5844,Four months of half-hourly GPM IMERG monsoon observations (2023).
+Complete Observed 24-Hour Windows,3653,Daily accumulation windows in 10-year GPM baseline.
+Complete Observed 72-Hour Windows,3651,Rolling 3-day accumulation windows in 10-year GPM baseline.
+Complete Observed API7 Windows,3647,Rolling 7-day antecedent windows in 10-year GPM baseline.
+Climatological Reference Records,12,Monthly percentile reference grids (P50 to P99).
+Scenario-Segment Records (Wide-Format),948,158 segments × 6 controlled research scenarios (S0-S5).
+Dynamic Formulation Records (Long-Format),3792,948 scenario-segment records × 4 DHI formulations (DHI_A to DHI_D).

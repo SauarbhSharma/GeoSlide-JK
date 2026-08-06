@@ -1,0 +1,2 @@
+scenario_id,spatial_std_mm,spearman_dhi_vs_static_susceptibility,spearman_dhi_vs_v2_3d_consensus,top_10_overlap_with_static_susceptibility,finding
+S0-S5 (Uniform Corridor Scenarios),0.0,1.0,0.942,1.0,DYNAMIC RANKING COLLAPSES TO STATIC SUSCEPTIBILITY RANKING WHEN RAINFALL IS SPATIALLY UNIFORM ACROSS THE CORRIDOR.
