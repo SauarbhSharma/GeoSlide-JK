@@ -1,0 +1,2 @@
+inventory_source,dated_events_count,temporal_matching_eligibility,guideline
+"NGDR Landslide Polygons (7,436 Polygons)",0,INELIGIBLE_UNDATED_INVENTORY,NGDR polygons lack exact timestamp; used exclusively for spatial validation context.

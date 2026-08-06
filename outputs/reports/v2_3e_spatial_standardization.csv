@@ -1,0 +1,6 @@
+spatial_parameter,value
+Archival CRS,EPSG:4326 (WGS 84)
+Metric Corridor CRS,EPSG:32643 (UTM Zone 43N)
+Web Delivery CRS,EPSG:4326 (WGS 84)
+Reprojection Method,Area-Conservative Resampling (Preserves Rainfall Volume)
+Grid Alignment,Aligned to 100m bilateral NH-44 corridor buffer

@@ -1,0 +1,4 @@
+dataset,quality_category,coverage_pct,provenance
+GPM IMERG Late Run,HIGH,100.0,NASA PPS V06B
+IMD Gridded Daily,HIGH,100.0,IMD Operational Grid
+Scenarios S0-S5,SCENARIO_ONLY,100.0,Controlled Predeclared Scenarios

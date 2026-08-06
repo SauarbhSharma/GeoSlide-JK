@@ -1,0 +1,7 @@
+scenario_id,name,r24,r72,api7,type
+S0,DRY_REFERENCE,0.0,0.0,0.0,Synthetic Scenario
+S1,MODERATE_RAIN,25.0,45.0,15.0,Climatological P50 Scenario
+S2,HEAVY_24H,75.0,110.0,35.0,Climatological P90 Scenario
+S3,PROLONGED_72H,90.0,150.0,55.0,Climatological P95 Scenario
+S4,SATURATED_ANTECEDENT,120.0,180.0,95.0,High Antecedent + Heavy 24h
+S5,EXTREME_COMPOUND,160.0,250.0,140.0,Climatological P99 Compound Scenario
