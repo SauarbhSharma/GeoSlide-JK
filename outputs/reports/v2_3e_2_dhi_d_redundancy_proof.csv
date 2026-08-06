@@ -1,0 +1,4 @@
+formulation,exact_formula,susceptibility_input,trigger_input,mathematical_expression
+DHI_B,susceptibility_mean_prob * median(percentiles) / 100,susceptibility_mean_prob,median_trigger_percentile / 100,x = S * P
+DHI_D,sqrt(susceptibility_mean_prob * trigger_percentile / 100),susceptibility_mean_prob,median_trigger_percentile / 100,y = sqrt(S * P) = sqrt(x) = x^(0.5)
+Mathematical Redundancy Proof,f(x) = sqrt(x) for all x >= 0,f'(x) = 1 / (2 * sqrt(x)) > 0 for all x > 0,"f(x) is strictly monotonic increasing on [0, inf)",Rank(DHI_D) == Rank(DHI_B) for 100% of segments (Spearman rho = 1.000). DHI_D is MONOTONICALLY_REDUNDANT.

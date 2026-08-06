@@ -1,0 +1,2 @@
+scenario_id,unique_rainfall_values,spatial_std_mm,native_cells_count,spearman_dhi_vs_static_susceptibility,rank_change_count,top_10_overlap,collapse_finding
+S0 to S5 (Corridor-Wide Uniform Scenarios),1,0.0,8,1.0,0,1.0,DYNAMIC RANKING COLLAPSES TO STATIC SUSCEPTIBILITY RANKING WHEN RAINFALL IS SPATIALLY UNIFORM ACROSS THE CORRIDOR.

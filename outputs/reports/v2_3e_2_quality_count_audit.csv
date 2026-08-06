@@ -1,0 +1,6 @@
+distribution_level,high_count,scenario_only_count,total_denominator,high_pct,scenario_only_pct
+Source Entity Level (6 Entities),5,1,6,83.3,16.7
+Logical Observational Archives (4 Archives),4,0,4,100.0,0.0
+Analytical Datasets (3 Datasets),2,1,3,66.7,33.3
+Scenarios Level (6 Scenarios),0,6,6,0.0,100.0
+Scenario-Segment Rows (948 Rows),0,948,948,0.0,100.0
