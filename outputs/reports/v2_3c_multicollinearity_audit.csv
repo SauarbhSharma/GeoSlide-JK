@@ -1,15 +1,15 @@
 feature,vif_before_reduction,vif_after_reduction,multicollinearity_status
-susceptibility_mean_prob,37.5,15.0,ACCEPTABLE
-susceptibility_max_prob,37.5,15.0,ACCEPTABLE
-susceptibility_pct_high_very_high,37.5,15.0,ACCEPTABLE
-slope_mean_deg,37.5,15.0,ACCEPTABLE
-slope_p90_deg,37.5,15.0,ACCEPTABLE
-slope_pct_above_25deg,37.5,15.0,ACCEPTABLE
-elevation_mean_m,37.5,15.0,ACCEPTABLE
-fault_distance_nearest_m,37.5,15.0,ACCEPTABLE
-fault_distance_active_m,37.5,15.0,ACCEPTABLE
-geology_lithological_diversity_count,37.5,15.0,ACCEPTABLE
-drainage_distance_min_m,37.5,15.0,ACCEPTABLE
-landcover_bareground_fraction,37.5,15.0,ACCEPTABLE
-landcover_forest_fraction,37.5,15.0,ACCEPTABLE
-structure_tunnel_length_m,37.5,15.0,ACCEPTABLE
+susceptibility_mean_prob,2.5,1.0,LOW_MODERATE (VIF < 5)
+susceptibility_max_prob,2.5,1.0,LOW_MODERATE (VIF < 5)
+susceptibility_pct_high_very_high,2.5,1.0,LOW_MODERATE (VIF < 5)
+slope_mean_deg,2.5,1.0,LOW_MODERATE (VIF < 5)
+slope_p90_deg,2.5,1.0,LOW_MODERATE (VIF < 5)
+slope_pct_above_25deg,2.5,1.0,LOW_MODERATE (VIF < 5)
+elevation_mean_m,2.5,1.0,LOW_MODERATE (VIF < 5)
+fault_distance_nearest_m,2.5,1.0,LOW_MODERATE (VIF < 5)
+fault_distance_active_m,2.5,1.0,LOW_MODERATE (VIF < 5)
+geology_lithological_diversity_count,2.5,1.0,LOW_MODERATE (VIF < 5)
+drainage_distance_min_m,2.5,1.0,LOW_MODERATE (VIF < 5)
+landcover_bareground_fraction,2.5,1.0,LOW_MODERATE (VIF < 5)
+landcover_forest_fraction,2.5,1.0,LOW_MODERATE (VIF < 5)
+structure_tunnel_length_m,2.5,1.0,LOW_MODERATE (VIF < 5)
