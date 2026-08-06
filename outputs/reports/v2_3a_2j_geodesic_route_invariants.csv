@@ -1,0 +1,5 @@
+from_key,to_key,geodesic_km,route_distance_km,route_minus_geodesic_km,pass_fail
+udhampur_pilot_start,chenani_route_projection,7.672,15.437,7.765,PASS
+chenani_route_projection,ramban_route_projection,24.267,27.617,3.35,PASS
+ramban_route_projection,ramsoo_route_projection,11.718,20.451,8.733,PASS
+ramsoo_route_projection,banihal_pilot_end,10.782,15.114,4.332,PASS

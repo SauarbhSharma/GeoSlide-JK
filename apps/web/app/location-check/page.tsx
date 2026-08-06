@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react';
 import { Header } from '@/components/layout/Header';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
-import { Search, MapPin, Navigation, AlertTriangle, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { Search, MapPin, Navigation, AlertTriangle, RefreshCw, CheckCircle2, ChevronDown } from 'lucide-react';
 import { apiUrl } from '@/lib/api';
+import { useUserRole } from '@/lib/RoleContext';
 
 interface LocationResult {
   success: boolean;
@@ -44,6 +45,7 @@ const PRESET_LOCATIONS = [
 ];
 
 export default function LocationRiskCheck() {
+  const { role } = useUserRole();
   const [latInput, setLatInput] = useState('33.2450');
   const [lonInput, setLonInput] = useState('75.2410');
   const [loading, setLoading] = useState(false);
@@ -125,19 +127,34 @@ export default function LocationRiskCheck() {
     }
   };
 
+  const getPlainLanguageTitle = (label?: string) => {
+    switch (label?.toLowerCase()) {
+      case 'very high':
+      case 'high':
+        return 'High Landslide Susceptibility';
+      case 'moderate':
+        return 'Moderate Landslide Susceptibility';
+      case 'low':
+      case 'very low':
+        return 'Baseline Landslide Susceptibility';
+      default:
+        return 'Moderate Landslide Susceptibility';
+    }
+  };
+
   return (
-    <div className="flex flex-col h-screen bg-navy-950 text-slate-100 overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-navy-950 text-slate-100">
       <Header />
 
-      <div className="flex-1 overflow-y-auto p-4 max-w-5xl mx-auto w-full space-y-4">
+      <main className="flex-1 overflow-y-auto p-4 max-w-5xl mx-auto w-full space-y-4">
         <ResearchDisclaimer />
 
         {/* Search Panel */}
-        <div className="bg-navy-900 border border-navy-700 p-4 rounded-xl space-y-3">
+        <div className="bg-navy-900 border border-navy-700 p-5 rounded-2xl space-y-3 shadow-xl">
           <div className="flex items-center justify-between">
             <h1 className="text-xl font-bold text-white flex items-center space-x-2">
               <MapPin className="w-5 h-5 text-blue-400" />
-              <span>Location Risk Check — Point Query Engine</span>
+              <span>Check My Area — Location Risk Checker</span>
             </h1>
             <span className={`text-xs font-mono border px-2.5 py-1 rounded-md ${
               apiConnected
@@ -148,7 +165,7 @@ export default function LocationRiskCheck() {
             </span>
           </div>
           <p className="text-xs text-slate-300">
-            Query real-time 100m raster values for static susceptibility (XGBoost) and dynamic hazard (24h rainfall proxy scenario) at any location in J&K UT.
+            Select an example location or enter latitude and longitude coordinates to inspect slope instability exposure.
           </p>
 
           <form onSubmit={handleSearchSubmit} className="flex flex-col md:flex-row gap-2">
@@ -160,7 +177,7 @@ export default function LocationRiskCheck() {
                   value={latInput}
                   onChange={(e) => setLatInput(e.target.value)}
                   placeholder="33.2450"
-                  className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-12 pr-3 py-2 text-sm text-white font-mono focus:outline-none focus:border-blue-500"
+                  className="w-full bg-navy-800 border border-navy-700 rounded-xl pl-12 pr-3 py-2 text-sm text-white font-mono focus:outline-none focus:border-blue-500"
                 />
               </div>
               <div className="flex-1 relative">
@@ -170,7 +187,7 @@ export default function LocationRiskCheck() {
                   value={lonInput}
                   onChange={(e) => setLonInput(e.target.value)}
                   placeholder="75.2410"
-                  className="w-full bg-navy-800 border border-navy-700 rounded-lg pl-12 pr-3 py-2 text-sm text-white font-mono focus:outline-none focus:border-blue-500"
+                  className="w-full bg-navy-800 border border-navy-700 rounded-xl pl-12 pr-3 py-2 text-sm text-white font-mono focus:outline-none focus:border-blue-500"
                 />
               </div>
             </div>
@@ -178,7 +195,7 @@ export default function LocationRiskCheck() {
             <div className="flex gap-2">
               <select
                 onChange={handleSelectPreset}
-                className="bg-navy-800 border border-navy-700 rounded-lg px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500"
+                className="bg-navy-800 border border-navy-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-blue-500 font-semibold"
               >
                 {PRESET_LOCATIONS.map((loc, i) => (
                   <option key={i} value={i}>
@@ -190,16 +207,16 @@ export default function LocationRiskCheck() {
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-4 py-2 rounded-lg flex items-center justify-center space-x-1.5 transition-colors disabled:opacity-50"
+                className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-xl flex items-center justify-center space-x-1.5 transition-colors disabled:opacity-50 shadow-lg shadow-blue-900/30"
               >
                 {loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
-                <span>Query</span>
+                <span>Check Location</span>
               </button>
 
               <button
                 type="button"
                 onClick={handleGeolocate}
-                className="bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold px-3 py-2 rounded-lg flex items-center justify-center border border-navy-700 transition-colors"
+                className="bg-navy-800 hover:bg-navy-700 text-white text-xs font-semibold px-3 py-2 rounded-xl flex items-center justify-center border border-navy-700 transition-colors"
                 title="Use current GPS location"
               >
                 <Navigation className="w-4 h-4" />
@@ -208,104 +225,105 @@ export default function LocationRiskCheck() {
           </form>
 
           {errorMsg && (
-            <div className="bg-rose-950/60 border border-rose-600/60 p-2.5 rounded-lg text-xs text-rose-200 flex items-center space-x-2">
+            <div className="bg-rose-950/60 border border-rose-600/60 p-3 rounded-xl text-xs text-rose-200 flex items-center space-x-2">
               <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0" />
               <span>{errorMsg}</span>
             </div>
           )}
         </div>
 
-        {/* Location Advisory Output Card */}
+        {/* Location Risk Result */}
         {result && (
-          <div className="bg-navy-900 border border-navy-700 p-5 rounded-xl space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-navy-800 pb-4 gap-3">
-              <div>
-                <div className="text-xs text-amber-400 font-mono font-semibold uppercase tracking-wider">
-                  Research advisory scenario — not an official warning.
-                </div>
-                <h2 className="text-2xl font-black text-white mt-0.5">
-                  {result.district ? `${result.district} District` : 'Query Location'}
-                </h2>
-                <div className="text-xs text-slate-300 mt-1 font-mono">
-                  Coordinates: {result.location?.latitude?.toFixed(4)}° N, {result.location?.longitude?.toFixed(4)}° E
-                </div>
-              </div>
-
-              {result.inside_study_area ? (
-                <div className="flex items-center space-x-3">
-                  <div className="bg-navy-950 border border-blue-500/40 text-blue-200 px-4 py-2 rounded-xl text-center">
-                    <div className="text-[10px] uppercase font-mono text-slate-400">Susceptibility Class</div>
-                    <div className="text-sm font-black text-white">{result.susceptibility_label || 'Moderate'}</div>
-                    <div className="text-[10px] text-blue-300 font-mono">
-                      Prob: {result.susceptibility_probability != null ? (result.susceptibility_probability * 100).toFixed(1) + '%' : 'N/A'}
-                    </div>
-                  </div>
-
-                  <div className="bg-amber-950/80 border border-amber-600 text-amber-200 px-4 py-2 rounded-xl text-center">
-                    <div className="text-[10px] uppercase font-mono text-amber-300">Dynamic Hazard</div>
-                    <div className="text-sm font-black">{result.dynamic_hazard_label || 'Low'}</div>
-                    <div className="text-[10px] text-amber-300 font-mono">
-                      Index: {result.dynamic_hazard_index != null ? result.dynamic_hazard_index.toFixed(4) : 'N/A'}
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="bg-slate-900 border border-slate-700 text-slate-300 px-4 py-2 rounded-xl text-center text-xs font-mono">
-                  OUTSIDE J&K STUDY AREA
-                </div>
-              )}
-            </div>
-
+          <div className="bg-navy-900 border border-navy-700 p-5 rounded-2xl space-y-4 shadow-xl">
             {result.inside_study_area ? (
               <>
-                {/* Environmental Factors Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-                  <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
-                    <span className="text-slate-400 font-medium">Elevation / Slope:</span>
-                    <div className="font-bold text-white">
-                      {result.terrain?.elevation_m != null ? `${result.terrain.elevation_m}m ASL` : 'N/A'} / {result.terrain?.slope_deg != null ? `${result.terrain.slope_deg}°` : 'N/A'}
+                {/* Simplified Plain-Language Headline for Citizens */}
+                <div className="bg-navy-950 p-4 rounded-xl border border-navy-800 space-y-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-navy-800 pb-3">
+                    <div>
+                      <span className="text-[10px] text-amber-400 font-mono uppercase tracking-wider">
+                        Location Instability Assessment
+                      </span>
+                      <h2 className="text-xl sm:text-2xl font-black text-white mt-0.5">
+                        {getPlainLanguageTitle(result.susceptibility_label)}
+                      </h2>
+                      <div className="text-xs text-slate-400 font-mono mt-0.5">
+                        {result.district ? `${result.district} District` : 'Jammu & Kashmir UT'} | {result.location?.latitude?.toFixed(4)}° N, {result.location?.longitude?.toFixed(4)}° E
+                      </div>
                     </div>
+
+                    <span className="px-3 py-1 bg-amber-950 border border-amber-600/50 text-amber-300 font-bold text-xs rounded-xl font-mono self-start">
+                      {result.susceptibility_label || 'Moderate'} Exposure
+                    </span>
                   </div>
 
-                  <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
-                    <span className="text-slate-400 font-medium">24h Rain Proxy / P90:</span>
-                    <div className="font-bold text-sky-300">
-                      {result.rainfall_accum_24h_mm != null ? `${result.rainfall_accum_24h_mm}mm` : 'N/A'} / {result.imd_p90_baseline_mm != null ? `${result.imd_p90_baseline_mm}mm` : 'N/A'}
-                    </div>
-                  </div>
-
-                  <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
-                    <span className="text-slate-400 font-medium">Rainfall Anomaly Ratio:</span>
-                    <div className="font-bold text-amber-300">
-                      {result.rainfall_anomaly_ratio != null ? `${result.rainfall_anomaly_ratio}x Baseline` : '1.00x'}
-                    </div>
-                  </div>
-
-                  <div className="bg-navy-800/60 border border-navy-700 p-3 rounded-lg space-y-1">
-                    <span className="text-slate-400 font-medium">Grid Cell Resolution:</span>
-                    <div className="font-bold text-emerald-300">100m EPSG:32643</div>
-                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed pt-1">
+                    This location lies in terrain where slope angle, geological lithology, drainage, or nearby historical landslides indicate higher relative susceptibility compared to valley baseline areas.
+                  </p>
                 </div>
 
-                {/* Precautionary Measures & Advisory */}
-                {result.advisory && (
-                  <div className="bg-navy-800/40 border border-navy-700 p-4 rounded-lg space-y-2 text-xs">
-                    <div className="flex items-center space-x-2 font-bold text-white">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                      <span>{result.advisory}</span>
+                {/* Practical Suggested Precautions */}
+                <div className="bg-navy-950 p-4 rounded-xl border border-navy-800 space-y-2 text-xs">
+                  <span className="font-bold text-white block text-xs uppercase tracking-wider text-slate-200">
+                    Suggested Travel & Safety Precautions:
+                  </span>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300 font-medium">
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>Avoid stopping or parking vehicle near steep un-engineered slope cuts.</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>Exercise heightened caution during intense or prolonged rainfall.</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>Verify official traffic and road advisories before travel.</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span>Follow instructions issued by district or highway authorities.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Expandable Technical Details Section */}
+                <details className="bg-navy-950 rounded-xl border border-navy-800 p-4 text-xs group">
+                  <summary className="font-bold text-slate-300 cursor-pointer flex items-center justify-between hover:text-white select-none">
+                    <span>Technical Details & Raw Raster Attributes (For Analysts / Researchers)</span>
+                    <ChevronDown className="w-4 h-4 text-slate-400 group-open:rotate-180 transition-transform" />
+                  </summary>
+
+                  <div className="mt-3 pt-3 border-t border-navy-800 space-y-3">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 font-mono text-[11px]">
+                      <div className="bg-navy-900 p-2.5 rounded-lg border border-navy-800">
+                        <span className="text-slate-400 block text-[10px]">Static Probability:</span>
+                        <span className="font-bold text-amber-300 text-xs">
+                          {result.susceptibility_probability != null ? (result.susceptibility_probability * 100).toFixed(2) + '%' : 'N/A'}
+                        </span>
+                      </div>
+                      <div className="bg-navy-900 p-2.5 rounded-lg border border-navy-800">
+                        <span className="text-slate-400 block text-[10px]">Dynamic Hazard Index:</span>
+                        <span className="font-bold text-rose-300 text-xs">
+                          {result.dynamic_hazard_index != null ? result.dynamic_hazard_index.toFixed(4) : 'N/A'}
+                        </span>
+                      </div>
+                      <div className="bg-navy-900 p-2.5 rounded-lg border border-navy-800">
+                        <span className="text-slate-400 block text-[10px]">Elevation / Slope:</span>
+                        <span className="font-bold text-white text-xs">
+                          {result.terrain?.elevation_m != null ? `${result.terrain.elevation_m}m` : 'N/A'} / {result.terrain?.slope_deg != null ? `${result.terrain.slope_deg}°` : 'N/A'}
+                        </span>
+                      </div>
+                      <div className="bg-navy-900 p-2.5 rounded-lg border border-navy-800">
+                        <span className="text-slate-400 block text-[10px]">Processing Grid:</span>
+                        <span className="font-bold text-emerald-300 text-xs">100m EPSG:32643</span>
+                      </div>
                     </div>
-                    {result.precautionary_measures && (
-                      <ul className="list-disc list-inside space-y-1 text-slate-300 pl-2 mt-2">
-                        {result.precautionary_measures.map((lim, i) => (
-                          <li key={i}>{lim}</li>
-                        ))}
-                      </ul>
-                    )}
                   </div>
-                )}
+                </details>
               </>
             ) : (
-              <div className="bg-navy-950 border border-navy-800 p-6 rounded-lg text-center space-y-2">
+              <div className="bg-navy-950 border border-navy-800 p-6 rounded-xl text-center space-y-2">
                 <AlertTriangle className="w-8 h-8 text-amber-400 mx-auto" />
                 <h3 className="font-bold text-white text-sm">Location outside J&K UT study domain</h3>
                 <p className="text-xs text-slate-400 max-w-md mx-auto">
@@ -315,7 +333,7 @@ export default function LocationRiskCheck() {
             )}
           </div>
         )}
-      </div>
+      </main>
     </div>
   );
 }

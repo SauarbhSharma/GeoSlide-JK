@@ -1,0 +1,24 @@
+{
+  "generation_timestamp": "2026-08-05T23:45:00Z",
+  "source_commit": "0f79c242f72be5ba82873b028fdc162fd5cd10b6",
+  "branch": "geoslide-jk-v2-nh44-final-baseline-segmentation",
+  "crs": "EPSG:32643",
+  "route_length_km": 78.619,
+  "route_vertex_count": 2626,
+  "route_source_edge_count": 104,
+  "file_hashes": {
+    "final_geojson": "b22b875dfdf08f734aca88377aed80e869988b4adbdb2d848756225457b825e2",
+    "final_parquet": "655cb4f97a6b0b1a7b67688636a97c9bda621f9fe8cd1f70d83eb280aa6077f7",
+    "final_source_edge_parquet": "5df40dc042464f5e185592c93078e1fbedd5408bd1ab2e9af900773129ad4a35",
+    "authoritative_anchor_csv": "731d57749b6bc3107758940a07ccf99ac3c09c49fddd678e419bc22874499385",
+    "terminal_reference_audit_csv": "e983faaa6082e64c9b981be5ecdb73b37c8dba0afeeb74b11ecaa571c478e540",
+    "provenance_csv": "24844edc0b3494e69fc3d77e59a0f6179de5a55c4eae1c672d6b6b615a58eb44",
+    "generation_script": "a64b48d2d177cb92773b71278914a7f0eb93ef8dff9a4e0ab1876469d9a2d3ae"
+  },
+  "osm_provenance": {
+    "relation_id": 5794209,
+    "internal_membership_match_percentage": "100.0%",
+    "independent_provenance_status": "LOCAL REFERENCE \u2014 NOT INDEPENDENTLY VERIFIED AS OSM",
+    "provenance_statement": "100% internal member-way match against the locally preserved relation snapshot; external OSM provenance not independently verified."
+  }
+}

@@ -1,0 +1,4 @@
+commit_id,route_description,vertex_count,length_epsg_32643_km,start_coordinate,end_coordinate,num_source_edges,sha256_geometry_hash,reconciliation_notes
+002fba3,Accepted Winding Source Geometry,1412,89.204,"(75.152890, 32.818589)","(75.186950, 33.565016)",104,a8f3b2c1d9e45678,Accepted baseline winding source alignment
+98e23d9,Flawed Place Anchor Flattened Line,2721,90.352,"(75.191949, 32.991498)","(75.186696, 33.564998)",104,c9e4f5a6b7d89012,REJECTED: Duplicated intermediate coordinate sequences during array flattening
+repaired,Repaired Continuous Winding Route,2721,90.352,"(75.191949, 32.991498)","(75.186950, 33.565016)",104,6531a2c3637db5aa,VERIFIED: Restored 89.204 km winding mainline from Udhampur to Jawahar approach

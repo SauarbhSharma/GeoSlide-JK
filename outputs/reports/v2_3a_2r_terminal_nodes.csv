@@ -1,0 +1,3 @@
+terminal_role,graph_node_id,source_edge_id,longitude,latitude,nearest_place,connected_component_id,node_degree,inclusion_reason
+Southern Terminal (Udhampur Pilot Start),"(514311.7631737454, 3631186.3559850254)",OSM_WAY_1243203837,75.152893,32.818589,Udhampur Pilot Start,1,1,Southernmost node on selected NH-44 mainline
+Northern Terminal (Banihal Pilot End),"(517351.81027247524, 3713943.181071426)",OSM_WAY_316685070,75.186949,33.565016,Banihal Pilot End,1,2,Northernmost node on selected NH-44 mainline

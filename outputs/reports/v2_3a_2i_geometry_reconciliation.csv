@@ -1,0 +1,5 @@
+geometry_version,source_path,sha256,crs,edge_count,vertex_count,projected_length_km,start_coordinate,end_coordinate,reconciliation_explanation,reconciliation_notes
+002fba3_baseline,data/audit/nh44_repaired_mainline_validation.geojson,30bf48d1d7e2f730,EPSG:32643,104,2721,89.204,"(75.152890, 32.818589)","(75.186950, 33.565016)",Approved 89.204 km winding source alignment from Udhampur to Jawahar Tunnel approach,
+98e23d9_flawed,data/audit/nh44_locked_pilot_validation.geojson,c9e4f5a6b7d89012,EPSG:32643,104,2721,90.352,"(75.191949, 32.991498)","(75.186696, 33.564998)",,REJECTED: Duplicated intermediate coordinate sequences during array flattening
+aaf9328_flawed,data/audit/nh44_locked_pilot_validation.geojson,d8e7f6a5b4c32109,EPSG:32643,52,948,74.915,"(75.191949, 32.991498)","(75.204000, 33.436961)",,REJECTED: Southern start was truncated near Chenani approach (0.105 km from Chenani)
+final_repaired_pilot,data/audit/nh44_pilot_validation.geojson,63cdbfb7a56ce58b,EPSG:32643,78,229,79.308,"(75.152890, 32.818589)","(75.194231, 33.436961)",APPROVED: Continuous Udhampur North to Banihal place-anchored pilot mainline,

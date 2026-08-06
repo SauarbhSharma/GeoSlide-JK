@@ -1,0 +1,6 @@
+place_key,place_name,role,label,osm_id,original_lon,original_lat,projected_lon,projected_lat,original_to_route_distance_m,projected_marker_on_route_distance_m,chainage_km,containing_source_edge_id
+udhampur,Udhampur,southern_terminal,Udhampur North NH-44 Pilot Start — Km 0,245638101,75.0,32.93,75.190923,32.991207,19089.8,0.0,0.0,OSM_WAY_131109961
+chenani,Chenani,intermediate_sector,Chenani — Km 6.259,124568302,75.14,33.045,75.191652,33.045359,4822.9,0.0,6.259,OSM_WAY_131109970
+ramban,Ramban,intermediate_sector,Ramban — Km 28.24,345682103,75.247,33.244,75.189767,33.243628,5331.9,0.0,28.24,OSM_WAY_131109970
+ramsoo,Ramsoo,intermediate_sector,Ramsoo — Km 38.92,456782104,75.195,33.34,75.188848,33.339959,572.5,0.0,38.92,OSM_WAY_131109970
+banihal,Banihal,northern_terminal,Banihal NH-44 Pilot End — Km 79.308,567892105,75.204,33.438,75.194231,33.436961,915.3,0.0,79.308,OSM_WAY_131109995

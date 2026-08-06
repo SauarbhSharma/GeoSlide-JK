@@ -1,0 +1,6 @@
+anchor_id,anchor_name,reference_longitude,reference_latitude,projected_longitude,projected_latitude,reference_to_route_distance_m,chainage_metres,chainage_kilometres,previous_anchor,route_distance_from_previous_anchor_km,geodesic_distance_from_previous_anchor_km,route_minus_geodesic_margin_km,monotonic_order_result,provenance_status
+udhampur_north_pilot_start,Udhampur North pilot start,75.191949,32.991498,75.191949,32.991498,0.0,0.0,0.0,N/A,0.0,0.0,0.0,PASS,LOCAL REFERENCE — NOT INDEPENDENTLY VERIFIED AS OSM
+chenani_route_projection,Chenani route projection,75.14,33.045,75.14,33.045,0.0,15437.0,15.437,Udhampur North pilot start,15.437,7.672,7.765,PASS,LOCAL REFERENCE — NOT INDEPENDENTLY VERIFIED AS OSM
+ramban_route_projection,Ramban route projection,75.247,33.244,75.247,33.244,0.0,43054.0,43.054,Chenani route projection,27.617,24.267,3.35,PASS,LOCAL REFERENCE — NOT INDEPENDENTLY VERIFIED AS OSM
+ramsoo_route_projection,Ramsoo route projection,75.195,33.34,75.195,33.34,0.0,63505.0,63.505,Ramban route projection,20.451,11.718,8.733,PASS,LOCAL REFERENCE — NOT INDEPENDENTLY VERIFIED AS OSM
+banihal_pilot_endpoint,Banihal pilot endpoint,75.194231,33.436961,75.194231,33.436961,0.0,78619.37,78.619,Ramsoo route projection,15.114,10.782,4.332,PASS,LOCAL REFERENCE — NOT INDEPENDENTLY VERIFIED AS OSM

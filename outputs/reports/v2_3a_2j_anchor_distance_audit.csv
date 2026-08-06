@@ -1,0 +1,14 @@
+object_key,object_type,name,longitude,latitude,utm_easting,utm_northing,geodesic_distance_to_route_m,projected_longitude,projected_latitude,projected_point_to_route_distance_m,route_chainage_km,source_edge_id,source_osm_way_id
+udhampur_place_reference,place_reference,Udhampur Town Reference,75.0,32.93,500000.0,3643526.78,19089.821,75.190923,32.991207,0.0,0.105,OSM_WAY_245638101,245638101
+udhampur_pilot_start,pilot_start,Udhampur North NH-44 Pilot Start,75.191949,32.991498,517932.81,3650360.77,0.043,75.191949,32.991498,0.0,0.0,OSM_WAY_131109961,131109961
+chenani_place_reference,place_reference,Chenani Town Reference,75.14,33.045,513071.58,3656284.37,7627.792,75.190923,32.991207,0.0,0.105,OSM_WAY_124568302,124568302
+chenani_route_projection,route_projection,Chenani Route Projection,75.14,33.045,513071.58,3656284.37,13648.887,75.283738,33.067505,0.0,15.437,OSM_WAY_131109970,131109970
+ramban_place_reference,place_reference,Ramban Town Reference,75.247,33.244,523010.02,3678364.53,931.147,75.244211,33.235935,0.0,39.351,OSM_WAY_345682103,345682103
+ramban_route_projection,route_projection,Ramban Route Projection,75.247,33.244,523010.02,3678364.53,3365.659,75.211555,33.249882,0.0,43.054,OSM_WAY_131109982,131109982
+ramsoo_place_reference,place_reference,Ramsoo Village Reference,75.195,33.34,518145.91,3688997.38,306.57,75.19196,33.338935,0.0,59.801,OSM_WAY_456782104,456782104
+ramsoo_route_projection,route_projection,Ramsoo Route Projection,75.195,33.34,518145.91,3688997.38,3010.177,75.173653,33.360401,0.0,63.505,OSM_WAY_131109990,131109990
+banihal_place_reference,place_reference,Banihal Town Reference,75.204,33.438,518962.13,3699863.98,915.343,75.194231,33.436961,0.0,74.915,OSM_WAY_567892105,567892105
+banihal_route_projection,route_projection,Banihal Route Projection,75.204,33.438,518962.13,3699863.98,915.343,75.194231,33.436961,0.0,74.915,OSM_WAY_131109995,131109995
+banihal_pilot_end,pilot_end,Banihal NH-44 Pilot End,75.194231,33.436961,518054.3,3699747.05,0.035,75.194231,33.436961,0.0,78.619,OSM_WAY_131109995,131109995
+qazigund_place_reference,place_reference,Qazigund Town Reference,75.161,33.593,514938.54,3717041.73,17573.136,75.194231,33.436961,0.0,74.915,OSM_WAY_678902106,678902106
+verinag_place_reference,place_reference,Verinag Town Reference,75.25,33.543,523209.88,3711514.58,12847.409,75.194231,33.436961,0.0,74.915,OSM_WAY_789012107,789012107

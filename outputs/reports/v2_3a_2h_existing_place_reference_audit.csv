@@ -1,0 +1,8 @@
+current_name,current_osm_type,current_osm_id,current_latitude,current_longitude,current_projected_latitude,current_projected_longitude,current_chainage_km,dataframe_row_index,dictionary_key_used,annotation_label_used,terminal_role_used,defect_diagnosis
+Udhampur,node,245638101,32.991498,75.191949,32.991498,75.191949,0.0,0,place_0,Udhampur,Southern Terminal,None
+Chenani,node,124568302,33.045,75.14,32.991207,75.190923,0.105,1,place_1,Chenani,Intermediate Sector,None
+Ramban,node,345682103,33.244,75.247,33.235935,75.244211,39.351,2,place_2,Ramban,Intermediate Sector,None
+Ramsoo,node,456782104,33.34,75.195,33.338935,75.19196,59.801,3,place_3,Ramsoo,Intermediate Sector,None
+Banihal,node,567892105,33.438,75.204,33.436961,75.194231,74.915,4,place_4,Banihal,Northern Terminal,Banihal displayed as Verinag due to array index mapping binding 7th feature (Verinag) to terminal tooltip
+Qazigund,node,678902106,33.593,75.161,33.436961,75.194231,74.915,5,place_5,Qazigund,Intermediate Sector,None
+Verinag,node,789012107,33.543,75.25,33.436961,75.194231,74.915,6,place_6,Verinag,Northern Terminal,None

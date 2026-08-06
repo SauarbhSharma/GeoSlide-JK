@@ -1,0 +1,10 @@
+url,status,content_type,ok
+http://127.0.0.1:3000/corridor,200,text/html; charset=utf-8,True
+http://127.0.0.1:3000/branding/geoslide-jk-emblem.png,200,image/png,True
+http://127.0.0.1:3000/_next/static/chunks/webpack-7ca4e1ae928764ad.js,200,application/javascript; charset=UTF-8,True
+http://127.0.0.1:3000/_next/static/chunks/main-app-99b72b93a19f5955.js,200,application/javascript; charset=UTF-8,True
+http://127.0.0.1:3000/_next/static/chunks/app/corridor/page-8cc995422041bb53.js,400,text/html; charset=utf-8,False
+http://127.0.0.1:3000/_next/static/chunks/app/layout-d6e05437703138dd.js,200,application/javascript; charset=UTF-8,True
+http://127.0.0.1:3000/_next/static/chunks/117-843dbcf3e1a42497.js,200,application/javascript; charset=UTF-8,True
+http://127.0.0.1:3000/_next/static/chunks/946-ac71667aafd80be2.js,200,application/javascript; charset=UTF-8,True
+http://127.0.0.1:3000/_next/static/chunks/fd9d1056-b31b2def6e2bca73.js,200,application/javascript; charset=UTF-8,True

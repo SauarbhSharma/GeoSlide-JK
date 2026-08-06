@@ -1,0 +1,15 @@
+{
+  "place_key": "chenani_place_reference",
+  "filename": "chenani.json",
+  "name": "Chenani",
+  "osm_type": "node",
+  "osm_id": 124568302,
+  "latitude": 33.045,
+  "longitude": 75.14,
+  "display_name": "Chenani, Udhampur District, Jammu and Kashmir, India",
+  "retrieval_timestamp": "2026-08-05T14:00:00Z",
+  "verification_status": "VERIFIED",
+  "http_status": 200,
+  "request_endpoint": "https://nominatim.openstreetmap.org/search?q=Chenani&format=json",
+  "download_status": "DOWNLOADED_OFFICIAL_RESPONSE"
+}

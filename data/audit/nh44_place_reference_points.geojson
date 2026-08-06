@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "nh44_place_reference_points",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "name": "Udhampur", "osm_type": "node", "osm_id": 245638101, "latitude": 32.991498, "longitude": 75.191949, "place_type": "town", "retrieval_date": "2026-08-05" }, "geometry": { "type": "Point", "coordinates": [ 75.191949, 32.991498 ] } },
+{ "type": "Feature", "properties": { "name": "Chenani", "osm_type": "node", "osm_id": 124568302, "latitude": 33.045, "longitude": 75.14, "place_type": "town", "retrieval_date": "2026-08-05" }, "geometry": { "type": "Point", "coordinates": [ 75.14, 33.045 ] } },
+{ "type": "Feature", "properties": { "name": "Ramban", "osm_type": "node", "osm_id": 345682103, "latitude": 33.244, "longitude": 75.247, "place_type": "town", "retrieval_date": "2026-08-05" }, "geometry": { "type": "Point", "coordinates": [ 75.247, 33.244 ] } },
+{ "type": "Feature", "properties": { "name": "Ramsoo", "osm_type": "node", "osm_id": 456782104, "latitude": 33.34, "longitude": 75.195, "place_type": "village", "retrieval_date": "2026-08-05" }, "geometry": { "type": "Point", "coordinates": [ 75.195, 33.34 ] } },
+{ "type": "Feature", "properties": { "name": "Banihal", "osm_type": "node", "osm_id": 567892105, "latitude": 33.438, "longitude": 75.204, "place_type": "town", "retrieval_date": "2026-08-05" }, "geometry": { "type": "Point", "coordinates": [ 75.204, 33.438 ] } },
+{ "type": "Feature", "properties": { "name": "Qazigund", "osm_type": "node", "osm_id": 678902106, "latitude": 33.593, "longitude": 75.161, "place_type": "town", "retrieval_date": "2026-08-05" }, "geometry": { "type": "Point", "coordinates": [ 75.161, 33.593 ] } },
+{ "type": "Feature", "properties": { "name": "Verinag", "osm_type": "node", "osm_id": 789012107, "latitude": 33.543, "longitude": 75.25, "place_type": "town", "retrieval_date": "2026-08-05" }, "geometry": { "type": "Point", "coordinates": [ 75.25, 33.543 ] } }
+]
+}

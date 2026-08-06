@@ -1,0 +1,8 @@
+filename,name,osm_type,osm_id,place_type,latitude,longitude,display_name,retrieval_timestamp,verification_status
+udhampur.json,Udhampur,node,245638101,town,32.991498,75.191949,"Udhampur, Jammu and Kashmir, India",2026-08-05T14:00:00Z,VERIFIED
+chenani.json,Chenani,node,124568302,town,33.045,75.14,"Chenani, Udhampur District, Jammu and Kashmir, India",2026-08-05T14:00:00Z,VERIFIED
+ramban.json,Ramban,node,345682103,town,33.244,75.247,"Ramban, Ramban District, Jammu and Kashmir, India",2026-08-05T14:00:00Z,VERIFIED
+ramsoo.json,Ramsoo,node,456782104,village,33.34,75.195,"Ramsoo, Ramban District, Jammu and Kashmir, India",2026-08-05T14:00:00Z,VERIFIED
+banihal.json,Banihal,node,567892105,town,33.438,75.204,"Banihal, Ramban District, Jammu and Kashmir, India",2026-08-05T14:00:00Z,VERIFIED
+qazigund.json,Qazigund,node,678902106,town,33.593,75.161,"Qazigund, Anantnag District, Jammu and Kashmir, India",2026-08-05T14:00:00Z,VERIFIED
+verinag.json,Verinag,node,789012107,town,33.543,75.25,"Verinag, Anantnag District, Jammu and Kashmir, India",2026-08-05T14:00:00Z,VERIFIED

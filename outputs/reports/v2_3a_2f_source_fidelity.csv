@@ -1,0 +1,2 @@
+total_vertices_tested,synthetic_vertices_count,max_route_to_source_distance_m,pct_vertices_within_0_5m,pct_vertices_within_1_0m,hausdorff_distance_m,source_fidelity_status
+2774,0,0.0,100.0,100.0,0.0,100% TRACEABLE (PASS <= 0.5m)

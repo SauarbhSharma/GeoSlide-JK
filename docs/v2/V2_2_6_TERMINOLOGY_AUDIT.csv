@@ -1,0 +1,11 @@
+original_term,location_found,unsupported_reason,replacement_term,truthfulness_category
+Active Corridor Advisory,app/advisories/page.tsx,Implied live real-time traffic or road closure advisory,Research Corridor Scenario,Scenario / Proxy Output
+Normal Transit,components/dashboard/TravellerDashboard.tsx,Implied guarantee of safe road transit without slope hazards,Baseline Relative Exposure,Static Terrain Output
+Caution Required,components/dashboard/TravellerDashboard.tsx,Implied binding official traffic advisory,Elevated Relative Exposure,Static Terrain Output
+Delay Travel,components/dashboard/TravellerDashboard.tsx,Behavioral instruction issued from proxy model without human authorization,Very High Exposure Scenario — Verify Official Advisories,Research Scenario Output
+Current Road Risk,components/dashboard/HighwayOpsDashboard.tsx,Implied live operational pavement or road condition,Static Road-Segment Landslide Exposure,Static Terrain Output
+Maintenance Monitor,components/dashboard/HighwayOpsDashboard.tsx,Implied active maintenance work-order tracking system,Landslide Exposure Screening,Screening Output
+Preparedness Audit Ready,components/dashboard/DistrictAdminDashboard.tsx,Implied completed official DDMA audit,Preliminary Preparedness Screening Available,Screening Output
+Vulnerable Roads Identified,components/dashboard/DistrictAdminDashboard.tsx,Implied verified engineering field audit of rural access roads,Potentially Vulnerable Access Routes Screened,Screening Output
+Real-Time Prediction,app/location-check/page.tsx,Implied live sensor or radar feed,100m Raster Scenario Query,Static & Scenario Output
+Safe Route,app/journey/page.tsx,Legal and safety liability; mountain roads are never 100% safe,Lower Relative Landslide Exposure,Comparative Relative Output

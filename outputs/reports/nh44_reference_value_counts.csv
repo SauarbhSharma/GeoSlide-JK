@@ -1,0 +1,101 @@
+source_file,column_name,attribute_value,feature_count
+jk_nh44.parquet,name,Jammu Bypass NH-244A,74
+jk_nh44.parquet,name,NH44-Highway,5
+jk_nh44.parquet,name,NH144,1
+jk_nh44.parquet,name,NH44-Awantipora Road,1
+jk_nh44.parquet,name,NH-44 Awantipora junction,1
+jk_nh44.parquet,operator,None,82
+jk_nh44.parquet,highway,trunk,80
+jk_nh44.parquet,highway,primary,1
+jk_nh44.parquet,highway,motorway_junction,1
+jk_nh44.parquet,osm_id,1258390257,1
+jk_nh44.parquet,osm_id,1258390256,1
+jk_nh44.parquet,osm_id,1258390261,1
+jk_nh44.parquet,osm_id,1258390255,1
+jk_nh44.parquet,osm_id,1258390260,1
+jk_nh44.parquet,osm_id,1306095903,1
+jk_nh44.parquet,osm_id,1258390249,1
+jk_nh44.parquet,osm_id,1306095902,1
+jk_nh44.parquet,osm_id,1258390258,1
+jk_nh44.parquet,osm_id,1258390259,1
+jk_nh44.parquet,osm_id,1352004108,1
+jk_nh44.parquet,osm_id,1536809970,1
+jk_nh44.parquet,osm_id,1536809971,1
+jk_nh44.parquet,osm_id,1536809968,1
+jk_nh44.parquet,osm_id,1536809969,1
+jk_nh44.parquet,osm_id,1536809975,1
+jk_nh44.parquet,osm_id,1536809965,1
+jk_nh44.parquet,osm_id,1536809966,1
+jk_nh44.parquet,osm_id,1536809967,1
+jk_nh44.parquet,osm_id,1536809976,1
+jk_major_roads.parquet,name,nan,3233
+jk_major_roads.parquet,name,Jammu Bypass NH-244A,74
+jk_major_roads.parquet,name,Nargota Bypass,74
+jk_major_roads.parquet,name,Jammu Bypass,68
+jk_major_roads.parquet,name,Primary Health Centre,66
+jk_major_roads.parquet,name,Udhampur Bypass,37
+jk_major_roads.parquet,name,Samba-Udhampur Highway,33
+jk_major_roads.parquet,name,Ambgrota Road,25
+jk_major_roads.parquet,name,Akhnoor Road,19
+jk_major_roads.parquet,name,Srinagar Baramulla National Highway,19
+jk_major_roads.parquet,name,Mughal Road,18
+jk_major_roads.parquet,name,Munawar Link Road,18
+jk_major_roads.parquet,name,Rambagh Flyover,17
+jk_major_roads.parquet,name,Hazratbal Road,16
+jk_major_roads.parquet,name,Jammu Surinsar Mansar Road,16
+jk_major_roads.parquet,name,Bijbehara Bypass,16
+jk_major_roads.parquet,name,Awantipora Bypass,15
+jk_major_roads.parquet,name,Talab Tillo Rd,14
+jk_major_roads.parquet,name,Parade Road,14
+jk_major_roads.parquet,name,Gulmarg Road,13
+jk_major_roads.parquet,operator,nan,4741
+jk_major_roads.parquet,operator,Government,3
+jk_major_roads.parquet,operator,Government Of Jammu And Kashmir,3
+jk_major_roads.parquet,operator,Directorate of Health Services Kashmir,2
+jk_major_roads.parquet,operator,GOVT,1
+jk_major_roads.parquet,operator,Airports Authority of India,1
+jk_major_roads.parquet,operator,Health Services Kashmir,1
+jk_major_roads.parquet,operator,National Bank Of Pakistan,1
+jk_major_roads.parquet,operator,Government of Jammu and Kashmir,1
+jk_major_roads.parquet,operator,Jammu and Kashmir Board of School Education,1
+jk_major_roads.parquet,operator,Kalras Educational Trust,1
+jk_major_roads.parquet,operator,Indian Governmnet,1
+jk_major_roads.parquet,operator,NHAI,1
+jk_major_roads.parquet,operator,Department of Education,1
+jk_major_roads.parquet,operator,Govt,1
+jk_major_roads.parquet,operator,Government Education Department,1
+jk_major_roads.parquet,operator,Jammu and Kashmir State Board of School Education,1
+jk_major_roads.parquet,highway,trunk,1792
+jk_major_roads.parquet,highway,secondary,1532
+jk_major_roads.parquet,highway,primary,828
+jk_major_roads.parquet,highway,nan,251
+jk_major_roads.parquet,highway,trunk_link,234
+jk_major_roads.parquet,highway,primary_link,48
+jk_major_roads.parquet,highway,secondary_link,47
+jk_major_roads.parquet,highway,motorway_junction,19
+jk_major_roads.parquet,highway,construction,5
+jk_major_roads.parquet,highway,service,2
+jk_major_roads.parquet,highway,motorway,1
+jk_major_roads.parquet,highway,unclassified,1
+jk_major_roads.parquet,highway,escape,1
+jk_major_roads.parquet,highway,services,1
+jk_major_roads.parquet,osm_id,946962933,1
+jk_major_roads.parquet,osm_id,946962934,1
+jk_major_roads.parquet,osm_id,7140654447,1
+jk_major_roads.parquet,osm_id,891803822,1
+jk_major_roads.parquet,osm_id,891803823,1
+jk_major_roads.parquet,osm_id,969790052,1
+jk_major_roads.parquet,osm_id,1122266614,1
+jk_major_roads.parquet,osm_id,1122266615,1
+jk_major_roads.parquet,osm_id,969790053,1
+jk_major_roads.parquet,osm_id,1122260550,1
+jk_major_roads.parquet,osm_id,120596909,1
+jk_major_roads.parquet,osm_id,126614741,1
+jk_major_roads.parquet,osm_id,1122032223,1
+jk_major_roads.parquet,osm_id,1122032222,1
+jk_major_roads.parquet,osm_id,126614733,1
+jk_major_roads.parquet,osm_id,999573019,1
+jk_major_roads.parquet,osm_id,999573018,1
+jk_major_roads.parquet,osm_id,1121967966,1
+jk_major_roads.parquet,osm_id,1352004104,1
+jk_major_roads.parquet,osm_id,1536809975,1

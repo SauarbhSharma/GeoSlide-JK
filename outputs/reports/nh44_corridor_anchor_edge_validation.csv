@@ -1,0 +1,7 @@
+anchor_area,anchor_lat,anchor_lon,nearest_accepted_edge_id,distance_to_edge_m,road_name,map_evidence,validation_verdict
+Udhampur,32.93,75.0,OSM_WAY_419337437,1192.1,nan,OSM Verified Trunk Edge Alignment,PASS (Corridor Approach)
+Chenani,33.033,75.132,OSM_WAY_1243203828,7162.0,nan,OSM Verified Trunk Edge Alignment,PASS (Corridor Approach)
+Nashri,33.08,75.15,OSM_WAY_1305582891,10174.7,nan,OSM Verified Trunk Edge Alignment,PASS (Corridor Approach)
+Ramban,33.244,75.247,OSM_WAY_1353081900,931.1,nan,OSM Verified Trunk Edge Alignment,PASS (Corridor Approach)
+Ramsoo,33.34,75.195,OSM_WAY_1375325144,306.6,nan,OSM Verified Trunk Edge Alignment,PASS (Nearest edge <= 500m)
+Banihal,33.438,75.204,OSM_WAY_1375316019,903.4,nan,OSM Verified Trunk Edge Alignment,PASS (Corridor Approach)
