@@ -1,0 +1,5 @@
+metric,value,note
+actual_landslide_inventory_events,7436,"7,436 polygon landslide events in GSI/NGDR inventory"
+segment_validation_context_rows,158,158 segment-context rows in validation table
+model_feature_table_leakage_status,CLEAN — ZERO LANDSLIDE COLUMNS IN STATIC FEATURE TABLE,Landslide context restricted to validation parquet/csv
+usage_restriction_field_verified,VALIDATION_CONTEXT_ONLY_NOT_MODEL_INPUT,Explicit restriction tag populated

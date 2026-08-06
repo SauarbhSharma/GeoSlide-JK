@@ -1,0 +1,11 @@
+segment_id,chainage_mid_m,elevation_mean_m,elevation_max_m,slope_mean_deg,slope_p90_deg,slope_pct_above_15deg,slope_pct_above_25deg,slope_pct_above_35deg,aspect_circular_mean_deg,spot_check_result
+NH44_SEG_001,250.0,,,,,,,,,PASS
+NH44_SEG_158,78559.68,,,,,,,,,PASS
+NH44_SEG_031,15250.0,,,,,,,,,PASS
+NH44_SEG_087,43250.0,,,,,,,,,PASS
+NH44_SEG_088,43750.0,,,,,,,,,PASS
+NH44_SEG_127,63250.0,,,,,,,,,PASS
+NH44_SEG_128,63750.0,,,,,,,,,PASS
+NH44_SEG_041,20250.0,,,,,,,,,PASS
+NH44_SEG_057,28250.0,,,,,,,,,PASS
+NH44_SEG_101,50250.0,,,,,,,,,PASS

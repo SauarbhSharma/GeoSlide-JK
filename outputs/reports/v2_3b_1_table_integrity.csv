@@ -1,0 +1,7 @@
+check,expected,observed,status
+row_count_equals_158,158,158,PASS
+unique_segment_ids_count,158,158,PASS
+duplicate_columns_count,0,0,PASS
+chainage_order_strictly_increasing,True,True,PASS
+residual_segment_present,True,True,PASS
+parquet_csv_row_alignment,True,True,PASS
