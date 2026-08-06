@@ -1,0 +1,3 @@
+structure_type,flag,numerical_dhi_modified
+TUNNEL,SURFACE_HAZARD_INTERPRETATION_LIMITED,False
+BRIDGE,ELEVATED_STRUCTURE_CONTEXT,False

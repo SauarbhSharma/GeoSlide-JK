@@ -1,0 +1,6 @@
+standardization_item,convention
+Internal Time Zone,UTC (Coordinated Universal Time)
+Display Time Zone,"IST (Indian Standard Time, UTC+05:30)"
+Rainfall Units,Millimetres (mm)
+Missing Timestamp Handling,Flagged as MISSING_WINDOW (Never converted to zero)
+Sub-Daily Aggregation,"Sum of 30-min intervals for 1h, 3h, 6h, 12h, 24h, 48h, 72h, 7d"

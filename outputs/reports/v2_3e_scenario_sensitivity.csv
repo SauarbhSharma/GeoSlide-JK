@@ -1,0 +1,4 @@
+scenario_pair,spearman_rho,top_10_overlap,sensitive_segments_count
+S1 (Moderate) vs S2 (Heavy),1.0,1.0,0
+S2 (Heavy 24h) vs S3 (Prolonged 72h),0.991,0.938,4
+S2 (Heavy 24h) vs S4 (Saturated Antecedent),0.975,0.875,8

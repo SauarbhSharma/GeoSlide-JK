@@ -1,0 +1,5 @@
+archive_id,expected_timesteps,actual_unique_timesteps,duplicate_timesteps,missing_timesteps,incomplete_days,incomplete_months,complete_24h_windows,complete_72h_windows,complete_7d_windows,completeness_pct
+RF_01 (GPM Daily 2015-2024),3653,3653,0,0,0,0,3653,3651,3647,100.0
+RF_02 (GPM Monsoon 30-min),5856,5844,0,12,1,0,121,119,115,99.8
+RF_03 (IMD Daily 2015-2024),3653,3653,0,0,0,0,3653,3651,3647,100.0
+RF_04 (ERA5 Hourly 2015-2024),87672,87672,0,0,0,0,3653,3651,3647,100.0

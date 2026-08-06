@@ -1,0 +1,5 @@
+formulation_id,formula,concept
+DHI_A,susceptibility_mean_prob * ratio_24h_p90,Linear product of static susceptibility and 24h trigger ratio
+DHI_B,susceptibility_mean_prob * median(percentiles) / 100,Linear product of static susceptibility and median trigger percentile
+DHI_C,susceptibility_p90_prob * median(percentiles) / 100,Upper-tail susceptibility modulated by rainfall percentile
+DHI_D,sqrt(susceptibility_mean_prob * trigger_percentile / 100),Geometric mean modulation of static susceptibility and rainfall

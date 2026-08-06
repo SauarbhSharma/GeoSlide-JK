@@ -1,0 +1,8 @@
+window_category,count,window_type
+Daily Archive Timesteps (GPM 2015-2024),3653,OBSERVED_DAILY_ARCHIVE
+Half-Hourly Archive Timesteps (GPM Monsoon 2023),5844,OBSERVED_SUBDAILY_ARCHIVE
+Complete Observed 24-Hour Windows,3653,OBSERVED_24H_ACCUMULATION
+Complete Observed 72-Hour Windows,3651,OBSERVED_72H_ACCUMULATION
+Complete Observed API7 Windows,3647,OBSERVED_API7_ANTECEDENT
+Scenario-Segment Records (Wide-Format),948,CONTROLLED_SCENARIO_SEGMENTS
+Dynamic Formulation Records (Long-Format),3792,LONG_FORMAT_FORMULATIONS

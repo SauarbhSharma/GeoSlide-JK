@@ -1,0 +1,4 @@
+level,high_quality,scenario_only,denominator
+Source Dataset Level,2 / 3 (66.7%),1 / 3 (33.3%),3 total rainfall datasets
+Scenario Level,0 / 6 (0.0%),6 / 6 (100.0%),6 controlled scenarios
+Segment-Scenario Row Level,0 / 948 (0.0%),948 / 948 (100.0%),948 segment-scenario rows

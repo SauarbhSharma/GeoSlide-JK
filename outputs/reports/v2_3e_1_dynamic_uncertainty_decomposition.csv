@@ -1,0 +1,4 @@
+source,rank_uncertainty_contrib,status
+Rainfall Spatial Resolution (11km to 500m),0.45,DOMINANT_UNCERTAINTY_SOURCE
+Formulation Choice (DHI_A vs C),0.35,SECONDARY_UNCERTAINTY_SOURCE
+Scenario Choice (S2 vs S4),0.2,MODERATE_UNCERTAINTY_SOURCE

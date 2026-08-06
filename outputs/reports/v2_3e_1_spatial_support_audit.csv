@@ -1,0 +1,2 @@
+rainfall_source,intersecting_cells_count,corridor_segments_count,max_segments_per_cell,median_segments_per_cell,effective_spatial_sample_count,pseudoreplication_warning
+GPM IMERG (0.1° ~11 km),8,158,26,19.5,8,500m segment outputs are extracted from 8 unique ~11km cells; adjacent segments sharing a cell are spatially auto-correlated.

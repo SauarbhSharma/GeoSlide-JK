@@ -1,0 +1,5 @@
+formulation_id,formula,independent_status,spearman_rho_vs_dhi_b
+DHI_A,susceptibility_mean_prob * ratio_24h_p90,INDEPENDENT_PRIMARY,0.982
+DHI_B,susceptibility_mean_prob * median(percentiles) / 100,INDEPENDENT_PERCENTILE,1.0
+DHI_C,susceptibility_p90_prob * median(percentiles) / 100,INDEPENDENT_UPPER_TAIL,0.965
+DHI_D,sqrt(susceptibility_mean_prob * trigger_percentile / 100),MONOTONICALLY_REDUNDANT,1.0

@@ -1,0 +1,5 @@
+parameter,value,status
+Native Grid Cell Resolution,0.1-degree (~11 km GPM IMERG grid),CORRECTED_TERMINOLOGY
+Intersecting Native Cells Count,8 distinct native 0.1-degree grid cells,CORRECTED_TERMINOLOGY
+Max Segments per Native Cell,26 segments (median = 19.5 segments/cell),CORRECTED_TERMINOLOGY
+Mandatory Limitation Statement,Segment-level rainfall outputs inherit the approximately 0.1-degree source support and do not represent independent 500 m rainfall measurements.,CORRECTED_TERMINOLOGY
