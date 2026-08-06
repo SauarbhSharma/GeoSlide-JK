@@ -1,0 +1,5 @@
+component_name,spearman_rho,spearman_ci_95,mann_whitney_u,p_value,cliffs_delta,top_decile_precision,top_decile_recall,inventory_capture_pct
+STATIC_SUSCEPTIBILITY_PROFILE,0.425,"[0.28, 0.55]",1840.0,0.0001,0.46,0.81,0.35,35.0
+TERRAIN_SEVERITY_PROFILE,0.384,"[0.24, 0.51]",1965.0,0.0004,0.39,0.75,0.31,31.0
+GEOLOGICAL_CONTEXT_PROFILE,0.312,"[0.16, 0.45]",2180.0,0.0035,0.31,0.69,0.27,27.0
+SURFACE_DRAINAGE_PROFILE,0.286,"[0.13, 0.43]",2310.0,0.0082,0.27,0.62,0.24,24.0

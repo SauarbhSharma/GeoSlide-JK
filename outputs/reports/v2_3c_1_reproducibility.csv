@@ -1,0 +1,5 @@
+reproducibility_check,expected,observed,status
+semantic_feature_table_hash,de25ecf1f4f80450df0f1179e7c18ed26f7dbee6688bbe6c5a4448168105c5bf,de25ecf1f4f80450df0f1179e7c18ed26f7dbee6688bbe6c5a4448168105c5bf,PASS
+segment_id_sequence,158 unique IDs,158 unique IDs,PASS
+chainage_order,Strictly monotonic,Strictly monotonic,PASS
+stochastic_variation,0.0,0.0,PASS

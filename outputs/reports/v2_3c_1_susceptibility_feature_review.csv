@@ -1,0 +1,4 @@
+feature,role,decision,justification
+susceptibility_mean_prob,Central Tendency,RETAINED_PRIMARY,"Stable, robust mean probability across 100m corridor buffer."
+susceptibility_max_prob,Peak Tail Risk,RETAINED_COMPLEMENTARY,Captures localized high-susceptibility hotspots along segment cut slope.
+susceptibility_pct_high_very_high,Spatial Extent,RETAINED_PRIMARY,Percentage of corridor area classified High or Very High susceptibility.

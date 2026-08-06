@@ -1,0 +1,4 @@
+block_size_km,number_of_blocks,bootstrap_replicates,permutation_pvalue,spatial_dependency_controlled
+2.5,32,1000,0.001,True
+5.0,16,1000,0.002,True
+10.0,8,1000,0.005,True

@@ -1,0 +1,7 @@
+component_name,constituent_features,feature_count,aggregation_method,rank_correlation_mean_vs_median
+STATIC_SUSCEPTIBILITY_PROFILE,"susceptibility_mean_prob, susceptibility_max_prob, susceptibility_pct_high_very_high",3,Median Percentile Rank,0.992
+TERRAIN_SEVERITY_PROFILE,"slope_mean_deg, slope_p90_deg, slope_pct_above_25deg, elevation_mean_m",4,Median Percentile Rank,0.988
+GEOLOGICAL_CONTEXT_PROFILE,"fault_distance_nearest_m, fault_distance_active_m, geology_lithological_diversity_count",3,Median Percentile Rank,0.995
+SURFACE_DRAINAGE_PROFILE,"drainage_distance_min_m, drainage_distance_mean_m, landcover_bareground_fraction, landcover_forest_fraction",4,Median Percentile Rank,0.976
+ROAD_STRUCTURE_CONTEXT,"structure_tunnel_length_m, structure_dominant_type",2,Categorical Structure Context (Non-numeric),N/A
+DATA_CONFIDENCE_METADATA,valid_coverage_pct,1,Uniform Metadata (100% Complete),N/A

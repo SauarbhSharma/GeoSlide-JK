@@ -1,0 +1,4 @@
+metric,value,note
+valid_coverage_pct_unique_values,1,Uniformly 100.0% across all 158 segments
+variance,0.0,Zero spatial variance
+confidence_status,UNIFORMLY_COMPLETE,Retained as metadata; excluded from percentile ranking and physical component scoring

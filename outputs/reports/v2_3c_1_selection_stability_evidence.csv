@@ -1,0 +1,15 @@
+candidate_feature,resampling_method,selection_frequency_pct,cluster_reassignment_freq_pct,stability_status
+susceptibility_mean_prob,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+susceptibility_max_prob,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+susceptibility_pct_high_very_high,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+slope_mean_deg,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+slope_p90_deg,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+slope_pct_above_25deg,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+elevation_mean_m,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+fault_distance_nearest_m,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+fault_distance_active_m,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+geology_lithological_diversity_count,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+drainage_distance_min_m,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+drainage_distance_mean_m,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+landcover_bareground_fraction,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE
+landcover_forest_fraction,Chainage-Block Resampling (1000 Replicates),100.0,0.0,STABLE

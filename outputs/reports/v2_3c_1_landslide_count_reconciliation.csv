@@ -1,0 +1,8 @@
+landslide_metric,count,explanation
+total_source_inventory_polygons,7436,Total mapped landslide polygons in GSI/NGDR state-wide inventory dataset
+unique_polygons_intersecting_50m_corridor,312,Unique inventory polygons with geometry overlapping 50m bilateral buffer
+unique_polygons_intersecting_100m_corridor,648,Unique inventory polygons with geometry overlapping 100m primary corridor buffer
+unique_polygons_intersecting_250m_corridor,1284,Unique inventory polygons with geometry overlapping 250m sensitivity buffer
+segments_with_100m_polygon_intersections,36,NH-44 segments containing at least one intersecting inventory polygon
+segments_with_nearest_distance_context_only,122,NH-44 segments with zero 100m polygon intersections (nearest polygon distance recorded)
+segment_validation_context_rows,158,Exactly 158 segment-context rows in validation table
