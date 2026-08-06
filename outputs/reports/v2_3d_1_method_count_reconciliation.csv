@@ -1,0 +1,13 @@
+method_id,method_name,produces_numeric_score,produces_rank,included_in_consensus,included_in_pairwise_rank_correlation,included_in_weight_sensitivity,validation_only_status,exclusion_reason
+METHOD_A,Equal-Weight Arithmetic Mean,True,True,True,True,True,False,N/A
+METHOD_B,Equal-Weight Geometric Mean,True,True,True,True,False,False,N/A
+METHOD_C,Rank-Sum / Borda Aggregation,True,True,True,True,False,False,N/A
+METHOD_D,Worst-Component Emphasis,True,True,True,True,False,False,N/A
+METHOD_E,Balanced Upper-Tail Method,True,True,True,True,False,False,N/A
+METHOD_F,TOPSIS Sensitivity Method,True,True,True,True,True,False,N/A
+METHOD_G,Epsilon-Dominance Flag,False,False,False,False,False,False,Non-numerical Pareto analytical flag (Method G Epsilon-Dominance)
+METHOD_H1,Susceptibility Emphasis Scenario,True,True,True,True,True,False,N/A
+METHOD_H2,Terrain Emphasis Scenario,True,True,True,True,True,False,N/A
+METHOD_H3,Geology Emphasis Scenario,True,True,True,True,True,False,N/A
+METHOD_H4,Surface/Drainage Emphasis Scenario,True,True,True,True,True,False,N/A
+METHOD_H5,Susceptibility & Terrain Scenario,True,True,True,True,True,False,N/A

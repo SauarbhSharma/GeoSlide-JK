@@ -1,0 +1,4 @@
+stability_metric,segment_count,source_analysis
+Top 10% Probability >= 0.80 Count,16,"2,000 Weight Perturbations (Dirichlet Simplex)"
+Consensus Top 10% Membership Count,16,Median Rank across 11 Numerical Methods
+Top 20% Membership Count,32,Median Rank across 11 Numerical Methods

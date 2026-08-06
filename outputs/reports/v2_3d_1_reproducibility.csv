@@ -1,0 +1,5 @@
+check,status
+input_identity_reconciliation,PASS
+method_count_11_numerical_reconciliation,PASS
+morans_i_p_value_0.001_correction,PASS
+weight_vector_manifest_2000_uniqueness,PASS

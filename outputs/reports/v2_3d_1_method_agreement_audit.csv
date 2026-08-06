@@ -1,0 +1,4 @@
+audit_metric,value,pair
+Minimum Pairwise Spearman Correlation,0.935,Method D (Worst Component) vs Method H3 (Geology Emphasis)
+Maximum Pairwise Spearman Correlation,1.0,Method A (Equal Weight) vs Method H5 (Susceptibility & Terrain)
+Perfect Correlation Pair Explanation,"Method A vs Method H5 achieve rho = 1.000 because susceptibility and terrain severity have high symmetric correlation along the corridor, preserving exact rank ordering.",

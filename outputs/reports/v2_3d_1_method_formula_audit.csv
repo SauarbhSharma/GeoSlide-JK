@@ -1,0 +1,12 @@
+method_id,formula,scale,weights,tied_ranks,rank_direction
+METHOD_A,Mean(Component Percentiles),"[0, 100]","0.25, 0.25, 0.25, 0.25",Average,Descending
+METHOD_B,Exp(Mean(Log(Component / 100))) * 100,"[0, 100]","0.25, 0.25, 0.25, 0.25 (eps=1e-4)",Average,Descending
+METHOD_C,Sum(Component Ranks),"[4, 632]",N/A,Average,Ascending
+METHOD_D,Max(Component Percentiles),"[0, 100]",Max Component,Average,Descending
+METHOD_E,0.50*Median + 0.50*Max,"[0, 100]","0.50 Median, 0.50 Max",Average,Descending
+METHOD_F,D- / (D+ + D-) * 100,"[0, 100]","0.25, 0.25, 0.25, 0.25",Average,Descending
+METHOD_H1,0.40*Sus + 0.25*Ter + 0.20*Geo + 0.15*SD,"[0, 100]","0.40, 0.25, 0.20, 0.15",Average,Descending
+METHOD_H2,0.25*Sus + 0.40*Ter + 0.20*Geo + 0.15*SD,"[0, 100]","0.25, 0.40, 0.20, 0.15",Average,Descending
+METHOD_H3,0.25*Sus + 0.20*Ter + 0.40*Geo + 0.15*SD,"[0, 100]","0.25, 0.20, 0.40, 0.15",Average,Descending
+METHOD_H4,0.25*Sus + 0.20*Ter + 0.15*Geo + 0.40*SD,"[0, 100]","0.25, 0.20, 0.15, 0.40",Average,Descending
+METHOD_H5,0.35*Sus + 0.35*Ter + 0.15*Geo + 0.15*SD,"[0, 100]","0.35, 0.35, 0.15, 0.15",Average,Descending

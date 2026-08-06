@@ -1,0 +1,7 @@
+check_parameter,value,status
+Total Weight Vectors,1087.0,PASS
+Duplicate Vectors Count,0.0,PASS
+Invalid Boundary Vectors Count,0.0,PASS
+Min Weight Across Components,0.05,PASS (>= 0.05)
+Max Weight Across Components,0.5999,PASS (<= 0.60)
+Max Sum Deviation from 1.0,0.0,PASS
