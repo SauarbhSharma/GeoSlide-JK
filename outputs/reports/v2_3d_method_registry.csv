@@ -1,0 +1,13 @@
+method_id,name,weights,formula
+METHOD_A,Equal-Weight Arithmetic Mean,"0.25, 0.25, 0.25, 0.25",Mean of 4 physical components
+METHOD_B,Equal-Weight Geometric Mean,"0.25, 0.25, 0.25, 0.25",Geometric mean of normalized components (eps=1e-4)
+METHOD_C,Rank-Sum / Borda Aggregation,N/A,Sum of component ranks across 4 physical components
+METHOD_D,Worst-Component Emphasis,Max component,Maximum percentile across 4 physical components
+METHOD_E,Balanced Upper-Tail Method,0.50 Median + 0.50 Max,0.50 * Median percentile + 0.50 * Max percentile
+METHOD_F,TOPSIS Sensitivity Method,"0.25, 0.25, 0.25, 0.25","Euclidean distance to ideal point (1.0, 1.0, 1.0, 1.0)"
+METHOD_G,Epsilon-Dominance Flag,Pareto Eps=5.0,Categorical flag for Epsilon-Pareto membership
+METHOD_H1,Susceptibility Emphasis Scenario,"0.40, 0.25, 0.20, 0.15",Weighted mean emphasizing ML susceptibility
+METHOD_H2,Terrain Emphasis Scenario,"0.25, 0.40, 0.20, 0.15",Weighted mean emphasizing slope severity
+METHOD_H3,Geology Emphasis Scenario,"0.25, 0.20, 0.40, 0.15",Weighted mean emphasizing fault proximity
+METHOD_H4,Surface/Drainage Emphasis Scenario,"0.25, 0.20, 0.15, 0.40",Weighted mean emphasizing hydrography
+METHOD_H5,Susceptibility & Terrain Scenario,"0.35, 0.35, 0.15, 0.15",Weighted mean emphasizing susceptibility & terrain

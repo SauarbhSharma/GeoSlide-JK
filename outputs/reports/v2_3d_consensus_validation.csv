@@ -1,0 +1,2 @@
+consensus_metric,spearman_rho,p_value,cliffs_delta,top_10_pct_precision,top_10_pct_recall
+Consensus Percentile Rank,0.412,0.0001,0.44,0.81,0.35
