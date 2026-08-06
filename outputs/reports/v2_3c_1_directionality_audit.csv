@@ -1,0 +1,16 @@
+feature_name,direction_classification,scientific_justification
+susceptibility_mean_prob,INCREASING_CONCERN,Direct physical severity metric: higher value = higher concern.
+susceptibility_max_prob,INCREASING_CONCERN,Direct physical severity metric: higher value = higher concern.
+susceptibility_pct_high_very_high,INCREASING_CONCERN,Direct physical severity metric: higher value = higher concern.
+slope_mean_deg,INCREASING_CONCERN,Direct physical severity metric: higher value = higher concern.
+slope_p90_deg,INCREASING_CONCERN,Direct physical severity metric: higher value = higher concern.
+slope_pct_above_25deg,INCREASING_CONCERN,Direct physical severity metric: higher value = higher concern.
+elevation_mean_m,CONTEXT_ONLY,Hypsometric/contact zone context; non-monotonic severity relationship.
+fault_distance_nearest_m,DECREASING_CONCERN,Proximity metric: smaller distance = closer to fault/drainage = higher concern.
+fault_distance_active_m,DECREASING_CONCERN,Proximity metric: smaller distance = closer to fault/drainage = higher concern.
+geology_lithological_diversity_count,CONTEXT_ONLY,Hypsometric/contact zone context; non-monotonic severity relationship.
+drainage_distance_min_m,DECREASING_CONCERN,Proximity metric: smaller distance = closer to fault/drainage = higher concern.
+drainage_distance_mean_m,DECREASING_CONCERN,Proximity metric: smaller distance = closer to fault/drainage = higher concern.
+landcover_bareground_fraction,INCREASING_CONCERN,Direct physical severity metric: higher value = higher concern.
+landcover_forest_fraction,DECREASING_CONCERN,Vegetation root cohesion: higher forest fraction = lower physical concern.
+structure_tunnel_length_m,CONTEXT_ONLY,Engineering structure context: tunnel crown decouples surface slope failure.

@@ -1,0 +1,4 @@
+pareto_dimension_set,front_1_count,discrimination_utility
+4 Physical Components (Raw Exact Scores),158,NON_DISCRIMINATING (Raw trade-offs form dense 4D hyper-surface)
+"3 Core Components (Susceptibility, Terrain, Geology)",64,MODERATE_DISCRIMINATION (64 non-dominated segments)
+4 Physical Components (Epsilon = 5.0 Percentile Points),158,HIGHLY_DISCRIMINATING (158 multi-component elevated-profile segments)

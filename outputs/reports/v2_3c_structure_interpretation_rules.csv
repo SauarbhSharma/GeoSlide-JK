@@ -1,0 +1,6 @@
+structure_category,surface_susceptibility_directly_interpretable,tunnel_decoupling_rule,interpretation_guideline
+OPEN_SURFACE_ROAD,True,N/A - Surface Road,Direct road surface landslide hazard exposure.
+TUNNEL_INTERIOR,False,DECOUPLED: Surface slope failure above tunnel crown does NOT directly hit road deck interior.,Subsurface structural protection; surface susceptibility decoupled from deck hazard.
+TUNNEL_PORTAL_OR_APPROACH,True,PORTAL EXPOSURE: Portal cut slopes remain highly vulnerable to rockfall/debris flow.,High portal cut slope vulnerability near tunnel entrance/exit.
+BRIDGE_OR_VIADUCT,False,ELEVATED DECK: Deck elevated over terrain; pier foundation/scour exposure governs.,Elevated road deck over valley/river crossing.
+MIXED_STRUCTURE,True,TRANSITION: Mixed surface/portal/bridge transition zone.,Complex transition zone across structural boundary.

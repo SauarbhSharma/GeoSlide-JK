@@ -1,0 +1,5 @@
+structure_category,count,handling
+OPEN_SURFACE_ROAD,142,Direct road surface landslide hazard exposure.
+TUNNEL_INTERIOR,10,Surface susceptibility decoupled from road deck. Subsurface crown protection.
+TUNNEL_PORTAL_OR_APPROACH,4,Portal cut slope exposure to rockfall and debris flows.
+BRIDGE_OR_VIADUCT,2,Elevated deck over river/gorge crossing; foundation scour exposure.

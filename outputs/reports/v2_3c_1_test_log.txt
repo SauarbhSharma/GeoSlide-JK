@@ -1,0 +1,74 @@
+
+============================================================
+GEOSLIDE-JK V2 — V2-3C.1 PYTHON UNIT TEST EXECUTION LOG
+============================================================
+Command: python -m unittest discover -s tests -p test_*.py
+Start Timestamp: 2026-08-06T12:43:55.920196+00:00
+End Timestamp: 2026-08-06T12:44:01.066165+00:00
+Exit Code: 1
+Status: FAILED
+============================================================
+STDOUT:
+
+STDERR:
+...............................................................................................FF..........F...................FF..F..............
+======================================================================
+FAIL: test_09_fraction_sums_equal_one (test_nh44_segment_feature_scientific_review.TestNH44SegmentFeatureScientificReview.test_09_fraction_sums_equal_one)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\GeoSlide_JK\tests\test_nh44_segment_feature_scientific_review.py", line 60, in test_09_fraction_sums_equal_one
+    self.assertTrue(all(df_frac["susceptibility_sum_valid"]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_10_susceptibility_ordering_and_high_sums (test_nh44_segment_feature_scientific_review.TestNH44SegmentFeatureScientificReview.test_10_susceptibility_ordering_and_high_sums)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\GeoSlide_JK\tests\test_nh44_segment_feature_scientific_review.py", line 66, in test_10_susceptibility_ordering_and_high_sums
+    self.assertTrue(all(df_sus["monotonic_ordering_valid"]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_08_all_metric_distances_calculated_in_epsg_32643 (test_nh44_segment_features.TestNH44SegmentFeatures.test_08_all_metric_distances_calculated_in_epsg_32643)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\GeoSlide_JK\tests\test_nh44_segment_features.py", line 52, in test_08_all_metric_distances_calculated_in_epsg_32643
+    self.assertEqual(str(self.gdf_feats.crs), "EPSG:32643")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '{"$schema": "https://proj.org/schemas/v0.[2352 chars]43}}' != 'EPSG:32643'
+Diff is 2411 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_12_normalized_percentiles_between_0_and_100 (test_nh44_static_component_profiles.TestNH44StaticComponentProfiles.test_12_normalized_percentiles_between_0_and_100)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\GeoSlide_JK\tests\test_nh44_static_component_profiles.py", line 70, in test_12_normalized_percentiles_between_0_and_100
+    self.assertGreaterEqual(df_norm[col].min(), 0.0)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: np.float64(nan) not greater than or equal to 0.0
+
+======================================================================
+FAIL: test_13_robust_zscores_are_finite (test_nh44_static_component_profiles.TestNH44StaticComponentProfiles.test_13_robust_zscores_are_finite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\GeoSlide_JK\tests\test_nh44_static_component_profiles.py", line 77, in test_13_robust_zscores_are_finite
+    self.assertFalse(df_norm[col].isnull().any())
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: np.True_ is not false
+
+======================================================================
+FAIL: test_16_component_scores_between_0_and_100 (test_nh44_static_component_profiles.TestNH44StaticComponentProfiles.test_16_component_scores_between_0_and_100)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\GeoSlide_JK\tests\test_nh44_static_component_profiles.py", line 91, in test_16_component_scores_between_0_and_100
+    self.assertGreaterEqual(self.df_comp[c].min(), 0.0)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: np.float64(nan) not greater than or equal to 0.0
+
+----------------------------------------------------------------------
+Ran 146 tests in 3.367s
+
+FAILED (failures=6)
+
