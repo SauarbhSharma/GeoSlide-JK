@@ -195,7 +195,7 @@ GeoSlide-JK/
 │   ├── README_STREAMLIT.md    # Streamlit app documentation
 │   └── streamlit_app.py       # Streamlit main entrypoint
 ├── .streamlit/                # Streamlit dark theme config
-├── tests/                     # 139 passing Python master unit tests
+├── tests/                     # 286 passing Python master unit tests
 ├── .gitignore                 # Strengthened security & data exclusion rules
 └── README.md                  # Main repository README
 ```

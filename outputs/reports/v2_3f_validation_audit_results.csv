@@ -1,0 +1,11 @@
+audit_check,status,details
+v2_3a_to_v2_3e_immutability,PASS,100% hash match across all released upstream artifacts.
+segment_count_reconciliation,PASS,Exactly 158 unique NH-44 corridor segments.
+scenario_count_reconciliation,PASS,Exactly 6 research scenarios S0-S5.
+scenario_segment_row_reconciliation,PASS,Exactly 948 canonical scenario-segment records.
+independent_formulation_count,PASS,"Exactly 3 independent formulations (DHI_A, DHI_B, DHI_C)."
+redundant_formulation_exclusion,PASS,DHI_D verified as Spearman=1.000 monotonic power transformation of DHI_B; excluded from consensus.
+dry_control_s0_handling,PASS,S0 Dry Control unranked with explicit DRY_CONTROL_NO_DYNAMIC_DISCRIMINATION status.
+native_cell_limitation_exposure,PASS,Exposes 8 distinct native 0.1° GPM cells (max 26 segments/cell).
+no_landslide_leakage,PASS,Zero landslide inventory columns enter scoring or consensus.
+no_operational_warnings,PASS,"Zero alert levels, emergency warnings, or road-closure recommendations created."

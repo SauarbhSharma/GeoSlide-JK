@@ -4,6 +4,25 @@ All notable changes to the **GeoSlide-JK** project will be documented in this fi
 
 ---
 
+## [2.3.6] - 2026-08-07
+
+### Added - V2-3F NH-44 DHI Robustness, Consensus and Uncertainty Audit Complete
+- **Independent & Redundant Formulations:** Evaluated `DHI_A`, `DHI_B`, `DHI_C` as independent formulations. Proved `DHI_D = sqrt(DHI_B)` is a strictly monotonic power transformation (Spearman rho = 1.000) and excluded it from consensus.
+- **Dry Control S0 Handling:** Unranked zero-rainfall control under `DRY_CONTROL_NO_DYNAMIC_DISCRIMINATION` status to prevent false quintile assignments.
+- **Native Grid Cell Limitation:** Exposed 8 distinct native 0.1-degree (~11 km) GPM IMERG grid cells (median 19.5 segments/cell) with mandatory coarse spatial support disclaimers.
+- **UI Integration:** Updated Next.js NH-44 Corridor page with consensus selector, formulation spread, native cell support details, and research truthfulness disclaimers.
+- **Automated Test Suite:** Expanded Python test suite to 286 automated tests with 100% pass rate.
+
+---
+
+## [2.3.5] - 2026-08-06
+
+### Added - V2-3E Scenario-Based Rainfall Dynamic Hazard Profiles
+- **Scenarios S0-S5:** Integrated 6 research scenarios across 158 NH-44 corridor segments (948 records).
+- **Antecedent Rainfall Indices:** Calculated 24h, 72h, and API7 antecedent moisture indices across 10-year GPM IMERG baseline.
+
+---
+
 ## [0.2.0] - 2026-07-29
 
 ### Added - Phase 2 & Phase 2.1 Complete

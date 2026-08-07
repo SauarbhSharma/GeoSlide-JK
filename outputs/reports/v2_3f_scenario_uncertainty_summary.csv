@@ -1,0 +1,7 @@
+scenario_id,mean_percentile_range,max_percentile_range,stable_segments_count,sensitive_segments_count,unranked_dry_control_count,scenario_status
+S0,0.0,0.0,0,0,158,DRY_CONTROL_UNRANKED
+S1,0.0,0.0,158,0,0,ACTIVE_SCENARIO
+S2,0.0,0.0,158,0,0,ACTIVE_SCENARIO
+S3,0.0,0.0,158,0,0,ACTIVE_SCENARIO
+S4,0.0,0.0,158,0,0,ACTIVE_SCENARIO
+S5,0.0,0.0,158,0,0,ACTIVE_SCENARIO

@@ -1,0 +1,6 @@
+metric,value
+Distinct Native Rainfall Cells,8 distinct native 0.1-degree (~11 km) grid cells
+Minimum Segments per Cell,18 segments
+Median Segments per Cell,19.5 segments
+Maximum Segments per Cell,26 segments
+Spatial Support Limitation,Segment-level rainfall outputs inherit the approximately 0.1-degree source support and do not represent independent 500 m rainfall measurements.
