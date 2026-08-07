@@ -91,10 +91,11 @@ class TestNH44V23FR5AuthoritativeCorrection(unittest.TestCase):
         for _, row in self.df_hashes.iterrows():
             fpath = self.project_root / row["file_path"]
             self.assertTrue(fpath.exists(), f"Manifest file missing: {fpath}")
-            fbytes = open(fpath, "rb").read()
+            with open(fpath, "rb") as fh:
+                fbytes = fh.read()
             real_sha = hashlib.sha256(fbytes).hexdigest()
-            self.assertEqual(row["sha256"], real_sha)
-            self.assertEqual(row["file_size_bytes"], len(fbytes))
+            self.assertEqual(row["sha256"], real_sha, f"SHA mismatch for artifact {row['artifact_alias']} at {row['file_path']}")
+            self.assertEqual(row["file_size_bytes"], len(fbytes), f"Size mismatch for artifact {row['artifact_alias']} at {row['file_path']}")
 
     def test_10_no_landslide_leakage_and_warnings(self):
         for col in self.df_rob.columns:
