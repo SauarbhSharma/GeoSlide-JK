@@ -1,14 +1,18 @@
 # GeoSlide-JK 2.0 — V2-3F Checkpoint Completion Report
 
-> **Milestone:** V2-3F NH-44 DHI Robustness, Consensus and Uncertainty Audit  
-> **Target Branch:** `geoslide-jk-v2-nh44-dhi-robustness-uncertainty`  
-> **Status:** COMPLETE — READY FOR INDEPENDENT REVIEW
+> **Milestone:** V2-3F NH-44 DHI Robustness, Consensus and Uncertainty Audit (R4 Release Integrity Completion)  
+> **Release Branch:** `geoslide-jk-v2-nh44-v2-3f-r4-release-integrity`  
+> **Release Tag:** `v2.3f-r4-nh44-dhi-release-integrity`  
+> **Status:** COMPLETE — 100% RELEASE INTEGRITY VERIFIED
 
 ---
 
 ## Executive Summary
-Phase V2-3F establishes an independent formulation robustness and uncertainty framework over the V2-3E dynamic hazard profiles across all 158 authoritative NH-44 corridor segments:
-1. **Redundant Formulation Excluded:** `DHI_D` proved strictly monotonic with `DHI_B` (Spearman rho = 1.000) and excluded from consensus (3 independent formulations: `DHI_A`, `DHI_B`, `DHI_C`).
+Phase V2-3F (with V2-3F-R4 Release Integrity Completion) establishes an independent formulation robustness and uncertainty framework over the V2-3E dynamic hazard profiles across all 158 authoritative NH-44 corridor segments:
+
+1. **Redundant Formulation Excluded:** `DHI_D = sqrt(DHI_B)` proved strictly monotonic with 0.0 max absolute residual and excluded from consensus (3 independent formulations: `DHI_A`, `DHI_B`, `DHI_C`).
 2. **Dry Control Unranked:** S0 Dry Control assigned explicit `DRY_CONTROL_NO_DYNAMIC_DISCRIMINATION` status to prevent false quintiles.
-3. **Native Cell Support:** Exposes 8 native 0.1° (~11km) GPM cells (max 26 segments/cell).
-4. **Truthfulness & Safety:** Zero operational alerts, zero road closure recommendations, zero landslide leakage.
+3. **Native Cell Disambiguation:** 2 native 0.1° (~11 km) GPM cells (`GPM_NATIVE_33.25N_75.15E` with 98 segments and `GPM_NATIVE_33.25N_75.25E` with 60 segments). The 8 locations are derived 0.02° corridor-support interpolation nodes.
+4. **Zero-Variance Rank Correlation:** Constant DHI vectors within each scenario S1–S5 return undefined rank correlation (`status = UNDEFINED_ZERO_VARIANCE`, `verification_status = VERIFIED_UNDEFINED_ZERO_VARIANCE`).
+5. **Truthfulness & Safety:** Zero operational alerts, zero road closure recommendations, zero landslide leakage.
+6. **Supersession Notice:** Historical releases R1, R2, and R3 are preserved as evidence and superseded by R4 (`v2_3f_r4_artifact_supersession_table.csv`).

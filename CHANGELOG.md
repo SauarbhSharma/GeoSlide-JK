@@ -4,6 +4,17 @@ All notable changes to the **GeoSlide-JK** project will be documented in this fi
 
 ---
 
+## [2.3.10] - 2026-08-07
+
+### Added - V2-3F-R4 NH-44 DHI Scientific Evidence and Release-Integrity Completion
+- **Native GPM Resolution Disambiguation:** Proven 2 native 0.1-degree (~11 km) GPM IMERG grid cells (`GPM_NATIVE_33.25N_75.15E` with 98 segments and `GPM_NATIVE_33.25N_75.25E` with 60 segments). The 8 locations are derived 0.02-degree corridor-support interpolation nodes.
+- **Zero-Variance Correlation Semantics:** Standardized within-scenario constant vector rank correlations to null/blank numeric fields with `status = UNDEFINED_ZERO_VARIANCE` and `verification_status = VERIFIED_UNDEFINED_ZERO_VARIANCE`.
+- **DHI_D Exact Redundancy:** Proved `DHI_D = sqrt(DHI_B)` with 0.0 max absolute residual, strictly excluding DHI_D from all consensus and stability calculations.
+- **Scenario Derivation Provenance:** Documented explicit YAML keys in `configs/rainfall_thresholds.yaml` and Parquet columns in `data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet`.
+- **UI & Documentation Sync:** Updated Next.js corridor page (`apps/web/app/corridor/page.tsx`), README, CHANGELOG, methodology, data dictionary, and completion report.
+
+---
+
 ## [2.3.6] - 2026-08-07
 
 ### Added - V2-3F NH-44 DHI Robustness, Consensus and Uncertainty Audit Complete
