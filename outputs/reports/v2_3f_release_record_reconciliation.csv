@@ -1,0 +1,3 @@
+reconciliation_item,result,status
+Scenario Definition Precision,"Authoritative S0-S5 table established (S0 Dry Control, S1 Monsoon P50, S2 Monsoon P90, S3 Monsoon P95, S4 High Antecedent, S5 P99 Compound Stress).",RECONCILED
+V2-3E Pull Request Object Verification,PR OBJECT COULD NOT BE REMOTELY VERIFIED (GitHub CLI/API object unavailable; source branch was merged directly into main with merge commit 76af6af).,VERIFIED_RECORD_NOTE

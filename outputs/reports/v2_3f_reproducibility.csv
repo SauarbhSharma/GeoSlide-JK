@@ -1,0 +1,4 @@
+check,status
+output_hash_manifest_match,PASS
+consensus_median_reproducibility,PASS
+dhi_d_redundancy_proof_reproducibility,PASS
