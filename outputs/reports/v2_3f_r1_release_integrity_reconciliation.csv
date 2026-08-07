@@ -1,0 +1,5 @@
+item_name,historical_v2_3f_claim,reconciled_v2_3f_r1_result,impact_and_resolution
+Native Cell Arithmetic Discrepancy,"Min=18, Median=19.5, Max=26","Min=18, Median=20.0, Max=20 (Vector: [18, 20, 20, 20, 20, 20, 20, 20], Sum=158)",Documentation & report narrative reconciled to match exact native cell count vector.
+Spearman Correlation Coverage,4 Pairs reported for S2 only,"Complete 6-pair matrices generated for S1, S2, S3, S4, S5 individually + pooled (36 total pairs)",Full symmetric formulation matrix published in v2_3f_r1_scenario_pairwise_spearman.csv.
+S4 Scenario Provenance,Constructed from climatological P95 antecedent values,S4 SATURATED_ANTECEDENT is a compound reference combining 95mm API7 (P95 antecedent) with 120mm 24h rainfall,Reconciled scenario provenance classification as CLIMATOLOGY_DERIVED_REFERENCE.
+IQR Quantile Algorithm,75th pct - 25th pct across 3 DHI values,"Explicitly defined as numpy.percentile([P_A, P_B, P_C], 75) - numpy.percentile([P_A, P_B, P_C], 25) = 0.5 * (Max_Pct - Min_Pct)",Algorithm documented and regression-tested with numerical examples.
