@@ -1,0 +1,6 @@
+scenario_id,valid_rows,mean_percentile_range,median_percentile_range,max_percentile_range,mean_iqr,informative_for_segment_discrimination,degeneracy_status,threshold_stable_count,scientifically_informative_stability
+S1,158,0.0,0.0,0.0,0.0,False,NON_DISCRIMINATING_COMPLETE_TIE,158,NON_DISCRIMINATING
+S2,158,0.0,0.0,0.0,0.0,False,NON_DISCRIMINATING_COMPLETE_TIE,158,NON_DISCRIMINATING
+S3,158,0.0,0.0,0.0,0.0,False,NON_DISCRIMINATING_COMPLETE_TIE,158,NON_DISCRIMINATING
+S4,158,0.0,0.0,0.0,0.0,False,NON_DISCRIMINATING_COMPLETE_TIE,158,NON_DISCRIMINATING
+S5,158,0.0,0.0,0.0,0.0,False,NON_DISCRIMINATING_COMPLETE_TIE,158,NON_DISCRIMINATING

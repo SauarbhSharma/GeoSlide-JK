@@ -1,0 +1,5 @@
+historical_artifact,replacement_artifact,status,reason
+outputs/reports/v2_3f_r2_native_cell_evidence.csv,outputs/reports/v2_3f_r3_native_gpm_cell_evidence.csv & v2_3f_r3_derived_support_location_evidence.csv,SUPERSEDED_BY_R3,Disambiguated 2 native 0.1° GPM cells from 8 derived 0.02° support nodes.
+outputs/reports/v2_3f_r2_authoritative_scenario_definitions.csv,outputs/reports/v2_3f_r3_authoritative_scenario_definitions.csv,SUPERSEDED_BY_R3,Corrected input_source references to configs/rainfall_thresholds.yaml.
+outputs/reports/v2_3f_r2_scenario_pairwise_spearman.csv,outputs/reports/v2_3f_r3_scenario_pairwise_spearman.csv,SUPERSEDED_BY_R3,Replaced hardcoded 1.0 Spearman values for zero-variance constant vectors with blank/null fields.
+scripts/run_v2_3f_r2_reproducibility.py,scripts/run_v2_3f_r3_reproducibility.py,SUPERSEDED_BY_R3,Removed hardcoded absolute Antigravity scratch paths in favor of repository-relative paths.

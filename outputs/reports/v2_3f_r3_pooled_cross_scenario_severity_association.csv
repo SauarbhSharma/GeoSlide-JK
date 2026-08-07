@@ -1,0 +1,7 @@
+population,pair,sample_size,spearman_rho,association_type,note
+POOLED_ACTIVE_S1_S5,DHI_A vs DHI_B,790,1.0,POOLED_CROSS_SCENARIO_SEVERITY_ASSOCIATION,"Reflects between-scenario severity progression, not within-scenario segment discrimination."
+POOLED_ACTIVE_S1_S5,DHI_A vs DHI_C,790,1.0,POOLED_CROSS_SCENARIO_SEVERITY_ASSOCIATION,"Reflects between-scenario severity progression, not within-scenario segment discrimination."
+POOLED_ACTIVE_S1_S5,DHI_A vs DHI_D,790,1.0,POOLED_CROSS_SCENARIO_SEVERITY_ASSOCIATION,"Reflects between-scenario severity progression, not within-scenario segment discrimination."
+POOLED_ACTIVE_S1_S5,DHI_B vs DHI_C,790,1.0,POOLED_CROSS_SCENARIO_SEVERITY_ASSOCIATION,"Reflects between-scenario severity progression, not within-scenario segment discrimination."
+POOLED_ACTIVE_S1_S5,DHI_B vs DHI_D,790,1.0,POOLED_CROSS_SCENARIO_SEVERITY_ASSOCIATION,"Reflects between-scenario severity progression, not within-scenario segment discrimination."
+POOLED_ACTIVE_S1_S5,DHI_C vs DHI_D,790,1.0,POOLED_CROSS_SCENARIO_SEVERITY_ASSOCIATION,"Reflects between-scenario severity progression, not within-scenario segment discrimination."
