@@ -414,7 +414,7 @@ def run_reproducibility(output_dir=None):
     ]
     pd.DataFrame(val_r5_results).to_csv(reports_dir / "v2_3f_r5_validation_audit_results.csv", index=False)
 
-    # Complete POSIX Relative Output Hashes Manifest
+    # Complete POSIX Relative Output Hashes Manifest (excluding non-deterministic runtime logs)
     r5_manifest_files = [
         ("r5_authoritative_raster_metadata_csv", reports_dir / "v2_3f_r5_authoritative_raster_metadata.csv"),
         ("r5_segment_native_cell_mapping_csv", reports_dir / "v2_3f_r5_segment_native_cell_mapping.csv"),
