@@ -1,0 +1,7 @@
+scenario_id,canonical_label,scenario_class,r24_mm,r72_mm,api7_mm,units,accumulation_window,percentile_label,input_source,provenance,classification
+S0,DRY_REFERENCE,DRY_CONTROL,0.0,0.0,0.0,mm,Zero Baseline Control,N/A (Dry Control),configs/rainfall_scenarios.yaml,Controlled Research Baseline,Dry Control Zero Baseline (Unranked)
+S1,MODERATE_RAIN,CLIMATOLOGY_DERIVED_REFERENCE,25.0,45.0,15.0,mm,July Monsoon P50,P50 Baseline,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,10-Year GPM Climatology Grid (2015-2024),Climatology-Derived Reference
+S2,HEAVY_24H,CLIMATOLOGY_DERIVED_REFERENCE,75.0,110.0,35.0,mm,July Monsoon P90,P90 Trigger Reference,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,10-Year GPM Climatology Grid (2015-2024),Climatology-Derived Reference
+S3,PROLONGED_72H,CLIMATOLOGY_DERIVED_REFERENCE,90.0,150.0,55.0,mm,July Monsoon P95,P95 Multi-Day Accumulation Reference,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,10-Year GPM Climatology Grid (2015-2024),Climatology-Derived Reference
+S4,SATURATED_ANTECEDENT,CLIMATOLOGY_DERIVED_REFERENCE,120.0,180.0,95.0,mm,Heavy 24h + P95 Antecedent Moisture,Compound Saturation Reference,configs/rainfall_scenarios.yaml,10-Year GPM Climatology Grid (2015-2024),Compound Climatology-Derived Reference
+S5,EXTREME_COMPOUND,SYNTHETIC_STRESS_TEST,160.0,250.0,140.0,mm,P99 Compound Extreme Tail,P99 Upper-Tail Stress Basis,configs/rainfall_scenarios.yaml,Controlled Research Stress Test Basis,Synthetic Upper-Tail Stress Test Basis

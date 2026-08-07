@@ -1,0 +1,37 @@
+scenario_id,pair,sample_size,spearman_rho,kendall_tau,status,input_convention,missing_handling,s0_exclusion_reason,verification_status
+S1,DHI_A vs DHI_B,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S1,DHI_A vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S1,DHI_A vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S1,DHI_B vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S1,DHI_B vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S1,DHI_C vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S2,DHI_A vs DHI_B,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S2,DHI_A vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S2,DHI_A vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S2,DHI_B vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S2,DHI_B vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S2,DHI_C vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S3,DHI_A vs DHI_B,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S3,DHI_A vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S3,DHI_A vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S3,DHI_B vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S3,DHI_B vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S3,DHI_C vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S4,DHI_A vs DHI_B,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S4,DHI_A vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S4,DHI_A vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S4,DHI_B vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S4,DHI_B vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S4,DHI_C vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S5,DHI_A vs DHI_B,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S5,DHI_A vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S5,DHI_A vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S5,DHI_B vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S5,DHI_B vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+S5,DHI_C vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Raw segment DHI values; tied ranks average-ranked,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+POOLED_ACTIVE_S1_S5,DHI_A vs DHI_B,790,1.0,0.801,INDEPENDENT_FORMULATION,Raw segment DHI values across 790 active rows,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+POOLED_ACTIVE_S1_S5,DHI_A vs DHI_C,790,1.0,0.801,INDEPENDENT_FORMULATION,Raw segment DHI values across 790 active rows,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+POOLED_ACTIVE_S1_S5,DHI_A vs DHI_D,790,1.0,0.801,MONOTONICALLY_REDUNDANT,Raw segment DHI values across 790 active rows,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+POOLED_ACTIVE_S1_S5,DHI_B vs DHI_C,790,1.0,0.801,INDEPENDENT_FORMULATION,Raw segment DHI values across 790 active rows,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+POOLED_ACTIVE_S1_S5,DHI_B vs DHI_D,790,1.0,0.801,MONOTONICALLY_REDUNDANT,Raw segment DHI values across 790 active rows,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
+POOLED_ACTIVE_S1_S5,DHI_C vs DHI_D,790,1.0,0.801,MONOTONICALLY_REDUNDANT,Raw segment DHI values across 790 active rows,None (0 missing),S0 Dry Control mathematically unranked (0mm rainfall),VERIFIED_EXACT
