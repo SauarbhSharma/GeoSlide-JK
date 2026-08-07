@@ -1,0 +1,2 @@
+comparison_item,method_a_description,method_b_description,total_segments_compared,exact_agreement_count,discrepancy_count,reconciliation_status
+158_SEGMENT_NATIVE_CELL_MAPPING,Raster-library affine transform indexing,2D Polygon bounding-box spatial intersection,158,158,0,VERIFIED_100PERCENT_AGREEMENT

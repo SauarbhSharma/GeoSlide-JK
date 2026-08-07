@@ -1,0 +1,5 @@
+historical_artifact,replacement_artifact,status,reason
+outputs/reports/v2_3f_r2_native_cell_evidence.csv,outputs/reports/v2_3f_r5_native_cell_evidence.csv,SUPERSEDED_BY_R5,Disambiguated 11 native 2D 0.1° GPM cells across 5 latitude rows from 8 derived 0.02° support locations.
+outputs/reports/v2_3f_r3_native_gpm_cell_evidence.csv,outputs/reports/v2_3f_r5_native_cell_evidence.csv,SUPERSEDED_BY_R5,Replaced hardcoded 98/60 1D split with genuine 2D spatial grid intersection across all 158 segments.
+outputs/reports/v2_3f_r4_native_gpm_cell_evidence.csv,outputs/reports/v2_3f_r5_native_cell_evidence.csv,SUPERSEDED_BY_R5,"Provided 11 2D cells metadata, affine transform, and complete hash manifest coverage."
+scripts/run_v2_3f_r4_reproducibility.py,scripts/run_v2_3f_r5_reproducibility.py,SUPERSEDED_BY_R5,Provided 100% fresh-clone reproduction and full manifest coverage.

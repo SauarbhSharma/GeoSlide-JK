@@ -1,0 +1,2 @@
+audit_item,r4_historical_claim,r5_authoritative_finding,corrective_action,verification_status
+R4_NON_EXISTENT_YAML_KEYS_AUDIT,Referenced scenarios.s4_saturated.r24_mm in configs/rainfall_thresholds.yaml,Key does not exist in configs/rainfall_thresholds.yaml; value originates from scripts/phase_5_rainfall_hazard_pipeline.py,Corrected source path to scripts/phase_5_rainfall_hazard_pipeline.py and classified S4/S5 as repository-defined hypothetical stress tests,CORRECTED_IN_R5

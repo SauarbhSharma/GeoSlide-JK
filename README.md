@@ -221,11 +221,13 @@ If you use GeoSlide-JK software, datasets, or methodology in your research, plea
 
 ---
 
-## 🔬 V2-3F-R4 Scientific Evidence & Release Integrity
+## 🔬 V2-3F-R5 Scientific Evidence & Release Integrity
 
-GeoSlide-JK v2.3f-r4 (`v2.3f-r4-nh44-dhi-release-integrity`) establishes complete scientific evidence for NH-44 Dynamic Hazard Index (DHI) robustness:
-- **Native GPM Resolution Disambiguation:** 2 native 0.1° GPM cells (`GPM_NATIVE_33.25N_75.15E` with 98 segments, `GPM_NATIVE_33.25N_75.25E` with 60 segments). The 8 locations are derived 0.02° corridor-support interpolation nodes.
-- **Zero-Variance Correlation Semantics:** Uniform scenario screening produces constant DHI vectors within each scenario S1–S5, returning undefined rank correlation (`status = UNDEFINED_ZERO_VARIANCE`).
-- **DHI_D Exact Redundancy:** `DHI_D = sqrt(DHI_B)` with 0.0 residual, strictly excluded from all consensus and stability calculations.
-- **Historical Supersession:** V2-3F-R3 is historically preserved but superseded by V2-3F-R4.
-
+### GeoSlide-JK Release Baseline & Incremental Milestones
+- **V2-3F-R5 Release Tag:** `v2.3f-r5-nh44-dhi-authoritative-correction`
+- **V2-3F-R5 Milestone:** NH-44 DHI Authoritative Grid, Provenance and Reproducibility Correction
+- **Authoritative 2D GPM Spatial Grid Intersection:** 11 native 2D 0.1° GPM cells across 5 latitude bands (33.0°N to 33.5°N) mapped to all 158 corridor segments with 100% Path A/B agreement.
+- **Unproven 8 Support Locations:** Marked `ROLE_UNPROVEN` and excluded from scientific calculations.
+- **Scenario Provenance:** Corrected S4 and S5 to repository-defined hypothetical stress test classifications.
+- **DHI_D Redundancy:** `DHI_D = sqrt(DHI_B)` proved with 0.0 machine-precision residual in full precision and 4.29e-5 on 4-decimal rounded values (`ROUNDED_SERIALIZATION_CONSISTENT`).
+- **Reproducibility:** 100% path-independent, isolated, fresh-clone reproducible pipeline with complete POSIX manifest coverage.

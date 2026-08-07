@@ -1,0 +1,2 @@
+dataset_identity,dataset_version,source_raster_content_sha256,crs,width_pixels,height_pixels,affine_transform,longitude_spacing_deg,latitude_spacing_deg,coordinate_convention,axis_orientation,nodata_definition,representative_point_method,verification_status
+GPM_IMERG_V06B_DAILY_CLIMATOLOGY_GRID,V06B,429db9dd04ebec89895c102a0a2df2525aa1caaa9c45efac88c6e267bbbe4a5e,EPSG:4326,3600,1800,"Affine(0.1, 0.0, -180.0, 0.0, -0.1, 90.0)",0.1,0.1,PIXEL_CENTER,WEST_TO_EAST_NORTH_TO_SOUTH,-9999.0,SEGMENT_MIDPOINT_INTERSECTION,VERIFIED_AUTHORITATIVE

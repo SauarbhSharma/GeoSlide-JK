@@ -42,7 +42,7 @@ function RoleCard({ id, title, subtitle, question, outcome, icon, active, onSele
         {/* Desktop-only detailed question & outcome */}
         <div className="hidden sm:block space-y-2 text-xs">
           <div className="text-slate-200 italic bg-navy-950/60 p-2 rounded-lg border border-navy-800 font-medium">
-            "{question}"
+            &quot;{question}&quot;
           </div>
           <div className="text-slate-300 text-[11px]">
             <strong className="text-slate-200">Outcome:</strong> {outcome}

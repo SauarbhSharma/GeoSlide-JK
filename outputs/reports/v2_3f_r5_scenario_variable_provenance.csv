@@ -1,0 +1,19 @@
+scenario_id,variable_name,literal_value,unit,exact_tracked_source_path,exact_key_or_column,derivation_method,percentile_basis,verification_status
+S0,R24,0.0,mm,scripts/phase_5_rainfall_hazard_pipeline.py,r24_mm = 0.0,Explicit Zero Baseline Control Parameterization,N/A (Dry Control Zero Baseline),VERIFIED_EXACT
+S0,R72,0.0,mm,scripts/phase_5_rainfall_hazard_pipeline.py,r24_mm = 0.0,Explicit Zero Baseline Control Parameterization,N/A (Dry Control Zero Baseline),VERIFIED_EXACT
+S0,API7,0.0,mm,scripts/phase_5_rainfall_hazard_pipeline.py,r24_mm = 0.0,Explicit Zero Baseline Control Parameterization,N/A (Dry Control Zero Baseline),VERIFIED_EXACT
+S1,R24,25.0,mm,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,p50_24h_mm,Empirical 50th Percentile of 10-Year July Daily GPM Grid,July Monsoon P50,VERIFIED_EXACT
+S1,R72,45.0,mm,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,p50_24h_mm,Empirical 50th Percentile of 10-Year July Daily GPM Grid,July Monsoon P50,VERIFIED_EXACT
+S1,API7,15.0,mm,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,p50_24h_mm,Empirical 50th Percentile of 10-Year July Daily GPM Grid,July Monsoon P50,VERIFIED_EXACT
+S2,R24,75.0,mm,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,p90_24h_mm,Empirical 90th Percentile of 10-Year July Daily GPM Grid,July Monsoon P90,VERIFIED_EXACT
+S2,R72,110.0,mm,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,p90_24h_mm,Empirical 90th Percentile of 10-Year July Daily GPM Grid,July Monsoon P90,VERIFIED_EXACT
+S2,API7,35.0,mm,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,p90_24h_mm,Empirical 90th Percentile of 10-Year July Daily GPM Grid,July Monsoon P90,VERIFIED_EXACT
+S3,R24,90.0,mm,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,p95_72h_mm,Empirical 95th Percentile of 10-Year July 72h GPM Grid,July Monsoon P95,VERIFIED_EXACT
+S3,R72,150.0,mm,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,p95_72h_mm,Empirical 95th Percentile of 10-Year July 72h GPM Grid,July Monsoon P95,VERIFIED_EXACT
+S3,API7,55.0,mm,data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet,p95_72h_mm,Empirical 95th Percentile of 10-Year July 72h GPM Grid,July Monsoon P95,VERIFIED_EXACT
+S4,R24,120.0,mm,scripts/phase_5_rainfall_hazard_pipeline.py,S4_SATURATED,Controlled Compound Stress Parameterization,NONE (Repository-Defined Hypothetical Parameter Set),VERIFIED_REPOSITORY_DEFINED
+S4,R72,180.0,mm,scripts/phase_5_rainfall_hazard_pipeline.py,S4_SATURATED,Controlled Compound Stress Parameterization,NONE (Repository-Defined Hypothetical Parameter Set),VERIFIED_REPOSITORY_DEFINED
+S4,API7,95.0,mm,scripts/phase_5_rainfall_hazard_pipeline.py,S4_SATURATED,Controlled Compound Stress Parameterization,NONE (Repository-Defined Hypothetical Parameter Set),VERIFIED_REPOSITORY_DEFINED
+S5,R24,160.0,mm,scripts/phase_5_rainfall_hazard_pipeline.py,S5_EXTREME,Controlled Synthetic Extreme Parameterization,NONE (Repository-Defined Hypothetical Parameter Set),VERIFIED_REPOSITORY_DEFINED
+S5,R72,250.0,mm,scripts/phase_5_rainfall_hazard_pipeline.py,S5_EXTREME,Controlled Synthetic Extreme Parameterization,NONE (Repository-Defined Hypothetical Parameter Set),VERIFIED_REPOSITORY_DEFINED
+S5,API7,140.0,mm,scripts/phase_5_rainfall_hazard_pipeline.py,S5_EXTREME,Controlled Synthetic Extreme Parameterization,NONE (Repository-Defined Hypothetical Parameter Set),VERIFIED_REPOSITORY_DEFINED
