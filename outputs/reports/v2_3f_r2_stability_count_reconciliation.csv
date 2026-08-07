@@ -1,0 +1,5 @@
+metric_level,category,row_count,unique_segment_count,pct_of_active
+Scenario-Segment Rows (Active S1-S5),STABLE_CONSENSUS (range <= 15.0%),790,158,100.0
+Scenario-Segment Rows (Active S1-S5),MODERATE_AGREEMENT (15.0% < range <= 30.0%),0,0,0.0
+Scenario-Segment Rows (Active S1-S5),FORMULATION_SENSITIVE (range > 30.0%),0,0,0.0
+Scenario-Segment Rows (Dry Control S0),DRY_CONTROL_UNRANKED,158,158,0.0
