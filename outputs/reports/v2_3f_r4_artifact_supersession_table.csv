@@ -1,0 +1,6 @@
+historical_artifact,replacement_artifact,status,reason
+outputs/reports/v2_3f_r2_native_cell_evidence.csv,outputs/reports/v2_3f_r4_native_gpm_cell_evidence.csv,SUPERSEDED_BY_R4,Disambiguated 2 native 0.1° GPM cells from 8 derived 0.02° support nodes with complete metadata.
+outputs/reports/v2_3f_r3_native_gpm_cell_evidence.csv,outputs/reports/v2_3f_r4_native_gpm_cell_evidence.csv,SUPERSEDED_BY_R4,"Added raster row/col, bounds, coordinate convention, and 64-character SHA-256 hashes."
+outputs/reports/v2_3f_r3_derived_support_location_evidence.csv,outputs/reports/v2_3f_r4_derived_support_location_evidence.csv,SUPERSEDED_BY_R4,Corrected segment range overlap and provided 64-character SHA-256 hashes.
+outputs/reports/v2_3f_r3_scenario_pairwise_spearman.csv,outputs/reports/v2_3f_r4_scenario_pairwise_spearman.csv,SUPERSEDED_BY_R4,"Added raw columns, p-values, missing/tie handling, and VERIFIED_UNDEFINED_ZERO_VARIANCE status."
+scripts/run_v2_3f_r3_reproducibility.py,scripts/run_v2_3f_r4_reproducibility.py,SUPERSEDED_BY_R4,Provided isolated execution support and clean-clone verification.

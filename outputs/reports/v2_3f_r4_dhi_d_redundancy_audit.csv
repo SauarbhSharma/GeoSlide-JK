@@ -1,0 +1,2 @@
+audit_item,formula_dhi_b,formula_dhi_d,sample_size,max_absolute_residual,relationship_status,consensus_exclusion_action,verification_status
+DHI_D_EXACT_REDUNDANCY,dhi_b = API7 / (R24 + R72),dhi_d = sqrt(dhi_b),948,4.294694143724964e-05,STRICT_MONOTONIC_SQUARE_ROOT_REDUNDANCY,EXCLUDED_FROM_ALL_CONSENSUS_RANGE_IQR_AND_STABILITY,VERIFIED_EXACT

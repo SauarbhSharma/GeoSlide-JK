@@ -218,3 +218,14 @@ If you use GeoSlide-JK software, datasets, or methodology in your research, plea
 ```
 
 *Data Sources Acknowledgment: Copernicus GLO-30 DEM (ESA/Copernicus), ESA WorldCover 2021 (ESA), Geological Survey of India (GSI 50K Lithology/Tectonics), National Geo-hazard Data Repository (NGDR Landslide Inventory).*
+
+---
+
+## 🔬 V2-3F-R4 Scientific Evidence & Release Integrity
+
+GeoSlide-JK v2.3f-r4 (`v2.3f-r4-nh44-dhi-release-integrity`) establishes complete scientific evidence for NH-44 Dynamic Hazard Index (DHI) robustness:
+- **Native GPM Resolution Disambiguation:** 2 native 0.1° GPM cells (`GPM_NATIVE_33.25N_75.15E` with 98 segments, `GPM_NATIVE_33.25N_75.25E` with 60 segments). The 8 locations are derived 0.02° corridor-support interpolation nodes.
+- **Zero-Variance Correlation Semantics:** Uniform scenario screening produces constant DHI vectors within each scenario S1–S5, returning undefined rank correlation (`status = UNDEFINED_ZERO_VARIANCE`).
+- **DHI_D Exact Redundancy:** `DHI_D = sqrt(DHI_B)` with 0.0 residual, strictly excluded from all consensus and stability calculations.
+- **Historical Supersession:** V2-3F-R3 is historically preserved but superseded by V2-3F-R4.
+
