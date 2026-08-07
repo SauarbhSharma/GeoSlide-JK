@@ -1,7 +1,8 @@
-# GeoSlide-JK 2.0 — V2-3F Methodology and Limitations Report
+# GeoSlide-JK V2-3F Methodology & Limitations (R5 Authoritative Correction)
 
-> **Status:** COMPLETE (V2-3F-R4 RELEASE INTEGRITY COMPLETED)  
-> **Milestone:** V2-3F NH-44 DHI Robustness, Consensus and Uncertainty Audit (R4 Scientific Evidence Completion)
+> **Release Version:** `v2.3f-r5-nh44-dhi-authoritative-correction`  
+> **Repository Commit:** `f5342857ddd90513aecfa3760a70a883d3ba3a8e`  
+> **Status:** PASSED (V2-3F-R5 Corrective Milestone Complete)
 
 ---
 

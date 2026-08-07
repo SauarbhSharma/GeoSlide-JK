@@ -1,0 +1,2 @@
+defect_item,r4_historical_claim,r5_authoritative_finding,root_cause,corrective_action,verification_status
+R4_HARDCODED_SEGMENT_SPLIT,"NH44_SEG_001..098 in 75.15E, NH44_SEG_099..158 in 75.25E (98/60 1D split)",11 2D GPM cells spanning 5 latitude rows (33.0N to 33.5N) with 158 total segment assignments,Hardcoded 1D segment index threshold (if seg <= 98) ignoring latitude variation,Replaced hardcoded split with genuine 2D spatial grid intersection in R5,DEFECT_CORRECTED_IN_R5

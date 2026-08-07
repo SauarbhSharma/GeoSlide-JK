@@ -1,0 +1,80 @@
+..........................................................................................................................................................................................................................................................................................................................................D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\CHANGELOG.md'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\README.md'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\apps\\web\\app\\corridor\\page.tsx'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\docs\\v2\\V2_3F_COMPLETION_REPORT.md'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\docs\\v2\\V2_3F_DATA_DICTIONARY.md'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\docs\\v2\\V2_3F_METHODOLOGY_AND_LIMITATIONS.md'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\docs\\v2\\V2_3F_R5_AUTHORITATIVE_CORRECTION_REPORT.md'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_artifact_supersession_table.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_authoritative_raster_metadata.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_authoritative_scenario_definitions.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_derived_support_location_evidence.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_dhi_constant_value_trace.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_dhi_d_redundancy_audit.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_native_cell_evidence.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_native_mapping_path_reconciliation.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_pooled_cross_scenario_severity_association.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_r4_mapping_defect_audit.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_scenario_pairwise_spearman.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_scenario_provenance_audit.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_scenario_variable_provenance.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_segment_native_cell_mapping.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_uncertainty_reconciliation.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\outputs\\reports\\v2_3f_r5_validation_audit_results.csv'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\scripts\\run_v2_3f_r5_reproducibility.py'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+D:\Projects\GeoSlide_JK\tests\test_nh44_v2_3f_r5_authoritative_correction.py:94: ResourceWarning: unclosed file <_io.BufferedReader name='D:\\Projects\\GeoSlide_JK\\tests\\test_nh44_v2_3f_r5_authoritative_correction.py'>
+  fbytes = open(fpath, "rb").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.....
+----------------------------------------------------------------------
+Ran 335 tests in 6.837s
+
+OK

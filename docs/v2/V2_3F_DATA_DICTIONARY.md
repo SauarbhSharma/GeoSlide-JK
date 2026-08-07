@@ -1,4 +1,7 @@
-# GeoSlide-JK 2.0 — V2-3F-R4 Data Dictionary
+# GeoSlide-JK V2-3F Data Dictionary (R5 Authoritative Correction)
+
+> **Release Version:** `v2.3f-r5-nh44-dhi-authoritative-correction`  
+> **Status:** AUTHORITATIVE CANONICAL SCHEMAS (V2-3F-R5)
 
 ## 1. Dynamic Hazard & Robustness Fields (`outputs/reports/v2_3f_scenario_segment_robustness.csv`)
 

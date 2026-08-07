@@ -4,6 +4,18 @@ All notable changes to the **GeoSlide-JK** project will be documented in this fi
 
 ---
 
+## [2.3.11] - 2026-08-08
+
+### Added
+- **V2-3F-R5 Corrective Release:** `v2.3f-r5-nh44-dhi-authoritative-correction`.
+- **Authoritative 2D Spatial GPM Grid Intersection:** 11 native 2D 0.1° GPM cells across 5 latitude bands (33.0°N to 33.5°N) mapped to all 158 corridor segments with 100% Path A/B agreement (`outputs/reports/v2_3f_r5_native_cell_evidence.csv`).
+- **Unproven Support Locations:** Marked 8 historical 0.02° locations as `ROLE_UNPROVEN` and excluded them from scientific calculations (`v2_3f_r5_derived_support_location_evidence.csv`).
+- **Scenario Provenance Alignment:** Corrected S4 and S5 provenance to repository-defined hypothetical stress tests (`v2_3f_r5_authoritative_scenario_definitions.csv`).
+- **DHI_D Redundancy Audit:** `DHI_D = sqrt(DHI_B)` proved with 0.0 machine-precision residual in full precision and 4.29e-5 on 4-decimal rounded values (`v2_3f_r5_dhi_d_redundancy_audit.csv`).
+- **Full POSIX Manifest Coverage:** Complete manifest covering outputs, docs, UI, scripts, tests, and build logs (`v2_3f_r5_output_hashes.csv`).
+
+---
+
 ## [2.3.10] - 2026-08-07
 
 ### Added - V2-3F-R4 NH-44 DHI Scientific Evidence and Release-Integrity Completion

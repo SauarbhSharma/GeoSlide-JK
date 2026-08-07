@@ -71,16 +71,18 @@ export default function CorridorPage() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-2xl font-bold text-slate-100 flex items-center gap-2">
-                <Activity className="w-6 h-6 text-emerald-400" />
-                NH-44 Corridor Dynamic Hazard & Formulation Robustness
-              </h1>
-              <span className="px-2.5 py-0.5 rounded text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                V2-3F-R4 Complete
+              <span className="px-2.5 py-0.5 text-xs font-semibold bg-emerald-900/50 text-emerald-300 border border-emerald-700/50 rounded-full">
+                V2-3F-R5 RELEASE
+              </span>
+              <span className="text-xs text-slate-400 font-mono">
+                Tag: v2.3f-r5-nh44-dhi-authoritative-correction
               </span>
             </div>
-            <p className="text-sm text-slate-400 mt-1">
-              Multi-formulation Dynamic Hazard Index (DHI) screening, consensus percentiles, and native GPM grid cell evidence across 158 segments (Udhampur–Banihal).
+            <h1 className="text-2xl font-bold text-slate-100 mt-1">
+              NH-44 Strategic Corridor Monitor
+            </h1>
+            <p className="text-sm text-slate-400">
+              158 Corridor Segments | 11 Native 2D GPM Cells (33.0°N..33.5°N) | Static Susceptibility Baseline
             </p>
           </div>
           
