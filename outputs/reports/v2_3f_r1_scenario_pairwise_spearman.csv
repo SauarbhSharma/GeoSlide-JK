@@ -1,0 +1,37 @@
+scenario_id,pair,sample_size,spearman_rho,kendall_tau,status,notes
+S1,DHI_A vs DHI_B,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S1,DHI_A vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S1,DHI_A vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S1,DHI_B vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S1,DHI_B vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S1,DHI_C vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S2,DHI_A vs DHI_B,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S2,DHI_A vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S2,DHI_A vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S2,DHI_B vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S2,DHI_B vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S2,DHI_C vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S3,DHI_A vs DHI_B,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S3,DHI_A vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S3,DHI_A vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S3,DHI_B vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S3,DHI_B vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S3,DHI_C vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S4,DHI_A vs DHI_B,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S4,DHI_A vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S4,DHI_A vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S4,DHI_B vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S4,DHI_B vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S4,DHI_C vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S5,DHI_A vs DHI_B,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S5,DHI_A vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S5,DHI_A vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S5,DHI_B vs DHI_C,158,1.0,0.0,INDEPENDENT_FORMULATION,Unrounded Spearman calculation on raw segment DHI values.
+S5,DHI_B vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+S5,DHI_C vs DHI_D,158,1.0,0.0,MONOTONICALLY_REDUNDANT,Unrounded Spearman calculation on raw segment DHI values.
+POOLED_ACTIVE_S1_S5,DHI_A vs DHI_B,790,1.0,0.801,INDEPENDENT_FORMULATION,Pooled active scenario population (790 rows).
+POOLED_ACTIVE_S1_S5,DHI_A vs DHI_C,790,1.0,0.801,INDEPENDENT_FORMULATION,Pooled active scenario population (790 rows).
+POOLED_ACTIVE_S1_S5,DHI_A vs DHI_D,790,1.0,0.801,MONOTONICALLY_REDUNDANT,Pooled active scenario population (790 rows).
+POOLED_ACTIVE_S1_S5,DHI_B vs DHI_C,790,1.0,0.801,INDEPENDENT_FORMULATION,Pooled active scenario population (790 rows).
+POOLED_ACTIVE_S1_S5,DHI_B vs DHI_D,790,1.0,0.801,MONOTONICALLY_REDUNDANT,Pooled active scenario population (790 rows).
+POOLED_ACTIVE_S1_S5,DHI_C vs DHI_D,790,1.0,0.801,MONOTONICALLY_REDUNDANT,Pooled active scenario population (790 rows).

@@ -1,0 +1,6 @@
+scenario_id,valid_rows,mean_percentile_range,median_percentile_range,q75_percentile_range,q90_percentile_range,q95_percentile_range,max_percentile_range,stable_count,moderate_agreement_count,sensitive_count
+S1,158,0.0,0.0,0.0,0.0,0.0,0.0,158,0,0
+S2,158,0.0,0.0,0.0,0.0,0.0,0.0,158,0,0
+S3,158,0.0,0.0,0.0,0.0,0.0,0.0,158,0,0
+S4,158,0.0,0.0,0.0,0.0,0.0,0.0,158,0,0
+S5,158,0.0,0.0,0.0,0.0,0.0,0.0,158,0,0
