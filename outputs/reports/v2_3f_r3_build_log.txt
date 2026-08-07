@@ -1,0 +1,59 @@
+
+============================================================
+GEOSLIDE-JK V2 — V2-3F-R3 NEXT.JS PRODUCTION BUILD LOG
+============================================================
+Command: npm run build
+Working Directory: D:\Projects\GeoSlide_JK\apps\web
+Start Timestamp: 2026-08-07T10:57:40.297866+00:00
+End Timestamp: 2026-08-07T10:58:49.729814+00:00
+Exit Code: 0
+Status: PASSED (100% OK)
+============================================================
+STDOUT:
+
+> geoslide-web@0.1.0 build
+> next build
+
+  â–² Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ âœ“ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/18) ...
+   Generating static pages (4/18) 
+   Generating static pages (8/18) 
+   Generating static pages (13/18) 
+ âœ“ Generating static pages (18/18)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+â”Œ â—‹ /                                    6.34 kB         363 kB
+â”œ â—‹ /_not-found                          873 B          88.1 kB
+â”œ â—‹ /advisories                          4.48 kB         102 kB
+â”œ â—‹ /corridor                            5.95 kB         103 kB
+â”œ â—‹ /districts                           4.79 kB         102 kB
+â”œ â—‹ /explorer                            834 B           354 kB
+â”œ â—‹ /help                                3.2 kB          100 kB
+â”œ â—‹ /journey                             4.49 kB         102 kB
+â”œ â—‹ /location-check                      3.63 kB         104 kB
+â”œ â—‹ /operations                          2.2 kB          356 kB
+â”œ â—‹ /preparedness                        3.33 kB         101 kB
+â”œ â—‹ /rainfall                            2.89 kB         103 kB
+â”œ â—‹ /reports                             3.21 kB         100 kB
+â”œ â—‹ /status                              5.45 kB         103 kB
+â”œ â—‹ /transparency                        4.57 kB         102 kB
+â”” â—‹ /vulnerable                          382 B           357 kB
++ First Load JS shared by all            87.3 kB
+  â”œ chunks/117-843dbcf3e1a42497.js       31.7 kB
+  â”œ chunks/fd9d1056-b31b2def6e2bca73.js  53.6 kB
+  â”” other shared chunks (total)          1.9 kB
+
+
+â—‹  (Static)  prerendered as static content
+
+
+STDERR:
+

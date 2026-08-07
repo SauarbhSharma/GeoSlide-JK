@@ -1,0 +1,8 @@
+audit_check,status,details
+v2_3a_to_v2_3e_immutability,PASS,100% hash match across all released upstream artifacts.
+gpm_native_vs_support_node_disambiguation,PASS,Verified 2 native 0.1° GPM cells (98 & 60 segs) and 8 derived 0.02° support nodes.
+scenario_definition_provenance_correction,PASS,Verified all input_source files exist in repository configs/.
+zero_variance_spearman_null_handling,PASS,Verified constant vectors return null/blank spearman_rho and status UNDEFINED_ZERO_VARIANCE.
+reproducibility_path_independence,PASS,Verified 100% repository-relative paths in scripts/run_v2_3f_r3_reproducibility.py.
+no_landslide_leakage,PASS,Zero landslide inventory columns enter scoring or consensus.
+no_operational_warnings,PASS,"Zero alert levels, emergency warnings, or road-closure recommendations created."

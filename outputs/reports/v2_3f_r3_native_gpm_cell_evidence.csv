@@ -1,0 +1,3 @@
+native_cell_id,center_latitude_deg,center_longitude_deg,resolution_deg,assigned_segments_count,assigned_segment_range,segment_ids_sha256,mapping_source,verification_status
+GPM_NATIVE_33.25N_75.15E,33.25,75.15,0.1,98,NH44_SEG_001..NH44_SEG_098,f10e8df1a6dd139e,Authoritative GPM IMERG 0.1-degree Grid Transform,VERIFIED_EXACT
+GPM_NATIVE_33.25N_75.25E,33.25,75.25,0.1,60,NH44_SEG_099..NH44_SEG_158,0ab95640f695a880,Authoritative GPM IMERG 0.1-degree Grid Transform,VERIFIED_EXACT
