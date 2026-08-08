@@ -223,7 +223,8 @@ If you use GeoSlide-JK software, datasets, or methodology in your research, plea
 
 ## 🔬 V2-3F-R7 Scientific Evidence & Release Integrity
 
-### GeoSlide-JK Release Baseline & Current Stable Version: `2.3.13`
+### GeoSlide-JK Release Baseline
+- **Current Stable Version:** `2.3.13`
 - **Current Milestone Tag:** `v2.3f-r7-nh44-dhi-cryptographic-evidence-correction`
 - **Release Date:** August 8, 2026
 - **Status:** PASSED (V2-3F-R7 NH-44 DHI Cryptographic Evidence, Authoritative Provenance and Reproducibility Correction)
