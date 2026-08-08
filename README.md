@@ -221,12 +221,12 @@ If you use GeoSlide-JK software, datasets, or methodology in your research, plea
 
 ---
 
-## 🔬 V2-3F-R6 Scientific Evidence & Release Integrity
+## 🔬 V2-3F-R7 Scientific Evidence & Release Integrity
 
-### GeoSlide-JK Release Baseline & **Current Stable Version:** `2.3.12`
-- **Current Milestone Tag:** `v2.3f-r6-nh44-dhi-forensic-evidence-correction`
+### GeoSlide-JK Release Baseline & Current Stable Version: `2.3.13`
+- **Current Milestone Tag:** `v2.3f-r7-nh44-dhi-cryptographic-evidence-correction`
 - **Release Date:** August 8, 2026
-- **Status:** PASSED (V2-3F-R6 NH-44 DHI Forensic Evidence, Variable Provenance and Clean-Clone Correction)
+- **Status:** PASSED (V2-3F-R7 NH-44 DHI Cryptographic Evidence, Authoritative Provenance and Reproducibility Correction)
 - **Authoritative 2D GPM Spatial Grid Intersection:** 11 native 2D 0.1° GPM cells across 5 latitude bands (33.0°N to 33.5°N) mapped to all 158 corridor segments with 100% Path A/B agreement.
 - **Unproven 8 Support Locations:** Marked `ROLE_UNPROVEN` and excluded from scientific calculations.
 - **Scenario Provenance:** Corrected S4 and S5 to repository-defined hypothetical stress test classifications.
