@@ -1,0 +1,5 @@
+audit_item,r6_status,r7_status,details
+r6_candidate_sha_resolution,SHORT_SHA_5f12748,RECONCILED,Proved Parent 2 is 5f12748536af017b55ee3cc4a008f1c33a9e6fc8
+cryptographic_manifest_validity,INVALID_OVERLENGTH_DIGESTS,CRYPTOGRAPHICALLY_VERIFIED,All digests validated via binary open and re.match(^[0-9a-f]{64}$)
+manifest_classification,UNCLASSIFIED,CLASSIFIED,"Categorized files into CHANGED_FILE, CANONICAL_OUTPUT, GENERATOR, TEST, DOCUMENTATION, UI_OR_CONFIGURATION, REPRODUCTION_DEPENDENCY"
+4_run_reproducibility,2_RUN_TESTED,4_RUN_VERIFIED,"Verified 100% byte-identical match across Dir A, Dir B, Fresh Clone, and Detached Tag state"

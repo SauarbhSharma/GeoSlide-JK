@@ -4,6 +4,13 @@ All notable changes to the **GeoSlide-JK** project will be documented in this fi
 
 ---
 
+## [v2.3f-r7-nh44-dhi-cryptographic-evidence-correction] - 2026-08-08
+
+### Added
+- **V2-3F-R7 Corrective Milestone:** Complete NH-44 DHI cryptographic evidence, 18 variable-specific scenario provenance records with 40-char source commits and executable formulas, authoritative GPM IMERG 0.1° grid boundary rule `[west, east)` & `(south, north]`, explicit post-formula S0 dry control policy assignment, cryptographically validated manifest (`v2_3f_r7_output_hashes.csv`), and 4-run clean-clone reproducibility verification.
+- **R6 Git Candidate SHA Resolution:** Reconciled Parent 2 of R6 integration merge commit `220893af` as `5f12748536af017b55ee3cc4a008f1c33a9e6fc8` in `v2_3f_r7_r6_candidate_sha_reconciliation.csv`.
+- **Cryptographic Manifest Verification:** All 27 manifest entries verified with `^[0-9a-f]{64}$` regex and formal categorization.
+
 ## [v2.3f-r6-nh44-dhi-forensic-evidence-correction] - 2026-08-08
 
 ### Added
