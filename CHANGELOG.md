@@ -4,6 +4,13 @@ All notable changes to the **GeoSlide-JK** project will be documented in this fi
 
 ---
 
+## [v2.3f-r6-nh44-dhi-forensic-evidence-correction] - 2026-08-08
+
+### Added
+- **V2-3F-R6 Corrective Milestone:** Complete NH-44 DHI forensic evidence, 18 variable-specific scenario provenance records, authoritative GPM IMERG 0.1° grid boundary rule `[west, east)` & `(south, north]`, explicit post-formula S0 dry control policy assignment, complete deterministic manifest (`v2_3f_r6_output_hashes.csv`), and 4-run clean-clone reproducibility verification.
+- **R5 Git Candidate SHA Resolution:** Reconciled Parent 2 of R5 integration merge commit `16ec09fd` as `a30546271285d1f680e777235fc13da0935c49e4` in `v2_3f_r6_r5_candidate_sha_reconciliation.csv`.
+- **Deterministic Audit Summary:** Replaced volatile build/test logs with `v2_3f_r6_deterministic_audit_summary.csv`.
+
 ## [2.3.11] - 2026-08-08
 
 ### Added
