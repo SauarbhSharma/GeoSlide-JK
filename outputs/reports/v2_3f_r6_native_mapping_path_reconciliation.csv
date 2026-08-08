@@ -1,0 +1,2 @@
+comparison_item,method_a_description,method_b_description,total_segments_compared,exact_agreement_count,discrepancy_count,reconciliation_status
+158_SEGMENT_NATIVE_CELL_MAPPING,"Raster affine transform indexing col=floor((lon+180)/0.1), row=floor((90-lat)/0.1)","2D Polygon bounding-box spatial intersection with [West, East) & (South, North] boundary rule",158,158,0,VERIFIED_100PERCENT_AGREEMENT

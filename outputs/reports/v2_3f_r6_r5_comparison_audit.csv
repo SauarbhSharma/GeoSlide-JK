@@ -1,0 +1,6 @@
+audit_item,r5_status,r6_status,details
+r5_candidate_sha_resolution,AMBIGUOUS_TEXT_REPORT,RECONCILED,Proved Parent 2 is a30546271285d1f680e777235fc13da0935c49e4
+manifest_completeness,EXCLUDED_7_FILES,100PERCENT_COMPLETE,"Manifest includes package.json, lockfile, eslintrc, components, UI, scripts, docs, and tests"
+scenario_variable_provenance,SHARED_SOURCE_COLUMNS,INDIVIDUAL_VARIABLE_SOURCES,18 distinct provenance records mapping each variable to its exact column/symbol
+s0_dry_control_math,VERIFIED_EXACT_FOR_0/0,POST_FORMULA_POLICY_RULE,0/0 ratio recorded as NULL/NaN; 0.0 value designated as post-formula UI policy rule
+volatile_log_handling,TRACKED_BUILD_LOGS,DETERMINISTIC_AUDIT_SUMMARY,Volatile logs replaced by deterministic v2_3f_r6_deterministic_audit_summary.csv
