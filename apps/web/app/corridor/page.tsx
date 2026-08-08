@@ -71,16 +71,19 @@ export default function CorridorPage() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-800 pb-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 text-xs font-semibold bg-emerald-900/50 text-emerald-300 border border-emerald-700/50 rounded-full">
-                V2-3F-R5 RELEASE
+              <span className="px-2.5 py-0.5 text-xs font-semibold bg-amber-900/50 text-amber-300 border border-amber-700/50 rounded-full">
+                V2-3F-R8A1 CANDIDATE
               </span>
               <span className="text-xs text-slate-400 font-mono">
-                Tag: v2.3f-r5-nh44-dhi-authoritative-correction
+                Candidate Branch: geoslide-jk-v2-nh44-v2-3f-r8a1-clean-clone-scientific-correction
               </span>
             </div>
-            <h1 className="text-2xl font-bold text-slate-100 mt-1">
-              NH-44 Strategic Corridor Monitor
+            <h1 className="text-2xl font-bold tracking-tight text-white mt-1">
+              NH-44 Corridor Dynamic Hazard Index (DHI) Explorer
             </h1>
+            <p className="text-sm text-amber-400/90 font-mono mt-1">
+              REPOSITORY_DECLARED_IMERG_COMPATIBLE_ANALYSIS_GRID — EMPIRICAL RASTER PROVENANCE NOT PROVEN
+            </p>
             <p className="text-sm text-slate-400">
               158 Corridor Segments | 11 Native 2D GPM Cells (33.0°N..33.5°N) | Static Susceptibility Baseline
             </p>

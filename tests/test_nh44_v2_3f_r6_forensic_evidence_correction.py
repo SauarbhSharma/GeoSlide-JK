@@ -107,8 +107,7 @@ class TestNH44V23FR6ForensicEvidenceCorrection(unittest.TestCase):
             with open(fpath, "rb") as fh:
                 fbytes = fh.read()
             real_sha = hashlib.sha256(fbytes).hexdigest()
-            if r["file_path"] in ["CHANGELOG.md", "README.md", "apps/web/app/corridor/page.tsx", "tests/test_nh44_v2_3f_r6_forensic_evidence_correction.py"]:
-                continue
+            self.assertEqual(r["sha256"], real_sha, f"SHA mismatch for artifact {r['artifact_alias']} at {r['file_path']}")
             self.assertEqual(r["file_size_bytes"], len(fbytes), f"Size mismatch for artifact {r['artifact_alias']} at {r['file_path']}")
 
 if __name__ == "__main__":
