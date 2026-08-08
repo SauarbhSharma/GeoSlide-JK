@@ -3,6 +3,6 @@ r7_git_history_reconciliation,2_MERGES_RECORDED,RECONCILED,Recorded 2 merge comm
 historical_manifest_preservation,MODIFIED_R5_R6,RESTORED_BYTE_FOR_BYTE,Restored R5 and R6 output hashes byte-for-byte from release tags
 gitattributes_canonical_bytes,MISSING,TRACKED_LF_ENFORCED,Added root .gitattributes enforcing text eol=lf and binary formats
 grid_provenance_truthfulness,HARDCODED_AUTHORITATIVE,PATH_B_DECLARED_GRID,Classified grid as REPOSITORY_DECLARED_IMERG_COMPATIBLE_ANALYSIS_GRID under Path B
-mapping_methods_independence,SHARED_AFFINE_FORMULA,GENUINELY_INDEPENDENT,Method A uses Affine inverse; Method B independently constructs cell BBoxes
+mapping_methods_independence,SHARED_AFFINE_FORMULA,GENUINELY_INDEPENDENT,Method A uses exact decimal inverse; Method B independently searches cell BBoxes
 scenario_definitions_source,HARDCODED_LIST,CANONICAL_YAML_SOURCE,Pipeline and provenance reading configs/scenario_definitions.yaml
-scientific_audits_implementation,HARDCODED_ZEROS,DYNAMIC_NUMPY,"Dynamic Spearman, Kendall tau, uncertainty, and residual calculations via pure numpy"
+scientific_audits_implementation,HARDCODED_ZEROS,DYNAMIC_SCIPY_STATS,"Dynamic Spearman, Kendall tau, uncertainty, and residual calculations via scipy.stats"

@@ -1,5 +1,5 @@
 gate_name,command,exit_code,status,details
-python_unit_tests,PYTHONPATH=src python -m unittest discover -s tests -p 'test_*.py',0,PASSED_ALL_360_TESTS,360 unit tests passed cleanly
+python_unit_tests,PYTHONPATH=src python -m unittest discover -s tests -p 'test_*.py',0,PASSED_ALL_TESTS,All unit tests passed cleanly
 typescript_typecheck,npx tsc --noEmit,0,PASSED_ZERO_ERRORS,0 TypeScript compilation errors
 non_interactive_eslint,npm run lint,0,PASSED_ZERO_ERRORS,0 ESLint errors
 nextjs_production_build,npm run build,0,PASSED_18_STATIC_PAGES,18 static pages compiled successfully

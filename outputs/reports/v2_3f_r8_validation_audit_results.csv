@@ -4,6 +4,6 @@ gpm_native_11_cell_2d_intersection,PASS,Verified 11 declared 2D 0.1° cells acro
 scenario_definition_provenance_correction,PASS,Verified 18 variable-specific provenance records with exact symbol citations.
 zero_variance_spearman_null_handling,PASS,Verified constant vectors return null/blank spearman_rho and status UNDEFINED_ZERO_VARIANCE.
 dhi_d_redundancy_exclusion,PASS,Verified max absolute residual |DHI_D - sqrt(DHI_B)| = 0.0 in full precision and 4.29e-5 on rounded values.
-reproducibility_path_independence,PASS,Verified 100% repository-relative paths in scripts/run_v2_3f_r8_reproducibility.py.
+reproducibility_path_independence,PASS,Verified 100% repository-relative paths in scripts/run_v2_3f_r8a1_reproducibility.py.
 no_landslide_leakage,PASS,Zero landslide inventory columns enter scoring or consensus.
 no_operational_warnings,PASS,"Zero alert levels, emergency warnings, or road-closure recommendations created."
