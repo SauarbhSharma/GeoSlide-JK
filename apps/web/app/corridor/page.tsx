@@ -5,6 +5,8 @@ import { Header } from '@/components/layout/Header';
 import { ResearchDisclaimer } from '@/components/layout/ResearchDisclaimer';
 import { Activity, ShieldAlert, Layers, ChevronRight, AlertTriangle, Info, Database } from 'lucide-react';
 
+import r8a2_2Evidence from '@/src/data/r8a2_2_corridor_evidence.json';
+
 interface ScenarioInfo {
   id: string;
   name: string;
@@ -21,7 +23,6 @@ interface SegmentRobustnessData {
   name: string;
   length: string;
   nativeCellId: string;
-  supportNodeId: string;
   cellSegments: number;
   dhiA: number;
   dhiB: number;
@@ -39,23 +40,23 @@ interface SegmentRobustnessData {
 
 export default function CorridorPage() {
   const scenarios: ScenarioInfo[] = [
-    { id: 'S0', name: 'S0 — DRY_REFERENCE', class: 'DRY_CONTROL', r24: '0 mm', r72: '0 mm', api7: '0 mm', basis: 'Zero Rainfall Baseline (Unranked Control)', source: 'configs/rainfall_thresholds.yaml' },
-    { id: 'S1', name: 'S1 — MODERATE_RAIN', class: 'CLIMATOLOGY_DERIVED_REFERENCE', r24: '25 mm', r72: '45 mm', api7: '15 mm', basis: 'July Monsoon P50 Baseline', source: 'nh44_rainfall_climatology_percentiles.parquet' },
-    { id: 'S2', name: 'S2 — HEAVY_24H', class: 'CLIMATOLOGY_DERIVED_REFERENCE', r24: '75 mm', r72: '110 mm', api7: '35 mm', basis: 'July Monsoon P90 Baseline', source: 'nh44_rainfall_climatology_percentiles.parquet' },
-    { id: 'S3', name: 'S3 — PROLONGED_72H', class: 'CLIMATOLOGY_DERIVED_REFERENCE', r24: '90 mm', r72: '150 mm', api7: '55 mm', basis: 'July Monsoon P95 Baseline', source: 'nh44_rainfall_climatology_percentiles.parquet' },
-    { id: 'S4', name: 'S4 — SATURATED_ANTECEDENT', class: 'COMPOUND_STRESS_TEST', r24: '120 mm', r72: '180 mm', api7: '95 mm', basis: 'High Antecedent + Heavy 24h Compound Basis', source: 'configs/rainfall_thresholds.yaml' },
-    { id: 'S5', name: 'S5 — EXTREME_COMPOUND', class: 'SYNTHETIC_STRESS_TEST', r24: '160 mm', r72: '250 mm', api7: '140 mm', basis: 'P99 Compound Synthetic Stress Test', source: 'configs/rainfall_thresholds.yaml' },
+    { id: 'S0', name: 'S0 — DRY_REFERENCE', class: 'DRY_CONTROL', r24: '0 mm', r72: '0 mm', api7: '0 mm', basis: 'Zero Rainfall Baseline (Unranked Control)', source: 'configs/scenario_definitions.yaml' },
+    { id: 'S1', name: 'S1 — MODERATE_RAIN', class: 'MIXED_EMPIRICAL_REPOSITORY_DEFINED', r24: '25 mm', r72: '45 mm', api7: '15 mm', basis: 'R24 July P50 Empirical, R72/API7 Repository-Defined Parameter', source: 'configs/scenario_definitions.yaml' },
+    { id: 'S2', name: 'S2 — HEAVY_24H', class: 'CLIMATOLOGY_DERIVED_EMPIRICAL', r24: '75 mm', r72: '110 mm', api7: '35 mm', basis: 'July Monsoon P90 Empirical Baseline', source: 'nh44_rainfall_climatology_percentiles.parquet' },
+    { id: 'S3', name: 'S3 — PROLONGED_72H', class: 'MIXED_EMPIRICAL_REPOSITORY_DEFINED', r24: '90 mm', r72: '150 mm', api7: '55 mm', basis: 'R24 July P95 Empirical, R72/API7 Repository-Defined Parameter', source: 'configs/scenario_definitions.yaml' },
+    { id: 'S4', name: 'S4 — SATURATED_ANTECEDENT', class: 'COMPOUND_HYPOTHETICAL_STRESS_TEST', r24: '120 mm', r72: '180 mm', api7: '95 mm', basis: 'Repository-Defined S4 Compound Stress Test', source: 'configs/scenario_definitions.yaml' },
+    { id: 'S5', name: 'S5 — EXTREME_COMPOUND', class: 'SYNTHETIC_HYPOTHETICAL_STRESS_TEST', r24: '160 mm', r72: '250 mm', api7: '140 mm', basis: 'Repository-Defined S5 Synthetic Stress Test', source: 'configs/scenario_definitions.yaml' },
   ];
 
   const [selectedScenario, setSelectedScenario] = useState<ScenarioInfo>(scenarios[2]); // Default S2 Heavy 24h
   const [selectedFormulation, setSelectedFormulation] = useState<'CONSENSUS' | 'DHI_A' | 'DHI_B' | 'DHI_C' | 'DHI_D'>('CONSENSUS');
 
   const sampleSegments: SegmentRobustnessData[] = [
-    { chainage: 'Km 142.0 – 142.5', name: 'Panthyal Cut-Slope', length: '500 m', nativeCellId: 'GPM_NATIVE_33.25N_75.15E', supportNodeId: 'SUPPORT_NODE_33.25N_75.14E', cellSegments: 98, dhiA: 0.5032, dhiB: 0.5032, dhiC: 0.5032, dhiD: 0.7094, pctA: 50.32, pctB: 50.32, pctC: 50.32, consensusPct: 50.32, pctRange: 0.0, stability: 'NON_DISCRIMINATING_COMPLETE_TIE', structureType: 'SURFACE', structureNote: 'Direct cut slope surface exposure' },
-    { chainage: 'Km 148.0 – 148.5', name: 'Ramban Bypass Sector', length: '500 m', nativeCellId: 'GPM_NATIVE_33.25N_75.15E', supportNodeId: 'SUPPORT_NODE_33.25N_75.14E', cellSegments: 98, dhiA: 0.5032, dhiB: 0.5032, dhiC: 0.5032, dhiD: 0.7094, pctA: 50.32, pctB: 50.32, pctC: 50.32, consensusPct: 50.32, pctRange: 0.0, stability: 'NON_DISCRIMINATING_COMPLETE_TIE', structureType: 'SURFACE', structureNote: 'Direct cut slope surface exposure' },
-    { chainage: 'Km 153.0 – 153.5', name: 'Digdol Landslide Zone', length: '500 m', nativeCellId: 'GPM_NATIVE_33.25N_75.15E', supportNodeId: 'SUPPORT_NODE_33.25N_75.16E', cellSegments: 98, dhiA: 0.5032, dhiB: 0.5032, dhiC: 0.5032, dhiD: 0.7094, pctA: 50.32, pctB: 50.32, pctC: 50.32, consensusPct: 50.32, pctRange: 0.0, stability: 'NON_DISCRIMINATING_COMPLETE_TIE', structureType: 'SURFACE', structureNote: 'Direct cut slope surface exposure' },
-    { chainage: 'Km 165.5 – 166.0', name: 'T5 Tunnel Interior', length: '500 m', nativeCellId: 'GPM_NATIVE_33.25N_75.15E', supportNodeId: 'SUPPORT_NODE_33.25N_75.18E', cellSegments: 98, dhiA: 0.5032, dhiB: 0.5032, dhiC: 0.5032, dhiD: 0.7094, pctA: 50.32, pctB: 50.32, pctC: 50.32, consensusPct: 50.32, pctRange: 0.0, stability: 'NON_DISCRIMINATING_COMPLETE_TIE', structureType: 'TUNNEL', structureNote: 'SURFACE_HAZARD_INTERPRETATION_LIMITED: Subsurface tunnel crown decouples surface runoff' },
-    { chainage: 'Km 178.0 – 178.5', name: 'Banihal River Viaduct', length: '500 m', nativeCellId: 'GPM_NATIVE_33.25N_75.25E', supportNodeId: 'SUPPORT_NODE_33.25N_75.22E', cellSegments: 60, dhiA: 0.5032, dhiB: 0.5032, dhiC: 0.5032, dhiD: 0.7094, pctA: 50.32, pctB: 50.32, pctC: 50.32, consensusPct: 50.32, pctRange: 0.0, stability: 'NON_DISCRIMINATING_COMPLETE_TIE', structureType: 'BRIDGE', structureNote: 'ELEVATED_STRUCTURE_CONTEXT: Elevated deck over river crossing' },
+    { chainage: 'Km 142.0 – 142.5', name: 'Panthyal Cut-Slope', length: '500 m', nativeCellId: 'GPM_NATIVE_33.25N_75.15E', cellSegments: 98, dhiA: 0.5032, dhiB: 0.5032, dhiC: 0.5032, dhiD: 0.7094, pctA: 50.32, pctB: 50.32, pctC: 50.32, consensusPct: 50.32, pctRange: 0.0, stability: 'NON_DISCRIMINATING_COMPLETE_TIE', structureType: 'SURFACE', structureNote: 'Direct cut slope surface exposure' },
+    { chainage: 'Km 148.0 – 148.5', name: 'Ramban Bypass Sector', length: '500 m', nativeCellId: 'GPM_NATIVE_33.25N_75.15E', cellSegments: 98, dhiA: 0.5032, dhiB: 0.5032, dhiC: 0.5032, dhiD: 0.7094, pctA: 50.32, pctB: 50.32, pctC: 50.32, consensusPct: 50.32, pctRange: 0.0, stability: 'NON_DISCRIMINATING_COMPLETE_TIE', structureType: 'SURFACE', structureNote: 'Direct cut slope surface exposure' },
+    { chainage: 'Km 153.0 – 153.5', name: 'Digdol Landslide Zone', length: '500 m', nativeCellId: 'GPM_NATIVE_33.25N_75.15E', cellSegments: 98, dhiA: 0.5032, dhiB: 0.5032, dhiC: 0.5032, dhiD: 0.7094, pctA: 50.32, pctB: 50.32, pctC: 50.32, consensusPct: 50.32, pctRange: 0.0, stability: 'NON_DISCRIMINATING_COMPLETE_TIE', structureType: 'SURFACE', structureNote: 'Direct cut slope surface exposure' },
+    { chainage: 'Km 165.5 – 166.0', name: 'T5 Tunnel Interior', length: '500 m', nativeCellId: 'GPM_NATIVE_33.25N_75.15E', cellSegments: 98, dhiA: 0.5032, dhiB: 0.5032, dhiC: 0.5032, dhiD: 0.7094, pctA: 50.32, pctB: 50.32, pctC: 50.32, consensusPct: 50.32, pctRange: 0.0, stability: 'NON_DISCRIMINATING_COMPLETE_TIE', structureType: 'TUNNEL', structureNote: 'SURFACE_HAZARD_INTERPRETATION_LIMITED: Subsurface tunnel crown decouples surface runoff' },
+    { chainage: 'Km 178.0 – 178.5', name: 'Banihal River Viaduct', length: '500 m', nativeCellId: 'GPM_NATIVE_33.25N_75.25E', cellSegments: 60, dhiA: 0.5032, dhiB: 0.5032, dhiC: 0.5032, dhiD: 0.7094, pctA: 50.32, pctB: 50.32, pctC: 50.32, consensusPct: 50.32, pctRange: 0.0, stability: 'NON_DISCRIMINATING_COMPLETE_TIE', structureType: 'BRIDGE', structureNote: 'ELEVATED_STRUCTURE_CONTEXT: Elevated deck over river crossing' },
   ];
 
   const [selectedSeg, setSelectedSeg] = useState<SegmentRobustnessData>(sampleSegments[0]);
@@ -72,10 +73,10 @@ export default function CorridorPage() {
           <div>
             <div className="flex items-center gap-2">
               <span className="px-2.5 py-0.5 text-xs font-semibold bg-amber-900/50 text-amber-300 border border-amber-700/50 rounded-full">
-                V2-3F-R8A1 CANDIDATE
+                V2-3F-R8A2-2 CANDIDATE
               </span>
               <span className="text-xs text-slate-400 font-mono">
-                Candidate Branch: geoslide-jk-v2-nh44-v2-3f-r8a1-clean-clone-scientific-correction
+                Candidate Branch: geoslide-jk-v2-nh44-v2-3f-r8a2-2-clean-serial-recovery
               </span>
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-white mt-1">
@@ -85,7 +86,7 @@ export default function CorridorPage() {
               REPOSITORY_DECLARED_IMERG_COMPATIBLE_ANALYSIS_GRID — EMPIRICAL RASTER PROVENANCE NOT PROVEN
             </p>
             <p className="text-sm text-slate-400">
-              158 Corridor Segments | 11 Native 2D GPM Cells (33.0°N..33.5°N) | Static Susceptibility Baseline
+              {r8a2_2Evidence.summary.total_segments} Corridor Segments | {r8a2_2Evidence.summary.occupied_native_cells} Occupied Native 2D GPM Cells ({r8a2_2Evidence.summary.latitude_rows_count} Latitude Rows, {r8a2_2Evidence.summary.longitude_columns_count} Longitude Columns) | Static Susceptibility Baseline
             </p>
           </div>
           
@@ -112,10 +113,10 @@ export default function CorridorPage() {
         <div className="bg-emerald-950/30 border border-emerald-800/40 rounded-xl p-4 text-xs text-emerald-300 space-y-1">
           <div className="font-semibold text-emerald-200 flex items-center gap-1.5">
             <Info className="w-4 h-4 text-emerald-400" />
-            Authoritative V2-3F-R4 Dynamic Hazard Disclosures & Truthfulness
+            V2-3F-R8A2-2 Dynamic Hazard Disclosures & Truthfulness
           </div>
           <p>
-            - **2 Native GPM 0.1° Cells:** Corridor segments intersect exactly 2 native 0.1° (~11 km) GPM IMERG grid cells (98 segments in cell 75.15°E, 60 segments in cell 75.25°E). The 8 locations are derived 0.02° corridor-support interpolation nodes.
+            - **11 Native 2D 0.1° Cells:** 158 corridor segments intersect 11 native 0.1° IMERG cells spanning 6 latitude rows (33.0°N..33.5°N) and 3 longitude columns (75.0°E..75.2°E).
           </p>
           <p>
             - **Zero-Variance Within-Scenario Rank Correlation:** Uniform corridor-wide scenario rainfall broadcasting yields constant DHI values within each scenario S1–S5. Within-scenario rank correlation is mathematically undefined (`status = UNDEFINED_ZERO_VARIANCE`).
