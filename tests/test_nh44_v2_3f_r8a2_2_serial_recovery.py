@@ -33,7 +33,7 @@ def test_01_independently_derived_scientific_fixtures():
         {"scenario_id": "S5", "dhi_a": 0.5, "dhi_b": 0.5, "dhi_c": 0.5, "dhi_d": 0.7071}
     ])
     df_sp = compute_spearman_and_kendall_audits(df_fix)
-    
+
     expected_columns = [
         "scenario_id", "pair", "raw_column_x", "raw_column_y", "sample_size",
         "spearman_rho", "spearman_p_value", "kendall_tau", "status", "reason",
@@ -80,7 +80,7 @@ def test_01_independently_derived_scientific_fixtures():
     assert observed_tuples == expected_tuples
     assert len(set(observed_tuples)) == 30
     assert not df_sp.duplicated(subset=["scenario_id", "pair"]).any()
-    
+
     scipy_pairs_checked = 0
     from scipy import stats
 
@@ -124,7 +124,7 @@ def test_02_native_cell_boundary_cases():
     assert m_west["col"] == 2551
     assert m_west["west"] == 75.10
     assert m_west["east"] == 75.20
-    
+
     m_inside = map_segment_method_a(33.25, 75.15)
     assert m_inside["col"] == 2551
     assert m_inside["west"] == 75.10
@@ -543,7 +543,7 @@ def test_20_no_self_declared_pass_evidence():
         PROJECT_ROOT / "src" / "geoslide" / "scientific_audits.py",
         PROJECT_ROOT / "apps" / "web" / "app" / "corridor" / "page.tsx",
     ]
-    
+
     prohibited_pattern = re.compile(
         r"(?<![A-Za-z0-9_])"
         r"(?:"
@@ -556,7 +556,7 @@ def test_20_no_self_declared_pass_evidence():
         r"(?![A-Za-z0-9_])",
         re.IGNORECASE,
     )
-    
+
     # Canary assertions
     canary_prohibited = [
         "PASS",
@@ -568,22 +568,22 @@ def test_20_no_self_declared_pass_evidence():
     ]
     for bad_tok in canary_prohibited:
         assert prohibited_pattern.search(bad_tok), f"Canary failed: '{bad_tok}' was not rejected by prohibited_pattern"
-        
+
     canary_allowed = ["MODERATE_AGREEMENT"]
     for good_tok in canary_allowed:
         assert not prohibited_pattern.search(good_tok), f"Canary failed: '{good_tok}' was incorrectly rejected by prohibited_pattern"
-    
+
     literal_zero_metric_pattern = re.compile(
         r"\b(?:mismatch_count|hash_mismatch_count|size_mismatch_count|"
         r"total_mismatch_count|missing_entry_count|total_discrepancy_count|"
         r"comparison_difference)=0\b",
         re.IGNORECASE,
     )
-    
+
     for cfile in candidate_files:
         assert cfile.exists(), f"Missing production candidate file: {cfile}"
         content = cfile.read_text(encoding="utf-8")
-        
+
         if cfile.suffix == ".py":
             tree = ast.parse(content, filename=str(cfile))
             for node in ast.walk(tree):
@@ -611,10 +611,10 @@ def test_21_exact_ui_import_path_and_capitalization():
     corridor_page = (PROJECT_ROOT / "apps" / "web" / "app" / "corridor" / "page.tsx").read_text(encoding="utf-8")
     assert '@' in corridor_page
     assert 'r8a2_2_corridor_evidence.json' in corridor_page
-    
+
     ui_json_path = PROJECT_ROOT / "apps" / "web" / "src" / "data" / "r8a2_2_corridor_evidence.json"
     assert ui_json_path.exists(), f"Tracked UI evidence JSON artifact missing: {ui_json_path}"
-    
+
     ui_data = json.loads(ui_json_path.read_text(encoding="utf-8"))
     assert isinstance(ui_data, dict), "UI evidence JSON schema invalid"
     assert "segments" in ui_data and "cells" in ui_data
