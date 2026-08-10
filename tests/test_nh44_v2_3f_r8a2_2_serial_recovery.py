@@ -611,6 +611,16 @@ def test_21_exact_ui_import_path_and_capitalization():
     corridor_page = (PROJECT_ROOT / "apps" / "web" / "app" / "corridor" / "page.tsx").read_text(encoding="utf-8")
     assert '@' in corridor_page
     assert 'r8a2_2_corridor_evidence.json' in corridor_page
+    
+    ui_json_path = PROJECT_ROOT / "apps" / "web" / "src" / "data" / "r8a2_2_corridor_evidence.json"
+    assert ui_json_path.exists(), f"Tracked UI evidence JSON artifact missing: {ui_json_path}"
+    
+    ui_data = json.loads(ui_json_path.read_text(encoding="utf-8"))
+    assert isinstance(ui_data, dict), "UI evidence JSON schema invalid"
+    assert "segments" in ui_data and "cells" in ui_data
+    assert isinstance(ui_data["segments"], list) and isinstance(ui_data["cells"], list)
+    assert len(ui_data["segments"]) == 158, f"Expected 158 segments, got {len(ui_data['segments'])}"
+    assert len(ui_data["cells"]) == 11, f"Expected 11 native cells, got {len(ui_data['cells'])}"
 
 def test_22_no_hardcoded_scientific_ui_values():
     corridor_page = (PROJECT_ROOT / "apps" / "web" / "app" / "corridor" / "page.tsx").read_text(encoding="utf-8")

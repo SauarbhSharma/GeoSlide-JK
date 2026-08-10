@@ -1,0 +1,5 @@
+gate_name,command,exit_code,status,details
+python_unit_tests,PYTHONPATH=src python -m unittest discover -s tests -p 'test_*.py',EXTERNAL,NOT_EXECUTED_BY_SCIENTIFIC_GENERATOR — EXTERNAL COMMAND REQUIRED,External execution required
+typescript_typecheck,npx tsc --noEmit,EXTERNAL,NOT_EXECUTED_BY_SCIENTIFIC_GENERATOR — EXTERNAL COMMAND REQUIRED,External execution required
+non_interactive_eslint,npm run lint,EXTERNAL,NOT_EXECUTED_BY_SCIENTIFIC_GENERATOR — EXTERNAL COMMAND REQUIRED,External execution required
+nextjs_production_build,npm run build,EXTERNAL,NOT_EXECUTED_BY_SCIENTIFIC_GENERATOR — EXTERNAL COMMAND REQUIRED,External execution required
