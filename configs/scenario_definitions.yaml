@@ -1,0 +1,74 @@
+# GeoSlide-JK 2.0 — Canonical Scenario Definitions
+# Single authoritative machine-readable source for rainfall hazard scenarios S0-S5
+
+S0_DRY_CONTROL:
+  name: "Dry Control Baseline"
+  r24_mm: 0.0
+  r72_mm: 0.0
+  api7_mm: 0.0
+  r24_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  r24_symbol: "r24_mm = 0.0"
+  r72_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  r72_symbol: "r72_mm = 0.0"
+  api7_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  api7_symbol: "api7_mm = 0.0"
+
+S1_MODERATE:
+  name: "Moderate Monsoon (July P50 Baseline)"
+  r24_mm: 25.0
+  r72_mm: 45.0
+  api7_mm: 15.0
+  r24_source: "data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet"
+  r24_symbol: "p50_24h_mm"
+  r72_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  r72_symbol: "S1_MODERATE['r72_mm']"
+  api7_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  api7_symbol: "S1_MODERATE['api7_mm']"
+
+S2_HEAVY:
+  name: "Heavy Monsoon (July P90 Baseline)"
+  r24_mm: 75.0
+  r72_mm: 110.0
+  api7_mm: 35.0
+  r24_source: "data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet"
+  r24_symbol: "p90_24h_mm"
+  r72_source: "data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet"
+  r72_symbol: "p90_72h_mm"
+  api7_source: "data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet"
+  api7_symbol: "p90_api7_mm"
+
+S3_PROLONGED:
+  name: "Prolonged Storm (July P95 Target)"
+  r24_mm: 90.0
+  r72_mm: 150.0
+  api7_mm: 55.0
+  r24_source: "data/processed/rainfall/nh44_rainfall_climatology_percentiles.parquet"
+  r24_symbol: "p95_24h_mm"
+  r72_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  r72_symbol: "S3_PROLONGED['r72_mm']"
+  api7_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  api7_symbol: "S3_PROLONGED['api7_mm']"
+
+S4_SATURATED:
+  name: "Saturated Compound Stress Test"
+  r24_mm: 120.0
+  r72_mm: 180.0
+  api7_mm: 95.0
+  r24_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  r24_symbol: "S4_SATURATED['r24_mm']"
+  r72_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  r72_symbol: "S4_SATURATED['r72_mm']"
+  api7_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  api7_symbol: "S4_SATURATED['api7_mm']"
+
+S5_EXTREME:
+  name: "Synthetic Extreme Compound Stress Test"
+  r24_mm: 160.0
+  r72_mm: 250.0
+  api7_mm: 140.0
+  r24_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  r24_symbol: "S5_EXTREME['r24_mm']"
+  r72_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  r72_symbol: "S5_EXTREME['r72_mm']"
+  api7_source: "scripts/phase_5_rainfall_hazard_pipeline.py"
+  api7_symbol: "S5_EXTREME['api7_mm']"

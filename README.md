@@ -16,6 +16,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > **⚠️ Research Disclaimer**: GeoSlide-JK is a research decision-support prototype and is not an official government warning system.
+> 
+> **📌 V2-3F-R8A1 Analysis Grid Notice**: `REPOSITORY_DECLARED_IMERG_COMPATIBLE_ANALYSIS_GRID — EMPIRICAL RASTER PROVENANCE NOT PROVEN`
 
 ---
 

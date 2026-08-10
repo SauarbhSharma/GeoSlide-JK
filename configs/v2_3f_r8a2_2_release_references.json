@@ -1,0 +1,50 @@
+{
+  "description": "GeoSlide-JK 2.0 Tracked Release References Lock File (V2-3F-R8A2-2)",
+  "release_references": [
+    {
+      "release": "V2-3F-R3",
+      "tag_object": "f4475095c1cfff511f9cb63632f2305487f337ff",
+      "tag_target": "3e8947978c096a3bb7c262bb835ae3ff1b932a10",
+      "release_tag_git_blob_sha256": "37f44a307dddd59b5ae7bd997dd9cb927bb8aa8798bf1b3a58eec4c414bb4b53",
+      "restored_file_path": "outputs/reports/v2_3f_r3_output_hashes.csv",
+      "historical_validity_status": "HISTORICAL_RECORD_VALID",
+      "reason": "Initial baseline manifest"
+    },
+    {
+      "release": "V2-3F-R4",
+      "tag_object": "819ecc5965ce6544eb1cc505eeff545c0ec7de98",
+      "tag_target": "f5342857ddd90513aecfa3760a70a883d3ba3a8e",
+      "release_tag_git_blob_sha256": "4b7b2bcbd9452b4ccca6ecb34a5d893eb4236cf5e38eb410aed0f3a677465eb1",
+      "restored_file_path": "outputs/reports/v2_3f_r4_output_hashes.csv",
+      "historical_validity_status": "HISTORICAL_RECORD_VALID",
+      "reason": "Authoritative V2-3F-R4 release"
+    },
+    {
+      "release": "V2-3F-R5",
+      "tag_object": "79a279ca6b1b01561739cabd758e026da49b65f9",
+      "tag_target": "16ec09fd67186e6a1b90a2f4de86cf10e9f0ecdd",
+      "release_tag_git_blob_sha256": "925050cf183be141c06aa8ad137ca936665d495848fd5b6ddfffca35a0e0f1b3",
+      "restored_file_path": "outputs/reports/v2_3f_r5_output_hashes.csv",
+      "historical_validity_status": "RESTORED_BYTE_FOR_BYTE",
+      "reason": "Restored byte-for-byte from release tag"
+    },
+    {
+      "release": "V2-3F-R6",
+      "tag_object": "dc46edda03b1d57d3e712fa4a97a5605e91a0942",
+      "tag_target": "220893af24e66f040ab6c89fc4ed1634a6147a1c",
+      "release_tag_git_blob_sha256": "d9c75fbd280b77663164432574242c6c020b27a66545b3faf828ca05a04ab0de",
+      "restored_file_path": "outputs/reports/v2_3f_r6_output_hashes.csv",
+      "historical_validity_status": "RESTORED_BYTE_FOR_BYTE",
+      "reason": "Restored byte-for-byte from release tag"
+    },
+    {
+      "release": "V2-3F-R7",
+      "tag_object": "8f53f7e787db97c2a7e8b6e56c4918bb49209500",
+      "tag_target": "2685a8521f8b0ba106bf993791b13630e55f3a35",
+      "release_tag_git_blob_sha256": "7dc36e58b5620ab1fbb0cc7584e5b8b660e8670d2bea7724bc3f3a494375d8e1",
+      "restored_file_path": "outputs/reports/v2_3f_r7_output_hashes.csv",
+      "historical_validity_status": "FAILED_EVIDENCE_RECORDED",
+      "reason": "Recorded as historical failed evidence"
+    }
+  ]
+}
