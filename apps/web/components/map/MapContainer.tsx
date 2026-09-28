@@ -199,26 +199,37 @@ export function MapContainer({
     const MapClass = maplibregl.Map;
     const PopupClass = maplibregl.Popup;
 
+    const maptilerKey = process.env.NEXT_PUBLIC_MAPTILER_KEY;
+    const basemapSource = maptilerKey
+      ? {
+          type: "raster" as const,
+          tiles: [
+            `https://api.maptiler.com/maps/dataviz-dark/256/{z}/{x}/{y}.png?key=${maptilerKey}`,
+          ],
+          tileSize: 256,
+          attribution: "&copy; MapTiler &copy; OpenStreetMap contributors",
+        }
+      : {
+          type: "raster" as const,
+          tiles: [
+            "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+          ],
+          tileSize: 256,
+          attribution: "&copy; Esri, HERE, Garmin, FAO, NOAA, USGS, OpenStreetMap contributors",
+        };
+
     const map = new MapClass({
       container: mapContainerRef.current,
       style: {
         version: 8,
         sources: {
-          "carto-dark": {
-            type: "raster",
-            tiles: [
-              "https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
-              "https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
-            ],
-            tileSize: 256,
-            attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
-          },
+          "basemap-dark": basemapSource,
         },
         layers: [
           {
-            id: "carto-dark-layer",
+            id: "basemap-dark-layer",
             type: "raster",
-            source: "carto-dark",
+            source: "basemap-dark",
             minzoom: 0,
             maxzoom: 19,
           },
@@ -244,7 +255,7 @@ export function MapContainer({
 
       if (isAbortError) return; // Safely ignore tile cancellation
 
-      if (e && e.error && (e.error.message?.includes("basemap") || e.error.message?.includes("carto"))) {
+      if (e && e.error && (e.error.message?.includes("basemap") || e.error.message?.includes("carto") || e.error.message?.includes("esri"))) {
         setBasemapError(true);
       }
     });

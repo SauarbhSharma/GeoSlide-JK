@@ -23,6 +23,7 @@ interface SegmentRobustnessData {
   name: string;
   length: string;
   nativeCellId: string;
+  supportNodeId?: string;
   cellSegments: number;
   dhiA: number;
   dhiB: number;

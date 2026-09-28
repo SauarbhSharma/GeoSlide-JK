@@ -89,3 +89,6 @@ test-results/
 *.swo
 .DS_Store
 Thumbs.db
+
+# Build cache
+apps/web/tsconfig.tsbuildinfo
